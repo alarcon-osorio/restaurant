@@ -24,7 +24,8 @@ public class ServiceOrder {
     private String accompaniment;
     private String drinksIncludes;
     private String price;
-    private String tableNumber;
+    private long cant;
+    private long tableNumber;
     private String image;
     private String time;
 
