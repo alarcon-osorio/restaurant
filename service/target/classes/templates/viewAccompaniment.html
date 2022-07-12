@@ -1,0 +1,53 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<header th:insert="includes/header :: header"> </header>
+<header th:insert="includes/navbar :: navbar"> </header>
+
+<div class="container mt-4 vj-destacados">
+    <div class="row">
+        <div class="col-md-12  mb-4">
+            <form action="#" method="get">
+            <div class="card">
+                <img th:src="${menuImage}" class="card-img-top" alt="...">
+                <div class="card-footer">
+                    <h4 th:text="${menuName} + ' - ' + ${menuDescription}" class="card-title"></h4>
+                </div>
+                <div class="card-body">
+                    <br th:if="${menuTypeId == 2}">
+                    <label class="form-label" th:if="${menuTypeId == 2}">Acompañamiento</label>
+                    <select class="form-control" name="menuAccompaniment" id="" th:if="${menuTypeId == 2}">
+                        <option value="0">Seleccione...</option>
+                        <option th:each="menuAccompaniment : ${menuAccompaniment}" th:text="${menuAccompaniment.accompaniment}" th:value="${menuAccompaniment.accompaniment}"></option>
+                    </select>
+                    <br th:if="${menuTypeId == 2}">
+                    <label  for="cant" class="form-label">Cantidad</label>
+                    <input class="form-control" type="number" name="cant" id="cant" value="1">
+                    <br>
+                    <label for="mesa" class="form-label">Mesa</label>
+                    <select class="form-control" name="mesa" id="mesa" required>
+                        <option value="0">Seleccione...</option>
+                        <option th:each="listRestaurantTable : ${listRestaurantTable}" th:text="'Mesa - ' + ${listRestaurantTable.tableNumber}" th:value="${listRestaurantTable.tableNumber}"></option>
+                    </select>
+                    <br th:if="${menuTypeId == 2}">
+                    <label for="bebidas" class="form-label" th:if="${menuTypeId == 2}">Bebidas Incluidas</label>
+                    <select class="form-control" name="bebidas" id="bebidas" th:if="${menuTypeId == 2}">
+                        <option value="0">Seleccione...</option>
+                        <option th:each="menuIncludesList : ${menuIncludesList}" th:text="${menuIncludesList.name}" th:value="${menuIncludesList.name}"></option>
+                    </select>
+                    <br>
+                    <label for="obs" class="form-label">Observaciones</label>
+                    <textarea class="form-control" type="number" name="obs" id="obs" placeholder="Use estas observaciones para complementar el pedido..."></textarea>
+                </div>
+
+                <div class="card-footer text-muted">
+                    <button type="submit" class="btn btn-success float-right">Guardar</button>
+                    <a th:href="@{/type_menu(id=${menuTypeId})}" th:text="Atras" class="btn btn-warning"></a>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
