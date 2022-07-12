@@ -31,20 +31,27 @@ public class AccompanimentWeb {
     ServiceMenuIncludes serviceMenuIncludes;
 
     @GetMapping(value = "/accompaniment")
-    public String accompaniment(Model model, long menuId){
+    public String accompaniment(Model model, long menuId, boolean add){
         List<MenuAccompaniment> menuAccompaniment = serviceMenuAccompaniment.getMenuAccompanimentList();
         Menu menu = serviceMenu.getMenuId(menuId);
         List<RestaurantTable> listRestaurantTable = serviceRestaurantTable.getRestaurantTableList();
         List<MenuIncludes> menuIncludesList = serviceMenuIncludes.getMenuIncludesList();
+        if(add){
+            model.addAttribute("success", "ok");
+        }
         model.addAttribute("menuAccompaniment", menuAccompaniment);
         model.addAttribute("menuName", menu.getName());
         model.addAttribute("menuDescription", menu.getDescription());
         model.addAttribute("menuImage", menu.getImage());
         model.addAttribute("menuTypeId", menu.getIdMenuType());
-        model.addAttribute("menud", menu.getId());
+        model.addAttribute("menuPrice", menu.getPrice());
+        model.addAttribute("menuId", menu.getId());
         model.addAttribute("listRestaurantTable", listRestaurantTable);
         model.addAttribute("menuIncludesList", menuIncludesList);
         return "viewAccompaniment";
     }
+
+    //TODO: Que traiga el id_menu_type para diferenciar los platos especiales y poder personalizarlos
+    //TODO: Intentar hacer un contador de 0 valores para con th:if para que no muestra campos que no sean necesios
 
 }

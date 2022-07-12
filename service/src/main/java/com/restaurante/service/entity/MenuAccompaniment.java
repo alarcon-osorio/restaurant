@@ -17,6 +17,7 @@ public class MenuAccompaniment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private long idMenu;
+    private long idMenuType;
     private String accompaniment;
 
 }
