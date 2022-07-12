@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="refine - publish local">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/controller/web/OrderWeb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/entity/ServiceOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/repository/RepositoryOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/service/ServiceOrders.java" afterDir="false" />
+    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Validate pends - (Se agrego nueva funcionalidad de guardado de pedidos para tener en cuenta)">
       <change afterPath="$PROJECT_DIR$/target/classes/com/restaurante/service/controller/web/OrderWeb.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/restaurante/service/entity/ServiceOrder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/restaurante/service/repository/RepositoryOrder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/restaurante/service/service/ServiceOrders.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/restaurante/service/ServiceApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/ServletInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/controller/web/AccompanimentWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/controller/web/AccompanimentWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewAccompaniment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewAccompaniment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/restaurante/service/controller/web/AccompanimentWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/restaurante/service/controller/web/AccompanimentWeb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/viewAccompaniment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/viewAccompaniment.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657584805205</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Validate pends - (Se agrego nueva funcionalidad de guardado de pedidos para tener en cuenta)">
+      <created>1657597741524</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657597741524</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +136,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="upload Service" />
     <MESSAGE value="refine - publish local" />
-    <option name="LAST_COMMIT_MESSAGE" value="refine - publish local" />
+    <MESSAGE value="Validate pends - (Se agrego nueva funcionalidad de guardado de pedidos para tener en cuenta)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Validate pends - (Se agrego nueva funcionalidad de guardado de pedidos para tener en cuenta)" />
   </component>
 </project>
