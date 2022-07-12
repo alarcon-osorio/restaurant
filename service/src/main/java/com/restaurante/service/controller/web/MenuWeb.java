@@ -30,7 +30,7 @@ public class MenuWeb {
     }
 
     @GetMapping(value = "/type_menu")
-    public String type_menu(Model model, long id){
+    public String typeMenu(Model model, long id){
         List<Menu> menu = serviceMenu.getMenuTypeId(id);
         List<MenuType> menuTypeList = serviceMenuType.getMenuType();
         model.addAttribute("menu", menu);
