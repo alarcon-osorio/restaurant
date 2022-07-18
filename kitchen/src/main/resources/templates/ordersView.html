@@ -12,55 +12,68 @@
                 <p class="owner-subtext"><a href="#">Cerrar Sesión</a></p>
             </div>
             <div class="btn-group" style="width:100%">
-                <a th:href="@{/menu}" class="btn btn-outline-warning">Todos</a>
-                <a th:each="menuTypeList : ${menuTypeList}" th:href="@{/type_menu(id=${menuTypeList.id})}"  th:text="${menuTypeList.name}" class="btn btn-outline-success"></a>
+                <a th:href="@{/kitchen?table=0}" class="btn btn-outline-warning">Todas</a>
+                <a th:each="tableDistinct : ${tableDistinct}" th:href="@{/kitchen(table=${tableDistinct})}" th:text="'Mesa ' + ${tableDistinct}" class="btn btn-outline-success"></a>
             </div>
-            <br>
-            <br>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="search" placeholder="Buscar platos..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-success" id="btn-search" type="button">buscar</button>
-                </div>
-            </div>
-            <div class="salida"></div>
         </div>
     </div>
+
+    <div class="row justify-content-center align-items-center" th:if="${allOrders} == 'ok'">
+        <h1 th:text="'Todas las mesas'"></h1>
+        <hr>
+    </div>
+
     <div class="row">
-        <div th:each="menu : ${menu}" class="col-md-6  mb-4">
+        <div th:each="serviceOrderList : ${serviceOrderList}" class="col-md-4  mb-4">
             <div class="card">
-                <img th:src="${menu.image}" class="card-img-top" alt="...">
+                <img th:src="${serviceOrderList.image}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h4 th:text="${menu.name}" class="card-title"></h4>
-                    <h5 th:text="'$' + ${menu.price}" class="card-title"></h5>
-                    <h6 th:text="${menu.description}" ></h6>
+                    <h4 th:text="'Mesa ' + ${serviceOrderList.tableNumber}" class="card-title" style="text-align:center;"></h4>
+                    <h5 th:text="${serviceOrderList.name}" class="card-title"></h5>
+                    <h6 th:if="${serviceOrderList.accompaniment}" th:text="'Acompañamientos: ' +${serviceOrderList.accompaniment}"></h6>
+                    <h6 th:if="${serviceOrderList.option1}" th:text="'Caldo: ' + ${serviceOrderList.option1}" ></h6>
+                    <h6 th:if="${serviceOrderList.option2}" th:text="'Huevos: ' + ${serviceOrderList.option2}" ></h6>
+                    <h6 th:if="${serviceOrderList.option3}" th:text="'Bebida: ' + ${serviceOrderList.option3}" ></h6>
+                    <h6 th:if="${serviceOrderList.option4}" th:text="'Complemento: ' + ${serviceOrderList.option4}" ></h6>
+                    <h6 th:if="${serviceOrderList.drinksIncludes}" th:text="'Bebida Incluida: ' + ${serviceOrderList.drinksIncludes}"></h6>
+                    <h6 th:text="'Observaciones: ' +${serviceOrderList.observations}" class="card-title"></h6>
+                    <h6 th:text="'Cantidad: ' +${serviceOrderList.cant}"></h6>
                 </div>
                 <div class="card-footer text-muted">
-                    <a th:href="@{/accompaniment(menuId=${menu.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>
+                    <a th:href="@{/accompaniment(menuId=${serviceOrderList.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center align-items-center" th:if="${ordersByTable} == 'ok'">
+        <h1 th:text="'Mesa ' + ${table}"></h1>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div th:each="serviceOrderByTable : ${serviceOrderByTable}" class="col-md-4  mb-4">
+            <div class="card">
+                <img th:src="${serviceOrderByTable.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 th:text="'Mesa ' + ${serviceOrderByTable.tableNumber}" class="card-title" style="text-align:center;"></h4>
+                    <h5 th:text="${serviceOrderByTable.name}" class="card-title"></h5>
+                    <h6 th:if="${serviceOrderByTable.accompaniment}" th:text="'Acompañamientos: ' +${serviceOrderByTable.accompaniment}"></h6>
+                    <h6 th:if="${serviceOrderByTable.option1}" th:text="'Caldo: ' + ${serviceOrderByTable.option1}" ></h6>
+                    <h6 th:if="${serviceOrderByTable.option2}" th:text="'Huevos: ' + ${serviceOrderByTable.option2}" ></h6>
+                    <h6 th:if="${serviceOrderByTable.option3}" th:text="'Bebida: ' + ${serviceOrderByTable.option3}" ></h6>
+                    <h6 th:if="${serviceOrderByTable.option4}" th:text="'Complemento: ' + ${serviceOrderByTable.option4}" ></h6>
+                    <h6 th:if="${serviceOrderByTable.drinksIncludes}" th:text="'Bebida Incluida: ' + ${serviceOrderByTable.drinksIncludes}"></h6>
+                    <h6 th:text="'Observaciones: ' +${serviceOrderByTable.observations}" class="card-title"></h6>
+                    <h6 th:text="'Cantidad: ' +${serviceOrderByTable.cant}"></h6>
+                </div>
+                <div class="card-footer text-muted">
+                    <a th:href="@{/accompaniment(menuId=${serviceOrderByTable.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 <footer th:insert="includes/footer :: footer"> </footer>
-<script>
-    $(document).ready(function(){
-         $("#search").keyup(function(){
-              var parametros="search="+$(this).val()
-              $.ajax({
-                 data:  parametros,
-                  url:   'api/menu/10',
-                  type:  'get',
-                    beforeSend: function () { },
-                    success:  function (response) {
-                        var response = $(".salida").html(response);
-                        log(response);
-                  },
-                  error:function(){
-                       alert("error")
-                    }
-               });
-         })
-})
-</script>
 </html>

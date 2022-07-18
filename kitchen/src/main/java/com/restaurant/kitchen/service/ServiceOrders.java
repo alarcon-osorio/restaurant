@@ -16,4 +16,14 @@ public class ServiceOrders {
     public List<ServiceOrder> getServiceOrderList(){
         return repositoryOrders.findAll();
     }
+
+    public List<String> getTableNumberDistinct(){
+        return repositoryOrders.findByDistinctTableNumber();
+    }
+
+    public List<ServiceOrder> getByTableNumber(long table){
+        return repositoryOrders.findByTableNumber(table);
+    }
+
+
 }
