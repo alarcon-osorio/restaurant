@@ -40,7 +40,7 @@
                     <h6 th:text="'Cantidad: ' +${serviceOrderList.cant}"></h6>
                 </div>
                 <div class="card-footer text-muted">
-                    <a th:href="@{/accompaniment(menuId=${serviceOrderList.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>
+                    <a th:href="@{/preparation(id=${serviceOrderList.id})}" th:text="'Preparar'" class="btn btn-primary"></a>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                     <h6 th:text="'Cantidad: ' +${serviceOrderByTable.cant}"></h6>
                 </div>
                 <div class="card-footer text-muted">
-                    <a th:href="@{/accompaniment(menuId=${serviceOrderByTable.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>
+                    <a th:href="@{/preparation(id=${serviceOrderByTable.id})}" th:text="'Preparar'" class="btn btn-primary"></a>
                 </div>
             </div>
         </div>

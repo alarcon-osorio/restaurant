@@ -29,8 +29,6 @@ Lsrc/main/java/com/restaurante/service/repository/RepositoryMenuOptional.java,e
 Ksrc/main/java/com/restaurante/service/service/ServiceMenuAccompaniment.java,c\c\cc4b2e050d0eba4b713c031cb50b6cda33dff2a3
 n
 >src/main/java/com/restaurante/service/entity/MenuIncludes.java,7\6\76e2aec621597db85db0a43b42efd1e2c55ac6af
-s
-Csrc/main/java/com/restaurante/service/entity/MenuAccompaniment.java,2\9\29b9723dc1a542eb1655731049066f597a4078c9
 v
 Fsrc/main/java/com/restaurante/service/service/ServiceMenuOptional.java,5\7\5776b3da283cac12965a8c5b3ff35dc3aebf6fbd
 z
@@ -39,3 +37,5 @@ q
 Asrc/main/java/com/restaurante/service/controller/web/HomeWeb.java,2\2\2275af8fb2317c6e5d61ab6b49cf2be495987a14
 n
 >src/main/java/com/restaurante/service/entity/ServiceOrder.java,a\c\ac94bb315e02ecd0feb864f6f77e542ea509bfae
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec

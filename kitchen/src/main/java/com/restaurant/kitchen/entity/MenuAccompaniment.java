@@ -1,4 +1,4 @@
-package com.restaurante.service.entity;
+package com.restaurant.kitchen.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,17 +10,15 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "menu", schema="restaurant")
-public class Menu {
+@Table(name = "menu_accompaniment")
+public class MenuAccompaniment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private long idMenu;
     private long idMenuType;
-    private String name;
-    private String description;
-    private String price;
-    private String image;
-    private long ordered; //TODO: Pensar en cambiar por favorite
+    private String accompaniment;
 
 }
+
