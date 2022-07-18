@@ -14,7 +14,7 @@
             <div class="btn-group" style="width:100%">
                 <!--<a th:href="@{/orders?table=0}" class="btn btn-outline-warning">Todo</a>-->
                 <a th:href="@{/menu}" class="btn btn-outline-warning">Menú</a>
-                <a th:each="tableNumberList : ${tableNumberList}" th:href="@{/orders(table=${tableNumberList})}"  th:text="'Mesa ' + ${tableNumberList}" class="btn btn-outline-success"></a>
+                <a th:each="tableNumberList : ${tableNumberList}" th:href="@{/orders(table=${tableNumberList})}" th:text="'Mesa ' + ${tableNumberList}" class="btn btn-outline-success"></a>
             </div>
         </div>
     </div>
