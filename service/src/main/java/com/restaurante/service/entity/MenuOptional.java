@@ -10,28 +10,19 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "service_order")
-public class ServiceOrder {
+@Table(name = "menu_optional")
+public class MenuOptional {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private long idMenu;
-    private long idMenuType;
-    private String name;
-    private String description;
-    private String observations;
-    private String accompaniment;
+    private long idTypeMenu;
     private String option1;
     private String option2;
     private String option3;
     private String option4;
     private String option5;
-    private String drinksIncludes;
-    private String price;
-    private long cant;
-    private long tableNumber;
-    private String image;
-    private String time;
+
 
 }

@@ -1,4 +1,4 @@
-package com.restaurante.service.entity;
+package com.restaurant.kitchen.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,3 +35,4 @@ public class ServiceOrder {
     private String time;
 
 }
+

@@ -1,17 +1,12 @@
 package com.restaurante.service.controller.web;
 
-import com.restaurante.service.entity.Menu;
-import com.restaurante.service.entity.MenuAccompaniment;
-import com.restaurante.service.entity.MenuIncludes;
-import com.restaurante.service.entity.RestaurantTable;
-import com.restaurante.service.service.ServiceMenu;
-import com.restaurante.service.service.ServiceMenuAccompaniment;
-import com.restaurante.service.service.ServiceMenuIncludes;
-import com.restaurante.service.service.ServiceRestaurantTable;
+import com.restaurante.service.entity.*;
+import com.restaurante.service.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -30,13 +25,25 @@ public class AccompanimentWeb {
     @Autowired
     ServiceMenuIncludes serviceMenuIncludes;
 
+    @Autowired
+    ServiceMenuOptional serviceMenuOptional;
+
+    @Autowired
+    ServiceOrders serviceOrders;
+
     @GetMapping(value = "/accompaniment")
-    public String accompaniment(Model model, long menuId, boolean add){
+    public String accompaniment(Model model, long menuId, String table, boolean add){
         List<MenuAccompaniment> menuAccompaniment = serviceMenuAccompaniment.getMenuAccompanimentList();
         Menu menu = serviceMenu.getMenuId(menuId);
         List<RestaurantTable> listRestaurantTable = serviceRestaurantTable.getRestaurantTableList();
         List<MenuIncludes> menuIncludesList = serviceMenuIncludes.getMenuIncludesList();
+        List<MenuOptional> menuOptionalList = serviceMenuOptional.getMenuOptionalByIdMenu(menuId);
+        if (!menuOptionalList.isEmpty()){
+            model.addAttribute("options", "ok");
+            model.addAttribute("menuOptionalList", menuOptionalList);
+        }
         if(add){
+            model.addAttribute("table", table);
             model.addAttribute("success", "ok");
         }
         model.addAttribute("menuAccompaniment", menuAccompaniment);
@@ -49,6 +56,12 @@ public class AccompanimentWeb {
         model.addAttribute("listRestaurantTable", listRestaurantTable);
         model.addAttribute("menuIncludesList", menuIncludesList);
         return "viewAccompaniment";
+    }
+
+    @RequestMapping(value = "/saveOrder")
+    public String saveOrder(ServiceOrder serviceOrder){
+        serviceOrders.saveOrder(serviceOrder);
+        return "redirect:/accompaniment?menuId=" + serviceOrder.getIdMenu() + "&table=" + serviceOrder.getTableNumber() + "&add=true";
     }
 
     //TODO: Que traiga el id_menu_type para diferenciar los platos especiales y poder personalizarlos

@@ -17,6 +17,7 @@ public class MenuIncludes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private long idMenu;
+    private long idMenuType;
     private String name;
     private String price;
 }

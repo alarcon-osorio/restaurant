@@ -111,3 +111,9 @@
 .btn-group, .btn-group-vertical {
     display: contents !important;
 }
+
+/*
+.btn-group>.btn:first-child {
+    margin-left: 10px !important;
+}
+*/

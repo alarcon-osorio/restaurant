@@ -12,62 +12,85 @@
                 <p class="owner-subtext"><a href="#">Cerrar Sesión</a></p>
             </div>
             <div class="btn-group" style="width:100%">
-                <a th:href="@{/orders?table=0}" class="btn btn-outline-warning">Todo</a>
-                <!--<a th:each="menuTypeList : ${menuTypeList}" th:href="@{/type_menu(id=${menuTypeList.id})}"  th:text="${menuTypeList.name}" class="btn btn-outline-success"></a>-->
+                <!--<a th:href="@{/orders?table=0}" class="btn btn-outline-warning">Todo</a>-->
+                <a th:href="@{/menu}" class="btn btn-outline-warning">Menú</a>
+                <a th:each="tableNumberList : ${tableNumberList}" th:href="@{/orders(table=${tableNumberList})}"  th:text="'Mesa ' + ${tableNumberList}" class="btn btn-outline-success"></a>
             </div>
         </div>
     </div>
+
     <div class="row" th:if="${table} == 0">
+        <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Exito!</strong> Pedido ordenado exitosamente...<a href="/menu">  /  Volver al Menú</a>.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
         <div class="col-md-12  mb-4">
             <h1 th:text="'Resumen de Pedidos'" style="text-align:center;"></h1>
             <br>
             <div class="card" th:each="serviceOrderList : ${serviceOrderList}" style="margin-bottom: 42px;">
+                <br>
                 <h1 th:text="'Mesa: ' +${serviceOrderList.tableNumber}" class="card-title" style="text-align: center;"></h1>
                 <div class="container">
                     <div class="card-body">
                         <h6 th:text="'Nombre del plato: ' + ${serviceOrderList.name}" class="card-title"></h6>
-                        <h6 th:text="'Observaciones: ' +${serviceOrderList.observations}" class="card-title"></h6>
                         <h6 th:if="${serviceOrderList.accompaniment}" th:text="'Acompañamientos: ' +${serviceOrderList.accompaniment}"></h6>
+                        <h6 th:if="${serviceOrderList.option1}" th:text="'Caldo: ' +${serviceOrderList.option1}"></h6>
+                        <h6 th:if="${serviceOrderList.option2}" th:text="'Huevos: ' +${serviceOrderList.option2}"></h6>
+                        <h6 th:if="${serviceOrderList.option3}" th:text="'Bebida: ' +${serviceOrderList.option3}"></h6>
+                        <h6 th:if="${serviceOrderList.option4}" th:text="'Complemento: ' +${serviceOrderList.option4}"></h6>
                         <h6 th:if="${serviceOrderList.drinksIncludes}" th:text="'Bebida Incluida: ' +${serviceOrderList.drinksIncludes}"></h6>
+                        <h6 th:text="'Observaciones: ' +${serviceOrderList.observations}" class="card-title"></h6>
                         <h6 th:text="'Cantidad: ' +${serviceOrderList.cant}"></h6>
                     </div>
-                    <hr>
-                </div>
-                <div class="btn-group">
-                    <a th:href="@{/menu}" class="btn btn-outline-success">Ordenar</a>
-                    <a th:href="@{/menu}" class="btn btn-outline-info">Editar Orden</a>
-                    <a th:href="@{/menu}" class="btn btn-outline-danger">Cancelar Orden</a>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="row" th:if="${table} != 0">
+        <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Exito!</strong> Pedido ordenado exitosamente...<a href="/menu">  /  Volver al Menú</a>.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
         <div class="col-md-12  mb-4">
             <div class="card">
+                <br>
                 <h1 th:text="'Mesa: ' +${table}" class="card-title" style="text-align: center;"></h1>
                 <hr>
                 <div class="card-body" th:if="${empty} == empty">
                     <h6 style="text-align: center;" th:text="'No existe pedido en esta mesa'" class="card-title"></h6>
                 </div>
-                <div th:each="tableNumber : ${tableNumber}" >
-                    <div class="card-body">
-                        <h6 th:text="'Nombre del plato: ' + ${tableNumber.name}" class="card-title"></h6>
-                        <h6 th:text="'Observaciones: ' +${tableNumber.observations}" class="card-title"></h6>
-                        <h6 th:if="${tableNumber.accompaniment}" th:text="'Acompañamientos: ' +${tableNumber.accompaniment}"></h6>
-                        <h6 th:if="${tableNumber.drinksIncludes}" th:text="'Bebida Incluida: ' +${tableNumber.drinksIncludes}"></h6>
-                        <h6 th:text="'Cantidad: ' +${tableNumber.cant}"></h6>
+                <form th:action="@{/confirm_order}" method="get">
+                    <div th:each="tableNumber : ${tableNumber}" >
+                        <div class="card-body">
+                            <input type="hidden" th:value="${table}" name="table">
+                            <h6 th:text="'Nombre del plato: ' + ${tableNumber.name}" class="card-title" ></h6>
+                            <h6 th:if="${tableNumber.accompaniment}" th:text="'Acompañamientos: ' +${tableNumber.accompaniment}"></h6>
+                            <h6 th:if="${tableNumber.option1}" th:text="'Caldo: ' +${tableNumber.option1}"></h6>
+                            <h6 th:if="${tableNumber.option2}" th:text="'Huevos: ' +${tableNumber.option2}"></h6>
+                            <h6 th:if="${tableNumber.option3}" th:text="'Bebida: ' +${tableNumber.option3}"></h6>
+                            <h6 th:if="${tableNumber.option4}" th:text="'Complemento: ' +${tableNumber.option4}"></h6>
+                            <h6 th:if="${tableNumber.drinksIncludes}" th:text="'Bebida Incluida: ' +${tableNumber.drinksIncludes}"></h6>
+                            <h6 th:text="'Observaciones: ' +${tableNumber.observations}" class="card-title"></h6>
+                            <h6 th:text="'Cantidad: ' +${tableNumber.cant}"></h6>
+                        </div>
+                        <hr>
                     </div>
-                    <hr>
-                </div>
-                <div class="btn-group" th:if="${empty} == empty">
-                    <a th:href="@{/menu}" class="btn btn-outline-danger">Atrás</a>
-                </div>
-                <div class="btn-group" th:if="${empty} != empty">
-                    <a th:href="@{/menu}" class="btn btn-outline-success">Ordenar</a>
-                    <a th:href="@{/menu}" class="btn btn-outline-info">Editar Orden</a>
-                    <a th:href="@{/menu}" class="btn btn-outline-danger">Cancelar Orden</a>
-                </div>
+                    <div class="btn-group" th:if="${empty} == empty">
+                        <a th:href="@{/menu}" class="btn btn-outline-danger">Atrás</a>
+                    </div>
+                    <div class="btn-group" th:if="${empty} != empty">
+                        <button type="submit" class="btn btn-outline-success" th:if="${disableButton} != ok">Ordenar</button>
+                        <a th:if="${disableButton} != ok" th:href="@{/menu}" class="btn btn-outline-info">Editar Orden</a>
+                        <a th:if="${disableButton} != ok" th:href="@{/menu}" class="btn btn-outline-danger">Cancelar Orden</a>
+                        <a th:if="${disableButton} == ok" th:href="@{/menu}" class="btn btn-outline-success">Pedido Ordenado</a>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
