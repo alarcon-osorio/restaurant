@@ -299,8 +299,6 @@ X.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RE
 ^.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_springsecurity5_3_0_4_RELEASE.xml,4/7/47bba78eee73ac2cd72628e3949c3b61e975522f
 q
 A.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_15_RELEASE.xml,2/1/21a3c0a7783eebf7f9aab268954c2412d169fe87
-S
-#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
 r
 Bservice/src/main/java/com/restaurante/service/entity/MenuType.java,7/e/7e7b2d9d4b2da76f396c655d53f94dd942436a4c
 y
@@ -365,8 +363,6 @@ i
 service/pom.xml,a/1/a1f4042fbcf78e2ab86d486176a2378cd0a26e9a
 b
 2service/src/main/resources/templates/viewMenu.html,2/d/2da003cef352d486b2070d438ef804a74a2c89f5
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 k
 ;service/src/main/resources/templates/viewAccompaniment.html,3/2/32a559a6063d6eda35916f4307d2e3ebaf819f3f
 t
