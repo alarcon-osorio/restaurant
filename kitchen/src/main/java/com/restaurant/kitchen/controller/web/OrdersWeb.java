@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -25,13 +24,13 @@ public class OrdersWeb {
             List<ServiceOrder> serviceOrderList = serviceOrders.getServiceOrderList();
             model.addAttribute("serviceOrderList", serviceOrderList);
             model.addAttribute("allOrders", "ok");
-            return "ordersView";
+            return "viewOrders";
         }else{
             List<ServiceOrder> serviceOrderByTable = serviceOrders.getByTableNumber(table);
             model.addAttribute("table", table);
             model.addAttribute("serviceOrderByTable", serviceOrderByTable);
             model.addAttribute("ordersByTable", "ok");
-            return "ordersView";
+            return "viewOrders";
         }
     }
 

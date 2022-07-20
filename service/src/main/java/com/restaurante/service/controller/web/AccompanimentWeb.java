@@ -60,11 +60,15 @@ public class AccompanimentWeb {
 
     @RequestMapping(value = "/saveOrder")
     public String saveOrder(ServiceOrder serviceOrder){
+        serviceOrder.setOrdered(0);
+        serviceOrder.setPrepared(0);
+        serviceOrder.setPrepare(0);
+        serviceOrder.setServed(0);
+        serviceOrder.setClose(0);
+        serviceOrder.setCancel(0);
         serviceOrders.saveOrder(serviceOrder);
         return "redirect:/accompaniment?menuId=" + serviceOrder.getIdMenu() + "&table=" + serviceOrder.getTableNumber() + "&add=true";
     }
 
-    //TODO: Que traiga el id_menu_type para diferenciar los platos especiales y poder personalizarlos
-    //TODO: Intentar hacer un contador de 0 valores para con th:if para que no muestra campos que no sean necesios
 
 }

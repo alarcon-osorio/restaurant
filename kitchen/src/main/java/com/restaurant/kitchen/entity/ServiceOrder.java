@@ -31,6 +31,12 @@ public class ServiceOrder {
     private String price;
     private long cant;
     private long tableNumber;
+    private long ordered;
+    private long prepare;
+    private long prepared;
+    private long close;
+    private long cancel;
+    private String paymentMethod;
     private String image;
     private String time;
 

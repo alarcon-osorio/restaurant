@@ -1,0 +1,88 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<header th:insert="includes/header :: header"> </header>
+<header th:insert="includes/navbar :: navbar"> </header>
+
+<div class="container mt-4 vj-destacados">
+    <div class="row">
+        <div class="col col-md-12 text-left mb-4" sec:authorize="isAuthenticated()">
+            <div>
+                <a class="font-weight-bold">Bienvenido: Cocina</a>
+                <img src="https://i.pinimg.com/originals/6c/ed/a5/6ceda58e688c161b04800864a34988f6.jpg" width="45" height="45" class="d-inline-block align-top rounded-circle" alt="" loading="lazy">
+                <p class="owner-subtext"><a href="/">Cerrar Sesión</a></p>
+            </div>
+            <div class="btn-group" style="width:100%">
+                <a th:href="@{/kitchen?table=0}" class="btn btn-outline-warning">Todas</a>
+                <a th:each="tableDistinct : ${tableDistinct}" th:href="@{/kitchen(table=${tableDistinct})}" th:text="'Mesa ' + ${tableDistinct}" class="btn btn-outline-success"></a>
+            </div>
+        </div>
+    </div>
+
+    <hr th:if="${allOrders} == 'ok'">
+    <div class="row justify-content-center align-items-center" th:if="${allOrders} == 'ok'">
+        <h1>Todas las Mesas</h1>
+    </div>
+    <hr>
+    <div class="row">
+        <div th:each="serviceOrderList : ${serviceOrderList}" class="col-md-4  mb-4">
+            <div class="card">
+                <img th:src="${serviceOrderList.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 th:text="'Mesa ' + ${serviceOrderList.tableNumber}" class="card-title" style="text-align:center;"></h4>
+                    <h5 th:text="${serviceOrderList.name}" class="card-title"></h5>
+                    <h6 th:if="${serviceOrderList.accompaniment}" th:text="'Acompañamientos: ' +${serviceOrderList.accompaniment}"></h6>
+                    <h6 th:if="${serviceOrderList.option1}" th:text="'Caldo: ' + ${serviceOrderList.option1}" ></h6>
+                    <h6 th:if="${serviceOrderList.option2}" th:text="'Huevos: ' + ${serviceOrderList.option2}" ></h6>
+                    <h6 th:if="${serviceOrderList.option3}" th:text="'Bebida: ' + ${serviceOrderList.option3}" ></h6>
+                    <h6 th:if="${serviceOrderList.option4}" th:text="'Complemento: ' + ${serviceOrderList.option4}" ></h6>
+                    <h6 th:if="${serviceOrderList.drinksIncludes}" th:text="'Bebida Incluida: ' + ${serviceOrderList.drinksIncludes}"></h6>
+                    <h6 th:text="'Observaciones: ' +${serviceOrderList.observations}" class="card-title"></h6>
+                    <h6 th:text="'Cantidad: ' +${serviceOrderList.cant}"></h6>
+                </div>
+                <div class="card-footer text-muted">
+                    <a th:if="${serviceOrderList.prepare} == 0 and ${serviceOrderList.prepared} == 0" th:href="@{/prepare(id=${serviceOrderList.id})}" th:text="'Comenzar Preparación'" class="btn btn-primary"></a>
+                    <a th:if="${serviceOrderList.prepare} == 1 and ${serviceOrderList.prepared} == 0" th:href="@{/prepared(id=${serviceOrderList.id})}" class="btn btn-warning "><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"> </span> Terminar Preparacón</a>
+                    <a th:if="${serviceOrderList.prepare} == 1 and ${serviceOrderList.prepared} == 1" th:href="@{/kitchen?table=0}" th:text="'Preparación Terminada'" class="btn btn-success"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center" th:if="${ordersByTable} == 'ok'">
+        <h1 th:text="'Mesa ' + ${table}"></h1>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div th:each="serviceOrderByTable : ${serviceOrderByTable}" class="col-md-4  mb-4">
+            <div class="card">
+                <img th:src="${serviceOrderByTable.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 th:text="'Mesa ' + ${serviceOrderByTable.tableNumber}" class="card-title" style="text-align:center;"></h4>
+                    <h5 th:text="${serviceOrderByTable.name}" class="card-title"></h5>
+                    <h6 th:if="${serviceOrderByTable.accompaniment}" th:text="'Acompañamientos: ' +${serviceOrderByTable.accompaniment}"></h6>
+                    <h6 th:if="${serviceOrderByTable.option1}" th:text="'Caldo: ' + ${serviceOrderByTable.option1}" ></h6>
+                    <h6 th:if="${serviceOrderByTable.option2}" th:text="'Huevos: ' + ${serviceOrderByTable.option2}" ></h6>
+                    <h6 th:if="${serviceOrderByTable.option3}" th:text="'Bebida: ' + ${serviceOrderByTable.option3}" ></h6>
+                    <h6 th:if="${serviceOrderByTable.option4}" th:text="'Complemento: ' + ${serviceOrderByTable.option4}" ></h6>
+                    <h6 th:if="${serviceOrderByTable.drinksIncludes}" th:text="'Bebida Incluida: ' + ${serviceOrderByTable.drinksIncludes}"></h6>
+                    <h6 th:text="'Observaciones: ' +${serviceOrderByTable.observations}" class="card-title"></h6>
+                    <h6 th:text="'Cantidad: ' +${serviceOrderByTable.cant}"></h6>
+                </div>
+                <div class="card-footer text-muted">
+                    <a th:if="${serviceOrderByTable.prepare} == 0 and ${serviceOrderByTable.prepared} == 0" th:href="@{/prepare(id=${serviceOrderByTable.id})}" th:text="'Comenzar Preparación'" class="btn btn-primary"></a>
+                    <a th:if="${serviceOrderByTable.prepare} == 1 and ${serviceOrderByTable.prepared} == 0" th:href="@{/prepared(id=${serviceOrderByTable.id})}" class="btn btn-warning "><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"> </span> Terminar Preparacón</a>
+                    <a th:if="${serviceOrderByTable.prepare} == 1 and ${serviceOrderByTable.prepared} == 1" th:href="@{/kitchen(table=${serviceOrderByTable.tableNumber})}" th:text="'Preparación Terminada'" class="btn btn-success"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="includes/footer :: footer"> </footer>
+<script type="text/javascript">
+  function actualizar(){
+    location.reload(true);
+  }
+  setInterval("actualizar()",10000);
+</script>
+</html>

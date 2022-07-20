@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Tirilla de Venta</title>
+    <link rel="stylesheet" th:href="@{/css/invoice.css}">
+    <script language="Javascript">
+        printScreen();
+
+        function printScreen() {
+            if (window.print)
+            window.print()
+            else
+            alert("Para imprimir presione Crtl+P.");
+        }
+    </script>
+</head>
+<body>
+<table class="body-wrap">
+    <tbody>
+        <tr>
+        <td>
+        </td>
+        <td class="container" width="600">
+            <div class="content">
+                <table class="main" width="100%" cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr>
+                        <td class="content-wrap aligncenter">
+                            <table width="100%" cellpadding="0" cellspacing="0" id="print">
+                                <tbody>
+                                <tr>
+                                    <td class="content-block">
+                                        <h2>PARADOR Q´LEKO</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="content-block">
+                                        <table class="invoice">
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    Facturado a: <span th:text="'Mesa ' + ${table}"></span>
+                                                    <br>Número de pedido: <span th:text="${table}"></span>
+                                                    <br>Fecha: <span th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <br>
+                                                    <table class="invoice-items" cellpadding="0" cellspacing="0">
+                                                        <tbody>
+                                                        <tr th:each="serviceOrdersByTable: ${serviceOrdersByTable}">
+                                                            <td th:text="${serviceOrdersByTable.name}"></td>
+                                                            <td class="alignright" th:text="'$' + ${serviceOrdersByTable.price}"></td>
+                                                        </tr>
+                                                        <tr class="total">
+                                                            <td class="alignright" width="80%">Total:</td>
+                                                            <td class="alignright" th:text="'$' + ${totalOrder}"></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content-block" style="text-align:center">
+                            Bogota Colombia - Via la Mosquera - La Mesa
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="footer">
+                    <table width="100%">
+                        <tbody>
+                        <tr>
+                            Siguenos en Redes sociales:
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </td>
+        <td>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script language="Javascript">
+    timeCollapse();
+
+    function timeCollapse() {
+      setInterval('back()', 3000);
+    }
+
+    function back(){
+       alert("NO OLVIDE REGISTRAR EL PAGO");
+       window.history.back();
+    }
+
+</script>
+</html>

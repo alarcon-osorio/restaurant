@@ -31,6 +31,26 @@ public class ServiceOrders {
         repositoryOrder.saveOrderTable(table);
     }
 
+    @Transactional
+    public void saveOrderTableById(long id){
+        repositoryOrder.saveOrderTableById(id);
+    }
+
+    @Transactional
+    public void saveOrderServed(long id){
+        repositoryOrder.saveOrderServed(id);
+    }
+
+    @Transactional
+    public void orderTableCancel(long id){
+        repositoryOrder.orderTableCancel(id);
+    }
+
+    @Transactional
+    public void cancelOrder(long id){
+        repositoryOrder.cancelOrder(id);
+    }
+
     public List<String> getTableNumber(){
         return repositoryOrder.findByDistinctTableNumber();
     }
@@ -40,6 +60,14 @@ public class ServiceOrders {
             return repositoryOrder.findByNeatOrderByTableAll();
         }
         return repositoryOrder.findByNeatOrderByTable(table);
+    }
+
+    public List<ServiceOrder> findByPrepared(){
+        return repositoryOrder.findByPrepared();
+    }
+
+    public ServiceOrder getServiceOrderById(long id){
+        return repositoryOrder.findById(id).get();
     }
 
 

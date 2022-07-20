@@ -1,0 +1,102 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<header th:insert="includes/header :: header"> </header>
+<header th:insert="includes/navbar :: navbar"> </header>
+
+<div class="container mt-4 vj-destacados">
+  <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Exito!</strong>Mesa editada <a th:href="'/orders?table=' + ${table}">Ver Resumen</a><a href="/menu">  /  Volver al Menú</a>.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-md-12  mb-4">
+      <form th:action="@{/save_table}" method="GET">
+        <div class="card">
+          <img th:src="${serviceOrderById.image}" class="card-img-top" alt="...">
+          <div class="card-footer">
+            <h4 th:text="'Mesa ' + ${serviceOrderById.tableNumber} + ' - ' + ${serviceOrderById.name}" class="card-title"></h4>
+            <input type="hidden" th:value="${serviceOrderById.id}" name="id">
+            <input type="hidden" th:value="${serviceOrderById.idMenu}" name="idMenu">
+            <input type="hidden" th:value="${serviceOrderById.idMenuType}" name="idMenuType">
+            <input type="hidden" th:value="${serviceOrderById.name}" name="name">
+            <input type="hidden" th:value="${serviceOrderById.price}" name="price">
+            <input type="hidden" th:value="${serviceOrderById.tableNumber}" name="tableNumber">
+            <input type="hidden" th:value="${serviceOrderById.description}" name="description">
+            <input type="hidden" th:value="${serviceOrderById.image}" name="image">
+          </div>
+
+          <div class="card-body">
+            <div class="form-group" th:if="${serviceOrderById.idMenuType == 2}">
+              <label class="form-label">Acompañamiento</label>
+              <select class="form-control" name="accompaniment">
+                <option th:each="menuAccompaniment : ${menuAccompaniment}" th:text="${menuAccompaniment.accompaniment} == ${serviceOrderById.accompaniment} ? 'Sin acompañamiento' : ${menuAccompaniment.accompaniment}" th:value="${menuAccompaniment.accompaniment} == ${serviceOrderById.accompaniment} ? 'Sin acompañamiento' : ${menuAccompaniment.accompaniment}"></option>
+                <option th:text="${serviceOrderById.accompaniment}" th:value="${serviceOrderById.accompaniment}" selected></option>
+              </select>
+            </div>
+
+            <div class="form-group" th:if="${serviceOrderById.idMenuType == 2}">
+              <label class="form-label">Bebidas Incluidas</label>
+              <select class="form-control" name="drinksIncludes">
+                <option th:each="menuIncludesList : ${menuIncludesList}" th:text="${menuIncludesList.name} == ${serviceOrderById.drinksIncludes} ? 'Sin Bebidas' : ${menuIncludesList.name}" th:value="${menuIncludesList.name} == ${serviceOrderById.drinksIncludes} ? 'Sin Bebidas' : ${menuIncludesList.name}"></option>
+                <option th:text="${serviceOrderById.drinksIncludes}" th:value="${serviceOrderById.drinksIncludes}" selected></option>
+              </select>
+            </div>
+
+            <div th:if="${serviceOrderById.option1}" class="form-group">
+              <label class="form-label">Caldo</label>
+              <select class="form-control" name="option1">
+                <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option1} == ${serviceOrderById.option1} ? '-' : ${menuOptionalList.option1}" th:value="${menuOptionalList.option1} == ${serviceOrderById.option1} ? 'Sin Caldo' : ${menuOptionalList.option1}"></option>
+                <option th:text="${serviceOrderById.option1}" th:value="${serviceOrderById.option1}" selected></option>
+              </select>
+            </div>
+
+            <div th:if="${serviceOrderById.option2}" class="form-group">
+              <label class="form-label">Huevos</label>
+              <select class="form-control" name="option2">
+                <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option2} == ${serviceOrderById.option2} ? '-' : ${menuOptionalList.option2}" th:value="${menuOptionalList.option2} == ${serviceOrderById.option2} ? 'Sin Caldo' : ${menuOptionalList.option2}"></option>
+                <option th:text="${serviceOrderById.option2}" th:value="${serviceOrderById.option2}" selected></option>
+              </select>
+            </div>
+
+            <div th:if="${serviceOrderById.option3}" class="form-group">
+              <label class="form-label">Bebida</label>
+              <select class="form-control" name="option3" >
+                <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option3} == ${serviceOrderById.option3} ? '-' : ${menuOptionalList.option3}" th:value="${menuOptionalList.option3} == ${serviceOrderById.option3} ? 'Sin Caldo' : ${menuOptionalList.option3}"></option>
+                <option th:text="${serviceOrderById.option3}" th:value="${serviceOrderById.option3}" selected></option>
+              </select>
+            </div>
+
+            <div th:if="${serviceOrderById.option4}" class="form-group">
+              <label class="form-label">Complemento</label>
+              <select class="form-control" name="option4" >
+                <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option4} == ${serviceOrderById.option4} ? '-' : ${menuOptionalList.option4}" th:value="${menuOptionalList.option4} == ${serviceOrderById.option4} ? 'Sin Caldo' : ${menuOptionalList.option4}"></option>
+                <option th:text="${serviceOrderById.option4}" th:value="${serviceOrderById.option4}" selected></option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Cantidad</label>
+              <input class="form-control" type="number" name="cant"  th:value="${serviceOrderById.cant}">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Observaciones</label>
+              <textarea class="form-control" type="text" name="observations" th:text="${serviceOrderById.observations}" th:value="${serviceOrderById.observations}"></textarea>
+            </div>
+          </div>
+
+          <div class="card-footer text-muted">
+            <button type="submit" class="btn btn-success float-right">Guardar</button>
+            <a th:href="@{/orders?table=0}" th:text="Regresar" class="btn btn-warning"></a>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
