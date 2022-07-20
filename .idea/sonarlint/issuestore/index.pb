@@ -235,8 +235,6 @@ Fservice/src/main/java/com/restaurante/service/service/ServiceMenu.java,d/2/d2d
 Nservice/src/main/java/com/restaurante/service/service/ServiceMenuIncludes.java,1/8/1839961ac084655bb0e896aae75556cb547750d8
 z
 Jservice/src/main/java/com/restaurante/service/service/ServiceMenuType.java,4/2/42ff04404e275584a1bf438a2833c270fd7f63e7
-‚
-Rservice/src/main/java/com/restaurante/service/controller/web/AccompanimentWeb.java,0/4/0425c6e10c6c0964bfc194f05f44005489503cd8
 …
 Uservice/src/main/java/com/restaurante/service/controller/rest/MenuTypeController.java,a/0/a0113aebfc1e96f5dd1a796ec1d089f321ec6124
 Ž
@@ -257,10 +255,6 @@ F
 service/mvnw.cmd,d/f/df1129b760322f688114d679aabaa4f5c44860e0
 <
 service/mvnw,8/3/83da304b7682190aafa913f54747f3cbf9867ab7
-a
-1service/src/main/resources/application.properties,6/6/6624a48089e20f7f3a3556107bd7084aa3859c86
-_
-/service/src/main/resources/static/css/style.css,e/0/e07623b3aebb8c8ff5c9dba0a7f85dc0c26c2d69
 i
 9service/src/main/resources/templates/includes/footer.html,7/5/7591e015e03782cd2caa07908be1c82af709a51a
 i
@@ -269,17 +263,9 @@ i
 service/HELP.md,5/3/532afed160887818c34cabfd50cb89fdc5ee5e4c
 i
 9service/src/main/resources/templates/includes/navbar.html,5/c/5c4a452610aaf42cc782e02c8f3bdac3910bc737
-?
-service/pom.xml,a/1/a1f4042fbcf78e2ab86d486176a2378cd0a26e9a
-b
-2service/src/main/resources/templates/viewMenu.html,2/d/2da003cef352d486b2070d438ef804a74a2c89f5
-k
-;service/src/main/resources/templates/viewAccompaniment.html,3/2/32a559a6063d6eda35916f4307d2e3ebaf819f3f
 t
 Dkitchen/src/main/java/com/restaurant/kitchen/KitchenApplication.java,e/a/eaf0aa6855279bdb11c399c10959144fe21ff643
 u
 Eservice/src/main/java/com/restaurante/service/ServiceApplication.java,3/e/3e053e99b378a292c0146151d4d06be4715e1171
-A
-DB/restaurant.sql,e\a\ea35f4095f2513657c56a915ff40d167a8ffdeaf
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

@@ -36,6 +36,7 @@
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29b9723dc1a542eb1655731049066f597a4078c9" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo.jpeg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/viewEditOrders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DB/restaurant.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/controller/web/OrdersWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/controller/web/OrdersWeb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/controller/web/preparationWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/controller/web/preparationWeb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/entity/MenuAccompaniment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/entity/PaymentMethod.java" afterDir="false" />
