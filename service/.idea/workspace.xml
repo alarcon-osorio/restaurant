@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Orders module service">
-      <change afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/dto/CloseDay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/repository/RepositoryCloseDay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/service/ServiceCloseDay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewCloseDay.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/restaurant/warehouse/DemoApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/restaurant/warehouse/ServletInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/src/test/java/com/restaurant/warehouse/DemoApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/controller/web/CashWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/controller/web/CashWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/repository/RepositoryPaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/repository/RepositoryPaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/service/ServicePaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/service/ServicePaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewCash.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewCash.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewPrintInvoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewPrintInvoice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Orders module service" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658160216461</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Orders module service">
+      <created>1658342445681</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1658342445681</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
