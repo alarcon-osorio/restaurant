@@ -1,0 +1,69 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<header th:insert="includes/header :: header"> </header>
+<header th:insert="includes/navbar :: navbar"> </header>
+
+<div class="container mt-4 vj-destacados">
+  <div class="row">
+    <div class="col col-md-12 text-left mb-4" sec:authorize="isAuthenticated()">
+      <div>
+        <a class="font-weight-bold">Bienvenido: Cajero</a>
+        <img src="https://i.pinimg.com/originals/6c/ed/a5/6ceda58e688c161b04800864a34988f6.jpg" width="45" height="45" class="d-inline-block align-top rounded-circle" alt="" loading="lazy">
+        <p class="owner-subtext"><a href="/">Cerrar Sesión</a></p>
+      </div>
+      <div class="btn-group" style="width:100%">
+        <a th:each="tableDistinct : ${tableDistinct}" th:href="@{/cash_register(table=${tableDistinct})}" th:text="'Mesa ' + ${tableDistinct}" class="btn btn-outline-success"></a>
+        <a th:href="@{/cash_register?table=0}" class="btn btn-outline-secondary float-right">Atras</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Exito!</strong> Pedido ordenado exitosamente...<a href="/menu">  /  Volver al Menú</a>.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="col-md-12  mb-4">
+      <div class="card">
+        <br>
+        <h1 th:text="'Cierre de Caja Diario'" class="card-title" style="text-align: center;"></h1>
+        <hr>
+          <div>
+            <div class="card-body">
+
+              <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Mesa</th>
+                  <th scope="col">Valor</th>
+                  <th scope="col">Medio de Pago</th>
+                </tr>
+                </thead>
+                <tbody th:each="closeDayList, iter : ${closeDayList}">
+                <tr>
+                  <th scope="row" th:text="${iter.index}+1"></th>
+                  <td th:text="${closeDayList.time}"></td>
+                  <td th:text="${closeDayList.name}"></td>
+                  <td th:text="${closeDayList.cant}"></td>
+                  <td th:text="${closeDayList.tableNumber}"></td>
+                  <td th:text="'$' + ${#numbers.formatDecimal(closeDayList.totalItem, 0, 'COMMA', 0, 'POINT')}"></td>
+                  <td th:text="${closeDayList.paymentMethod}"></td>
+                </tr>
+                </tbody>
+              </table>
+              <h4 class="float-right" th:text="'Total: $' + ${#numbers.formatDecimal(totalOrder, 0, 'COMMA', 0, 'POINT')}"> </h4>
+              <br>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer th:insert="includes/footer :: footer"> </footer>
+</html>

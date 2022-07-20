@@ -12,9 +12,9 @@
                 <p class="owner-subtext"><a href="/">Cerrar Sesión</a></p>
             </div>
             <div class="btn-group" style="width:100%">
-                <!--<a th:href="@{/}" class="btn btn-outline-danger">Inicio</a>-->
                 <!--<a th:href="@{/cash_register?table=0}" class="btn btn-outline-warning">Todo</a>-->
                 <a th:each="tableDistinct : ${tableDistinct}" th:href="@{/cash_register(table=${tableDistinct})}" th:text="'Mesa ' + ${tableDistinct}" class="btn btn-outline-success"></a>
+                <a th:href="@{/close_day}" class="btn btn-outline-secondary float-right">Cierre Caja</a>
             </div>
         </div>
     </div>
@@ -56,16 +56,16 @@
                                     <th scope="col">Precio</th>
                                 </tr>
                                 </thead>
-                                <tbody th:each="serviceOrdersByTable : ${serviceOrdersByTable}">
+                                <tbody th:each="serviceOrdersByTable, iter : ${serviceOrdersByTable}">
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <th scope="row" th:text="${iter.index}+1"></th>
                                     <td th:text="${serviceOrdersByTable.name}"></td>
                                     <td th:text="${serviceOrdersByTable.cant}"></td>
-                                    <td th:text="${serviceOrdersByTable.price}"></td>
+                                    <td th:text="'$' + ${serviceOrdersByTable.cant} * ${serviceOrdersByTable.price}"></td>
                                 </tr>
                                 </tbody>
                             </table>
-                            <h4 class="float-right" th:text="'Total: $' + ${totalOrder}"> </h4>
+                            <h4 class="float-right" th:text="'Total: $' + ${#numbers.formatDecimal(totalOrder, 0, 'COMMA', 0, 'POINT')}"> </h4>
                         </div>
                         <br>
                         <hr>
