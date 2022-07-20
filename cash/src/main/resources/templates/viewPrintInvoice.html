@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Tirilla de Venta</title>
     <link rel="stylesheet" th:href="@{/css/invoice.css}">
-    <script language="Javascript">
+   <script language="Javascript">
         printScreen();
 
         function printScreen() {
@@ -49,12 +49,19 @@
                                                 <td>
                                                     <br>
                                                     <table class="invoice-items" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th style="text-align:left">Cant.</th>
+                                                            <th style="text-align:center">Descripción</th>
+                                                            <th style="text-align:right">Valor</th>
+                                                        </tr>
                                                         <tbody>
                                                         <tr th:each="serviceOrdersByTable: ${serviceOrdersByTable}">
+                                                            <td th:text="${serviceOrdersByTable.cant}"></td>
                                                             <td th:text="${serviceOrdersByTable.name}"></td>
                                                             <td class="alignright" th:text="'$' + ${serviceOrdersByTable.price}"></td>
                                                         </tr>
                                                         <tr class="total">
+                                                            <td></td>
                                                             <td class="alignright" width="80%">Total:</td>
                                                             <td class="alignright" th:text="'$' + ${totalOrder}"></td>
                                                         </tr>
@@ -72,7 +79,7 @@
                     </tr>
                     <tr>
                         <td class="content-block" style="text-align:center">
-                            Bogota Colombia - Via la Mosquera - La Mesa
+                            La Pala Tena - Via Mosquera - La Mesa
                         </td>
                     </tr>
                     </tbody>

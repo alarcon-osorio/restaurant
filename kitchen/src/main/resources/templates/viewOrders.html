@@ -24,7 +24,7 @@
     </div>
     <hr>
     <div class="row">
-        <div th:each="serviceOrderList : ${serviceOrderList}" class="col-md-4  mb-4">
+        <div th:each="serviceOrderList : ${serviceOrderList}" class="col-md-6  mb-4">
             <div class="card">
                 <img th:src="${serviceOrderList.image}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -54,7 +54,7 @@
     <hr>
 
     <div class="row">
-        <div th:each="serviceOrderByTable : ${serviceOrderByTable}" class="col-md-4  mb-4">
+        <div th:each="serviceOrderByTable : ${serviceOrderByTable}" class="col-md-6  mb-4">
             <div class="card">
                 <img th:src="${serviceOrderByTable.image}" class="card-img-top" alt="...">
                 <div class="card-body">
