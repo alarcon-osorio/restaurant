@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Refine - button search and more">
-      <change beforePath="$PROJECT_DIR$/../cash/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/repository/RepositoryOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/repository/RepositoryOrders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/entity/MenuOptional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/entity/MenuOptional.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewAccompaniment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewAccompaniment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/restaurante/service/entity/MenuOptional.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/restaurante/service/entity/MenuOptional.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/viewAccompaniment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/viewAccompaniment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT.war.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewAccompaniment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewAccompaniment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/service.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.restaurante.service.ServiceApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.restaurante.service.ServiceApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.restaurante.service.ServiceApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.restaurante.service.ServiceApplicationTests.txt" afterDir="false" />
-    </list>
+    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Refine - button search and more FIXES" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -252,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658512679743</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Refine - button search and more FIXES">
+      <created>1658515949032</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1658515949032</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,6 +264,7 @@
     <MESSAGE value="Orders module service - Logo no commit" />
     <MESSAGE value="Refine - code &amp; Database" />
     <MESSAGE value="Refine - button search and more" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refine - button search and more" />
+    <MESSAGE value="Refine - button search and more FIXES" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refine - button search and more FIXES" />
   </component>
 </project>
