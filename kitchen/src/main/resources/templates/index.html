@@ -1,36 +1,38 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<div class="wrapper fadeInDown">
-    <div id="formContent">
-        <!-- Tabs Titles -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
-        <!-- Icon -->
-        <div class="fadeIn first">
-            <br>
-            <img src="https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/286207576_105326158879065_1115776960756379867_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEVpxXd8WYHDbtEumbt8WOtnQD4GUrMoHKdAPgZSsygcmsujwUMP-E0aRet0GROfXM&_nc_ohc=y4uKkg4_RkoAX_lfVKo&_nc_ht=scontent-bog1-1.xx&oh=00_AT-c2xKnJBL3_pUGjtwl9lAJdk1vsN83x_Gw7PqWViY_hA&oe=62DBFED8" class='imgRedonda' id="icon" alt="User Icon" />
-            <br>
-            <br>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <br>
+                <img src="https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/286207576_105326158879065_1115776960756379867_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEVpxXd8WYHDbtEumbt8WOtnQD4GUrMoHKdAPgZSsygcmsujwUMP-E0aRet0GROfXM&_nc_ohc=y4uKkg4_RkoAX_lfVKo&_nc_ht=scontent-bog1-1.xx&oh=00_AT-c2xKnJBL3_pUGjtwl9lAJdk1vsN83x_Gw7PqWViY_hA&oe=62DBFED8" class='imgRedonda' id="icon" alt="User Icon" />
+                <br>
+                <br>
+            </div>
+
+            <!-- Login Form -->
+            <form>
+                <input type="text" id="login" class="fadeIn second" placeholder="Username" name="table"  required>
+                <input type="text" id="password" class="fadeIn third" placeholder="Password" required>
+                <a th:href="@{/kitchen?table=0}" class="btn btn-info">Ingresar</a>
+            </form>
+
+            <!-- Remind Passowrd
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+            -->
+
         </div>
-
-        <!-- Login Form -->
-        <form>
-            <input type="text" id="login" class="fadeIn second" placeholder="Username" name="table"  required>
-            <input type="text" id="password" class="fadeIn third" placeholder="Password" required>
-            <a href="/kitchen?table=0" class="btn btn-info">Ingresar</a>
-        </form>
-
-        <!-- Remind Passowrd
-        <div id="formFooter">
-            <a class="underlineHover" href="#">Forgot Password?</a>
-        </div>
-        -->
-
     </div>
-</div>
-
+</html>
 <style>
 
 /* BASIC */

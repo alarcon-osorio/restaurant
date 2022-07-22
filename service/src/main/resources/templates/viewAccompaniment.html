@@ -5,7 +5,7 @@
 
 <div class="container mt-4 vj-destacados">
     <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Exito!</strong> Pedido ordenado exitosamente... <a href="/menu">Agregar + </a> / <a th:href="'/orders?table=' + ${table}">Confirmar Orden</a>.
+        <strong>Exito!</strong> Pedido ordenado exitosamente... <a th:href="@{/menu}"> Agregar + </a> / <a th:href="@{/orders?table=} + ${table}">Confirmar Orden</a>.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
