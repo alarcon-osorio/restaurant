@@ -1,7 +1,6 @@
 package com.restaurant.cash.repository;
 
 import com.restaurant.cash.dto.CloseDay;
-import com.restaurant.cash.entity.ServiceOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

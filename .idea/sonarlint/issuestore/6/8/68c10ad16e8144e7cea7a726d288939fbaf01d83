@@ -1,0 +1,47 @@
+
+@
+java:S1068"*Remove this unused "idMenu" private field.(—ı½À
+I
+java:S1068".Remove this unused "idMenuType" private field.(ëó•Éøÿÿÿÿ
+J
+java:S1068"/Remove this unused "description" private field.(ÇÓæâıÿÿÿÿ
+K
+java:S1068"0Remove this unused "observations" private field.(Ñ¼¢ªşÿÿÿÿ
+L
+java:S1068"1Remove this unused "accompaniment" private field.(ğ•Í„şÿÿÿÿ
+A
+java:S1068"+Remove this unused "option1" private field.(æ‰êÂ
+A
+java:S1068"+Remove this unused "option2" private field.(¸²ÉÉ
+F
+java:S1068"+Remove this unused "option3" private field.(ÅÍÿÿÿÿÿ
+F
+java:S1068"+Remove this unused "option4" private field.(†–‚¾øÿÿÿÿ
+F
+java:S1068"+Remove this unused "option5" private field.(¹ÂÆ£üÿÿÿÿ
+M
+java:S1068"2Remove this unused "drinksIncludes" private field.(±É¢’şÿÿÿÿ
+D
+java:S1068")Remove this unused "price" private field.(†ùŠÿúÿÿÿÿ
+C
+java:S1068 "(Remove this unused "cant" private field.(ñÏœôûÿÿÿÿ
+E
+java:S1068!"/Remove this unused "tableNumber" private field.(ÚºšÒ
+F
+java:S1068""+Remove this unused "ordered" private field.(¥¢´šÿÿÿÿÿ
+F
+java:S1068#"+Remove this unused "prepare" private field.(Ò¯©Øÿÿÿÿÿ
+A
+java:S1068$",Remove this unused "prepared" private field.(Ü¡ì]
+@
+java:S1068%"*Remove this unused "served" private field.(¯¹¢ç
+D
+java:S1068&")Remove this unused "close" private field.(¦ûŠùÿÿÿÿ
+E
+java:S1068'"*Remove this unused "cancel" private field.(Ú÷«©üÿÿÿÿ
+L
+java:S1068("1Remove this unused "paymentMethod" private field.(ëí·ªûÿÿÿÿ
+?
+java:S1068)")Remove this unused "image" private field.(Êº¼¨
+C
+java:S1068*"(Remove this unused "time" private field.(Ñ’àòùÿÿÿÿ

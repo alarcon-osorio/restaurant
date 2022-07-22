@@ -32,7 +32,8 @@
                                 <tr>
                                     <td class="content-block">
                                         <h2>PARADOR Q´LEKO</h2>
-                                        <h3>Domicilios: 320 808 4232</h3>
+                                        <img style="max-width: 30%; border-radius: 60px;" src="https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/286207576_105326158879065_1115776960756379867_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEVpxXd8WYHDbtEumbt8WOtnQD4GUrMoHKdAPgZSsygcmsujwUMP-E0aRet0GROfXM&_nc_ohc=y4uKkg4_RkoAX_lfVKo&_nc_ht=scontent-bog1-1.xx&oh=00_AT-c2xKnJBL3_pUGjtwl9lAJdk1vsN83x_Gw7PqWViY_hA&oe=62DBFED8" class='imgRedonda' id="icon" alt="User Icon" />
+                                        <h3 style="margin-top: 5px;">Domicilios: 320 808 4232</h3>
                                         <h4>@paradorqleko</h4>
                                     </td>
                                 </tr>
@@ -90,7 +91,7 @@
                     <table width="100%">
                         <tbody>
                         <tr>
-                            Siguenos en Redes sociales:
+                            Software desarollado por EFICIENTE SAS
                         </tr>
                         </tbody>
                     </table>
@@ -103,17 +104,20 @@
     </tbody>
 </table>
 </body>
-<script language="Javascript">
-    timeCollapse();
+<script>
+timeCollapse();
 
-    function timeCollapse() {
-      setInterval('back()', 3000);
-    }
+function timeCollapse() {
+    setInterval('alert()', 2000);
+}
 
-    function back(){
-       alert("NO OLVIDE REGISTRAR EL PAGO");
-       window.history.back();
-    }
-
+function alert(){
+    var option = confirm("NO OLVIDE REGISTRAR EL PAGO");
+    if (option == true) {
+        window.history.back();
+	} else {
+	    window.history.back();
+	}
+}
 </script>
 </html>

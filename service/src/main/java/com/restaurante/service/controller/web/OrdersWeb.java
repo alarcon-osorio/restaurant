@@ -142,5 +142,19 @@ public class OrdersWeb {
         return "redirect:/orders?table=0";
     }
 
+    @RequestMapping(value = "/saveOrder")
+    public String saveOrder(ServiceOrder serviceOrder){
+        if (serviceOrder.getObservations().isEmpty()){
+            serviceOrder.setObservations("Sin Observaciones");
+        }
+        serviceOrder.setOrdered(0);
+        serviceOrder.setPrepared(0);
+        serviceOrder.setPrepare(0);
+        serviceOrder.setServed(0);
+        serviceOrder.setClose(0);
+        serviceOrder.setCancel(0);
+        serviceOrders.saveOrder(serviceOrder);
+        return "redirect:/accompaniment?menuId=" + serviceOrder.getIdMenu() + "&table=" + serviceOrder.getTableNumber() + "&add=true";
+    }
 
 }

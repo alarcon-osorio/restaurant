@@ -8,7 +8,7 @@
         <div class="col col-md-12 text-left mb-4" sec:authorize="isAuthenticated()">
             <div>
                 <a class="font-weight-bold">Bienvenido: Mesero</a>
-                <img src="https://i.pinimg.com/originals/6c/ed/a5/6ceda58e688c161b04800864a34988f6.jpg" width="45" height="45" class="d-inline-block align-top rounded-circle" alt="" loading="lazy">
+                <img src="https://i.pinimg.com/originals/fb/16/4c/fb164c25c9c83206fef9028a91ebfeb9.gif" width="45" height="45" class="d-inline-block align-top rounded-circle" alt="" loading="lazy">
                 <p class="owner-subtext"><a href="/">Cerrar Sesión</a></p>
             </div>
             <div class="btn-group" style="width:100%">
@@ -21,16 +21,18 @@
             <div class="input-group mb-3">
                 <input type="text" class="form-control" id="search" placeholder="Buscar platos..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-success" id="btn-search" type="button">buscar</button>
+                    <button class="btn btn-outline-success" id="btn-search" type="button">Buscar</button>
                 </div>
             </div>
             <div class="salida"></div>
         </div>
     </div>
-    <div class="row">
+    <div class="row filtered">
         <div th:each="menu : ${menu}" class="col-md-6  mb-4">
             <div class="card">
-                <img th:src="${menu.image}" class="card-img-top" alt="...">
+                <a th:href="@{/accompaniment(menuId=${menu.id})}">
+                    <img th:src="${menu.image}" class="card-img-top" alt="...">
+                </a>
                 <div class="card-body">
                     <h4 th:text="${menu.name}" class="card-title"></h4>
                     <h5 th:text="'$' + ${menu.price}" class="card-title"></h5>
@@ -45,23 +47,16 @@
 </div>
 <footer th:insert="includes/footer :: footer"> </footer>
 <script>
-    $(document).ready(function(){
-         $("#search").keyup(function(){
-              var parametros="search="+$(this).val()
-              $.ajax({
-                 data:  parametros,
-                  url:   'api/menu/10',
-                  type:  'get',
-                    beforeSend: function () { },
-                    success:  function (response) {
-                        var response = $(".salida").html(response);
-                        log(response);
-                  },
-                  error:function(){
-                       alert("error")
-                    }
-               });
-         })
-})
+  $(document).ready(function () {
+    (function ($) {
+        $('#search').keyup(function () {
+             var rex = new RegExp($(this).val(), 'i');
+             $('.filtered div').hide();
+             $('.filtered div').filter(function () {
+                return rex.test($(this).text());
+             }).show();
+        })
+    }(jQuery));
+});
 </script>
 </html>
