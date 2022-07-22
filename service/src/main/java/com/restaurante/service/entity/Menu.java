@@ -21,6 +21,6 @@ public class Menu {
     private String description;
     private String price;
     private String image;
-    private long ordered; //TODO: Pensar en cambiar por favorite
+    private long ordered;
 
 }

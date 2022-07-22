@@ -5,33 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Orders module service">
-      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/CashApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/CashApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/repository/RepositoryCloseDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/repository/RepositoryCloseDay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/repository/RepositoryPaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/repository/RepositoryPaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/service/ServicePaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/service/ServicePaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/static/css/invoice.css" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/static/css/invoice.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewCash.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewCash.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewPrintInvoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewPrintInvoice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/KitchenApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/KitchenApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/repository/RepositoryOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/java/com/restaurant/kitchen/repository/RepositoryOrders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/viewOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/viewOrders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f7c41ea4da69181059feeff08801622bab88b4c5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/ServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/ServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/controller/web/AccompanimentWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/controller/web/AccompanimentWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/controller/web/OrdersWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/controller/web/OrdersWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewAccompaniment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewAccompaniment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewMenu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewOrders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/restaurante/service/ServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/restaurante/service/ServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/restaurante/service/controller/web/AccompanimentWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/restaurante/service/controller/web/AccompanimentWeb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/restaurante/service/controller/web/OrdersWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/restaurante/service/controller/web/OrdersWeb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/viewAccompaniment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/viewAccompaniment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/viewMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/viewMenu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/viewOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/viewOrders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/entity/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/entity/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT.war.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +77,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "last_opened_file_path": "C:/Users/jeison.alarcon/OneDrive - Organización TERPEL S.A/Desarrollo/2. Personal/MaquitecnicosCalc",
+    "last_opened_file_path": "C:/Users/QLEKO/Documents/Restaurant/restaurant/service",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.3034483"
@@ -121,6 +98,8 @@
     <option name="myCommands">
       <command value="mvn clean" />
       <command value="mvn install" />
+      <command value="mvn clean install" />
+      <command value="mvn clean package" />
     </option>
   </component>
   <component name="RunManager">
