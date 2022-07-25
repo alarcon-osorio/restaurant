@@ -26,11 +26,19 @@
                 </div>
                 <div class="card-body">
 
-                    <div th:if="${menuTypeId == 2}" class="form-group">
-                        <label class="form-label" th:if="${menuTypeId == 2}">Acompañamiento</label>
-                        <select class="form-control" name="accompaniment" th:if="${menuTypeId == 2}" required>
+                    <div th:if="${menuAccompaniment == 'ok'}" class="form-group">
+                        <label class="form-label">Acompañamiento</label>
+                        <select class="form-control" name="accompaniment" required>
                             <option value="">Seleccione...</option>
-                            <option th:each="menuAccompaniment : ${menuAccompaniment}" th:text="${menuAccompaniment.accompaniment}" th:value="${menuAccompaniment.accompaniment}"></option>
+                            <option th:each="menuAccompanimentIdMenu : ${menuAccompanimentIdMenu}" th:text="${menuAccompanimentIdMenu.accompaniment}" th:value="${menuAccompanimentIdMenu.accompaniment}"></option>
+                        </select>
+                    </div>
+
+                    <div th:if="${menuIncludes == 'ok'}" class="form-group" >
+                        <label class="form-label">Bebida Incluida</label>
+                        <select class="form-control" name="drinksIncludes" required>
+                            <option value="">Seleccione...</option>
+                            <option th:each="menuIncludeByIdMenu : ${menuIncludeByIdMenu}" th:text="${menuIncludeByIdMenu.name}" th:value="${menuIncludeByIdMenu.name}"></option>
                         </select>
                     </div>
 
@@ -63,14 +71,6 @@
                         <select class="form-control" name="option4" required>
                             <option value="">Seleccione...</option>
                             <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option4}" th:value="${menuOptionalList.option4}"></option>
-                        </select>
-                    </div>
-
-                    <div class="form-group" th:if="${menuTypeId == 2}">
-                        <label class="form-label">Bebidas Incluidas</label>
-                        <select class="form-control" name="drinksIncludes" required>
-                            <option value="">Seleccione...</option>
-                            <option th:each="menuIncludesList : ${menuIncludesList}" th:text="${menuIncludesList.name}" th:value="${menuIncludesList.name}"></option>
                         </select>
                     </div>
 

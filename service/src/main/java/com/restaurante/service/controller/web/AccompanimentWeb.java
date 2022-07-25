@@ -30,11 +30,21 @@ public class AccompanimentWeb {
 
     @GetMapping(value = "/accompaniment")
     public String accompaniment(Model model, long menuId, String table, boolean add){
-        List<MenuAccompaniment> menuAccompaniment = serviceMenuAccompaniment.getMenuAccompanimentList();
+        List<MenuAccompaniment> menuAccompanimentList = serviceMenuAccompaniment.getMenuAccompanimentList();
+        List<MenuAccompaniment> menuAccompanimentIdMenu = serviceMenuAccompaniment.getMenuAccompanimentMenuId(menuId);
+        List<MenuIncludes> menuIncludeByIdMenu = serviceMenuIncludes.getMenuIncludesIdMenu(menuId);
         Menu menu = serviceMenu.getMenuId(menuId);
         List<RestaurantTable> listRestaurantTable = serviceRestaurantTable.getRestaurantTableList();
         List<MenuIncludes> menuIncludesList = serviceMenuIncludes.getMenuIncludesList();
         List<MenuOptional> menuOptionalList = serviceMenuOptional.getMenuOptionalByIdMenu(menuId);
+        if  (!menuIncludeByIdMenu.isEmpty()){
+            model.addAttribute("menuIncludes", "ok");
+            model.addAttribute("menuIncludeByIdMenu", menuIncludeByIdMenu);
+        }
+        if  (!menuAccompanimentIdMenu.isEmpty()){
+            model.addAttribute("menuAccompaniment", "ok");
+            model.addAttribute("menuAccompanimentIdMenu", menuAccompanimentIdMenu);
+        }
         if (!menuOptionalList.isEmpty()){
             model.addAttribute("options", "ok");
             model.addAttribute("menuOptionalList", menuOptionalList);
@@ -43,7 +53,6 @@ public class AccompanimentWeb {
             model.addAttribute("table", table);
             model.addAttribute("success", "ok");
         }
-        model.addAttribute("menuAccompaniment", menuAccompaniment);
         model.addAttribute("menuName", menu.getName());
         model.addAttribute("menuDescription", menu.getDescription());
         model.addAttribute("menuImage", menu.getImage());

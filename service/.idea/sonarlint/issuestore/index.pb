@@ -1,10 +1,6 @@
 
-Ü
-Vsrc/main/java/com/restaurante/service/controller/rest/MenuAccompanimentController.java,8\4\84c4029495d4a156275f5de084d93599aec8f8b6
 r
 Bsrc/main/java/com/restaurante/service/service/ServiceMenuType.java,e\c\ec5ad6bca6071dfc8d125bb0d1bc0646fd6c3b87
-v
-Fsrc/main/java/com/restaurante/service/service/ServiceMenuIncludes.java,a\c\ac1e9aa2c64eff12ed8def6e2bbddc2ff28ddd52
 n
 >src/main/java/com/restaurante/service/service/ServiceMenu.java,6\9\69a44ac375a263f912202c3571ddfe3247992d03
 \
@@ -13,22 +9,12 @@ y
 Isrc/main/java/com/restaurante/service/service/ServiceRestaurantTable.java,1\6\16d3cd1a6d0cceed6e7024202077f90ffc6e513e
 n
 >src/main/java/com/restaurante/service/entity/MenuOptional.java,0\e\0e89e77066d941164984431440fda5a447b01008
-{
-Ksrc/main/java/com/restaurante/service/service/ServiceMenuAccompaniment.java,c\c\cc4b2e050d0eba4b713c031cb50b6cda33dff2a3
 n
 >src/main/java/com/restaurante/service/entity/MenuIncludes.java,7\6\76e2aec621597db85db0a43b42efd1e2c55ac6af
 s
 Csrc/main/java/com/restaurante/service/entity/MenuAccompaniment.java,2\9\29b9723dc1a542eb1655731049066f597a4078c9
 f
 6src/main/java/com/restaurante/service/entity/Menu.java,5\3\53e1c6f97447abb116a0eaa4897838df1bdd2b23
-v
-Fsrc/main/java/com/restaurante/service/service/ServiceMenuOptional.java,5\7\5776b3da283cac12965a8c5b3ff35dc3aebf6fbd
-Å
-Qsrc/main/java/com/restaurante/service/repository/RepositoryMenuAccompaniment.java,9\7\9759f8d3b0b19b7fdd48b4e40b9fea75d3fe188a
-|
-Lsrc/main/java/com/restaurante/service/repository/RepositoryMenuIncludes.java,4\8\489146865b896dab78e80dd654f85d54c2bcbe7c
-|
-Lsrc/main/java/com/restaurante/service/repository/RepositoryMenuOptional.java,e\5\e5b50d48b4bb5854dd4a5f3e59fc1bdeb3d83fea
 x
 Hsrc/main/java/com/restaurante/service/repository/RepositoryMenuType.java,4\5\45df3955b057bbcbac4fb1f2ee22ad7f61cf73a8
 
@@ -41,10 +27,6 @@ p
 @src/main/java/com/restaurante/service/service/ServiceOrders.java,8\b\8b90221da39aa050835e0b67382ed1e94697b2de
 u
 Esrc/main/java/com/restaurante/service/repository/RepositoryOrder.java,7\1\711e3f0d2568301fd012a0f1090bb06cc6074252
-z
-Jsrc/main/java/com/restaurante/service/controller/web/AccompanimentWeb.java,8\0\809ba013acacb8dc3e996d1b732d2115e5055b36
-s
-Csrc/main/java/com/restaurante/service/controller/web/OrdersWeb.java,8\5\85ff3a33cdcd8d68de2a8af6eff089f21f1946b4
 q
 Asrc/main/java/com/restaurante/service/controller/web/HomeWeb.java,2\2\2275af8fb2317c6e5d61ab6b49cf2be495987a14
 q
@@ -53,5 +35,11 @@ y
 Isrc/main/java/com/restaurante/service/controller/rest/MenuController.java,4\3\43126d22a9c0fa04a038bf784988b1eb081dcf26
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+|
+Lsrc/main/java/com/restaurante/service/repository/RepositoryMenuOptional.java,e/5/e5b50d48b4bb5854dd4a5f3e59fc1bdeb3d83fea
+v
+Fsrc/main/java/com/restaurante/service/service/ServiceMenuOptional.java,5/7/5776b3da283cac12965a8c5b3ff35dc3aebf6fbd
 m
-=src/main/java/com/restaurante/service/ServiceApplication.java,1\3\137bc04907b8997f3b7a5c0dfdc6d2d1692f423c
+=src/main/java/com/restaurante/service/ServiceApplication.java,1/3/137bc04907b8997f3b7a5c0dfdc6d2d1692f423c
+Ü
+Vsrc/main/java/com/restaurante/service/controller/rest/MenuAccompanimentController.java,8/4/84c4029495d4a156275f5de084d93599aec8f8b6

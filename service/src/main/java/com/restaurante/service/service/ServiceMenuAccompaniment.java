@@ -25,4 +25,9 @@ public class ServiceMenuAccompaniment {
     public List<MenuAccompaniment> getMenuAccompanimentMenuId(long id){
         return repositoryMenuAccompaniment.findByMenuId(id);
     }
+
+    public List<String> getMenuAccompanimentDistinct(){
+        return repositoryMenuAccompaniment.findAccompanimentDistinct();
+    }
+
 }

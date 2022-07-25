@@ -100,10 +100,12 @@ public class OrdersWeb {
         List<MenuAccompaniment> menuAccompaniment = serviceMenuAccompaniment.getMenuAccompanimentList();
         List<MenuIncludes> menuIncludesList = serviceMenuIncludes.getMenuIncludesList();
         List<MenuOptional> menuOptionalList = serviceMenuOptional.getMenuOptional();
+        List<String> menuAccompanimentDistinct = serviceMenuAccompaniment.getMenuAccompanimentDistinct();
         model.addAttribute("serviceOrderById", serviceOrderById);
         model.addAttribute("menuAccompaniment", menuAccompaniment);
         model.addAttribute("menuIncludesList", menuIncludesList);
         model.addAttribute("menuOptionalList", menuOptionalList);
+        model.addAttribute("menuAccompanimentDistinct", menuAccompanimentDistinct);
         return "viewEditOrders";
     }
 

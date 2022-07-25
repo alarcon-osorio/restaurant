@@ -16,4 +16,8 @@ public class ServiceMenuIncludes {
     public List<MenuIncludes> getMenuIncludesList(){
         return repositoryMenuIncludes.findAll();
     }
+
+    public List<MenuIncludes> getMenuIncludesIdMenu(long idMenu){
+        return repositoryMenuIncludes.findByIdMenu(idMenu);
+    }
 }
