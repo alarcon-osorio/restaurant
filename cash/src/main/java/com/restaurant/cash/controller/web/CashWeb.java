@@ -49,13 +49,28 @@ public class CashWeb {
     }
 
     @RequestMapping(value = "/close_day")
-    public String closeDay(Model model){
+    public String closeDay(Model model, String date){
+
+        if (date !=  null){
+            List<CloseDay> closeDayList = serviceCloseDay.getCloseDayByDate(date);
+            String totalOrder = serviceCloseDay.getTotalOrderByDate(date);
+            if (closeDayList.isEmpty()){
+                model.addAttribute("empty", "ok");
+            }
+            model.addAttribute("closeDayList", closeDayList);
+            model.addAttribute("totalOrder", totalOrder);
+            return "viewCloseDay";
+        }
+
         List<CloseDay> closeDayList = serviceCloseDay.getCloseDay();
         String totalOrder = serviceCloseDay.getTotalOrder();
         model.addAttribute("closeDayList", closeDayList);
         model.addAttribute("totalOrder", totalOrder);
+
         return "viewCloseDay";
     }
+
+    //TODO: Calcular valores de descuento en los bonos
 
 
 }

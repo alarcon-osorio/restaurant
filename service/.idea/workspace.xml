@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Refine - button search and more FIXES">
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/controller/web/CashWeb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/controller/web/CashWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/controller/web/CashWeb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/controller/web/HomeWeb.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/controller/web/PrintInvoiceWeb.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/repository/RepositoryCloseDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/repository/RepositoryCloseDay.java" afterDir="false" />
