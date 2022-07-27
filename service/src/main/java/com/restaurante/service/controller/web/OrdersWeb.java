@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -57,7 +58,7 @@ public class OrdersWeb {
 
             if (serviceOrdersByTableNumber.isEmpty()){
                 model.addAttribute("table", table);
-                model.addAttribute("empty", "empty");
+                model.addAttribute("empty", "ok");
                 return "viewOrders";
             }
 
@@ -73,7 +74,7 @@ public class OrdersWeb {
                 }
             }
 
-            model.addAttribute("tableNumber", serviceOrdersByTableNumber);
+            model.addAttribute("serviceOrdersByTableNumber", serviceOrdersByTableNumber);
             model.addAttribute("table", table);
 
             if(add){
@@ -81,11 +82,13 @@ public class OrdersWeb {
             }
 
             return "viewOrders";
+
         }catch (NullPointerException ex){
             List<ServiceOrder> serviceOrderList = serviceOrders.getServiceOrder();
             model.addAttribute("serviceOrderList", serviceOrderList);
         }
         return "viewOrders";
+
     }
 
     @RequestMapping(value = "/confirm_order")
@@ -95,12 +98,15 @@ public class OrdersWeb {
     }
 
     @RequestMapping(value = "/edit_order_table")
-    public String editOrderTable(Model model, @RequestParam long id) {
+    public String editOrderTable(Model model, @RequestParam long id, boolean edit) {
         ServiceOrder serviceOrderById = serviceOrders.getServiceOrderById(id);
         List<MenuAccompaniment> menuAccompaniment = serviceMenuAccompaniment.getMenuAccompanimentList();
         List<MenuIncludes> menuIncludesList = serviceMenuIncludes.getMenuIncludesList();
         List<MenuOptional> menuOptionalList = serviceMenuOptional.getMenuOptional();
         List<String> menuAccompanimentDistinct = serviceMenuAccompaniment.getMenuAccompanimentDistinct();
+        if (edit){
+            model.addAttribute("success", "ok");
+        }
         model.addAttribute("serviceOrderById", serviceOrderById);
         model.addAttribute("menuAccompaniment", menuAccompaniment);
         model.addAttribute("menuIncludesList", menuIncludesList);
@@ -110,10 +116,10 @@ public class OrdersWeb {
     }
 
     @RequestMapping(value = "/order_table")
-    public String orderTable(Model model, @RequestParam long id) {
+    public String orderTable(Model model, @RequestParam long id, @RequestParam long table, boolean add) {
         serviceOrders.saveOrderTableById(id);
         model.addAttribute("orderTable", "ok");
-        return "redirect:/orders?table=0";
+        return "redirect:/orders?table="  + table + "&add=" + add;
     }
 
     @RequestMapping(value = "/cancel_order_table")
@@ -134,14 +140,14 @@ public class OrdersWeb {
     public String saveTable(Model model, ServiceOrder serviceOrder) {
         serviceOrders.saveOrder(serviceOrder);
         model.addAttribute("saveTable", "ok");
-        return "redirect:/edit_order_table?id=" + serviceOrder.getId();
+        return "redirect:/edit_order_table?id=" + serviceOrder.getId() + "&edit=true";
     }
 
     @RequestMapping(value = "/served")
-    public String served(Model model, @RequestParam long id) {
+    public String served(Model model, @RequestParam long id, @RequestParam long table ) {
         serviceOrders.saveOrderServed(id);
         model.addAttribute("served", "ok");
-        return "redirect:/orders?table=0";
+        return "redirect:/orders?table=" + table;
     }
 
     @RequestMapping(value = "/saveOrder")

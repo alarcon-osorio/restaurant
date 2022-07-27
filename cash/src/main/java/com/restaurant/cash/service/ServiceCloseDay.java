@@ -20,8 +20,18 @@ public class ServiceCloseDay {
     }
 
     @Transactional
+    public List<CloseDay> getCloseDayByDate(String date) {
+        return repositoryCloseDay.findCloseDayByDate(date);
+    }
+
+    @Transactional
     public String getTotalOrder() {
         return repositoryCloseDay.findTotalOrder();
+    }
+
+    @Transactional
+    public String getTotalOrderByDate(String date) {
+        return repositoryCloseDay.findTotalOrderByDate(date);
     }
 
 
