@@ -39,3 +39,9 @@ Fsrc/main/java/com/restaurante/service/service/ServiceMenuOptional.java,5/7/577
 Vsrc/main/java/com/restaurante/service/controller/rest/MenuAccompanimentController.java,8/4/84c4029495d4a156275f5de084d93599aec8f8b6
 m
 =src/main/java/com/restaurante/service/ServiceApplication.java,1\3\137bc04907b8997f3b7a5c0dfdc6d2d1692f423c
+s
+Csrc/main/java/com/restaurante/service/controller/web/OrdersWeb.java,8\5\85ff3a33cdcd8d68de2a8af6eff089f21f1946b4
+p
+@src/main/java/com/restaurante/service/service/ServiceOrders.java,8\b\8b90221da39aa050835e0b67382ed1e94697b2de
+u
+Esrc/main/java/com/restaurante/service/repository/RepositoryOrder.java,7\1\711e3f0d2568301fd012a0f1090bb06cc6074252

@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Refine - button search and more FIXES">
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/controller/web/CashWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/controller/web/CashWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/controller/web/HomeWeb.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/controller/web/PrintInvoiceWeb.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/repository/RepositoryCloseDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/repository/RepositoryCloseDay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/service/ServiceCloseDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/service/ServiceCloseDay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewCloseDay.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewCloseDay.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/711e3f0d2568301fd012a0f1090bb06cc6074252" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/b/8b90221da39aa050835e0b67382ed1e94697b2de" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/controller/web/OrdersWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/controller/web/OrdersWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/repository/RepositoryOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/repository/RepositoryOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewEditOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewEditOrders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewMenu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewOrders.html" afterDir="false" />
-    </list>
+    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Refine - button search and more FIXES" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -254,7 +238,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658515949032</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Refine - button search and more FIXES">
+      <created>1658891058432</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1658891058432</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Refine - button search and more FIXES">
+      <created>1658891087844</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1658891087844</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

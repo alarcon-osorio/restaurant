@@ -1,0 +1,37 @@
+
+\
+java:S11923"FDefine a constant instead of duplicating this literal "table" 3 times.(ĞÑ­ë
+u
+java:S1192`"XDefine a constant instead of duplicating this literal "redirect:/orders?table=" 3 times.(ÊééÈ8ìËì£0
+f
+java:S11924"KDefine a constant instead of duplicating this literal "viewOrders" 4 times.(âÄ§Öúÿÿÿÿ
+h
+java:S3776#"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ÑéçÌ
+W
+java:S4684‹"@Replace this persistent entity with a simple POJO or DTO object.(òÃäœ
+W
+java:S4684™"@Replace this persistent entity with a simple POJO or DTO object.(şä€Å
+\
+java:S11923"FDefine a constant instead of duplicating this literal "table" 3 times.(ĞÑ­ë
+n
+java:S1192`"XDefine a constant instead of duplicating this literal "redirect:/orders?table=" 3 times.(ÊééÈ
+f
+java:S11924"KDefine a constant instead of duplicating this literal "viewOrders" 4 times.(âÄ§Öúÿÿÿÿ
+h
+java:S3776#"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ÑéçÌ
+W
+java:S4684‹"@Replace this persistent entity with a simple POJO or DTO object.(òÃäœ
+W
+java:S4684™"@Replace this persistent entity with a simple POJO or DTO object.(şä€Å
+\
+java:S11923"FDefine a constant instead of duplicating this literal "table" 3 times.(ĞÑ­ë
+n
+java:S1192`"XDefine a constant instead of duplicating this literal "redirect:/orders?table=" 3 times.(ÊééÈ
+f
+java:S11924"KDefine a constant instead of duplicating this literal "viewOrders" 4 times.(âÄ§Öúÿÿÿÿ
+h
+java:S3776#"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ÑéçÌ
+W
+java:S4684‹"@Replace this persistent entity with a simple POJO or DTO object.(òÃäœ
+W
+java:S4684™"@Replace this persistent entity with a simple POJO or DTO object.(şä€Å
