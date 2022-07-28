@@ -19,8 +19,8 @@ public class ServicePaymentMethod {
     }
 
     @Transactional
-    public void savePaymentMethod(String method, long table) {
-        repositoryPaymentMethod.savePaymentMethod(method, table);
+    public void savePaymentMethod(String method, long discount, long table) {
+        repositoryPaymentMethod.savePaymentMethod(method, discount, table);
     }
 
 }

@@ -37,6 +37,7 @@ public class ServiceOrder {
     private long close;
     private long cancel;
     private String image;
+    private long discount;
     private String paymentMethod;
     private String time;
 

@@ -18,4 +18,7 @@ public interface RepositoryOrders extends JpaRepository<ServiceOrder, Long> {
     @Query(value = "SELECT SUM(price * cant) from restaurant.service_order r where r.table_number = ?1 AND ordered = 1 AND cancel = 0 AND close = 0 AND served = 1;", nativeQuery = true)
     String findTotalOrder(long table);
 
+    @Query(value = "SELECT SUM(price * cant) from restaurant.service_order r where r.table_number = ?1 AND ordered = 1 AND cancel = 0 AND close = 0 AND served = 1;", nativeQuery = true)
+    long findTotalOrderDiscount(long table);
+
 }

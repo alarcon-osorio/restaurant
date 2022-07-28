@@ -22,5 +22,15 @@ public class ServicePrepared {
         repositoryPrepared.preparedById(id);
     }
 
+    @Transactional
+    public void prepareOrderByTable(long table){
+        repositoryPrepared.prepareByTable(table);
+    }
+
+    @Transactional
+    public void preparedOrderByTable(long table){
+        repositoryPrepared.preparedByTable(table);
+    }
+
 
 }

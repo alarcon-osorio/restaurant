@@ -22,9 +22,9 @@
     <div class="row justify-content-center align-items-center" th:if="${allOrders} == 'ok'">
         <h1>Todas las Mesas</h1>
     </div>
-    <hr>
+    <hr th:if="${empty} != ok" >
     <div class="row">
-        <div th:each="serviceOrderList : ${serviceOrderList}" class="col-md-6  mb-4">
+        <div th:each="serviceOrderList : ${serviceOrderList}" class="col-md-4 mb-4">
             <div class="card">
                 <img th:src="${serviceOrderList.image}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -48,15 +48,21 @@
         </div>
     </div>
 
+    <div th:if="${empty} == ok" th:text="'No existen pedidos para procesar'" class="alert alert-danger" role="alert" ></div>
+
+    <div class="card-body" th:if="${ordersByTable} == 'ok' and ${empty} != 'ok'">
+        <a th:if="${ordered} == 'ok'" th:href="@{/prepare_table(table=${table})}" th:text="'Preparar platos - Mesa ' + ${table}" class="btn btn-success"></a>
+        <a th:if="${prepare} == 'ok'" th:href="@{/prepared_table(table=${table})}" th:text="'Terminar preparación - Mesa ' + ${table}" class="btn btn-warning"> </a>
+        <a th:if="${prepared} == 'ok'" th:href="'#'" th:text="'Preparación completa - Mesa ' + ${table}" class="btn btn-success"> </a>
+    </div>
+    <hr th:if="${empty} != ok" >
     <div class="row justify-content-center align-items-center" th:if="${ordersByTable} == 'ok'">
         <h1 th:text="'Mesa ' + ${table}"></h1>
     </div>
-    <hr>
-
-    <!-- TODO: PONER BOTON PARA PREPARAR Y TERMINAR LA PREPARACION DE TODO EN MASA SOLO MESAS -->
+    <hr th:if="${empty} != ok" >
 
     <div class="row">
-        <div th:each="serviceOrderByTable : ${serviceOrderByTable}" class="col-md-6  mb-4">
+        <div th:each="serviceOrderByTable : ${serviceOrderByTable}" class="col-md-4 mb-4">
             <div class="card">
                 <img th:src="${serviceOrderByTable.image}" class="card-img-top" alt="...">
                 <div class="card-body">

@@ -20,5 +20,6 @@ public class CloseDay {
     private long tableNumber;
     private String time;
     private String totalItem;
+    private long discount;
     private String paymentMethod;
 }

@@ -51,6 +51,7 @@
                   <th scope="col">Cantidad</th>
                   <th scope="col">Mesa</th>
                   <th scope="col">Valor</th>
+                  <th scope="col">Descuento</th>
                   <th scope="col">Medio de Pago</th>
                 </tr>
                 </thead>
@@ -62,6 +63,7 @@
                   <td th:text="${closeDayList.cant}"></td>
                   <td th:text="${closeDayList.tableNumber}"></td>
                   <td th:text="'$' + ${#numbers.formatDecimal(closeDayList.totalItem, 0, 'COMMA', 0, 'POINT')}"></td>
+                  <td th:text="${closeDayList.discount} + '%'"></td>
                   <td th:text="${closeDayList.paymentMethod}"></td>
                 </tr>
                 </tbody>

@@ -29,4 +29,9 @@ public class ServiceOrders {
         return repositoryOrders.findTotalOrder(table);
     }
 
+    @Transactional
+    public long getTotalOrderDiscount(long table){
+        return repositoryOrders.findTotalOrderDiscount(table);
+    }
+
 }

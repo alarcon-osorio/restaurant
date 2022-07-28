@@ -21,8 +21,6 @@ Hsrc/main/java/com/restaurante/service/repository/RepositoryMenuType.java,4\5\4
 Osrc/main/java/com/restaurante/service/repository/RepositoryRestaurantTable.java,6\4\64b5b3139eba12cd2b69a64d523df123923a0923
 t
 Dsrc/main/java/com/restaurante/service/repository/RepositoryMenu.java,c\2\c207ff1f7befd862d746640ecebab7476e80e3c3
-n
->src/main/java/com/restaurante/service/entity/ServiceOrder.java,a\c\ac94bb315e02ecd0feb864f6f77e542ea509bfae
 q
 Asrc/main/java/com/restaurante/service/controller/web/HomeWeb.java,2\2\2275af8fb2317c6e5d61ab6b49cf2be495987a14
 q
@@ -39,9 +37,3 @@ Fsrc/main/java/com/restaurante/service/service/ServiceMenuOptional.java,5/7/577
 Vsrc/main/java/com/restaurante/service/controller/rest/MenuAccompanimentController.java,8/4/84c4029495d4a156275f5de084d93599aec8f8b6
 m
 =src/main/java/com/restaurante/service/ServiceApplication.java,1\3\137bc04907b8997f3b7a5c0dfdc6d2d1692f423c
-s
-Csrc/main/java/com/restaurante/service/controller/web/OrdersWeb.java,8\5\85ff3a33cdcd8d68de2a8af6eff089f21f1946b4
-p
-@src/main/java/com/restaurante/service/service/ServiceOrders.java,8\b\8b90221da39aa050835e0b67382ed1e94697b2de
-u
-Esrc/main/java/com/restaurante/service/repository/RepositoryOrder.java,7\1\711e3f0d2568301fd012a0f1090bb06cc6074252

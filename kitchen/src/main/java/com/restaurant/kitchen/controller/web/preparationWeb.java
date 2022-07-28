@@ -24,4 +24,17 @@ public class preparationWeb {
         return "redirect:/kitchen?table=0";
     }
 
+    @RequestMapping(value = "/prepare_table")
+    public String savePrepareByTable(@RequestParam long table){
+        servicePrepared.prepareOrderByTable(table);
+        return "redirect:/kitchen?table=" + table;
+    }
+
+    @RequestMapping(value = "/prepared_table")
+    public String savePreparedByTable(@RequestParam long table){
+        servicePrepared.preparedOrderByTable(table);
+        return "redirect:/kitchen?table=" + table;
+    }
+
+
 }

@@ -160,6 +160,8 @@ public class OrdersWeb {
         serviceOrder.setServed(0);
         serviceOrder.setClose(0);
         serviceOrder.setCancel(0);
+        serviceOrder.setCancel(0);
+        serviceOrder.setDiscount(0);
         serviceOrders.saveOrder(serviceOrder);
         return "redirect:/accompaniment?menuId=" + serviceOrder.getIdMenu() + "&table=" + serviceOrder.getTableNumber() + "&add=true";
     }
