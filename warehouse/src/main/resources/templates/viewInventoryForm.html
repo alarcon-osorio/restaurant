@@ -1,0 +1,104 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<header th:insert="includes/header :: header"> </header>
+<header th:insert="includes/navbar :: navbar"> </header>
+
+<div class="container mt-4 vj-destacados">
+    <div class="row">
+        <div class="col col-md-12 text-right mb-4">
+            <a th:href="@{/inventory}" class="btn btn-outline-danger">Atrás</a>
+            <!--<a th:href="@{/calc}" class="btn btn-outline-warning">Home</a>-->
+        </div>
+    </div>
+    <div class="container">
+        <h2 align="center">Datos del producto</h2>
+
+        <div th:if="${update} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert" id="edit">
+            <strong>Exito!</strong> Registro editado exitosamente.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div th:if="${add} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert" id="save">
+            <strong>Exito!</strong> Registrato guarado exitosamente.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <div class="abs-center">
+        <form th:action="@{/save_inventory}" class="border p-3 form" method="POST">
+            <div class="mb-3">
+                <input type="hidden" th:if="${inventoryById.id}" name="operation" th:value="'update'">
+                <input type="hidden" th:if="${inventoryById.id} == ''" name="operation" th:value="'add'">
+                <input type="hidden" th:value="${inventoryById.id}" class="form-control" name="id">
+                <label for="numberProduct" class="form-label">Número de Producto</label>
+                <input type="text" class="form-control" id="numberProduct" name="numberProduct" th:value="${inventoryById.numberProduct}">
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" name="name" th:value="${inventoryById.name}" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Descripción</label>
+                <input type="text" class="form-control" id="description" name="description" th:value="${inventoryById.description}" required>
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Estado</label>
+                <select class="form-control" name="status" id="status" required>
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="measureUnit" class="form-label">Unidad de medida</label> <!-- TODO: Que lo traiga de base de datos -->
+                <select class="form-control" name="measureUnit" id="measureUnit" required>
+                    <option value="KG">KG</option>
+                    <option value="LB">LB</option>
+                    <option value="LT">LT</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="priceUnit" class="form-label">Precio Unitario</label>
+                <input type="number" class="form-control" id="priceUnit" name="priceUnit" th:value="${inventoryById.priceUnit}" required>
+            </div>
+            <div class="mb-3">
+                <label for="salePrice" class="form-label">Previo Venta</label>
+                <input type="number" class="form-control" id="salePrice" name="salePrice" th:value="${inventoryById.salePrice}" required>
+            </div>
+            <div class="mb-3">
+                <label for="cantDisp" class="form-label">Cantidad Disponible</label>
+                <input type="number" class="form-control" id="cantDisp" name="cantDisp" th:value="${inventoryById.cantDisp}" required>
+            </div>
+            <div class="mb-3">
+                <label for="cantOrder" class="form-label">Cantidad Ordenada</label>
+                <input type="number" class="form-control" id="cantOrder" name="cantOrder" th:value="${inventoryById.cantOrder}" required>
+            </div>
+            <div class="mb-3">
+                <label for="cantMinInv" class="form-label">Cantidad Minima</label>
+                <input type="number" class="form-control" id="cantMinInv" name="cantMinInv" th:value="${inventoryById.cantMinInv}" required>
+            </div>
+            <div class="mb-3">
+                <label for="totalInventory" class="form-label">Total</label>
+                <input type="number" class="form-control" id="totalInventory" name="totalInventory" th:value="${inventoryById.totalInventory}" required>
+            </div>
+            <button type="submit" class="btn btn-success ">Guardar</button>
+            <a th:if="${enableBtDelete} == 'ok'" th:href="@{/delete_inventory(id=${inventoryById.id})}" class="btn btn-danger float-right">Eliminar</a>
+        </form>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $("#edit").fadeOut(2000);
+        },2000);
+    });
+
+     $(document).ready(function() {
+        setTimeout(function() {
+            $("#save").fadeOut(2000);
+        },2000);
+    });
+</script>
+<footer th:insert="includes/footer :: footer"> </footer>
+</html>
