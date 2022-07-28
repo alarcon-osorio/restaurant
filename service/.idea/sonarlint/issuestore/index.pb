@@ -37,11 +37,7 @@ m
 =src/main/java/com/restaurante/service/ServiceApplication.java,1\3\137bc04907b8997f3b7a5c0dfdc6d2d1692f423c
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
-n
->src/main/java/com/restaurante/service/entity/ServiceOrder.java,a\c\ac94bb315e02ecd0feb864f6f77e542ea509bfae
 u
 Esrc/main/java/com/restaurante/service/repository/RepositoryOrder.java,7\1\711e3f0d2568301fd012a0f1090bb06cc6074252
 p
 @src/main/java/com/restaurante/service/service/ServiceOrders.java,8\b\8b90221da39aa050835e0b67382ed1e94697b2de
-s
-Csrc/main/java/com/restaurante/service/controller/web/OrdersWeb.java,8\5\85ff3a33cdcd8d68de2a8af6eff089f21f1946b4
