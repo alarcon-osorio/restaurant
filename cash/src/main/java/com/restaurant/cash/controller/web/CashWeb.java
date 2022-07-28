@@ -64,6 +64,7 @@ public class CashWeb {
             if (closeDayList.isEmpty()){
                 model.addAttribute("empty", "ok");
             }
+            model.addAttribute("date", date);
             model.addAttribute("closeDayList", closeDayList);
             model.addAttribute("totalOrder", totalOrder);
             return "viewCloseDay";
@@ -76,8 +77,5 @@ public class CashWeb {
 
         return "viewCloseDay";
     }
-
-    //TODO: Calcular valores de descuento en los bonos
-
 
 }

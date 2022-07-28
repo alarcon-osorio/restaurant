@@ -1,15 +1,25 @@
 package com.restaurant.cash.exporter;
 
+import com.restaurant.cash.dto.CloseDay;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFFont;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
 public class ExcelExportUnlisted {
     private XSSFWorkbook workbook;
     private XSSFSheet sheet;
-    private List<DataRegistry> dataRegistries;
+    private List<CloseDay> closeDays;
 
-    public ExcelExportUnlisted(List<DataRegistry> dataRegistries) {
-        this.dataRegistries = dataRegistries;
+    public ExcelExportUnlisted(List<CloseDay> closeDays) {
+        this.closeDays = closeDays;
         workbook = new XSSFWorkbook();
     }
 
@@ -25,17 +35,13 @@ public class ExcelExportUnlisted {
         style.setFont(font);
 
         createCell(row, 0, "id");
-        createCell(row, 1, "Fecha de registro");
-        createCell(row, 2, "Referncia OEM");
-        createCell(row, 3, "Referencia SAMPA o DT ");
+        createCell(row, 1, "Fecha de cierre");
+        createCell(row, 2, "Nombre");
+        createCell(row, 3, "Mesa");
         createCell(row, 4, "Cantidad");
-        createCell(row, 5, "Motivo");
-        createCell(row, 6, "Venta - (COP)");
-        createCell(row, 7, "Cantidad sugerida");
-        createCell(row, 8, "Marca sugerida");
-        createCell(row, 9, "Usuario");
-        createCell(row, 10, "Cliente");
-        createCell(row, 11, "Observaciones");
+        createCell(row, 5, "Total");
+        createCell(row, 6, "Descuento");
+        createCell(row, 7, "Metodo de pago");
 
     }
 
@@ -61,30 +67,18 @@ public class ExcelExportUnlisted {
         font.setFontHeight(10);
         style.setFont(font);
 
-        for (DataRegistry data : dataRegistries) {
+        for (CloseDay data : closeDays) {
             Row row = sheet.createRow(rowCount++);
             int columnCount = 0;
 
-            String[] splitData = data.getDatereg().split("-");
-
-            String year = splitData[0];
-            String mounth = splitData[1];
-            String day = splitData[2];
-
-
             createCell(row, columnCount++, data.getId());
-            createCell(row, columnCount++, day + "/" + mounth + "/" + year);
-            createCell(row, columnCount++, data.getRefoem());
-            createCell(row, columnCount++, data.getRefsadt());
+            createCell(row, columnCount++, data.getTime());
+            createCell(row, columnCount++, data.getName());
+            createCell(row, columnCount++, data.getTableNumber());
             createCell(row, columnCount++, data.getCant());
-            createCell(row, columnCount++, data.getReason());
-            createCell(row, columnCount++, data.getCop());
-            createCell(row, columnCount++, data.getCantsug());
-            createCell(row, columnCount++, data.getBrand());
-            createCell(row, columnCount++, data.getUser());
-            createCell(row, columnCount++, data.getClient());
-            createCell(row, columnCount++, data.getObs());
-
+            createCell(row, columnCount++, data.getTotalItem());
+            createCell(row, columnCount++, data.getDiscount());
+            createCell(row, columnCount++, data.getPaymentMethod());
         }
     }
 
