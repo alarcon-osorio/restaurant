@@ -267,8 +267,6 @@ t
 Dkitchen/src/main/java/com/restaurant/kitchen/KitchenApplication.java,e/a/eaf0aa6855279bdb11c399c10959144fe21ff643
 u
 Eservice/src/main/java/com/restaurante/service/ServiceApplication.java,3/e/3e053e99b378a292c0146151d4d06be4715e1171
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 z
 Jcash/src/main/java/com/restaurant/cash/controller/web/PrintInvoiceWeb.java,b\9\b9113a356382db06e796400c16c6a02a31a6b139
 
@@ -403,18 +401,6 @@ d
 0service/target/classes/templates/viewOrders.html,e\e\eeccbec430ecb2b676308832c905b9a67044e681
 
 Oservice/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewOrders.html,6\b\6b150efe5acf96ad02edfd4440420a1ce5ec6680
-@
-DB/menu_type.csv,a\a\aad1373370739662abe2fa5a8fa3a4d5e6660c67
-I
-DB/menu_accompaniment.csv,d\5\d513ac7c0e598e0b60a15b67ee32987ed747de56
-E
-DB/payment_method.csv,2\1\21548281af10164bf6869a0832bbd8ea36349f09
-D
-DB/service_order.csv,a\e\ae07b9a26cce7c24d7c7ef8d2b1eeb059427873e
-G
-DB/restaurant_table.csv,9\9\990f96bcdb988417ed50300af439997bb275efdd
-D
-DB/menu_optional.csv,d\a\da2e3d5aa5dae64d3809838f92b692a93df0e84e
 ^
 .cash/src/main/resources/static/css/invoice.css,9\c\9cd1a4dcffb85cddd976961acab059ac10a908c8
 _

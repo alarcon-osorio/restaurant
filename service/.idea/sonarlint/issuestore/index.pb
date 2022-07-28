@@ -35,3 +35,5 @@ Fsrc/main/java/com/restaurante/service/service/ServiceMenuOptional.java,5/7/577
 Vsrc/main/java/com/restaurante/service/controller/rest/MenuAccompanimentController.java,8/4/84c4029495d4a156275f5de084d93599aec8f8b6
 m
 =src/main/java/com/restaurante/service/ServiceApplication.java,1\3\137bc04907b8997f3b7a5c0dfdc6d2d1692f423c
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
