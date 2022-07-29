@@ -29,8 +29,8 @@
     <div class="abs-center">
         <form th:action="@{/save_inventory}" class="border p-3 form" method="POST">
             <div class="mb-3">
-                <input type="hidden" th:if="${inventoryById.id}" name="operation" th:value="'update'">
-                <input type="hidden" th:if="${inventoryById.id} == ''" name="operation" th:value="'add'">
+                <input type="text" th:if="${inventoryById.id}" name="operation" th:value="'update'">
+                <input type="text" th:unless="${inventoryById.id}" name="operation" th:value="'add'">
                 <input type="hidden" th:value="${inventoryById.id}" class="form-control" name="id">
                 <label for="numberProduct" class="form-label">Número de Producto</label>
                 <input type="text" class="form-control" id="numberProduct" name="numberProduct" th:value="${inventoryById.numberProduct}">
@@ -77,10 +77,6 @@
             <div class="mb-3">
                 <label for="cantMinInv" class="form-label">Cantidad Minima</label>
                 <input type="number" class="form-control" id="cantMinInv" name="cantMinInv" th:value="${inventoryById.cantMinInv}" required>
-            </div>
-            <div class="mb-3">
-                <label for="totalInventory" class="form-label">Total</label>
-                <input type="number" class="form-control" id="totalInventory" name="totalInventory" th:value="${inventoryById.totalInventory}" required>
             </div>
             <button type="submit" class="btn btn-success ">Guardar</button>
             <a th:if="${enableBtDelete} == 'ok'" th:href="@{/delete_inventory(id=${inventoryById.id})}" class="btn btn-danger float-right">Eliminar</a>

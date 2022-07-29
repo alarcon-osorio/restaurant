@@ -5,7 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update DataBase restaurant">
+      <change afterPath="$PROJECT_DIR$/../cash/src/main/resources/static/images/invoice.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cash/src/main/resources/static/images/logo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/restaurant/warehouse/controller/export/ControllerExport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/restaurant/warehouse/controller/web/WebHome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/restaurant/warehouse/exporter/ExcelExportUnlisted.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/static/images/qleko_image.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/exporter/ExcelExportUnlisted.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/java/com/restaurant/cash/exporter/ExcelExportUnlisted.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewPrintInvoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewPrintInvoice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewOrders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/restaurant.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/restaurant.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/viewOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/viewOrders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/java/com/restaurant/warehouse/entity/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/restaurant/warehouse/entity/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/java/com/restaurant/warehouse/repository/RepositoryInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/java/com/restaurant/warehouse/repository/RepositoryInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/viewInventory.html" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/viewInventory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/viewInventoryForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/viewInventoryForm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

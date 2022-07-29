@@ -32,7 +32,7 @@
                                 <tr>
                                     <td class="content-block">
                                         <h2>PARADOR Q´LEKO</h2>
-                                        <img style="max-width: 30%; border-radius: 60px;" src="https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/286207576_105326158879065_1115776960756379867_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEVpxXd8WYHDbtEumbt8WOtnQD4GUrMoHKdAPgZSsygcmsujwUMP-E0aRet0GROfXM&_nc_ohc=y4uKkg4_RkoAX_lfVKo&_nc_ht=scontent-bog1-1.xx&oh=00_AT-c2xKnJBL3_pUGjtwl9lAJdk1vsN83x_Gw7PqWViY_hA&oe=62DBFED8" class='imgRedonda' id="icon" alt="User Icon" />
+                                        <img style="max-width: 30%; border-radius: 60px;" th:src="@{/images/invoice.jpeg}" class='imgRedonda' id="icon" alt="User Icon" />
                                         <h3 style="margin-top: 5px;">Domicilios: 320 808 4232</h3>
                                         <h4>@paradorqleko</h4>
                                     </td>
@@ -44,7 +44,7 @@
                                             <tr>
                                                 <td>
                                                     Facturado a: <span th:text="'Mesa ' + ${table}"></span>
-                                                    <br>Número de pedido: <span th:text="${table}"></span>
+                                                    <br>Número de pedido: <span th:text="${table} + ${#dates.format(#dates.createNow(), 'MMM')}"></span>
                                                     <br>Fecha: <span th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></span>
                                                 </td>
                                             </tr>

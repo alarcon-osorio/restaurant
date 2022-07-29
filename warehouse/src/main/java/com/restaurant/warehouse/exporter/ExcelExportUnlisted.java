@@ -1,6 +1,6 @@
-package com.restaurant.cash.exporter;
+package com.restaurant.warehouse.exporter;
 
-import com.restaurant.cash.dto.CloseDay;
+import com.restaurant.warehouse.entity.Inventory;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
@@ -16,15 +16,15 @@ import java.util.List;
 public class ExcelExportUnlisted {
     private XSSFWorkbook workbook;
     private XSSFSheet sheet;
-    private List<CloseDay> closeDays;
+    private List<Inventory> inventories;
 
-    public ExcelExportUnlisted(List<CloseDay> closeDays) {
-        this.closeDays = closeDays;
+    public ExcelExportUnlisted(List<Inventory> inventories) {
+        this.inventories = inventories;
         workbook = new XSSFWorkbook();
     }
 
     private void writeHeaderLine() {
-        sheet = workbook.createSheet("CloseDay");
+        sheet = workbook.createSheet("Inventory");
 
         Row row = sheet.createRow(0);
 
@@ -35,14 +35,18 @@ public class ExcelExportUnlisted {
         style.setFont(font);
 
         createCell(row, 0, "id");
-        createCell(row, 1, "Fecha de cierre");
+        createCell(row, 1, "Número de Producto");
         createCell(row, 2, "Nombre");
-        createCell(row, 3, "Mesa");
-        createCell(row, 4, "Cantidad");
-        createCell(row, 5, "Total");
-        createCell(row, 6, "Descuento");
-        createCell(row, 7, "Metodo de pago");
-
+        createCell(row, 3, "Descripción");
+        createCell(row, 4, "Estado");
+        createCell(row, 5, "Unidad de Medida");
+        createCell(row, 6, "Precio Unitario");
+        createCell(row, 7, "Precio Venta");
+        createCell(row, 8, "Cantidad Disponible");
+        createCell(row, 9, "Cantidad Ordenada");
+        createCell(row, 10, "Cantidad Minima");
+        createCell(row, 11, "Total");
+        createCell(row, 12, "Fecha");
     }
 
     private void createCell(Row row, int columnCount, Object value) {
@@ -67,18 +71,23 @@ public class ExcelExportUnlisted {
         font.setFontHeight(10);
         style.setFont(font);
 
-        for (CloseDay data : closeDays) {
+        for (Inventory data : inventories) {
             Row row = sheet.createRow(rowCount++);
             int columnCount = 0;
 
             createCell(row, columnCount++, data.getId());
-            createCell(row, columnCount++, data.getTime());
+            createCell(row, columnCount++, data.getNumberProduct());
             createCell(row, columnCount++, data.getName());
-            createCell(row, columnCount++, data.getTableNumber());
-            createCell(row, columnCount++, data.getCant());
-            createCell(row, columnCount++, data.getTotalItem());
-            createCell(row, columnCount++, data.getDiscount());
-            createCell(row, columnCount++, data.getPaymentMethod());
+            createCell(row, columnCount++, data.getDescription());
+            createCell(row, columnCount++, data.getStatus());
+            createCell(row, columnCount++, data.getMeasureUnit());
+            createCell(row, columnCount++, data.getPriceUnit());
+            createCell(row, columnCount++, data.getSalePrice());
+            createCell(row, columnCount++, data.getCantDisp());
+            createCell(row, columnCount++, data.getCantOrder());
+            createCell(row, columnCount++, data.getCantMinInv());
+            createCell(row, columnCount++, data.getTotalInventory());
+            createCell(row, columnCount++, data.getDate());
         }
     }
 

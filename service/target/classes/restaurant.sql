@@ -95,3 +95,23 @@ CREATE TABLE `service_order` (
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `warehouse` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `number_product` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `measure_unit` varchar(255) DEFAULT NULL,
+  `price_unit` varchar(255) DEFAULT NULL,
+  `date_price_unit` timestamp NULL DEFAULT NULL,
+  `sale_price` varchar(255) DEFAULT NULL,
+  `date_sale_price` timestamp NULL DEFAULT NULL,
+  `cant_disp` int(11) DEFAULT NULL,
+  `cant_order` int(11) DEFAULT NULL,
+  `cant_min_inv` int(11) DEFAULT NULL,
+  `total_inventory` varchar(255) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+

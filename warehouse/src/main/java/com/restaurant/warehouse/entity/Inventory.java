@@ -28,6 +28,7 @@ public class Inventory {
     private String cantDisp;
     private String cantOrder;
     private String cantMinInv;
-    private String totalInventory;
     private String date;
+    private String totalInventory;
+
 }

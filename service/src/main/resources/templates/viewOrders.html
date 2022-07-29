@@ -72,8 +72,8 @@
     </div>
 
     <div class="card-body" th:if="${table} != 0 and ${empty} != 'ok'">
-        <a th:if="${disableButton} != ok" th:href="@{/confirm_order(table=${table})}" class="btn btn-success">Ordenar Mesa</a>
-        <a th:if="${disableButton} != ok" th:href="@{/cancel_order(table=${table})}" class="btn btn-danger">Cancelar Mesa</a>
+        <a th:if="${disableButton} != ok" th:href="@{/confirm_order(table=${table})}" th:text="'Ordenar Mesa ' + ${table}" class="btn btn-success"></a>
+        <a th:if="${disableButton} != ok" th:href="@{/cancel_order(table=${table})}" th:text="'Cancelar Mesa ' + ${table}" class="btn btn-danger"></a>
         <a th:if="${ordered} == ok" href="#" class="btn btn-danger"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Plato en Cocina...</a> <!--TODO: Contador de platos-->
         <a th:if="${prepare} == ok" href="#" class="btn btn-warning"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> En preparación...</a> <!--TODO: Contador de platos-->
         <a th:if="${prepared} == ok" href="#" class="btn btn-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Platos Listos, Servir en la mesa</a> <!--TODO: Contador de platos-->
