@@ -78,6 +78,7 @@
                         <label class="form-label">Mesa</label>
                         <select class="form-control" name="tableNumber" required>
                             <option value="">Seleccione...</option>
+                            <option value="100">DOMICILIOS</option>
                             <option th:each="listRestaurantTable : ${listRestaurantTable}" th:text="'Mesa - ' + ${listRestaurantTable.tableNumber}" th:value="${listRestaurantTable.tableNumber}"></option>
                         </select>
                     </div>

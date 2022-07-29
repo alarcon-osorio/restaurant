@@ -61,7 +61,7 @@
                   <td th:text="${closeDayList.time}"></td>
                   <td th:text="${closeDayList.name}"></td>
                   <td th:text="${closeDayList.cant}"></td>
-                  <td th:text="${closeDayList.tableNumber}"></td>
+                  <td th:text="${closeDayList.tableNumber} == '100' ? 'DOMICILIOS' :  ${closeDayList.tableNumber}"></td>
                   <td th:text="'$' + ${#numbers.formatDecimal(closeDayList.totalItem, 0, 'COMMA', 0, 'POINT')}"></td>
                   <td th:text="${closeDayList.discount} + '%'"></td>
                   <td th:text="${closeDayList.paymentMethod}"></td>
