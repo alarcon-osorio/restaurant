@@ -5,10 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update DataBase restaurant">
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewCloseDay.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewCloseDay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewPrintInvoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewPrintInvoice.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewAccompaniment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewAccompaniment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/viewAccompaniment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/viewAccompaniment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT.war.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/controller/web/AccompanimentWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/controller/web/AccompanimentWeb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/controller/web/OrdersWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/controller/web/OrdersWeb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/entity/ServiceOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/entity/ServiceOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/repository/RepositoryMenuAccompaniment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/repository/RepositoryMenuAccompaniment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/repository/RepositoryMenuIncludes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/repository/RepositoryMenuIncludes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/service/ServiceMenuAccompaniment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/service/ServiceMenuAccompaniment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/service/ServiceMenuIncludes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/service/ServiceMenuIncludes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewAccompaniment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewAccompaniment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewEditOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewEditOrders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewOrders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/service.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/service.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.restaurante.service.ServiceApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.restaurante.service.ServiceApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.restaurante.service.ServiceApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.restaurante.service.ServiceApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/viewInventoryForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/viewInventoryForm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,21 +88,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jeison.alarcon/OneDrive - Organización TERPEL S.A/Desarrollo/2. Personal/MaquitecnicosCalc&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.3034483&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "last_opened_file_path": "C:/Users/QLEKO/Documents/Restaurant/restaurant/cash",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.3034483"
   }
-}</component>
+}]]></component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>

@@ -25,14 +25,15 @@
         </div>
     </div>
     <div class="row filtered">
-        <div th:each="menu : ${menu}" class="col-md-6  mb-4">
+        <div th:each="menu : ${menu}" class="col-md-4 mb-4">
             <div class="card">
                 <a th:href="@{/accompaniment(menuId=${menu.id})}">
                     <img th:src="${menu.image}" class="card-img-top" alt="...">
                 </a>
                 <div class="card-body">
                     <h4 th:text="${menu.name}" class="card-title"></h4>
-                    <h5 th:text="'$' + ${menu.price}" class="card-title"></h5>
+
+                    <h5 th:text="'$' + ${#numbers.formatDecimal(menu.price, 0, 'COMMA', 0, 'POINT')}" class="card-title"></h5>
                     <h6 th:text="${menu.description}" ></h6>
                 </div>
                 <div class="card-footer text-muted">

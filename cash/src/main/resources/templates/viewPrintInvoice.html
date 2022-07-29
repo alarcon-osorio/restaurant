@@ -44,7 +44,7 @@
                                             <tr>
                                                 <td>
                                                     Facturado a: <span th:text="'Mesa ' + ${table}"></span>
-                                                    <br>Número de pedido: <span th:text="${table} + ${#dates.format(#dates.createNow(), 'MMM')}"></span>
+                                                    <br>Número de pedido: <span th:text="${table} + ${#dates.format(#dates.createNow(), 'dd')}"></span>
                                                     <br>Fecha: <span th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></span>
                                                 </td>
                                             </tr>
