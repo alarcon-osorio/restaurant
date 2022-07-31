@@ -29,8 +29,8 @@
     <div class="abs-center">
         <form th:action="@{/save_inventory}" class="border p-3 form" method="POST">
             <div class="mb-3">
-                <input type="text" th:if="${inventoryById.id}" name="operation" th:value="'update'">
-                <input type="text" th:unless="${inventoryById.id}" name="operation" th:value="'add'">
+                <input type="hidden" th:if="${inventoryById.id}" name="operation" th:value="'update'">
+                <input type="hidden" th:unless="${inventoryById.id}" name="operation" th:value="'add'">
                 <input type="hidden" th:value="${inventoryById.id}" class="form-control" name="id">
                 <label for="numberProduct" class="form-label">Número de Producto</label>
                 <input type="text" class="form-control" id="numberProduct" name="numberProduct" th:value="${inventoryById.numberProduct}">

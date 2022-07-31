@@ -5,7 +5,7 @@
 
 <div class="container mt-4 vj-destacados">
   <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Exito!</strong>Mesa editada <a th:href="'/orders?table=' + ${table}">Ver Resumen</a><a href="/menu">  /  Volver al Menú</a>.
+    <strong>Exito! </strong>Mesa editada <a th:href="'/orders?table=0'">Ver Resumen</a><a href="/menu">  /  Volver al Menú</a>.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -28,16 +28,16 @@
           </div>
 
           <div class="card-body">
-            <div class="form-group" th:if="${serviceOrderById.idMenuType == 2}">
+            <div class="form-group" th:if="${serviceOrderById.accompaniment}">
               <label class="form-label">Acompañamiento</label>
               <select class="form-control" name="accompaniment">
-                <option th:each="menuAccompaniment : ${menuAccompaniment}" th:text="${menuAccompaniment.accompaniment} == ${serviceOrderById.accompaniment} ? 'Sin acompañamiento' : ${menuAccompaniment.accompaniment}" th:value="${menuAccompaniment.accompaniment} == ${serviceOrderById.accompaniment} ? 'Sin acompañamiento' : ${menuAccompaniment.accompaniment}"></option>
+                <option th:each="menuAccompanimentDistinct : ${menuAccompanimentDistinct}" th:text="${menuAccompanimentDistinct} == ${serviceOrderById.accompaniment} ? 'Sin acompañamiento' : ${menuAccompanimentDistinct}" th:value="${menuAccompanimentDistinct} == ${serviceOrderById.accompaniment} ? 'Sin acompañamiento' : ${menuAccompanimentDistinct}"></option>
                 <option th:text="${serviceOrderById.accompaniment}" th:value="${serviceOrderById.accompaniment}" selected></option>
               </select>
             </div>
 
-            <div class="form-group" th:if="${serviceOrderById.idMenuType == 2}">
-              <label class="form-label">Bebidas Incluidas</label>
+            <div class="form-group" th:if="${serviceOrderById.drinksIncludes}">
+              <label class="form-label">Bebida Incluida</label>
               <select class="form-control" name="drinksIncludes">
                 <option th:each="menuIncludesList : ${menuIncludesList}" th:text="${menuIncludesList.name} == ${serviceOrderById.drinksIncludes} ? 'Sin Bebidas' : ${menuIncludesList.name}" th:value="${menuIncludesList.name} == ${serviceOrderById.drinksIncludes} ? 'Sin Bebidas' : ${menuIncludesList.name}"></option>
                 <option th:text="${serviceOrderById.drinksIncludes}" th:value="${serviceOrderById.drinksIncludes}" selected></option>
