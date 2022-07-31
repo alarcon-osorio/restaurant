@@ -37,7 +37,7 @@ public class ExcelExportUnlisted {
         createCell(row, 0, "id");
         createCell(row, 1, "Número de Producto");
         createCell(row, 2, "Nombre");
-        createCell(row, 3, "Descripción");
+        createCell(row, 3, "Tipo");
         createCell(row, 4, "Estado");
         createCell(row, 5, "Unidad de Medida");
         createCell(row, 6, "Precio Unitario");
@@ -78,7 +78,7 @@ public class ExcelExportUnlisted {
             createCell(row, columnCount++, data.getId());
             createCell(row, columnCount++, data.getNumberProduct());
             createCell(row, columnCount++, data.getName());
-            createCell(row, columnCount++, data.getDescription());
+            createCell(row, columnCount++, data.getType());
             createCell(row, columnCount++, data.getStatus());
             createCell(row, columnCount++, data.getMeasureUnit());
             createCell(row, columnCount++, data.getPriceUnit());

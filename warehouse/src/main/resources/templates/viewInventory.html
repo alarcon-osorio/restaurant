@@ -21,6 +21,20 @@
         </div>
     </div>
 
+    <div th:if="${add} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert" id="save">
+        <strong>Exito!</strong> Registrato guardado exitosamente.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div th:if="${update} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert" id="edit">
+        <strong>Exito!</strong> Registro editado exitosamente.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
     <div class="alert alert-danger" role="alert" th:if="${empty} == ok" >
         No se encuentra reporte para esa fecha, por favor ingrese una diferente...
     </div>
@@ -39,7 +53,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Núm. Producto</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Descripcón</th>
+                                <th scope="col">Tipo</th>
                                 <th scope="col">Estado</th>
                                 <th scope="col">Unidad de Medida</th>
                                 <th scope="col">Precio Unit.</th>
@@ -56,7 +70,7 @@
                                 <th scope="row" th:text="${iter.index}+1"></th>
                                 <td th:text="${inventoryList.numberProduct}"></td>
                                 <td th:text="${inventoryList.name}"></td>
-                                <td th:text="${inventoryList.description}"></td>
+                                <td th:text="${inventoryList.type}"></td>
                                 <td th:text="${inventoryList.status}"></td>
                                 <td th:text="${inventoryList.measureUnit}"></td>
                                 <td th:text="'$' + ${#numbers.formatDecimal(inventoryList.priceUnit, 0, 'COMMA', 0, 'POINT')}"></td>

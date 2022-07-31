@@ -18,7 +18,7 @@ public class Inventory {
     private long id;
     private String numberProduct;
     private String name;
-    private String description;
+    private String type;
     private String status;
     private String measureUnit;
     private String priceUnit;

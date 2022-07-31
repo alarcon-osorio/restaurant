@@ -30,6 +30,10 @@ public class ServiceInventory {
         repositoryInventory.deleteById(id);
     }
 
+    public String findNumberProduct(String numberProduct){
+        return repositoryInventory.findNumberProduct(numberProduct);
+    }
+
 
 
 

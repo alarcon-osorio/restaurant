@@ -11,20 +11,6 @@
     </div>
     <div class="container">
         <h2 align="center">Datos del producto</h2>
-
-        <div th:if="${update} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert" id="edit">
-            <strong>Exito!</strong> Registro editado exitosamente.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-
-        <div th:if="${add} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert" id="save">
-            <strong>Exito!</strong> Registrato guarado exitosamente.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
     </div>
     <div class="abs-center">
         <form th:action="@{/save_inventory}" class="border p-3 form" method="POST">
@@ -32,16 +18,18 @@
                 <input type="hidden" th:if="${inventoryById.id}" name="operation" th:value="'update'">
                 <input type="hidden" th:unless="${inventoryById.id}" name="operation" th:value="'add'">
                 <input type="hidden" th:value="${inventoryById.id}" class="form-control" name="id">
-                <label for="numberProduct" class="form-label">Número de Producto</label>
-                <input type="text" class="form-control" id="numberProduct" name="numberProduct" th:value="${inventoryById.numberProduct}">
+                <input type="hidden" class="form-control" id="numberProduct" name="numberProduct" th:value="${inventoryById.numberProduct}">
             </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="name" name="name" th:value="${inventoryById.name}" required>
             </div>
             <div class="mb-3">
-                <label for="description" class="form-label">Descripción</label>
-                <input type="text" class="form-control" id="description" name="description" th:value="${inventoryById.description}" required>
+                <label for="type" class="form-label">Tipo</label>
+                <select class="form-control" name="type" id="type" required>
+                    <option value="">Seleccione...</option>
+                    <option th:each="warehouseTypeProductList : ${warehouseTypeProductList}" th:value="${warehouseTypeProductList.type}" th:text="${warehouseTypeProductList.type}"></option>
+                </select>
             </div>
             <div class="mb-3">
                 <label for="status" class="form-label">Estado</label>
@@ -51,11 +39,10 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="measureUnit" class="form-label">Unidad de medida</label> <!-- TODO: Que lo traiga de base de datos -->
+                <label for="measureUnit" class="form-label">Unidad de medida</label>
                 <select class="form-control" name="measureUnit" id="measureUnit" required>
-                    <option value="KG">KG</option>
-                    <option value="LB">LB</option>
-                    <option value="LT">LT</option>
+                    <option value="">Seleccione...</option>
+                    <option th:each="getMeasureUnitList : ${getMeasureUnitList}" th:value="${getMeasureUnitList.type}" th:text="${getMeasureUnitList.type}"></option>
                 </select>
             </div>
             <div class="mb-3">
