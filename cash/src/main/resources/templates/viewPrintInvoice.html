@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Tirilla de Venta</title>
     <link rel="stylesheet" th:href="@{/css/invoice.css}">
-   <script language="Javascript">
+   <!--<script language="Javascript">
         printScreen();
 
         function printScreen() {
@@ -13,7 +13,7 @@
             else
             alert("Para imprimir presione Crtl+P.");
         }
-    </script>
+    </script>-->
 </head>
 <body>
 <table class="body-wrap">
@@ -108,8 +108,9 @@
 timeCollapse();
 
 function timeCollapse() {
-    setInterval('alert()', 2000);
+    setInterval('alert()', 10000);
 }
+
 
 function alert(){
     var option = confirm("NO OLVIDE REGISTRAR EL PAGO");

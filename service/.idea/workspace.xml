@@ -4,31 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update DataBase restaurant">
+    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update cash and others">
       <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewPrintInvoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/viewPrintInvoice.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT.war.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/controller/web/AccompanimentWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/controller/web/AccompanimentWeb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/controller/web/OrdersWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/controller/web/OrdersWeb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/entity/ServiceOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/entity/ServiceOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/repository/RepositoryMenuAccompaniment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/repository/RepositoryMenuAccompaniment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/repository/RepositoryMenuIncludes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/repository/RepositoryMenuIncludes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/service/ServiceMenuAccompaniment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/service/ServiceMenuAccompaniment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/service/ServiceMenuIncludes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/com/restaurante/service/service/ServiceMenuIncludes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewAccompaniment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewAccompaniment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewEditOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewEditOrders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewMenu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/service-0.0.1-SNAPSHOT/WEB-INF/classes/templates/viewOrders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/service.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/service.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.restaurante.service.ServiceApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.restaurante.service.ServiceApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.restaurante.service.ServiceApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.restaurante.service.ServiceApplicationTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/viewInventoryForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/viewInventoryForm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659060726918</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Update cash and others">
+      <created>1659125251653</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1659125251653</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -320,6 +305,7 @@
     <MESSAGE value="Refine - button search and more" />
     <MESSAGE value="Refine - button search and more FIXES" />
     <MESSAGE value="Update DataBase restaurant" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update DataBase restaurant" />
+    <MESSAGE value="Update cash and others" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update cash and others" />
   </component>
 </project>
