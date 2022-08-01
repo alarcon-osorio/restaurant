@@ -13,8 +13,6 @@ n
 >src/main/java/com/restaurante/service/entity/MenuIncludes.java,7\6\76e2aec621597db85db0a43b42efd1e2c55ac6af
 s
 Csrc/main/java/com/restaurante/service/entity/MenuAccompaniment.java,2\9\29b9723dc1a542eb1655731049066f597a4078c9
-f
-6src/main/java/com/restaurante/service/entity/Menu.java,5\3\53e1c6f97447abb116a0eaa4897838df1bdd2b23
 x
 Hsrc/main/java/com/restaurante/service/repository/RepositoryMenuType.java,4\5\45df3955b057bbcbac4fb1f2ee22ad7f61cf73a8
 

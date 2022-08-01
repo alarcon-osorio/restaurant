@@ -1,0 +1,54 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<header th:insert="includes/header :: header"> </header>
+<header th:insert="includes/navbar :: navbar"> </header>
+
+<div class="container mt-4 vj-destacados">
+  <div class="row">
+    <div class="col col-md-12 text-left mb-4" sec:authorize="isAuthenticated()">
+      <div class="float-right">
+        <a class="font-weight-bold">Bienvenido: Administrador</a>
+        <img src="https://i.pinimg.com/originals/fb/16/4c/fb164c25c9c83206fef9028a91ebfeb9.gif" width="45" height="45" class="d-inline-block align-top rounded-circle" alt="" loading="lazy">
+        <p class="owner-subtext"><a href="/">Cerrar Sesión</a></p>
+
+        <div class="btn-group" style="width:100%">
+          <a th:href="@{/orders?table=0}" class="btn btn-outline-success">Admin</a>
+          <a th:href="@{/}" class="btn btn-outline-warning">Cerrar Sesión</a>
+        </div>
+      </div>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class="row filtered">
+    <div th:each="modulesList : ${modulesList}" class="col-md-4 mb-4">
+      <div class="card">
+        <a th:href="@{/accompaniment(menuId=${modulesList.uri})}">
+          <img th:src="${modulesList.image}" class="card-img-top" alt="...">
+        </a>
+        <div class="card-body">
+          <h4 th:text="${modulesList.name}" class="card-title"></h4>
+          <h6 th:text="${modulesList.description}" ></h6>
+        </div>
+        <div class="card-footer text-muted">
+          <a th:href="@{/accompaniment(menuId=${menu.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer th:insert="includes/footer :: footer"> </footer>
+<script>
+  $(document).ready(function () {
+    (function ($) {
+        $('#search').keyup(function () {
+             var rex = new RegExp($(this).val(), 'i');
+             $('.filtered div').hide();
+             $('.filtered div').filter(function () {
+                return rex.test($(this).text());
+             }).show();
+        })
+    }(jQuery));
+});
+</script>
+</html>
