@@ -8,7 +8,7 @@ public class WebHome {
 
     @GetMapping("/")
     public String index(){
-        return "index";
+        return "viewModules";
     }
 
 }

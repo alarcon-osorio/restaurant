@@ -17,9 +17,10 @@
         </div>
 
         <!-- Login Form -->
-        <form>
-            <input type="text" id="login" class="fadeIn second" placeholder="Username" required>
-            <input type="text" id="password" class="fadeIn third"  placeholder="Password" required>
+        <form th:action="@{/process-login}">
+            <input type="text" name="username" id="login" class="fadeIn second" placeholder="Username" required>
+            <input type="text" name="password" id="password" class="fadeIn third"  placeholder="Password" required>
+            <input class="btn btn-info" type="submit" value="Log in"/>
             <a th:href="@{/modules}" class="btn btn-info">Ingresar</a>
         </form>
 

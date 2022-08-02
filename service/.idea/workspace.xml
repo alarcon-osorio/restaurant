@@ -5,20 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update cash and others">
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebHome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebModules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/Modules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryModules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceModules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/images/logo.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewModules.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/53e1c6f97447abb116a0eaa4897838df1bdd2b23" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewModules.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewModules.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
