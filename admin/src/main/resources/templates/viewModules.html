@@ -21,9 +21,9 @@
     </div>
   </div>
   <div class="row filtered">
-    <div th:each="modulesList : ${modulesList}" class="col-md-4 mb-4">
+    <div th:each="modulesList : ${modulesList}" class="col-md-3 mb-6">
       <div class="card">
-        <a th:href="@{/accompaniment(menuId=${modulesList.uri})}">
+        <a th:href="${modulesList.uri}">
           <img th:src="${modulesList.image}" class="card-img-top" alt="...">
         </a>
         <div class="card-body">
@@ -31,7 +31,7 @@
           <h6 th:text="${modulesList.description}" ></h6>
         </div>
         <div class="card-footer text-muted">
-          <a th:href="@{/accompaniment(menuId=${menu.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>
+          <a th:href="${modulesList.uri}" th:text="'Seleccionar'" class="btn btn-primary"></a>
         </div>
       </div>
     </div>
