@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update cash and others">
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/Auth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebHome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewModules.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewModules.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update module admin - autenticacion">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659125251653</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Update module admin - autenticacion">
+      <created>1659456945366</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1659456945366</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -312,6 +312,7 @@
     <MESSAGE value="Refine - button search and more FIXES" />
     <MESSAGE value="Update DataBase restaurant" />
     <MESSAGE value="Update cash and others" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update cash and others" />
+    <MESSAGE value="Update module admin - autenticacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update module admin - autenticacion" />
   </component>
 </project>
