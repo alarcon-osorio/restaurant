@@ -1,3 +1,4 @@
+/*
 package com.restaurant.admin.security.entity;
 
 import lombok.AllArgsConstructor;
@@ -27,3 +28,4 @@ public class Users{
     private boolean enabled;
 
 }
+ */

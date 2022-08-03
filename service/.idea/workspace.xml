@@ -5,7 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update module admin - autenticacion">
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebAdminMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuAccompaniment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuIncludes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuOptional.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/css/style_admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/Chart.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/data-table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/dataTables.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/documentation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/file-upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/hoverable-collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/jquery.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/off-canvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/template.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/base/vendor.bundle.base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/base/vendor.bundle.base.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/chart.js/Chart.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/datatables.net-bs4/dataTables.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/datatables.net-bs4/dataTables.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/datatables.net/jquery.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/css/materialdesignicons.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/fonts/materialdesignicons-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/fonts/materialdesignicons-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/fonts/materialdesignicons-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/fonts/materialdesignicons-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/fonts/materialdesignicons-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/charts/chartjs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/forms/basic_elements.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/icons/mdi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/samples/lock-screen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/samples/login-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/samples/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/samples/register-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/samples/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/basic-table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/ui-features/buttons.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/ui-features/typography.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/entity/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/repository/RepositoryUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/repository/RepositoryUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/service/MyUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/service/MyUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/service/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewModules.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewModules.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/53e1c6f97447abb116a0eaa4897838df1bdd2b23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/9/69a44ac375a263f912202c3571ddfe3247992d03" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c207ff1f7befd862d746640ecebab7476e80e3c3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/repository/RepositoryMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/repository/RepositoryMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,21 +122,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mac/Documents/Desarollo/restaurant/service&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.3034483&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "last_opened_file_path": "C:/Users/jeison.alarcon/OneDrive - Organización TERPEL S.A/Desarrollo/Microservicios Terpel/ViveTerpel/ms-cliente-auth-cmd",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.3034483"
   }
-}</component>
+}]]></component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
