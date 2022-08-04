@@ -8,7 +8,7 @@ public class HomeWeb {
 
     @RequestMapping(value = "/")
     public String index(){
-        return "index";
+        return "login";
     }
 
 }

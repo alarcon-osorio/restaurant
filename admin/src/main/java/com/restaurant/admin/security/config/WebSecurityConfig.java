@@ -1,4 +1,3 @@
-/*
 package com.restaurant.admin.security.config;
 
 import com.restaurant.admin.security.service.UserDetailsServiceImpl;
@@ -62,4 +61,3 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.authenticationProvider(authenticationProvider());
     }
 }
-*/

@@ -8,7 +8,7 @@ public class WebHome {
 
     @GetMapping(value = "/")
     public String home(){
-        return "index";
+        return "login";
     }
 
 }

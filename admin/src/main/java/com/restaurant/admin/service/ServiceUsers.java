@@ -1,6 +1,6 @@
 package com.restaurant.admin.service;
 
-import com.restaurant.admin.repository.RepositoryUsers;
+import com.restaurant.admin.repository.RepositoryUsersAdmin;
 import com.restaurant.admin.security.entity.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,10 +11,10 @@ import java.util.List;
 public class ServiceUsers {
 
     @Autowired
-    RepositoryUsers repositoryUsers;
+    RepositoryUsersAdmin repositoryUsersAdmin;
 
     public List<Users> findUsers(){
-        return repositoryUsers.findAll();
+        return repositoryUsersAdmin.findAll();
     }
 
 }
