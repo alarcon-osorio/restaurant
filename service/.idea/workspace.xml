@@ -5,64 +5,82 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update module admin - autenticacion">
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebAdminMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuAccompaniment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuIncludes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuOptional.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/css/style_admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/Chart.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/data-table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/dataTables.bootstrap4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/documentation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/file-upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/hoverable-collapse.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/jquery.dataTables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/off-canvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/tabs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/template.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/base/vendor.bundle.base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/base/vendor.bundle.base.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/chart.js/Chart.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/datatables.net-bs4/dataTables.bootstrap4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/datatables.net-bs4/dataTables.bootstrap4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/datatables.net/jquery.dataTables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/css/materialdesignicons.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/fonts/materialdesignicons-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/fonts/materialdesignicons-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/fonts/materialdesignicons-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/fonts/materialdesignicons-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/vendors/mdi/fonts/materialdesignicons-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/charts/chartjs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/forms/basic_elements.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/icons/mdi.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/samples/lock-screen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/samples/login-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/samples/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/samples/register-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/samples/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/basic-table.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/ui-features/buttons.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/ui-features/typography.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewAdmin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebInventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebPaymentDiscount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebRestaurantTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebServiceOrders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebUsers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/dto/MenuAccompanimentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/dto/MenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/dto/MenuIncludesDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/dto/MenuOptionalDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/Discount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/Inventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MeasureUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/PaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/RestaurantTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/WarehouseTypeProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryDiscount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryInventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMeasureUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenuAccompaniment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenuAccompanimentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenuIncludes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenuIncludesDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenuOptional.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenuOptionalDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenuType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryPaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryRestaurantTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryUsers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryWarehouseTypeProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceDiscount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceInventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceMeasureUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceMenuAccompaniment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceMenuIncludes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceMenuOptional.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceMenuType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServicePaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceRestaurantTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceUsers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceWarehouseTypeProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/inventory-stock.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/inventory-type-product-measure.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/menu-accompaniment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/menu-includes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/menu-optional.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/menu-principal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/menu-type.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/payment-discount.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/restaurant-table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/service-orders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/web/WebMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuAccompaniment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuAccompaniment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuIncludes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuIncludes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuOptional.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuOptional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/MenuType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/ServiceOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/entity/ServiceOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/repository/RepositoryMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/config/MvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/entity/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/repository/RepositoryUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/repository/RepositoryUsers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/service/MyUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/service/MyUserDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/security/service/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewModules.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewModules.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/53e1c6f97447abb116a0eaa4897838df1bdd2b23" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/9/69a44ac375a263f912202c3571ddfe3247992d03" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c207ff1f7befd862d746640ecebab7476e80e3c3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/service/ServiceOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/static/css/style_admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/css/style_admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/tables/basic-table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/viewAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/c/ec5ad6bca6071dfc8d125bb0d1bc0646fd6c3b87" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f7c41ea4da69181059feeff08801622bab88b4c5" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/repository/RepositoryMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/repository/RepositoryMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +149,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "last_opened_file_path": "C:/Users/jeison.alarcon/OneDrive - Organización TERPEL S.A/Desarrollo/Microservicios Terpel/ViveTerpel/ms-cliente-auth-cmd",
+    "last_opened_file_path": "C:/Users/jeison.alarcon/OneDrive - Organización TERPEL S.A/Desarrollo/2. Personal/Restaurant/restaurant/service",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.3034483"

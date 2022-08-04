@@ -1,14 +1,11 @@
+
 package com.restaurant.admin.security.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Set;
 
 @Entity
 @Data
@@ -21,6 +18,7 @@ public class Users{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")
     private Long id;
+    private String name; //TODO: Validar
     private String username;
     private String password;
     private String role;

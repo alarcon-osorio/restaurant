@@ -1,6 +1,4 @@
 
-r
-Bsrc/main/java/com/restaurante/service/service/ServiceMenuType.java,e\c\ec5ad6bca6071dfc8d125bb0d1bc0646fd6c3b87
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
 y
@@ -17,8 +15,6 @@ Hsrc/main/java/com/restaurante/service/repository/RepositoryMenuType.java,4\5\4
 Osrc/main/java/com/restaurante/service/repository/RepositoryRestaurantTable.java,6\4\64b5b3139eba12cd2b69a64d523df123923a0923
 q
 Asrc/main/java/com/restaurante/service/controller/web/HomeWeb.java,2\2\2275af8fb2317c6e5d61ab6b49cf2be495987a14
-q
-Asrc/main/java/com/restaurante/service/controller/web/MenuWeb.java,f\7\f7c41ea4da69181059feeff08801622bab88b4c5
 y
 Isrc/main/java/com/restaurante/service/controller/rest/MenuController.java,4\3\43126d22a9c0fa04a038bf784988b1eb081dcf26
 |

@@ -1,4 +1,4 @@
-package com.restaurant.admin.security.config;
+package com.restaurant.admin.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

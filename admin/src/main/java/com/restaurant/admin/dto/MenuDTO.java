@@ -1,4 +1,4 @@
-package com.restaurant.admin.entity;
+package com.restaurant.admin.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,14 +10,16 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "menu_accompaniment")
-public class MenuAccompaniment {
+public class MenuDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private long idMenu;
-    private long idMenuType;
-    private String accompaniment;
+    private String menuType;
+    private String name;
+    private String description;
+    private String price;
+    private String image;
+    private long ordered;
 
 }

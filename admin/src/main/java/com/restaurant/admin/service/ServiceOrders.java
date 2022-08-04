@@ -16,7 +16,7 @@ public class ServiceOrders {
     RepositoryOrders repositoryOrders;
 
     public List<ServiceOrder> getServiceOrders(){
-        return repositoryOrders.findOrders();
+        return repositoryOrders.findAll();
     }
 
     public String getTotalOrders(){
