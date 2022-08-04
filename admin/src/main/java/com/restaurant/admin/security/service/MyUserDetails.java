@@ -1,4 +1,3 @@
-/*
 package com.restaurant.admin.security.service;
 
 import java.util.Arrays;
@@ -54,6 +53,4 @@ public class MyUserDetails implements UserDetails {
     }
 
 }
-
- */
 

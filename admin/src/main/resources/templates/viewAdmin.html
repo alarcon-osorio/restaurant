@@ -23,9 +23,14 @@
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-    <!--
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-            <div class="navbar-brand-wrapper d-flex justify-content-center">
+      <a class="navbar-brand" th:href=@{/menu}>
+        <img src="https://i.pinimg.com/originals/6c/ed/a5/6ceda58e688c161b04800864a34988f6.jpg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        Modulo Administrador  - Restaurante Q'leko
+      </a>
+    </nav>
+    <!--
+      <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
           <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
           <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
@@ -170,6 +175,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
+
             <a class="nav-link" th:href="@{/admin}">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Dashboard</span>
@@ -183,7 +189,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Menú Principal</a></li>
+                <li class="nav-item"> <a class="nav-link" th:href="@{/menu}">Menú Principal</a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Tipos de Menú</a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Menú Acompañamientos</a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Menu Incluidos</a></li>
@@ -285,8 +291,8 @@
               <div class="d-flex justify-content-between flex-wrap">
                 <div class="d-flex align-items-end flex-wrap">
                   <div class="mr-md-3 mr-xl-5">
-                    <h2>Bienvenido al panel de Administración,</h2>
-                    <p class="mb-md-0">Analisis de ordenes de Servicio y modificación de la interfaz.</p>
+                    <h2>Bienvenido al panel de Administración</h2>
+                    <p class="mb-md-0">Desde aqui podras modificar las opciones principales de restuarante</p>
                   </div>
                   <!--
                   <div class="d-flex">
@@ -297,14 +303,16 @@
                   -->
                 </div>
                 <div class="d-flex justify-content-between align-items-end flex-wrap">
+                  <!--
                   <button type="button" class="btn btn-light bg-white btn-icon mr-3 d-none d-md-block ">
-                    <i class="mdi mdi-download text-muted"></i>
+                    <i class="mdi mdi-plus text-muted"></i>
                   </button>
                   <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
                     <i class="mdi mdi-clock-outline text-muted"></i>
                   </button>
+                  -->
                   <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
-                    <i class="mdi mdi-plus text-muted"></i>
+                    <i class="mdi mdi-download text-muted"></i>
                   </button>
                   <a th:href="@{/modules}" class="btn btn-primary mt-2 mt-xl-0">Ir a Modulos</a>
                 </div>
@@ -336,7 +344,7 @@
                         <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-calendar-heart icon-lg mr-3 text-primary"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Fecha inicial</small>
+                            <!--<small class="mb-1 text-muted">Fecha inicial</small>
                             <div class="dropdown">
                               <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium" href="#" role="button" id="dropdownMenuLinkA" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <h5 class="mb-0 d-inline-block">26 Jul 2022</h5>
@@ -346,35 +354,35 @@
                                 <a class="dropdown-item" href="#">22 Sep 2018</a>
                                 <a class="dropdown-item" href="#">21 Oct 2018</a>
                               </div>
-                            </div>
+                            </div>-->
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-currency-usd mr-3 icon-lg text-danger"></i>
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">Total Ingresos</small>
-                            <h5 class="mr-2 mb-0">$5,000,000</h5>
+                            <h5 class="mr-2 mb-0" th:text="${#numbers.formatDecimal(totalOrders, 0, 'COMMA', 0, 'POINT')}"></h5>
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-eye mr-3 icon-lg text-success"></i>
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">Total Pedidos</small>
-                            <h5 class="mr-2 mb-0">9833550</h5>
+                            <h5 class="mr-2 mb-0" th:text="${totalAttend}"></h5>
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-download mr-3 icon-lg text-warning"></i>
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">Por atender</small>
-                            <h5 class="mr-2 mb-0">2233783</h5>
+                            <h5 class="mr-2 mb-0" th:text="${pendingAttend}"></h5>
                           </div>
                         </div>
                         <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-flag mr-3 icon-lg text-danger"></i>
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">Cancelados</small>
-                            <h5 class="mr-2 mb-0">3497843</h5>
+                            <h5 class="mr-2 mb-0" th:text="${cancelled}"></h5>
                           </div>
                         </div>
                       </div>
@@ -518,22 +526,24 @@
                     <table id="recent-purchases-listing" class="table">
                       <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Status report</th>
-                            <th>Office</th>
-                            <th>Price</th>
-                            <th>Date</th>
-                            <th>Gross amount</th>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Mesa</th>
+                            <th>valor</th>
+                            <th>Descuento</th>
+                            <th>Medio de pago</th>
+                            <th>Fecha</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                            <td>Jeremy Ortega</td>
-                            <td>Levelled up</td>
-                            <td>Catalinaborough</td>
-                            <td>$790</td>
-                            <td>06 Jan 2018</td>
-                            <td>$2274253</td>
+                        <tr th:each="serviceOrderList, iter : ${serviceOrderList}">
+                            <td th:text="${iter.index + 1}"></td>
+                            <td th:text="${serviceOrderList.name}"></td>
+                            <td th:text="${serviceOrderList.tableNumber}"></td>
+                            <td th:text="${#numbers.formatDecimal(serviceOrderList.price, 0, 'COMMA', 0, 'POINT')}"></td>
+                            <td th:text="${serviceOrderList.discount} + '%'"></td>
+                            <td th:text="${serviceOrderList.paymentMethod}"></td>
+                            <td th:text="${serviceOrderList.time}"></td>
                         </tr>
                       </tbody>
                     </table>

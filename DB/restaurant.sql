@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 01-08-2022 a las 03:36:39
+-- Tiempo de generación: 04-08-2022 a las 06:08:04
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -244,7 +244,10 @@ CREATE TABLE `modules` (
 --
 
 INSERT INTO `modules` (`id`, `name`, `description`, `image`, `uri`) VALUES
-(1, 'Modulo de Meseros', 'Modulo de meseros restaurante', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQawzmx0m43sjEuXP_ljQ41dWWpkHKrNCAdfA&usqp=CAU', '192.168.0.254:8080/service');
+(1, 'Meseros', 'Modulo Meseros', 'https://cdn-icons-png.flaticon.com/512/5526/5526447.png', 'https://www.google.com'),
+(2, 'Cocina', 'Modulo Cocina', 'https://cdn-icons-png.flaticon.com/512/3699/3699708.png', ''),
+(3, 'Inventario', 'Modulo Inventario', 'https://cdn-icons-png.flaticon.com/512/2897/2897785.png', ''),
+(4, 'Caja', 'Modulo Caja', 'https://cdn-icons-png.flaticon.com/512/1198/1198290.png', '');
 
 -- --------------------------------------------------------
 
@@ -409,6 +412,28 @@ INSERT INTO `service_order` (`id`, `id_menu`, `id_menu_type`, `number_order`, `n
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id_user` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL,
+  `enabled` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id_user`, `name`, `username`, `password`, `role`, `enabled`) VALUES
+(1, 'Administrador', 'admin', '$2a$12$Ojnp1I5EaJrnBiYUu/V46OuRn0GRBGmLJxoofIPLXQZgPK5VQPUTu', 'ADMIN', 'true');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `warehouse`
 --
 
@@ -557,6 +582,12 @@ ALTER TABLE `service_order`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- Indices de la tabla `warehouse`
 --
 ALTER TABLE `warehouse`
@@ -618,7 +649,7 @@ ALTER TABLE `menu_type`
 -- AUTO_INCREMENT de la tabla `modules`
 --
 ALTER TABLE `modules`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `payment_method`
@@ -637,6 +668,12 @@ ALTER TABLE `restaurant_table`
 --
 ALTER TABLE `service_order`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `warehouse`

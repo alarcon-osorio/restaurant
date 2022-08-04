@@ -1,4 +1,3 @@
-/*
 package com.restaurant.admin.security.repository;
 
 import com.restaurant.admin.security.entity.Users;
@@ -11,4 +10,3 @@ public interface RepositoryUsers extends JpaRepository<Users, Long> {
     Users findByUsername(String username);
 
 }
-*/
