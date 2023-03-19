@@ -4,39 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update module admin - autenticacion">
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cash/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/static/images/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/static/images/invoice.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/static/images/invoice.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/static/images/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/includes/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/static/images/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/includes/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/security/repository/RepositoryUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/security/repository/RepositoryUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/security/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/security/service/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/includes/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/restaurante/service/security/service/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/restaurante/service/security/service/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/static/images/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/includes/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/login.html" afterDir="false" />
-    </list>
+    <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update module admin - autenticacion" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,21 +63,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "last_opened_file_path": "/Users/mac/Documents/Desarrollo/restaurant/service/src/main/resources/static/images",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.3034483"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mac/Documents/Desarrollo/restaurant/service/src/main/resources/static/images&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3034483&quot;
   }
-}]]></component>
+}</component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
