@@ -5,39 +5,39 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="wrapper fadeInDown">
-    <div id="formContent">
-        <!-- Tabs Titles -->
+  <div id="formContent">
+    <!-- Tabs Titles -->
 
-        <!-- Icon -->
-        <div class="fadeIn first">
-            <br>
-            <h2 class="text-center">Ingreso Administrador</h2>
-            <img th:src="@{/images/logo.png}" class='imgRedonda' id="icon" alt="User Icon" />
-            <br>
-            <br>
-        </div>
-
-        <!-- Login Form -->
-        <form th:action="@{/login}" method="post" class="form login">
-            <input type="text" name="username"  class="fadeIn second" placeholder="Username" required>
-            <input type="password" name="password"  class="fadeIn third"  placeholder="Password" required>
-
-            <div class="" th:if="${param.error}">
-                Usuario o contraseña incorrectos...
-            </div>
-            <div class="text--center" th:if="${param.logout}">
-                Te has desconectado.
-            </div>
-
-            <div class="form__field">
-                <input type="submit" value="Ingresar">
-                <br>
-                <a th:href="@{/loginClient}"><span>¡Soy Cliente!</span></a>
-                <br>
-            </div>
-        </form>
-
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <br>
+      <h2 class="text-center">Ingreso de Clientes</h2>
+      <img th:src="@{/images/logo.png}" class='imgRedonda' id="icon" alt="User Icon" />
+      <br>
+      <br>
     </div>
+
+    <!-- Login Form -->
+    <form th:action="@{/loginClient/ingress}" method="post" class="form login">
+      <input type="text" name="username"  class="fadeIn second" placeholder="Username" required>
+      <input type="password" name="password"  class="fadeIn third"  placeholder="Password" required>
+
+      <div class="" th:if="${param.error}">
+        Usuario o contraseña incorrectos...
+      </div>
+      <div class="text--center" th:if="${param.logout}">
+        Te has desconectado.
+      </div>
+
+      <div class="form__field">
+        <input type="submit" value="Ingresar">
+        <br>
+        <a th:href="@{/register}" type="button">¡No tengo cuenta!</a>
+        <br>
+      </div>
+    </form>
+
+  </div>
 </div>
 </html>
 <style>

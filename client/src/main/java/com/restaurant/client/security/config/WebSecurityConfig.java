@@ -43,11 +43,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers( "/css/**", "/images/**", "/favicon.ico", "/register").permitAll()
+                .antMatchers( "/css/**", "/images/**", "/favicon.ico", "/register", "/registration", "/login", "/loginClient", "/loginClient/ingress", "/menu", "/orders").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login")
+                .loginPage("/loginClient")
                 .defaultSuccessUrl("/menu")
                 .permitAll()
                 .and()
