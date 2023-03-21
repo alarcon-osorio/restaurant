@@ -1,6 +1,6 @@
 package com.restaurant.client.security.service;
 
-import com.restaurant.client.security.entity.Users;
+import com.restaurant.client.security.entity.Clients;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,28 +8,28 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Arrays;
 import java.util.Collection;
 
-public class MyUserDetails implements UserDetails {
+public class ClientDetailsService implements UserDetails {
 
-    private Users users;
+    private Clients clients;
 
-    public MyUserDetails(Users users) {
-        this.users = users;
+    public ClientDetailsService(Clients clients) {
+        this.clients = clients;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(users.getRole());
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(clients.getRole());
         return Arrays.asList(authority);
     }
 
     @Override
     public String getPassword() {
-        return users.getPassword();
+        return clients.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return users.getUsername();
+        return clients.getUsername();
     }
 
     @Override

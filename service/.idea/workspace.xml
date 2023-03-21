@@ -5,37 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update module admin - autenticacion">
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cash/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/static/images/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/static/images/invoice.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/static/images/invoice.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/static/images/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/includes/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cash/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cash/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/static/images/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/includes/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../kitchen/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/security/repository/RepositoryClientSecurity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/security/service/ClientDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/security/service/ClientDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/controller/web/ClientsWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/controller/web/ClientsWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/entity/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/security/entity/Clients.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/repository/RepositoryClients.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/repository/RepositoryClients.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/security/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/security/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/security/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/security/entity/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/security/repository/RepositoryUsers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/security/service/MyUserDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/security/service/UserDetailsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/service/ServiceClients.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/com/restaurant/client/service/ServiceClients.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/loginClient.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/viewMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/viewMenu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/security/repository/RepositoryUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/security/repository/RepositoryUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restaurante/service/security/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restaurante/service/security/service/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/includes/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/restaurante/service/security/service/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/restaurante/service/security/service/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/static/images/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/includes/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../warehouse/src/main/resources/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +91,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "last_opened_file_path": "/Users/mac/Documents/Desarrollo/restaurant/service/src/main/resources/static/images",
+    "last_opened_file_path": "C:/Users/jeison.alarcon/OneDrive - Organización TERPEL S.A/Desarrollo/2. Personal/Restaurante/restaurant/service",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.3034483"

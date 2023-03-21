@@ -18,7 +18,7 @@ public class Users{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")
     private Long id;
-    private String name; //TODO: Validar
+    private String name;
     private String username;
     private String password;
     private String role;
