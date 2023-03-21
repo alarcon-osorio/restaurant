@@ -1,0 +1,108 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<header th:insert="includes/header :: header"> </header>
+<header th:insert="includes/navbar :: navbar"> </header>
+
+<div class="container mt-4 vj-destacados">
+    <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Exito!</strong> Pedido ordenado exitosamente... <a th:href="@{/menu}"> Agregar + </a> / <a th:href="@{/orders?table=} + ${table}">Confirmar Orden</a>.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-md-12  mb-4">
+            <form th:action="@{/saveOrder}" method="POST">
+            <div class="card">
+                <img th:src="${menuImage}" class="card-img-top" alt="...">
+                <div class="card-footer">
+                    <h4 th:text="${menuName} + ' - ' + ${menuDescription}" class="card-title"></h4>
+                    <input type="hidden" th:value="${menuId}" name="idMenu">
+                    <input type="hidden" th:value="${menuTypeId}" name="idMenuType">
+                    <input type="hidden" th:value="${menuName}" name="name">
+                    <input type="hidden" th:value="${menuDescription}" name="description">
+                    <input type="hidden" th:value="${menuPrice}" name="price">
+                    <input type="hidden" th:value="${menuImage}" name="image">
+                </div>
+                <div class="card-body">
+
+                    <div th:if="${menuAccompaniment == 'ok'}" class="form-group">
+                        <label class="form-label">Acompañamiento</label>
+                        <select class="form-control" name="accompaniment" required>
+                            <option value="">Seleccione...</option>
+                            <option th:each="menuAccompanimentIdMenu : ${menuAccompanimentIdMenu}" th:text="${menuAccompanimentIdMenu.accompaniment}" th:value="${menuAccompanimentIdMenu.accompaniment}"></option>
+                        </select>
+                    </div>
+
+                    <div th:if="${menuIncludes == 'ok'}" class="form-group" >
+                        <label class="form-label">Bebida Incluida</label>
+                        <select class="form-control" name="drinksIncludes" required>
+                            <option value="">Seleccione...</option>
+                            <option th:each="menuIncludeByIdMenu : ${menuIncludeByIdMenu}" th:text="${menuIncludeByIdMenu.name}" th:value="${menuIncludeByIdMenu.name}"></option>
+                        </select>
+                    </div>
+
+                    <div th:if="${options == 'ok'}" class="form-group">
+                        <label class="form-label">Caldo</label>
+                        <select class="form-control" name="option1" required>
+                            <option value="">Seleccione...</option>
+                            <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option1}" th:value="${menuOptionalList.option1}"></option>
+                        </select>
+                    </div>
+
+                    <div th:if="${options == 'ok'}" class="form-group">
+                        <label class="form-label">Huevos</label>
+                        <select class="form-control" name="option2" required>
+                            <option value="">Seleccione...</option>
+                            <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option2}" th:value="${menuOptionalList.option2}"></option>
+                        </select>
+                    </div>
+
+                    <div th:if="${options == 'ok'}" class="form-group">
+                        <label class="form-label">Bebida</label>
+                        <select class="form-control" name="option3" required>
+                            <option value="">Seleccione...</option>
+                            <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option3}" th:value="${menuOptionalList.option3}"></option>
+                        </select>
+                    </div>
+
+                    <div th:if="${options == 'ok'}" class="form-group">
+                        <label class="form-label">Complemento</label>
+                        <select class="form-control" name="option4" required>
+                            <option value="">Seleccione...</option>
+                            <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option4}" th:value="${menuOptionalList.option4}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Mesa</label>
+                        <select class="form-control" name="tableNumber" required>
+                            <option value="">Seleccione...</option>
+                            <option value="100">DOMICILIOS</option>
+                            <option th:each="listRestaurantTable : ${listRestaurantTable}" th:text="'Mesa - ' + ${listRestaurantTable.tableNumber}" th:value="${listRestaurantTable.tableNumber}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Cantidad</label>
+                        <input class="form-control" type="number" name="cant" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Observaciones</label>
+                        <textarea class="form-control" name="observations" placeholder="Use estas observaciones para complementar el pedido..."></textarea>
+                    </div>
+                </div>
+
+                <div class="card-footer text-muted">
+                    <button type="submit" class="btn btn-success float-right">Ordenar</button>
+                    <a th:href="@{/type_menu(id=${menuTypeId})}" th:text="Regresar" class="btn btn-warning"></a>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
