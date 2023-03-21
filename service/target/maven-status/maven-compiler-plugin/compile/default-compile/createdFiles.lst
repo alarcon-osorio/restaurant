@@ -5,7 +5,9 @@ com\restaurante\service\entity\MenuIncludes.class
 com\restaurante\service\repository\RepositoryMenuIncludes.class
 com\restaurante\service\controller\web\AccompanimentWeb.class
 com\restaurante\service\repository\RepositoryMenuType.class
+com\restaurante\service\security\entity\Users.class
 com\restaurante\service\entity\MenuAccompaniment.class
+com\restaurante\service\security\service\UserDetailsServiceImpl.class
 com\restaurante\service\entity\MenuType.class
 com\restaurante\service\repository\RepositoryOrder.class
 com\restaurante\service\entity\ServiceOrder.class
@@ -16,9 +18,13 @@ com\restaurante\service\ServiceApplication.class
 com\restaurante\service\service\ServiceMenuAccompaniment.class
 com\restaurante\service\controller\web\HomeWeb.class
 com\restaurante\service\controller\web\MenuWeb.class
+com\restaurante\service\security\config\WebSecurityConfig.class
+com\restaurante\service\config\MvcConfig.class
 com\restaurante\service\entity\MenuOptional.class
 com\restaurante\service\entity\RestaurantTable.class
+com\restaurante\service\security\service\MyUserDetails.class
 com\restaurante\service\controller\rest\MenuController.class
+com\restaurante\service\security\repository\RepositoryUsers.class
 com\restaurante\service\service\ServiceMenu.class
 com\restaurante\service\service\ServiceOrders.class
 com\restaurante\service\service\ServiceMenuType.class
