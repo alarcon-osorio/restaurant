@@ -1,6 +1,6 @@
 package com.restaurant.client.security.config;
 
-import com.restaurant.client.security.service.UserDetailsServiceImpl;
+import com.restaurant.client.security.service.ClientDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return new UserDetailsServiceImpl();
+        return new ClientDetailsServiceImpl();
     }
 
     @Bean
@@ -43,11 +43,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers( "/css/**", "/images/**", "/favicon.ico", "/register", "/registration", "/login", "/loginClient", "/loginClient/ingress", "/menu", "/orders").permitAll()
+                .antMatchers( "/css/**", "/images/**", "/favicon.ico", "/register", "/registration", "/login", "/loginClient").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/loginClient")
+                .loginPage("/login")
                 .defaultSuccessUrl("/menu")
                 .permitAll()
                 .and()

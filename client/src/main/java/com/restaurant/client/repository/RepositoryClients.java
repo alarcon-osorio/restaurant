@@ -1,6 +1,6 @@
 package com.restaurant.client.repository;
 
-import com.restaurant.client.entity.Clients;
+import com.restaurant.client.security.entity.Clients;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

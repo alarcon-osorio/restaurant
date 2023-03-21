@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 17-03-2023 a las 20:04:20
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 22-03-2023 a las 00:39:57
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.0.25
 
@@ -24,6 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `clients`
+--
+
+CREATE TABLE `clients` (
+  `id_client` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `enabled` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `clients`
+--
+
+INSERT INTO `clients` (`id_client`, `name`, `lastname`, `username`, `email`, `role`, `password`, `enabled`) VALUES
+(1, 'Jeison', 'Alarcon', 'jalarcono', 'jalarcono@udistrital.edu.co', 'client', '$2a$10$6vUBr8eTggphsVfOkVBno.6uX8gvwqbfxtS.l5LzELT0VQFFjd.OG', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `discount`
 --
 
@@ -33,6 +57,13 @@ CREATE TABLE `discount` (
   `type` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `discount`
+--
+
+INSERT INTO `discount` (`id`, `value`, `type`, `description`) VALUES
+(4, 10, 'Descuento cliente frecuente', 'Descuento cliente frecuente');
 
 -- --------------------------------------------------------
 
@@ -61,6 +92,13 @@ CREATE TABLE `menu` (
   `image` varchar(255) NOT NULL,
   `ordered` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `menu`
+--
+
+INSERT INTO `menu` (`id`, `id_menu_type`, `name`, `description`, `price`, `image`, `ordered`) VALUES
+(6, 1, 'Espagueti Italiano', 'Especial de Italia', '20000', 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', '0');
 
 -- --------------------------------------------------------
 
@@ -117,6 +155,13 @@ CREATE TABLE `menu_type` (
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `menu_type`
+--
+
+INSERT INTO `menu_type` (`id`, `name`) VALUES
+(5, 'Tipico');
+
 -- --------------------------------------------------------
 
 --
@@ -153,6 +198,13 @@ CREATE TABLE `payment_method` (
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `payment_method`
+--
+
+INSERT INTO `payment_method` (`id`, `method`, `description`) VALUES
+(10, 'Efectivo', 'Pago en efectivo');
+
 -- --------------------------------------------------------
 
 --
@@ -178,6 +230,13 @@ CREATE TABLE `restaurant_table` (
   `id` int(11) NOT NULL,
   `table_number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `restaurant_table`
+--
+
+INSERT INTO `restaurant_table` (`id`, `table_number`) VALUES
+(22, 1);
 
 -- --------------------------------------------------------
 
@@ -214,6 +273,15 @@ CREATE TABLE `service_order` (
   `payment_method` varchar(255) DEFAULT NULL,
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `service_order`
+--
+
+INSERT INTO `service_order` (`id`, `id_menu`, `id_menu_type`, `number_order`, `name`, `description`, `observations`, `accompaniment`, `option1`, `option2`, `option3`, `option4`, `option5`, `drinks_includes`, `table_number`, `image`, `ordered`, `prepare`, `prepared`, `served`, `close`, `cancel`, `price`, `cant`, `discount`, `payment_method`, `time`) VALUES
+(21, 6, 1, NULL, 'Espagueti Italiano', 'Especial de Italia', 'Que tenga Mucha albondiga', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 1, 1, 1, 1, 1, 0, '20000', 1, 10, 'Efectivo', '2023-03-17 22:17:55'),
+(22, 6, 1, NULL, 'Espagueti Italiano', 'Especial de Italia', 'mucho queso', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 1, 1, 1, 1, 1, 0, '20000', 1, 10, 'Efectivo', '2023-03-17 22:26:24'),
+(23, 6, 1, NULL, 'Espagueti Italiano', 'Especial de Italia', 'Con mas queso', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 100, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 1, 1, 1, 1, 1, 0, '20000', 1, 10, 'Efectivo', '2023-03-18 00:11:39');
 
 -- --------------------------------------------------------
 
@@ -276,6 +344,14 @@ CREATE TABLE `warehouse_type_product` (
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `clients`
+--
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`id_client`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indices de la tabla `discount`
@@ -372,10 +448,16 @@ ALTER TABLE `warehouse_type_product`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `clients`
+--
+ALTER TABLE `clients`
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `discount`
 --
 ALTER TABLE `discount`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `measure_unit`
@@ -387,7 +469,7 @@ ALTER TABLE `measure_unit`
 -- AUTO_INCREMENT de la tabla `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `menu_accompaniment`
@@ -411,7 +493,7 @@ ALTER TABLE `menu_optional`
 -- AUTO_INCREMENT de la tabla `menu_type`
 --
 ALTER TABLE `menu_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`
@@ -423,7 +505,7 @@ ALTER TABLE `modules`
 -- AUTO_INCREMENT de la tabla `payment_method`
 --
 ALTER TABLE `payment_method`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `restaurant_data`
@@ -435,13 +517,13 @@ ALTER TABLE `restaurant_data`
 -- AUTO_INCREMENT de la tabla `restaurant_table`
 --
 ALTER TABLE `restaurant_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `service_order`
 --
 ALTER TABLE `service_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

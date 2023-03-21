@@ -1,6 +1,6 @@
 package com.restaurant.client.service;
 
-import com.restaurant.client.entity.Clients;
+import com.restaurant.client.security.entity.Clients;
 import com.restaurant.client.repository.RepositoryClients;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,8 +11,8 @@ public class ServiceClients {
     @Autowired
     RepositoryClients repositoryClients;
 
-    public Clients getClientByEmail(String clients){
-        return repositoryClients.findClientByEmail(clients);
+    public Clients getClientByEmail(String email){
+        return repositoryClients.findClientByEmail(email);
     }
 
     public void saveClients(Clients clients){
