@@ -1,6 +1,9 @@
 package com.restaurant.client.security.config;
 
+import com.restaurant.client.security.entity.Clients;
+import com.restaurant.client.security.repository.RepositoryClientSecurity;
 import com.restaurant.client.security.service.ClientDetailsServiceImpl;
+import com.restaurant.client.service.ServiceClients;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,9 +44,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
         http
                 .authorizeRequests()
-                .antMatchers( "/css/**", "/images/**", "/favicon.ico", "/register", "/registration", "/login", "/loginClient").permitAll()
+                .antMatchers( "/css/**", "/images/**", "/favicon.ico", "/register", "/registration", "/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

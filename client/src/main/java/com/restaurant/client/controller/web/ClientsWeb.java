@@ -5,6 +5,7 @@ import com.restaurant.client.service.ServiceClients;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,6 +18,9 @@ public class ClientsWeb {
 
     @Autowired
     ServiceClients serviceClients;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
 
     @RequestMapping(value = "/register")
@@ -31,8 +35,7 @@ public class ClientsWeb {
 
         if(existingClient != null && existingClient.getEmail() != null && !existingClient.getEmail().isEmpty()){
             result.rejectValue("email", null,"El email ya se encuentra registrado");
-            model.addAttribute("exit", "exist");
-            return "/register";
+            return "redirect:/register?emailExist";
         }
 
         if(result.hasErrors()){
@@ -40,14 +43,8 @@ public class ClientsWeb {
             return "/register";
         }
 
-        log.info(clients.getPassword());
-        log.info(clients.getUsername());
-
-        String[] username_split = clients.getEmail().split(("@"));
-        String user = username_split[0].trim();
-        clients.setUsername(user);
-
-        log.info(user);
+        clients.setUsername(clients.getEmail());
+        clients.setPassword(passwordEncoder.encode(clients.getPassword()));
 
         serviceClients.saveClients(clients);
         return "redirect:/register?success";

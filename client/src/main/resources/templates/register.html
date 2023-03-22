@@ -19,9 +19,9 @@
             </div>
         </div>
 
-        <div th:if="${param.}">
-            <div class="alert alert-info">
-                Te has registrado exitosamente !!!
+        <div th:if="${param.emailExist}">
+            <div class="alert alert-danger">
+                El email ya se encuentra registrado !!!
                 <br>
                 <a th:href="@{/login}"><span>Inicia sesión</span></a>
             </div>

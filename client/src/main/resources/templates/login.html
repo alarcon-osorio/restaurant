@@ -19,14 +19,21 @@
 
         <!-- Login Form -->
         <form th:action="@{/login}" method="post" class="form login">
-            <input type="text" name="username"  class="fadeIn second" placeholder="Username" required>
+            <input type="text" name="username"  class="fadeIn second" placeholder="Username@email.com" required>
             <input type="password" name="password"  class="fadeIn third"  placeholder="Password" required>
 
-            <div class="" th:if="${param.error}">
-                Usuario o contraseña incorrectos...
+
+            <div class="container" th:if="${param.error}">
+                <div class="alert alert-danger">
+                    Usuario o contraseña incorrectos intenta con usuario@correo.com
+                    <br>
+                    <a th:href="@{/register}" type="button">Haz click aqui si no tienes cuenta</a>
+                </div>
             </div>
-            <div class="text--center" th:if="${param.logout}">
-                Te has desconectado.
+            <div class="container" th:if="${param.logout}">
+                <div class="alert alert-danger">
+                    Te has desconectado
+                </div>
             </div>
 
             <div class="form__field">
