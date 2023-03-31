@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -65,6 +66,10 @@ public class MenuWeb {
         return "viewMenuPersonal";
     }
 
+    @PostMapping(value = "/save_personal_menu")
+    public String SavePersonalMenu(Model model){
+        return "redirect:/viewMenuPersonal";
+    }
 
 
 }

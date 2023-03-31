@@ -13,8 +13,9 @@
             </div>
             <div class="btn-group" style="width:100%">
                 <a th:href="@{/menuPersonal}" class="btn btn-success">Personalizar orden</a>
-                <a th:href="@{/orders?table=0}" class="btn btn-danger">Ver mi orden</a>
-                <a th:href="@{/menu}" class="btn btn-outline-warning">Todos</a>
+                <a th:href="@{/menuPersonal}" class="btn btn-info">Mi menú</a>
+                <a th:href="@{/orders?table=0}" class="btn btn-danger">Mi orden</a>
+                <a th:href="@{/menu}" class="btn btn-outline-warning">Menu Gral</a>
                 <a th:each="menuTypeList : ${menuTypeList}" th:href="@{/type_menu(id=${menuTypeList.id})}"  th:text="${menuTypeList.name}" class="btn btn-outline-success"></a>
             </div>
             <br>
