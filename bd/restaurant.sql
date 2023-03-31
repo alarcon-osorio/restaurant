@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 22-03-2023 a las 00:39:57
+-- Servidor: localhost
+-- Tiempo de generación: 31-03-2023 a las 05:40:16
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.0.25
 
@@ -43,7 +43,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id_client`, `name`, `lastname`, `username`, `email`, `role`, `password`, `enabled`) VALUES
-(1, 'Jeison', 'Alarcon', 'jalarcono', 'jalarcono@udistrital.edu.co', 'client', '$2a$10$6vUBr8eTggphsVfOkVBno.6uX8gvwqbfxtS.l5LzELT0VQFFjd.OG', 1);
+(1, 'Jeison', 'Alarcon', 'jalarcono@udistrital.edu.co', 'jalarcono@udistrital.edu.co', 'client', '$2a$10$Sh2nGMhmzBKy1PMZVk0/su0mPiP6CDSjvjn952M9/HxDkoYYhTqA2', 1);
 
 -- --------------------------------------------------------
 
@@ -143,6 +143,132 @@ CREATE TABLE `menu_optional` (
   `option4` varchar(255) NOT NULL,
   `option5` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu_personal_drinks`
+--
+
+CREATE TABLE `menu_personal_drinks` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `menu_personal_drinks`
+--
+
+INSERT INTO `menu_personal_drinks` (`id`, `name`) VALUES
+(1, 'Gaseosa');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu_personal_entries`
+--
+
+CREATE TABLE `menu_personal_entries` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `menu_personal_entries`
+--
+
+INSERT INTO `menu_personal_entries` (`id`, `name`) VALUES
+(1, 'Papas Fritas');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu_personal_options`
+--
+
+CREATE TABLE `menu_personal_options` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `menu_personal_options`
+--
+
+INSERT INTO `menu_personal_options` (`id`, `name`) VALUES
+(1, 'Arroz Blanco');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu_personal_principles`
+--
+
+CREATE TABLE `menu_personal_principles` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `menu_personal_principles`
+--
+
+INSERT INTO `menu_personal_principles` (`id`, `name`) VALUES
+(1, 'Lentejas');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu_personal_proteins`
+--
+
+CREATE TABLE `menu_personal_proteins` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `menu_personal_proteins`
+--
+
+INSERT INTO `menu_personal_proteins` (`id`, `name`) VALUES
+(1, 'Pollo');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu_personal_salad`
+--
+
+CREATE TABLE `menu_personal_salad` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `menu_personal_salad`
+--
+
+INSERT INTO `menu_personal_salad` (`id`, `name`) VALUES
+(1, 'Sin Ensalada');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu_personal_vegetables`
+--
+
+CREATE TABLE `menu_personal_vegetables` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `menu_personal_vegetables`
+--
+
+INSERT INTO `menu_personal_vegetables` (`id`, `name`) VALUES
+(1, 'Sin Vegetales');
 
 -- --------------------------------------------------------
 
@@ -281,7 +407,8 @@ CREATE TABLE `service_order` (
 INSERT INTO `service_order` (`id`, `id_menu`, `id_menu_type`, `number_order`, `name`, `description`, `observations`, `accompaniment`, `option1`, `option2`, `option3`, `option4`, `option5`, `drinks_includes`, `table_number`, `image`, `ordered`, `prepare`, `prepared`, `served`, `close`, `cancel`, `price`, `cant`, `discount`, `payment_method`, `time`) VALUES
 (21, 6, 1, NULL, 'Espagueti Italiano', 'Especial de Italia', 'Que tenga Mucha albondiga', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 1, 1, 1, 1, 1, 0, '20000', 1, 10, 'Efectivo', '2023-03-17 22:17:55'),
 (22, 6, 1, NULL, 'Espagueti Italiano', 'Especial de Italia', 'mucho queso', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 1, 1, 1, 1, 1, 0, '20000', 1, 10, 'Efectivo', '2023-03-17 22:26:24'),
-(23, 6, 1, NULL, 'Espagueti Italiano', 'Especial de Italia', 'Con mas queso', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 100, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 1, 1, 1, 1, 1, 0, '20000', 1, 10, 'Efectivo', '2023-03-18 00:11:39');
+(23, 6, 1, NULL, 'Espagueti Italiano', 'Especial de Italia', 'Con mas queso', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 100, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 1, 1, 1, 1, 1, 0, '20000', 1, 10, 'Efectivo', '2023-03-18 00:11:39'),
+(24, 6, 1, NULL, 'Espagueti Italiano', 'Especial de Italia', 'Sin Observaciones', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 0, 0, 0, 0, 0, 1, '20000', 1, 0, NULL, '2023-03-22 02:56:04');
 
 -- --------------------------------------------------------
 
@@ -390,6 +517,48 @@ ALTER TABLE `menu_optional`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `menu_personal_drinks`
+--
+ALTER TABLE `menu_personal_drinks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `menu_personal_entries`
+--
+ALTER TABLE `menu_personal_entries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `menu_personal_options`
+--
+ALTER TABLE `menu_personal_options`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `menu_personal_principles`
+--
+ALTER TABLE `menu_personal_principles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `menu_personal_proteins`
+--
+ALTER TABLE `menu_personal_proteins`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `menu_personal_salad`
+--
+ALTER TABLE `menu_personal_salad`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `menu_personal_vegetables`
+--
+ALTER TABLE `menu_personal_vegetables`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `menu_type`
 --
 ALTER TABLE `menu_type`
@@ -451,7 +620,7 @@ ALTER TABLE `warehouse_type_product`
 -- AUTO_INCREMENT de la tabla `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `discount`
@@ -490,6 +659,48 @@ ALTER TABLE `menu_optional`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT de la tabla `menu_personal_drinks`
+--
+ALTER TABLE `menu_personal_drinks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `menu_personal_entries`
+--
+ALTER TABLE `menu_personal_entries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `menu_personal_options`
+--
+ALTER TABLE `menu_personal_options`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `menu_personal_principles`
+--
+ALTER TABLE `menu_personal_principles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `menu_personal_proteins`
+--
+ALTER TABLE `menu_personal_proteins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `menu_personal_salad`
+--
+ALTER TABLE `menu_personal_salad`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `menu_personal_vegetables`
+--
+ALTER TABLE `menu_personal_vegetables`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `menu_type`
 --
 ALTER TABLE `menu_type`
@@ -523,7 +734,7 @@ ALTER TABLE `restaurant_table`
 -- AUTO_INCREMENT de la tabla `service_order`
 --
 ALTER TABLE `service_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
