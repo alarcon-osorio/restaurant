@@ -27,19 +27,19 @@
         </div>
     </div>
     <div class="row filtered">
-        <div th:each="menu : ${menu}" class="col-md-4 mb-4">
+        <div th:each="menuPersonal : ${menuPersonal}" class="col-md-4 mb-4">
             <div class="card">
-                <a th:href="@{/accompaniment(menuId=${menu.id})}">
-                    <img th:src="${menu.image}" class="card-img-top" alt="...">
+                <a th:href="@{/accompaniment(menuId=${menuPersonal.id})}">
+                    <!--<img th:src="${menu.image}" class="card-img-top" alt="...">-->
                 </a>
                 <div class="card-body">
-                    <h4 th:text="${menu.name}" class="card-title"></h4>
+                    <h4 th:text="${menuPersonal.mp_name_dish}" class="card-title"></h4>
 
-                    <h5 th:text="'$' + ${#numbers.formatDecimal(menu.price, 0, 'COMMA', 0, 'POINT')}" class="card-title"></h5>
-                    <h6 th:text="${menu.description}" ></h6>
+                    <!--<h5 th:text="'$' + ${#numbers.formatDecimal(menu.price, 0, 'COMMA', 0, 'POINT')}" class="card-title"></h5>-->
+                    <h6 th:text="${menuPersonal.mp_observations}" ></h6>
                 </div>
                 <div class="card-footer text-muted">
-                    <a th:href="@{/accompaniment(menuId=${menu.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>
+                   <!-- <a th:href="@{/accompaniment(menuId=${menu.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>-->
                 </div>
             </div>
         </div>

@@ -14,26 +14,23 @@
             </div>
             <div class="btn-group" style="width:100%">
                 <a th:href="@{/menu}" class="btn btn-outline-danger">Volver al Menú</a>
-                <!--<a th:href="@{/orders?table=0}" class="btn btn-outline-warning">Todo</a>
-                <a th:each="tableNumberList : ${tableNumberList}" th:href="@{/orders(table=${tableNumberList})}" th:text="'Mesa ' + ${tableNumberList}" class="btn btn-outline-success"></a>-->
+                <a th:with="name='jalarcono@udistrital.edu.co'" th:href="${menuPersonalView} + '/' + ${name}" class="btn btn-info">Mis preferencias</a>
             </div>
         </div>
     </div>
 
     <div class="container mt-4 vj-destacados">
         <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Exito! </strong>Preferencia guardada <a th:href="'/orders?table=0'">Ver mis preferencias</a><a href="/menu">  /  Volver al Menú</a>.
+            <strong>Exito! </strong>Preferencia guardada <a th:href="'/menuPersonalView'">Mis preferencias</a><a href="/menu">  /  Menú General</a>.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="row">
             <div class="col-md-12  mb-4">
-                <form th:action="@{/save_personal_menu}" method="POST">
+                <form th:action="@{/menuPersonalSave}" method="POST">
                     <div class="card">
                         <img src="https://img.freepik.com/foto-gratis/mesa-vista-superior-llena-deliciosa-composicion-alimentos_23-2149141352.jpg" class="card-img-top" alt="...">
-
-
                         <div class="card-body">
 
                             <div class="form-group">
@@ -45,74 +42,74 @@
                                 <label class="form-label">Tipo de Menu</label>
                                 <select class="form-control" name="id_menu_type" required>
                                     <option value="">Seleccione...</option>
-                                    <option ></option>
+                                    <option th:each="menuTypeList : ${menuTypeList}" th:value="${menuTypeList.id}" th:text="${menuTypeList.name}"></option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Nombre del plato</label>
-                                <input class="form-control" type="text" name="observations">
+                                <input class="form-control" type="text" name="mp_name_dish">
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Opciones incluidas</label>
-                                <select class="form-control" name="options" required>
+                                <select class="form-control" name="mp_options" required>
                                     <option value="">Seleccione...</option>
-                                    <option ></option>
+                                    <option th:each="menuPersonalFormOptions : ${menuPersonalFormOptions}" th:value="${menuPersonalFormOptions.id}" th:text="${menuPersonalFormOptions.name}"></option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Principios</label>
-                                <select class="form-control" name="principle" required>
+                                <select  class="form-control" name="mp_principles" required>
                                     <option value="">Seleccione...</option>
-                                    <option ></option>
+                                    <option th:each="menuPersonalFormPrinciples : ${menuPersonalFormPrinciples}" th:value="${menuPersonalFormPrinciples.id}" th:text="${menuPersonalFormPrinciples.name}"></option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Proteinas</label>
-                                <select class="form-control" name="proteins" required>
+                                <select class="form-control" name="mp_proteins" required>
                                     <option value="">Seleccione...</option>
-                                    <option ></option>
+                                    <option th:each="menuPersonalFormProteins : ${menuPersonalFormProteins}" th:value="${menuPersonalFormProteins.id}" th:text="${menuPersonalFormProteins.name}"></option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Entradas</label>
-                                <select class="form-control" name="entries" required>
+                                <select class="form-control" name="mp_entries" required>
                                     <option value="">Seleccione...</option>
-                                    <option ></option>
+                                    <option th:each="menuPersonalFormEntries : ${menuPersonalFormEntries}" th:value="${menuPersonalFormEntries.id}" th:text="${menuPersonalFormEntries.name}"></option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Vegetales</label>
-                                <select class="form-control" name="entries" required>
+                                <select class="form-control" name="mp_vegetables" required>
                                     <option value="">Seleccione...</option>
-                                    <option ></option>
+                                    <option th:each="menuPersonalFormVegetables : ${menuPersonalFormVegetables}" th:value="${menuPersonalFormVegetables.id}" th:text="${menuPersonalFormVegetables.name}"></option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Ensalada</label>
-                                <select class="form-control" name="entries" required>
+                                <select class="form-control" name="mp_salad" required>
                                     <option value="">Seleccione...</option>
-                                    <option ></option>
+                                    <option th:each="menuPersonalFormSalad : ${menuPersonalFormSalad}" th:value="${menuPersonalFormSalad.id}" th:text="${menuPersonalFormSalad.name}"></option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Bebida</label>
-                                <select class="form-control" name="entries" required>
+                                <select class="form-control" name="mp_drinks" required>
                                     <option value="">Seleccione...</option>
-                                    <option ></option>
+                                    <option th:each="menuPersonalFormDrinks : ${menuPersonalFormDrinks}" th:value="${menuPersonalFormDrinks.id}" th:text="${menuPersonalFormDrinks.name}"></option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Obervaciones</label>
-                                <textarea class="form-control" type="text" name="entry"></textarea>
+                                <textarea class="form-control" type="text" name="mp_observations"></textarea>
                             </div>
 
 
@@ -138,6 +135,7 @@
     function asignUser() {
         var username = document.getElementById("name").innerHTML;
         document.getElementById("usernameClient").value = username;
+        document.getElementById("usernameClientView").innerHtml = username;
     }
 });
 </script>

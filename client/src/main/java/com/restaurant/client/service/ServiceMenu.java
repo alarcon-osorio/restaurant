@@ -29,4 +29,8 @@ public class ServiceMenu {
         return repositoryMenu.findbyMenuTypeId(id);
     }
 
+    public Menu getMenuPersonalByIdUser(long id){
+        return repositoryMenu.findById(id).get();
+    }
+
 }
