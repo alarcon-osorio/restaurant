@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ClientsWeb {
 
     @Autowired
-    ServiceClients serviceClients;
+    public ServiceClients serviceClients;
 
     @Autowired
-    PasswordEncoder passwordEncoder;
+    public PasswordEncoder passwordEncoder;
 
 
     @RequestMapping(value = "/register")

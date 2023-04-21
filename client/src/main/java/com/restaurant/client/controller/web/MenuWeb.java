@@ -19,28 +19,28 @@ import java.util.List;
 public class MenuWeb {
 
     @Autowired
-    ServiceMenu serviceMenu;
+    public ServiceMenu serviceMenu;
 
     @Autowired
-    ServiceMenuType serviceMenuType;
+    public ServiceMenuType serviceMenuType;
 
     @Autowired
-    ServiceOrders serviceOrders;
+    public ServiceOrders serviceOrders;
 
     @Autowired
-    ServiceMenuAccompaniment serviceMenuAccompaniment;
+    public ServiceMenuAccompaniment serviceMenuAccompaniment;
 
     @Autowired
-    ServiceMenuIncludes serviceMenuIncludes;
+    public ServiceMenuIncludes serviceMenuIncludes;
 
     @Autowired
-    ServiceMenuOptional serviceMenuOptional;
+    public ServiceMenuOptional serviceMenuOptional;
 
     @Autowired
-    ServiceMenuPersonalForm serviceMenuPersonalForm;
+    public ServiceMenuPersonalForm serviceMenuPersonalForm;
 
     @Autowired
-    ServiceMenuPersonalView serviceMenuPersonalView;
+    public ServiceMenuPersonalView serviceMenuPersonalView;
 
     @GetMapping(value = "/menu")
     public String menu(Model model){
@@ -94,11 +94,10 @@ public class MenuWeb {
         return "redirect:/menuPersonalForm?success";
     }
 
-    @GetMapping(value = "/menuPersonalView")
-    public String menuPersonalView(Model model){
-        //List<MenuPersonal> menuPersonal = serviceMenuPersonalView.getMenuPersonalByUsername(username);
-        //log.info(menuPersonal.toString());
-        //model.addAttribute("menuPersonal", menuPersonal);
+    @GetMapping(value = "/menuPersonalView/{username}")
+    public String menuPersonalView(Model model, @PathVariable String username){
+        List<MenuPersonal> menuPersonal = serviceMenuPersonalView.getMenuPersonalByUsername(username);
+        model.addAttribute("menuPersonal", menuPersonal);
         model.addAttribute("menuPersonalView", "/menuPersonalView");
         return "menuPersonalView";
     }

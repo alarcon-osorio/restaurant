@@ -28,4 +28,5 @@ public class MenuAccompanimentController {
     @GetMapping(value = "/menu_accompaniment/menu_id/{id}")
     public List<MenuAccompaniment> getMenuAccompanimentMenuId(@PathVariable(name="id") long id){
         return serviceMenuAccompaniment.getMenuAccompanimentMenuId(id);
-    }}
+    }
+}

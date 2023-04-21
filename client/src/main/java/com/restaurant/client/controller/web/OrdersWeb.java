@@ -20,13 +20,13 @@ import java.util.List;
 public class OrdersWeb {
 
     @Autowired
-    ServiceOrders serviceOrders;
+    public ServiceOrders serviceOrders;
 
     @Autowired
-    ServiceMenuAccompaniment serviceMenuAccompaniment;
+    public ServiceMenuAccompaniment serviceMenuAccompaniment;
 
     @Autowired
-    ServiceMenuIncludes serviceMenuIncludes;
+    public ServiceMenuIncludes serviceMenuIncludes;
 
     @Autowired
     ServiceMenuOptional serviceMenuOptional;
@@ -35,9 +35,7 @@ public class OrdersWeb {
     public String orders(Model model, long table, boolean add){
 
         List<ServiceOrder> neatOrderList = serviceOrders.getNeatOrderByTable(table);
-        if(!neatOrderList.isEmpty()){
-            model.addAttribute("disableButton", "ok");
-        }
+
 
         List<String> tableNumberList = serviceOrders.getTableNumber();
         model.addAttribute("tableNumberList", tableNumberList);

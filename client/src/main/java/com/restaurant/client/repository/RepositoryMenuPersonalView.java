@@ -12,4 +12,7 @@ public interface RepositoryMenuPersonalView extends JpaRepository<MenuPersonal, 
 
     @Query(value = "select * from restaurant.menu_personal_view r where r.username = ?1", nativeQuery = true)
     List<MenuPersonal> findByUsername(String username);
+
+    @Query(value = "select * from restaurant.menu_personal_view r where r.id = ?1", nativeQuery = true)
+    MenuPersonal findById(long idMenuPersonal);
 }

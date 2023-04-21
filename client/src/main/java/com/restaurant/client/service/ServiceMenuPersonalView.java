@@ -1,5 +1,6 @@
 package com.restaurant.client.service;
 
+import com.restaurant.client.entity.Menu;
 import com.restaurant.client.entity.menu_personal.MenuPersonal;
 import com.restaurant.client.repository.RepositoryMenuPersonalView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,10 @@ public class ServiceMenuPersonalView {
 
     public List<MenuPersonal> getMenuPersonalList(){
         return repositoryMenuPersonalView.findAll();
+    }
+
+    public MenuPersonal getMenuPersonalById(long id){
+        return repositoryMenuPersonalView.findById(id);
     }
 
     public List<MenuPersonal> getMenuPersonalByUsername(String username){

@@ -3,7 +3,6 @@
 <header th:insert="includes/header :: header"> </header>
 <header th:insert="includes/navbar :: navbar"> </header>
 
-
 <div class="container mt-4 vj-destacados" id="div1">
     <div class="row">
         <div class="col col-md-12 text-left mb-4" sec:authorize="isAuthenticated()">
@@ -12,9 +11,9 @@
                 <img src="https://i.pinimg.com/originals/fb/16/4c/fb164c25c9c83206fef9028a91ebfeb9.gif" width="45" height="45" class="d-inline-block align-top rounded-circle" alt="" loading="lazy">
                 <p class="owner-subtext"><a th:href="@{/logout}">Cerrar Sesión</a></p>
             </div>
-            <div class="btn-group" style="width:100%">
-                <a th:href="@{/menu}" class="btn btn-outline-danger">Volver al Menú</a>
-                <a th:with="name='jalarcono@udistrital.edu.co'" th:href="${menuPersonalView} + '/' + ${name}" class="btn btn-info">Mis preferencias</a>
+            <div class="btn-group" style="width:100%" th:if="${#authorization.expression('isAuthenticated()')}">
+                <a th:href="@{/menu}" class="btn btn-outline-danger">Volver atrás</a>
+                <a th:href="${menuPersonalView} + '/' + ${#authentication.name}" class="btn btn-info">Mis preferencias</a>
             </div>
         </div>
     </div>

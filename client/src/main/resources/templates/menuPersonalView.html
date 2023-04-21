@@ -13,9 +13,8 @@
             </div>
             <div class="btn-group" style="width:100%">
                 <a th:href="@{/menuPersonalForm}" class="btn btn-success">Personalizar orden</a>
-                <a th:href="@{/menuPersonalView}" class="btn btn-info">Mi menú</a>
-                <a th:href="@{/orders?table=0}" class="btn btn-danger">Mi orden</a>
-                <a th:href="@{/menu}" class="btn btn-outline-warning">Menu Gral</a>
+                <a th:href="@{/orders?table=0}" class="btn btn-danger">Mis ordenes</a>
+                <a th:href="@{/menu}" class="btn btn-outline-warning">Menú del dia</a>
                 <!--<a th:each="menuTypeList : ${menuTypeList}" th:href="@{/type_menu(id=${menuTypeList.id})}"  th:text="${menuTypeList.name}" class="btn btn-outline-success"></a>-->
             </div>
             <br>
@@ -39,7 +38,8 @@
                     <h6 th:text="${menuPersonal.mp_observations}" ></h6>
                 </div>
                 <div class="card-footer text-muted">
-                   <!-- <a th:href="@{/accompaniment(menuId=${menu.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>-->
+                    <a th:href="@{/accompaniment(menuIdPersonal=${menuPersonal.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>
+                    <a th:href="@{/accompaniment(menuIdPersonal=${menuPersonal.id})}" th:text="'Eliminar'" class="btn btn-warning"></a>
                 </div>
             </div>
         </div>

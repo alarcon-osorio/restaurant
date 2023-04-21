@@ -21,4 +21,10 @@ public class ServiceMenuPersonalForm {
         return repositoryMenuForm.findMenuPersonalFormByType(type);
     }
 
+    public MenuPersonalForm getMenuPersonalById(String id){
+        return repositoryMenuForm.findByNameId(id);
+    }
+
+
+
 }

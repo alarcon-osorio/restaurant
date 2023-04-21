@@ -14,4 +14,8 @@ public interface RepositoryMenuPersonalForm extends JpaRepository<MenuPersonalFo
 
     @Query(value = "select * from restaurant.menu_personal_form r where r.type = ?1", nativeQuery = true)
     List<MenuPersonalForm> findMenuPersonalFormByType(long type);
+
+    @Query(value = "select * from restaurant.menu_personal_form r where r.id = ?1", nativeQuery = true)
+    MenuPersonalForm findByNameId(String id);
+
 }
