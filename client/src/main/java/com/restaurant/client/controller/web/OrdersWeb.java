@@ -1,13 +1,12 @@
 package com.restaurant.client.controller.web;
 
-import com.restaurant.client.entity.MenuAccompaniment;
-import com.restaurant.client.entity.MenuIncludes;
-import com.restaurant.client.entity.MenuOptional;
-import com.restaurant.client.entity.ServiceOrder;
+import com.restaurant.client.entity.*;
 import com.restaurant.client.service.ServiceMenuAccompaniment;
 import com.restaurant.client.service.ServiceMenuIncludes;
 import com.restaurant.client.service.ServiceMenuOptional;
 import com.restaurant.client.service.ServiceOrders;
+import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+@Slf4j
 @Controller
 public class OrdersWeb {
 
@@ -148,7 +148,27 @@ public class OrdersWeb {
     }
 
     @RequestMapping(value = "/saveOrder")
-    public String saveOrder(ServiceOrder serviceOrder){
+    public String saveOrder(ServiceOrder serviceOrder, String username){
+        log.info("Objeto --->" + serviceOrder);
+
+        if (serviceOrder.getObservations().isEmpty()){
+            serviceOrder.setObservations("Sin Observaciones");
+        }
+
+        serviceOrder.setOrdered(0);
+        serviceOrder.setPrepared(0);
+        serviceOrder.setPrepare(0);
+        serviceOrder.setServed(0);
+        serviceOrder.setClose(0);
+        serviceOrder.setCancel(0);
+        serviceOrder.setCancel(0);
+        serviceOrder.setDiscount(0);
+        serviceOrders.saveOrder(serviceOrder);
+        return "redirect:/orders?table=0&success";
+    }
+
+    @RequestMapping(value = "/saveOrderPersonal")
+    public String saveOrderPersonal(ServiceOrder serviceOrder){
         if (serviceOrder.getObservations().isEmpty()){
             serviceOrder.setObservations("Sin Observaciones");
         }

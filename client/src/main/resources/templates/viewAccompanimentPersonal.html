@@ -15,54 +15,50 @@
             <form th:action="@{/saveOrder}" method="POST">
             <div class="card">
                 <!--<img src="" class="card-img-top" alt="...">-->
-                <div class="card-footer">
+                <div class="card-footer" th:if="${#authorization.expression('isAuthenticated()')}">
                     <h4 th:text="'Resumen del plato: ' + ${menu_name}" class="card-title"></h4>
-                    <input type="hidden" th:value="${menu_id}" name="id">
-                    <input type="hidden" th:value="${id_menu_type}" name="id_menu_type">
-                    <input type="hidden" th:value="${name_dish}" name="name_dish">
-                    <input type="hidden" th:value="${options}" name="options">
-                    <input type="hidden" th:value="${principles}" name="principles">
-                    <input type="hidden" th:value="${proteins}" name="proteins">
-                    <input type="hidden" th:value="${entries}" name="entries">
-                    <input type="hidden" th:value="${vegetables}" name="vegetables">
-                    <input type="hidden" th:value="${salad}" name="salad">
-                    <input type="hidden" th:value="${drinks}" name="drinks">
+                    <input type="hidden" th:value="${id_menuType}" name="idMenuType">
+                    <input type="hidden" value="../images/personalized.png" name="image">
+                    <input type="hidden" th:value="${menu_name}" name="name">
+                    <input type="hidden" value="Plato personalizado" name="description">
+                    <input type="hidden" th:value="${price}" name="price">
+                    <input type="hidden" th:value="${#authentication.name}" name="username">
                 </div>
                 <div class="card-body">
 
                     <div class="form-group">
-                        <label class="form-label">Opciones</label>
-                        <input class="form-control" type="text" th:value="${optionsName}" readonly>
+                        <label class="form-label">Opción incluida</label>
+                        <input class="form-control" type="text" th:value="${optionsName}" name="options" readonly>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Principios</label>
-                        <input class="form-control" type="text" th:value="${principles}" readonly>
+                        <label class="form-label">Principio</label>
+                        <input class="form-control" type="text" th:value="${principlesName}" name="principles" readonly>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Proteinas</label>
-                        <input class="form-control" type="text" th:value="${proteins}" readonly>
+                        <label class="form-label">Proteina</label>
+                        <input class="form-control" type="text" th:value="${proteinsName}" name="proteins" readonly>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Entrada</label>
-                        <input class="form-control" type="text" th:value="${entries}" readonly>
+                        <input class="form-control" type="text" th:value="${entriesName}" name="entries" readonly>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Vegatales</label>
-                        <input class="form-control" type="text" th:value="${vegetables}"  readonly>
+                        <input class="form-control" type="text" th:value="${vegetablesName}" name="vegetables" readonly>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Ensalada</label>
-                        <input class="form-control" type="text" th:value="${salad}"  readonly>
+                        <input class="form-control" type="text" th:value="${saladName}" name="salad" readonly>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Bebida</label>
-                        <input class="form-control" type="text" th:value="${drinks}" readonly>
+                        <input class="form-control" type="text" th:value="${drinksName}" name="drinks" readonly>
                     </div>
 
                     <div class="form-group">

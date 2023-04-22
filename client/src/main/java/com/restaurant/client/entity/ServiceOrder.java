@@ -28,6 +28,16 @@ public class ServiceOrder {
     private String option4;
     private String option5;
     private String drinksIncludes;
+
+    //MenuPersonalized
+    private String options;
+    private String principles;
+    private String proteins;
+    private String entries;
+    private String vegetables;
+    private String salad;
+    private String drinks;
+
     private String price;
     private long cant;
     private long tableNumber;

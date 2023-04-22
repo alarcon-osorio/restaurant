@@ -27,8 +27,8 @@
         Sin pedidos para procesar
     </div>
 
-    <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Exito!</strong> Pedido ordenado exitosamente...<a href="/menu">  /  Volver al Menú</a>.
+    <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Exito!</strong> Pedido ordenado exitosamente....
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>

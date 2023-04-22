@@ -38,6 +38,9 @@ public class AccompanimentWeb {
     @Autowired
     ServiceMenuPersonalForm serviceMenuPersonalForm;
 
+    @Autowired
+    ServiceMenuPrice serviceMenuPrice;
+
     @GetMapping(value = "/accompaniment")
     public String accompaniment(Model model, @Nullable Long menuId, @Nullable Long menuIdPersonal, String table, boolean add){
 
@@ -46,7 +49,13 @@ public class AccompanimentWeb {
             log.info("MenuIdPersonal" + menuIdPersonal);
             MenuPersonal menuPersonal = serviceMenuPersonalView.getMenuPersonalById(menuIdPersonal);
             MenuPersonalForm optionsName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_options());
-            log.info("----- " + optionsName);
+            MenuPersonalForm principlesName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_principles());
+            MenuPersonalForm proteinsName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_proteins());
+            MenuPersonalForm entriesName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_entries());
+            MenuPersonalForm vegetablesName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_vegetables());
+            MenuPersonalForm saladName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_salad());
+            MenuPersonalForm drinksName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_drinks());
+            MenuPrice price = serviceMenuPrice.getMenuPrice(1);
             List<RestaurantTable> listRestaurantTable = serviceRestaurantTable.getRestaurantTableList();
 
             if(add){
@@ -61,12 +70,19 @@ public class AccompanimentWeb {
             model.addAttribute("options", menuPersonal.getMp_options());
             model.addAttribute("optionsName", optionsName.getName());
             model.addAttribute("principles", menuPersonal.getMp_principles());
+            model.addAttribute("principlesName", principlesName.getName());
             model.addAttribute("proteins", menuPersonal.getMp_proteins());
+            model.addAttribute("proteinsName", proteinsName.getName());
             model.addAttribute("entries", menuPersonal.getMp_entries());
+            model.addAttribute("entriesName", entriesName.getName());
             model.addAttribute("vegetables", menuPersonal.getMp_vegetables());
+            model.addAttribute("vegetablesName", vegetablesName.getName());
             model.addAttribute("salad", menuPersonal.getMp_salad());
+            model.addAttribute("saladName", saladName.getName());
             model.addAttribute("drinks", menuPersonal.getMp_drinks());
+            model.addAttribute("drinksName", drinksName.getName());
             model.addAttribute("observations", menuPersonal.getMp_observations());
+            model.addAttribute("price", price.getValue());
 
             return "viewAccompanimentPersonal";
         }
