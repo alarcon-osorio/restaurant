@@ -30,4 +30,8 @@ public class ServiceMenuPersonalView {
         repositoryMenuPersonalView.save(menuPersonal);
     }
 
+    public void deleteMenuPersonal(long menuIdPersonal){
+        repositoryMenuPersonalView.deleteById(menuIdPersonal);
+    }
+
 }

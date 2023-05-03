@@ -20,7 +20,7 @@
 
     <div class="container mt-4 vj-destacados">
         <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Exito! </strong>Preferencia guardada <a th:href="'/menuPersonalView'">Mis preferencias</a><a href="/menu">  /  Menú General</a>.
+            <strong>Exito! </strong>Preferencia guardada <a th:href="${menuPersonalView} + '/' + ${#authentication.name}">Mis preferencias</a><a href="/menu">  /  Menú General</a>.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -33,25 +33,25 @@
                         <div class="card-body">
 
                             <div class="form-group">
-                                <label class="form-label">Username</label>
-                                <input class="form-control" type="text" id="usernameClient" name="username">
+                                <input class="form-control" type="hidden" id="usernameClient" name="username">
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Tipo de Menu</label>
                                 <select class="form-control" name="id_menu_type" required>
                                     <option value="">Seleccione...</option>
-                                    <option th:each="menuTypeList : ${menuTypeList}" th:value="${menuTypeList.id}" th:text="${menuTypeList.name}"></option>
+                                    <!--<option th:each="menuTypeList : ${menuTypeList}" th:value="${menuTypeList.id}" th:text="${menuTypeList.name}"></option>-->
+                                    <option value="1">Personalizado</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Nombre del plato</label>
-                                <input class="form-control" type="text" name="mp_name_dish">
+                                <input class="form-control" type="text" name="mp_name_dish" value="Plato Personalizado">
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label">Opciones incluidas</label>
+                                <label class="form-label">Cereal incluido</label>
                                 <select class="form-control" name="mp_options" required>
                                     <option value="">Seleccione...</option>
                                     <option th:each="menuPersonalFormOptions : ${menuPersonalFormOptions}" th:value="${menuPersonalFormOptions.id}" th:text="${menuPersonalFormOptions.name}"></option>

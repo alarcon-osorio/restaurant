@@ -9,7 +9,10 @@ import org.jetbrains.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -42,9 +45,9 @@ public class AccompanimentWeb {
     ServiceMenuPrice serviceMenuPrice;
 
     @GetMapping(value = "/accompaniment")
-    public String accompaniment(Model model, @Nullable Long menuId, @Nullable Long menuIdPersonal, String table, boolean add){
+    public String accompaniment(Model model, @Nullable Long menuId, @Nullable Long menuIdPersonal, String table, boolean add) {
 
-        if (menuId == null){
+        if (menuId == null) {
             //Se va por MenuPersonal
             log.info("MenuIdPersonal" + menuIdPersonal);
             MenuPersonal menuPersonal = serviceMenuPersonalView.getMenuPersonalById(menuIdPersonal);
@@ -58,7 +61,7 @@ public class AccompanimentWeb {
             MenuPrice price = serviceMenuPrice.getMenuPrice(1);
             List<RestaurantTable> listRestaurantTable = serviceRestaurantTable.getRestaurantTableList();
 
-            if(add){
+            if (add) {
                 model.addAttribute("table", table);
                 model.addAttribute("success", "ok");
             }
@@ -94,19 +97,19 @@ public class AccompanimentWeb {
         List<RestaurantTable> listRestaurantTable = serviceRestaurantTable.getRestaurantTableList();
         List<MenuIncludes> menuIncludesList = serviceMenuIncludes.getMenuIncludesList();
         List<MenuOptional> menuOptionalList = serviceMenuOptional.getMenuOptionalByIdMenu(menuId);
-        if  (!menuIncludeByIdMenu.isEmpty()){
+        if (!menuIncludeByIdMenu.isEmpty()) {
             model.addAttribute("menuIncludes", "ok");
             model.addAttribute("menuIncludeByIdMenu", menuIncludeByIdMenu);
         }
-        if  (!menuAccompanimentIdMenu.isEmpty()){
+        if (!menuAccompanimentIdMenu.isEmpty()) {
             model.addAttribute("menuAccompaniment", "ok");
             model.addAttribute("menuAccompanimentIdMenu", menuAccompanimentIdMenu);
         }
-        if (!menuOptionalList.isEmpty()){
+        if (!menuOptionalList.isEmpty()) {
             model.addAttribute("options", "ok");
             model.addAttribute("menuOptionalList", menuOptionalList);
         }
-        if(add){
+        if (add) {
             model.addAttribute("table", table);
             model.addAttribute("success", "ok");
         }
@@ -121,5 +124,11 @@ public class AccompanimentWeb {
         return "viewAccompaniment";
     }
 
+    @GetMapping(value = "/deleteAccompaniment")
+    public String deleteAccompaniment(Model model, @RequestParam Long menuIdPersonal, @RequestParam String username) {
+        log.info("menuId " + menuIdPersonal + " username " + username );
+        serviceMenuPersonalView.deleteMenuPersonal(menuIdPersonal);
+        return "redirect:/menuPersonalView/" + username;
+    }
 
 }

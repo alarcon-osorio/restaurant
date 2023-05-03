@@ -39,8 +39,30 @@
                 </div>
                 <div class="card-footer text-muted">
                     <a th:href="@{/accompaniment(menuIdPersonal=${menuPersonal.id})}" th:text="'Seleccionar'" class="btn btn-primary"></a>
-                    <a th:href="@{/accompaniment(menuIdPersonal=${menuPersonal.id})}" th:text="'Eliminar'" class="btn btn-warning"></a>
+                    <button type="button" class="btn btn-danger" data-target="#deleteModal" data-toggle="modal">Eliminar</button>
                 </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="deleteModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>¿Seguro que deseas eliminar el menu personalizado?</p>
+                            </div>
+                            <div class="modal-footer" th:if="${#authorization.expression('isAuthenticated()')}">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                <a th:href="@{/deleteAccompaniment(menuIdPersonal=${menuPersonal.id},username=${#authentication.name})}" th:text="'Si'" class="btn btn-danger"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

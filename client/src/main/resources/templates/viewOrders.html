@@ -11,10 +11,15 @@
                 <img src="https://i.pinimg.com/originals/fb/16/4c/fb164c25c9c83206fef9028a91ebfeb9.gif" width="45" height="45" class="d-inline-block align-top rounded-circle" alt="" loading="lazy">
                 <p class="owner-subtext"><a th:href="@{/logout}">Cerrar Sesión</a></p>
             </div>
-            <div class="btn-group" style="width:100%">
+            <div class="btn-group" style="width:100%" th:if="${#authorization.expression('isAuthenticated()')}">
+                <!--
                 <a th:href="@{/menu}" class="btn btn-outline-danger">Menú</a>
                 <a th:href="@{/orders?table=0}" class="btn btn-outline-warning">Todo</a>
-                <a th:each="tableNumberList : ${tableNumberList}" th:href="@{/orders(table=${tableNumberList})}" th:text="'Mesa ' + ${tableNumberList}" class="btn btn-outline-success"></a>
+                 <a th:each="tableNumberList : ${tableNumberList}" th:href="@{/orders(table=${tableNumberList})}" th:text="'Mesa ' + ${tableNumberList}" class="btn btn-outline-success"></a>
+                -->
+                <a th:href="@{/menuPersonalForm}" class="btn btn-success">Personalizar orden</a>
+                <a th:href="${menuPersonalView} + '/' + ${#authentication.name}" class="btn btn-info">Mis preferencias</a>
+                <a th:href="@{/menu}" class="btn btn-outline-warning">Menú del dia</a>
             </div>
         </div>
     </div>
