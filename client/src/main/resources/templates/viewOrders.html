@@ -63,37 +63,15 @@
                     </div>
                     <div class="btn-group" th:if="${empty} != empty" style="margin-left: 10px;">
                         <a th:if="${serviceOrderList.ordered} == 0" th:href="@{/order_table(id=${serviceOrderList.id}, table=0, username=${#authentication.name})}" class="btn btn-outline-success">Ordenar Pedido</a>
-                        <a th:if="${serviceOrderList.ordered} == 0" th:href="@{/edit_order_table(id=${serviceOrderList.id})}" class="btn btn-outline-info">Editar Pedido</a>
-                        <!--<a th:if="${serviceOrderList.ordered} == 0" th:href="@{/cancel_order_table(id=${serviceOrderList.id}, username=${#authentication.name})}" class="btn btn-outline-danger">Cancelar Pedido</a>-->
-                        <button th:if="${serviceOrderList.ordered} == 0" type="button" class="btn btn-outline-danger" data-target="#cancelModal1" data-toggle="modal">Cancelar Pedido</button>
+                        <a th:if="${serviceOrderList.ordered} == 0 and ${serviceOrderList.idMenuType} != 2" th:href="@{/edit_order_table(id=${serviceOrderList.id})}" class="btn btn-outline-info">Editar Pedido</a>
+                        <a th:if="${serviceOrderList.ordered} == 0 and ${serviceOrderList.idMenuType} == 2" th:href="@{/edit_order_table_restaurant(id=${serviceOrderList.id})}" class="btn btn-outline-info">Editar Pedido</a>
+                        <button th:if="${serviceOrderList.ordered} == 0" data-toggle="modal" data-target="#cancelModal1" th:data-parametro="${serviceOrderList.id}" onclick="openModal(this)" class="btn btn-outline-danger">Cancelar Pedido</button>
                         <a th:if="${serviceOrderList.ordered} == 1 and ${serviceOrderList.prepare} == 0" th:href="@{/orders?table=0}" class="btn btn-outline-danger"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido en Cocina ...</a>
                         <a th:if="${serviceOrderList.ordered} == 1 and ${serviceOrderList.prepare} == 1  and ${serviceOrderList.prepared} == 0" th:href="@{/orders?table=0}" class="btn btn-outline-warning"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido en preparación ...</a>
                         <a th:if="${serviceOrderList.prepared} == 1 and ${serviceOrderList.served} == 0" th:href="@{/served(id=${serviceOrderList.id},table=0)}" class="btn btn-outline-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido Listo -> Servir en la mesa</a>
                         <a th:if="${serviceOrderList.served} == 1" href="#" class="btn btn-outline-success">Servido en la mesa</a>
                     </div>
                 </div>
-
-                <!-- Modal -->
-                <div class="modal fade" id="cancelModal1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="cancelModalLabel1">Cencelar Pedido</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>¿Seguro que deseas cancelar tu pedido?</p>
-                            </div>
-                            <div class="modal-footer" th:if="${#authorization.expression('isAuthenticated()')}">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                <a th:if="${serviceOrderList.ordered} == 0" th:href="@{/cancel_order_table(id=${serviceOrderList.id}, username=${#authentication.name})}" th:text="'Si'" class="btn btn-danger"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
 
@@ -133,9 +111,9 @@
                     </div>
                     <div class="btn-group" th:if="${empty} != ok" style="margin-left: 10px;">
                         <a th:if="${serviceOrdersByTableNumber.ordered} == 0" th:href="@{/order_table(id=${serviceOrdersByTableNumber.id},table=${table}, add='true', username=${#authentication.name})}" class="btn btn-outline-success">Ordenar Pedido</a>
-                        <a th:if="${serviceOrdersByTableNumber.ordered} == 0" th:href="@{/edit_order_table(id=${serviceOrdersByTableNumber.id})}" class="btn btn-outline-info">Editar Pedido</a>
-                        <!--<a th:if="${serviceOrdersByTableNumber.ordered} == 0" th:href="@{/cancel_order_table(id=${serviceOrdersByTableNumber.id}, username=${#authentication.name})}" class="btn btn-outline-danger">Cancelar Pedido</a>-->
-                        <button th:if="${serviceOrdersByTableNumber.ordered} == 0" type="button" class="btn btn-outline-danger" data-target="#cancelModal2" data-toggle="modal">Cancelar Pedido</button>
+                        <a th:if="${serviceOrdersByTableNumber.ordered} == 0 and ${serviceOrderList.idMenuType} != 2" th:href="@{/edit_order_table(id=${serviceOrdersByTableNumber.id})}" class="btn btn-outline-info">Editar Pedido</a>
+                        <a th:if="${serviceOrdersByTableNumber.ordered} == 0 and ${serviceOrderList.idMenuType} == 2" th:href="@{/edit_order_table_restaurant(id=${serviceOrdersByTableNumber.id})}" class="btn btn-outline-info">Editar Pedido</a>
+                        <button th:if="${serviceOrdersByTableNumber.ordered} == 0" data-toggle="modal" data-target="#cancelModal2" th:data-parametro="${serviceOrdersByTableNumber.id}" onclick="openModal2(this)" class="btn btn-outline-danger">Cancelar Pedido</button>
                         <a th:if="${serviceOrdersByTableNumber.ordered} == 1 and ${serviceOrdersByTableNumber.prepare} == 0" href="#" class="btn btn-outline-danger"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido en Cocina ...</a>
                         <a th:if="${serviceOrdersByTableNumber.ordered} == 1 and ${serviceOrdersByTableNumber.prepare} == 1  and ${serviceOrdersByTableNumber.prepared} == 0" th:href="@{/orders?table=0}" class="btn btn-outline-warning"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido En Preparación ...</a>
                         <a th:if="${serviceOrdersByTableNumber.prepared} == 1 and ${serviceOrdersByTableNumber.served} == 0" th:href="@{/served(id=${serviceOrdersByTableNumber.id},table=${table})}" class="btn btn-outline-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido Listo -> Servir en la mesa</a>
@@ -143,31 +121,51 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="cancelModal2">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="cancelModalLabel2">Cencelar Pedido</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>¿Seguro que deseas cancelar tu pedido?</p>
-                        </div>
-                        <div class="modal-footer" th:if="${#authorization.expression('isAuthenticated()')}">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                            <a th:href="@{/cancel_order_table(id=${serviceOrdersByTableNumber.id}, username=${#authentication.name})}" th:text="'Si'" class="btn btn-danger"></a>
-                        </div>
-                    </div>
+    <!-- Modal -->
+   <div class="modal fade" id="cancelModal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cancelModalLabel1">Cencelar Pedido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Seguro que deseas cancelar tu pedido?</p>
+                </div>
+                <div class="modal-footer" th:if="${#authorization.expression('isAuthenticated()')}">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <a th:href="@{/cancel_order_table} + '?username=' + ${#authentication.name}" th:text="'Si'" class="btn btn-danger"></a>
                 </div>
             </div>
-
         </div>
-
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cancelModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cancelModalLabel2">Cencelar Pedido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Seguro que deseas cancelar tu pedido?</p>
+                </div>
+                <div class="modal-footer" th:if="${#authorization.expression('isAuthenticated()')}">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <a th:href="@{/cancel_order_table} + '?username=' + ${#authentication.name}" th:text="'Si'" class="btn btn-danger"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 <footer th:insert="includes/footer :: footer"> </footer>
 <script>
@@ -178,9 +176,40 @@ $(document).ready(function() {
       }, pageRefresh);
   });
 
-  // Functions
   function refresh() {
   $('#div1').load(location.href + " #div1");
 }
+
+//Function
+function openModal(button) {
+    var parametro = button.dataset.parametro;
+    var mensajeModal = document.getElementById("mensaje-modal1");
+    var link = document.querySelector("a.btn-danger");
+    var url = link.getAttribute("href");
+    var nuevaUrl = url.split("&")[0] + "&id=" + parametro;
+    link.setAttribute("href", nuevaUrl);
+    $('#cancelModal1').modal('show');
+}
+
+function cancelarPedido() {
+    // Código para cancelar el pedido
+    $('#cancelModal1').modal('hide');
+}
+
+
+function openModal2(button) {
+    var parametro = button.dataset.parametro;
+    var link = document.querySelector("a.btn-danger");
+    var url = link.getAttribute("href");
+    var nuevaUrl = url.split("&")[0] + "&id=" + parametro;
+    link.setAttribute("href", nuevaUrl);
+    $('#cancelModal2').modal('show');
+}
+
+function cancelarPedido() {
+    // Código para cancelar el pedido
+    $('#cancelModal2').modal('hide');
+}
+
 </script>
 </html>

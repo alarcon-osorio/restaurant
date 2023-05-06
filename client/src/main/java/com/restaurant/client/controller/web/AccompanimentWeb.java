@@ -185,6 +185,9 @@ public class AccompanimentWeb {
 
     @RequestMapping(value = "/editAccompanimentPersonal")
     public String editAccompanimentPersonal(Model model, MenuPersonal menuPersonal){
+        if (menuPersonal.getMp_observations().isEmpty()){
+           menuPersonal.setMp_observations("Sin Observaciones");
+        }
         serviceMenuPersonalView.saveMenuPersonalView(menuPersonal);
         return "redirect:/accompaniment?menuIdPersonal=" +menuPersonal.getId() + "&edit=true&success";
 

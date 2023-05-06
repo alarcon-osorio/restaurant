@@ -27,6 +27,13 @@
         </div>
     </div>
 
+    <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Exito! </strong>Preferencia guardada
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
     <div th:if="${withOutMenuPersonal} != 'ok'" class="alert alert-info alert-dismissible fade show" role="alert">
         <strong>Siguiente paso! </strong>selecciona la preferencia que deseas ordenar para hoy :)
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -49,6 +56,11 @@
 
                     <!--<h5 th:text="'$' + ${#numbers.formatDecimal(menu.price, 0, 'COMMA', 0, 'POINT')}" class="card-title"></h5>-->
                     <h6 th:text="${menuPersonal.mp_observations}" ></h6>
+                    <h6 th:text="${menuPersonal.mp_options}" ></h6>
+                    <h6 th:text="${menuPersonal.mp_principles}" ></h6>
+                    <h6 th:text="${menuPersonal.mp_proteins}" ></h6>
+                    <h6 th:text="${menuPersonal.mp_entries}" ></h6>
+                    <h6 th:text="${menuPersonalForm.name}" ></h6>
                 </div>
                 <div class="card-footer text-muted">
                     <a th:href="@{/accompaniment(menuIdPersonal=${menuPersonal.id}, edit=false)}" th:text="'Seleccionar'" class="btn btn-success"></a>

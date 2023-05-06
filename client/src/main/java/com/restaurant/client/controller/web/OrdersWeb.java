@@ -138,11 +138,31 @@ public class OrdersWeb {
         return "viewEditOrders";
     }
 
+    @RequestMapping(value = "/edit_order_table_restaurant")
+    public String editOrderTableRestaurant(Model model, @RequestParam long id, boolean edit) {
+        ServiceOrder serviceOrderById = serviceOrders.getServiceOrderById(id);
+
+        List<MenuAccompaniment> menuAccompaniment = serviceMenuAccompaniment.getMenuAccompanimentList();
+        List<MenuIncludes> menuIncludesList = serviceMenuIncludes.getMenuIncludesList();
+        List<MenuOptional> menuOptionalList = serviceMenuOptional.getMenuOptional();
+        List<String> menuAccompanimentDistinct = serviceMenuAccompaniment.getMenuAccompanimentDistinct();
+        if (edit){
+            model.addAttribute("success", "ok");
+        }
+        model.addAttribute("serviceOrderById", serviceOrderById);
+        model.addAttribute("menuAccompaniment", menuAccompaniment);
+        model.addAttribute("menuIncludesList", menuIncludesList);
+        model.addAttribute("menuOptionalList", menuOptionalList);
+        model.addAttribute("menuAccompanimentDistinct", menuAccompanimentDistinct);
+
+        return "viewEditOrdersRestaurant";
+    }
+
     @RequestMapping(value = "/order_table")
     public String orderTable(Model model, @RequestParam long id, @RequestParam long table, boolean add, String username) {
         serviceOrders.saveOrderTableById(id);
         model.addAttribute("orderTable", "ok");
-        return "redirect:/orders?table="  + table + "&add=" + add + "username=" + username;
+        return "redirect:/orders?table="  + table + "&add=" + add + "&username=" + username;
     }
 
     @RequestMapping(value = "/cancel_order_table")
@@ -162,6 +182,11 @@ public class OrdersWeb {
     @RequestMapping(value = "/save_table")
     public String saveTable(Model model, ServiceOrder serviceOrder) {
         serviceOrders.saveOrder(serviceOrder);
+        if (serviceOrder.getIdMenuType() == 2){
+            model.addAttribute("saveTable", "ok");
+            return "redirect:/edit_order_table_restaurant?id=" + serviceOrder.getId() + "&edit=true";
+        }
+
         model.addAttribute("saveTable", "ok");
         return "redirect:/edit_order_table?id=" + serviceOrder.getId() + "&edit=true";
     }
