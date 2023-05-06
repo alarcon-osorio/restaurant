@@ -1,10 +1,9 @@
 package com.restaurant.client.controller.web;
 
 import com.restaurant.client.entity.*;
-import com.restaurant.client.service.ServiceMenuAccompaniment;
-import com.restaurant.client.service.ServiceMenuIncludes;
-import com.restaurant.client.service.ServiceMenuOptional;
-import com.restaurant.client.service.ServiceOrders;
+import com.restaurant.client.entity.menu_personal.MenuPersonal;
+import com.restaurant.client.entity.menu_personal.MenuPersonalForm;
+import com.restaurant.client.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +30,16 @@ public class OrdersWeb {
     @Autowired
     ServiceMenuOptional serviceMenuOptional;
 
-    @RequestMapping(value = "/orders")
-    public String orders(Model model, long table, boolean add){
+    @Autowired
+    ServiceMenuPersonalView serviceMenuPersonalView;
 
+    @Autowired
+    ServiceMenuPersonalForm serviceMenuPersonalForm;
+
+    @RequestMapping(value = "/orders")
+    public String orders(Model model, long table, boolean add, String username){
+
+        log.info("objeto --> " + username);
         List<ServiceOrder> neatOrderList = serviceOrders.getNeatOrderByTable(table);
 
 
@@ -41,7 +47,7 @@ public class OrdersWeb {
         model.addAttribute("tableNumberList", tableNumberList);
 
         if (table == 0){
-            List<ServiceOrder> serviceOrderList = serviceOrders.getServiceOrder();
+            List<ServiceOrder> serviceOrderList = serviceOrders.getServiceOrderByUser(username);
             if (serviceOrderList.isEmpty()){
                 model.addAttribute("withOutOrders", "ok");
             }
@@ -81,7 +87,7 @@ public class OrdersWeb {
             return "viewOrders";
 
         }catch (NullPointerException ex){
-            List<ServiceOrder> serviceOrderList = serviceOrders.getServiceOrder();
+            List<ServiceOrder> serviceOrderList = serviceOrders.getServiceOrderByUser(username);
             model.addAttribute("serviceOrderList", serviceOrderList);
         }
         return "viewOrders";
@@ -97,6 +103,7 @@ public class OrdersWeb {
     @RequestMapping(value = "/edit_order_table")
     public String editOrderTable(Model model, @RequestParam long id, boolean edit) {
         ServiceOrder serviceOrderById = serviceOrders.getServiceOrderById(id);
+
         List<MenuAccompaniment> menuAccompaniment = serviceMenuAccompaniment.getMenuAccompanimentList();
         List<MenuIncludes> menuIncludesList = serviceMenuIncludes.getMenuIncludesList();
         List<MenuOptional> menuOptionalList = serviceMenuOptional.getMenuOptional();
@@ -104,33 +111,52 @@ public class OrdersWeb {
         if (edit){
             model.addAttribute("success", "ok");
         }
+
+        List<MenuPersonalForm> menuPersonalFormOptions = serviceMenuPersonalForm.getMenuPersonalFormByType(1);
+        List<MenuPersonalForm> menuPersonalFormPrinciples = serviceMenuPersonalForm.getMenuPersonalFormByType(2);
+        List<MenuPersonalForm> menuPersonalFormProteins = serviceMenuPersonalForm.getMenuPersonalFormByType(3);
+        List<MenuPersonalForm> menuPersonalFormEntries = serviceMenuPersonalForm.getMenuPersonalFormByType(4);
+        List<MenuPersonalForm> menuPersonalFormVegetables = serviceMenuPersonalForm.getMenuPersonalFormByType(5);
+        List<MenuPersonalForm> menuPersonalFormSalad = serviceMenuPersonalForm.getMenuPersonalFormByType(6);
+        List<MenuPersonalForm> menuPersonalFormDrinks = serviceMenuPersonalForm.getMenuPersonalFormByType(7);
+
+        model.addAttribute("menuPersonalFormOptions", menuPersonalFormOptions);
+        model.addAttribute("menuPersonalFormPrinciples", menuPersonalFormPrinciples);
+        model.addAttribute("menuPersonalFormProteins", menuPersonalFormProteins);
+        model.addAttribute("menuPersonalFormEntries", menuPersonalFormEntries);
+        model.addAttribute("menuPersonalFormVegetables", menuPersonalFormVegetables);
+        model.addAttribute("menuPersonalFormSalad", menuPersonalFormSalad);
+        model.addAttribute("menuPersonalFormDrinks", menuPersonalFormDrinks);
+
         model.addAttribute("serviceOrderById", serviceOrderById);
         model.addAttribute("menuAccompaniment", menuAccompaniment);
         model.addAttribute("menuIncludesList", menuIncludesList);
         model.addAttribute("menuOptionalList", menuOptionalList);
         model.addAttribute("menuAccompanimentDistinct", menuAccompanimentDistinct);
+
+
         return "viewEditOrders";
     }
 
     @RequestMapping(value = "/order_table")
-    public String orderTable(Model model, @RequestParam long id, @RequestParam long table, boolean add) {
+    public String orderTable(Model model, @RequestParam long id, @RequestParam long table, boolean add, String username) {
         serviceOrders.saveOrderTableById(id);
         model.addAttribute("orderTable", "ok");
-        return "redirect:/orders?table="  + table + "&add=" + add;
+        return "redirect:/orders?table="  + table + "&add=" + add + "username=" + username;
     }
 
     @RequestMapping(value = "/cancel_order_table")
-    public String cancelOrderTable(Model model, @RequestParam long id) {
+    public String cancelOrderTable(Model model, @RequestParam long id, @RequestParam String username) {
         serviceOrders.orderTableCancel(id);
         model.addAttribute("orderTableCancel", "ok");
-        return "redirect:/orders?table=0";
+        return "redirect:/orders?table=0&username=" + username;
     }
 
     @RequestMapping(value = "/cancel_order")
-    public String cancelOrder(Model model, @RequestParam long table) {
+    public String cancelOrder(Model model, @RequestParam long table, @RequestParam String username) {
         serviceOrders.cancelOrder(table);
         model.addAttribute("cancelOrder", "ok");
-        return "redirect:/orders?table=0";
+        return "redirect:/orders?table=0&username=" + username;
     }
 
     @RequestMapping(value = "/save_table")
@@ -148,8 +174,7 @@ public class OrdersWeb {
     }
 
     @RequestMapping(value = "/saveOrder")
-    public String saveOrder(ServiceOrder serviceOrder, String username){
-        log.info("Objeto --->" + serviceOrder);
+    public String saveOrder(ServiceOrder serviceOrder){
 
         if (serviceOrder.getObservations().isEmpty()){
             serviceOrder.setObservations("Sin Observaciones");
@@ -164,11 +189,12 @@ public class OrdersWeb {
         serviceOrder.setCancel(0);
         serviceOrder.setDiscount(0);
         serviceOrders.saveOrder(serviceOrder);
-        return "redirect:/orders?table=0&success";
+        return "redirect:/orders?table=0&success&username=" + serviceOrder.getUsername();
     }
 
     @RequestMapping(value = "/saveOrderPersonal")
     public String saveOrderPersonal(ServiceOrder serviceOrder){
+
         if (serviceOrder.getObservations().isEmpty()){
             serviceOrder.setObservations("Sin Observaciones");
         }
@@ -181,7 +207,35 @@ public class OrdersWeb {
         serviceOrder.setCancel(0);
         serviceOrder.setDiscount(0);
         serviceOrders.saveOrder(serviceOrder);
-        return "redirect:/accompaniment?menuId=" + serviceOrder.getIdMenu() + "&table=" + serviceOrder.getTableNumber() + "&add=true";
+        return "redirect:/orders?table=0&success&username=" + serviceOrder.getUsername();
+    }
+
+
+    @RequestMapping(value = "/editOrderPersonal")
+    public String editOrderPersonal(ServiceOrder serviceOrder){
+
+        if (serviceOrder.getObservations().isEmpty()){
+            serviceOrder.setObservations("Sin Observaciones");
+        }
+
+        serviceOrder.setOptions(serviceOrder.getOptions());
+        serviceOrder.setPrinciples(serviceOrder.getPrinciples());
+        serviceOrder.setProteins(serviceOrder.getProteins());
+        serviceOrder.setEntries(serviceOrder.getProteins());
+        serviceOrder.setVegetables(serviceOrder.getVegetables());
+        serviceOrder.setSalad(serviceOrder.getSalad());
+        serviceOrder.setDrinks(serviceOrder.getDrinks());
+
+        serviceOrder.setOrdered(0);
+        serviceOrder.setPrepared(0);
+        serviceOrder.setPrepare(0);
+        serviceOrder.setServed(0);
+        serviceOrder.setClose(0);
+        serviceOrder.setCancel(0);
+        serviceOrder.setCancel(0);
+        serviceOrder.setDiscount(0);
+        serviceOrders.editOrderPersonal(serviceOrder);
+        return "redirect:/orders?table=0&success&username=" + serviceOrder.getUsername();
     }
 
 }

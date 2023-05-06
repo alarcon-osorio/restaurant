@@ -9,10 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -45,10 +42,10 @@ public class AccompanimentWeb {
     ServiceMenuPrice serviceMenuPrice;
 
     @GetMapping(value = "/accompaniment")
-    public String accompaniment(Model model, @Nullable Long menuId, @Nullable Long menuIdPersonal, String table, boolean add) {
+    public String accompaniment(Model model, @Nullable Long menuId, @Nullable Long menuIdPersonal, String table, boolean add, boolean edit) {
 
-        if (menuId == null) {
-            //Se va por MenuPersonal
+        if (menuId == null && edit == false) {
+            //Se va por MenuPersonal para seleccionarlo
             log.info("MenuIdPersonal" + menuIdPersonal);
             MenuPersonal menuPersonal = serviceMenuPersonalView.getMenuPersonalById(menuIdPersonal);
             MenuPersonalForm optionsName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_options());
@@ -88,6 +85,61 @@ public class AccompanimentWeb {
             model.addAttribute("price", price.getValue());
 
             return "viewAccompanimentPersonal";
+
+        } else if (menuId == null && edit == true) {
+            //Se va por MenuPersonal para editarlo
+            log.info("MenuIdPersonal" + menuIdPersonal);
+            MenuPersonal menuPersonal = serviceMenuPersonalView.getMenuPersonalById(menuIdPersonal);
+            MenuPersonalForm optionsName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_options());
+            MenuPersonalForm principlesName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_principles());
+            MenuPersonalForm proteinsName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_proteins());
+            MenuPersonalForm entriesName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_entries());
+            MenuPersonalForm vegetablesName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_vegetables());
+            MenuPersonalForm saladName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_salad());
+            MenuPersonalForm drinksName = serviceMenuPersonalForm.getMenuPersonalById(menuPersonal.getMp_drinks());
+            MenuPrice price = serviceMenuPrice.getMenuPrice(1);
+            List<RestaurantTable> listRestaurantTable = serviceRestaurantTable.getRestaurantTableList();
+
+            List<MenuPersonalForm> menuPersonalFormOptions = serviceMenuPersonalForm.getMenuPersonalFormByType(1);
+            List<MenuPersonalForm> menuPersonalFormPrinciples = serviceMenuPersonalForm.getMenuPersonalFormByType(2);
+            List<MenuPersonalForm> menuPersonalFormProteins = serviceMenuPersonalForm.getMenuPersonalFormByType(3);
+            List<MenuPersonalForm> menuPersonalFormEntries = serviceMenuPersonalForm.getMenuPersonalFormByType(4);
+            List<MenuPersonalForm> menuPersonalFormVegetables = serviceMenuPersonalForm.getMenuPersonalFormByType(5);
+            List<MenuPersonalForm> menuPersonalFormSalad = serviceMenuPersonalForm.getMenuPersonalFormByType(6);
+            List<MenuPersonalForm> menuPersonalFormDrinks = serviceMenuPersonalForm.getMenuPersonalFormByType(7);
+
+            model.addAttribute("listRestaurantTable", listRestaurantTable);
+            model.addAttribute("menu_id", menuPersonal.getId());
+            model.addAttribute("id_menuType", menuPersonal.getId_menu_type());
+            model.addAttribute("menu_name", menuPersonal.getMp_name_dish());
+            model.addAttribute("options", menuPersonal.getMp_options());
+            model.addAttribute("optionsName", optionsName.getName());
+            model.addAttribute("principles", menuPersonal.getMp_principles());
+            model.addAttribute("principlesName", principlesName.getName());
+            model.addAttribute("proteins", menuPersonal.getMp_proteins());
+            model.addAttribute("proteinsName", proteinsName.getName());
+            model.addAttribute("entries", menuPersonal.getMp_entries());
+            model.addAttribute("entriesName", entriesName.getName());
+            model.addAttribute("vegetables", menuPersonal.getMp_vegetables());
+            model.addAttribute("vegetablesName", vegetablesName.getName());
+            model.addAttribute("salad", menuPersonal.getMp_salad());
+            model.addAttribute("saladName", saladName.getName());
+            model.addAttribute("drinks", menuPersonal.getMp_drinks());
+            model.addAttribute("drinksName", drinksName.getName());
+            model.addAttribute("observations", menuPersonal.getMp_observations());
+            model.addAttribute("price", price.getValue());
+
+
+            model.addAttribute("menuPersonalFormOptions", menuPersonalFormOptions);
+            model.addAttribute("menuPersonalFormPrinciples", menuPersonalFormPrinciples);
+            model.addAttribute("menuPersonalFormProteins", menuPersonalFormProteins);
+            model.addAttribute("menuPersonalFormEntries", menuPersonalFormEntries);
+            model.addAttribute("menuPersonalFormVegetables", menuPersonalFormVegetables);
+            model.addAttribute("menuPersonalFormSalad", menuPersonalFormSalad);
+            model.addAttribute("menuPersonalFormDrinks", menuPersonalFormDrinks);
+            model.addAttribute("menuPersonalView", "/menuPersonalView");
+
+            return "viewEditAccompanimentPersonal";
         }
 
         List<MenuAccompaniment> menuAccompanimentList = serviceMenuAccompaniment.getMenuAccompanimentList();
@@ -129,6 +181,13 @@ public class AccompanimentWeb {
         log.info("menuId " + menuIdPersonal + " username " + username );
         serviceMenuPersonalView.deleteMenuPersonal(menuIdPersonal);
         return "redirect:/menuPersonalView/" + username;
+    }
+
+    @RequestMapping(value = "/editAccompanimentPersonal")
+    public String editAccompanimentPersonal(Model model, MenuPersonal menuPersonal){
+        serviceMenuPersonalView.saveMenuPersonalView(menuPersonal);
+        return "redirect:/accompaniment?menuIdPersonal=" +menuPersonal.getId() + "&edit=true&success";
+
     }
 
 }

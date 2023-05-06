@@ -5,7 +5,7 @@
 
 <div class="container mt-4 vj-destacados">
     <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Exito!</strong> Pedido ordenado exitosamente... <a th:href="@{/menu}"> Agregar + </a> / <a th:href="@{/orders?table=} + ${table}">Confirmar Orden</a>.
+        <strong>Exito!</strong> Ordenaste tu preferencia, ahora confirmala<a th:href="@{/orders?table=} + ${table}"> aqui</a>.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -15,7 +15,7 @@
             <form th:action="@{/saveOrder}" method="POST">
             <div class="card">
                 <img th:src="${menuImage}" class="card-img-top" alt="...">
-                <div class="card-footer">
+                <div class="card-footer" th:if="${#authorization.expression('isAuthenticated()')}">
                     <h4 th:text="${menuName} + ' - ' + ${menuDescription}" class="card-title"></h4>
                     <input type="hidden" th:value="${menuId}" name="idMenu">
                     <input type="hidden" th:value="${menuTypeId}" name="idMenuType">
@@ -23,6 +23,7 @@
                     <input type="hidden" th:value="${menuDescription}" name="description">
                     <input type="hidden" th:value="${menuPrice}" name="price">
                     <input type="hidden" th:value="${menuImage}" name="image">
+                    <input type="hidden" th:value="${#authentication.name}" name="username">
                 </div>
                 <div class="card-body">
 
@@ -78,7 +79,6 @@
                         <label class="form-label">Mesa</label>
                         <select class="form-control" name="tableNumber" required>
                             <option value="">Seleccione...</option>
-                            <option value="100">DOMICILIOS</option>
                             <option th:each="listRestaurantTable : ${listRestaurantTable}" th:text="'Mesa - ' + ${listRestaurantTable.tableNumber}" th:value="${listRestaurantTable.tableNumber}"></option>
                         </select>
                     </div>
@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="card-footer text-muted">
-                    <button type="submit" class="btn btn-success float-right">Ordenar</button>
+                    <button type="submit" class="btn btn-success float-right">Ordenar Pedido</button>
                     <a th:href="@{/type_menu(id=${menuTypeId})}" th:text="Regresar" class="btn btn-warning"></a>
                 </div>
             </div>

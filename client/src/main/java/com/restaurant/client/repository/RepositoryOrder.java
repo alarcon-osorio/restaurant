@@ -14,6 +14,9 @@ public interface RepositoryOrder extends JpaRepository<ServiceOrder, Long> {
     @Query(value = "select * from restaurant.service_order WHERE cancel = 0 AND close = 0 ORDER BY table_number", nativeQuery = true)
     List<ServiceOrder> findAll();
 
+    @Query(value = "select * from restaurant.service_order WHERE cancel = 0 AND close = 0 AND username = ?1 ORDER BY table_number", nativeQuery = true)
+    List<ServiceOrder> finByUsername(String username);
+
     @Query(value = "select * from restaurant.service_order r where r.table_number = ?1 AND cancel = 0 AND close = 0", nativeQuery = true)
     List<ServiceOrder> findByTableNumber(long table);
 

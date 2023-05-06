@@ -19,6 +19,7 @@ public class ServiceOrder {
     private long idMenu;
     private long idMenuType;
     private String name;
+    private String username;
     private String description;
     private String observations;
     private String accompaniment;

@@ -55,6 +55,7 @@ class AccompanimentWebTest {
         long menuId = 1L;
         String table = "Table 1";
         boolean add = true;
+        boolean edit = true;
         List<MenuAccompaniment> menuAccompanimentList = new ArrayList<>();
         List<MenuAccompaniment> menuAccompanimentIdMenu = new ArrayList<>();
         List<MenuIncludes> menuIncludeByIdMenu = new ArrayList<>();
@@ -73,7 +74,7 @@ class AccompanimentWebTest {
         when(serviceMenuOptional.getMenuOptionalByIdMenu(menuId)).thenReturn(menuOptionalList);
 
         // Call the method being tested
-        String viewName = accompanimentWeb.accompaniment(model, menuId, menuIdPersonal, table, add);
+        String viewName = accompanimentWeb.accompaniment(model, menuId, menuIdPersonal, table, add, edit);
 
         // Verify the model attributes were set correctly
         verify(model).addAttribute("menuName", menu.getName());

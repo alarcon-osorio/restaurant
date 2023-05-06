@@ -3,9 +3,9 @@
 <header th:insert="includes/header :: header"> </header>
 <header th:insert="includes/navbar :: navbar"> </header>
 
-<div class="container mt-4 vj-destacados">
-  <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Exito! </strong>Mesa editada <a th:href="'/orders?table=0'">Ver Resumen</a><a href="/menu">  /  Volver al Menú</a>.
+<div class="container mt-4 vj-destacados" th:if="${#authorization.expression('isAuthenticated()')}" >
+  <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert" >
+    <strong>Exito! </strong>Mesa editada <a th:href="'/orders?table=0&username=' + ${#authentication.name}">Ya puedes ordenar</a>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -14,7 +14,7 @@
     <div class="col-md-12  mb-4">
       <form th:action="@{/save_table}" method="GET">
         <div class="card">
-          <img th:src="${serviceOrderById.image}" class="card-img-top" alt="...">
+          <img src="https://img.freepik.com/foto-gratis/mesa-vista-superior-llena-deliciosa-composicion-alimentos_23-2149141352.jpg" class="card-img-top" alt="...">
           <div class="card-footer">
             <h4 th:text="'Mesa ' + ${serviceOrderById.tableNumber} + ' - ' + ${serviceOrderById.name}" class="card-title"></h4>
             <input type="hidden" th:value="${serviceOrderById.id}" name="id">
@@ -25,6 +25,7 @@
             <input type="hidden" th:value="${serviceOrderById.tableNumber}" name="tableNumber">
             <input type="hidden" th:value="${serviceOrderById.description}" name="description">
             <input type="hidden" th:value="${serviceOrderById.image}" name="image">
+            <input type="hidden" th:value="${#authentication.name}" name="username">
           </div>
 
           <div class="card-body">
@@ -82,14 +83,70 @@
             </div>
 
             <div class="form-group">
+              <label class="form-label">Cereal incluido</label>
+              <select class="form-control" name="options" required>
+                <option th:value="${serviceOrderById.options}" th:text="${serviceOrderById.options}" selected="true"></option>
+                <option th:each="menuPersonalFormOptions : ${menuPersonalFormOptions}" th:value="${menuPersonalFormOptions.name}" th:text="${menuPersonalFormOptions.name}" th:unless="${menuPersonalFormOptions.name} == ${serviceOrderById.options}"></option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Principio</label>
+              <select class="form-control" name="principles" required>
+                <option th:value="${serviceOrderById.principles}" th:text="${serviceOrderById.principles}" selected="true"></option>
+                <option th:each="menuPersonalFormPrinciples : ${menuPersonalFormPrinciples}" th:value="${menuPersonalFormPrinciples.name" th:text="${menuPersonalFormPrinciples.name}" th:unless="${menuPersonalFormPrinciples.name} == ${serviceOrderById.principles}"></option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Proteina</label>
+              <select class="form-control" name="proteins" required>
+                <option th:value="${serviceOrderById.proteins}" th:text="${serviceOrderById.proteins}" selected="true"></option>
+                <option th:each="menuPersonalFormProteins : ${menuPersonalFormProteins}" th:value="${menuPersonalFormProteins.name}" th:text="${menuPersonalFormProteins.name}" th:unless="${menuPersonalFormProteins.name} == ${serviceOrderById.proteins}"></option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Entradas</label>
+              <select class="form-control" name="entries" required>
+                <option th:value="${serviceOrderById.entries}" th:text="${serviceOrderById.entries}" selected="true"></option>
+                <option th:each="menuPersonalFormEntries : ${menuPersonalFormEntries}" th:value="${menuPersonalFormEntries.name}" th:text="${menuPersonalFormEntries.name}" th:unless="${menuPersonalFormEntries.name} == ${serviceOrderById.entries}"></option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Vegatales</label>
+              <select class="form-control" name="vegetables" required>
+                <option th:value="${serviceOrderById.vegetables}" th:text="${serviceOrderById.vegetables}" selected="true"></option>
+                <option th:each="menuPersonalFormVegetables : ${menuPersonalFormVegetables}" th:value="${menuPersonalFormVegetables.name}" th:text="${menuPersonalFormVegetables.name}" th:unless="${menuPersonalFormVegetables.name} == ${serviceOrderById.vegetables}"></option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Ensalada</label>
+              <select class="form-control" name="salad" required>
+                <option th:value="${serviceOrderById.salad}" th:text="${serviceOrderById.salad}" selected="true"></option>
+                <option th:each="menuPersonalFormSalad : ${menuPersonalFormSalad}" th:value="${menuPersonalFormSalad.name}" th:text="${menuPersonalFormSalad.name}" th:unless="${menuPersonalFormSalad.name} == ${serviceOrderById.salad}"></option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Bebida</label>
+              <select class="form-control" name="drinks" required>
+                <option th:value="${serviceOrderById.drinks}" th:text="${serviceOrderById.drinks}" selected="true"></option>
+                <option th:each="menuPersonalFormDrinks : ${menuPersonalFormDrinks}" th:value="${menuPersonalFormDrinks.name}" th:text="${menuPersonalFormDrinks.name}" th:unless="${menuPersonalFormDrinks.name} == ${serviceOrderById.drinks}"></option>
+              </select>
+            </div>
+
+            <div class="form-group">
               <label class="form-label">Observaciones</label>
               <textarea class="form-control" type="text" name="observations" th:text="${serviceOrderById.observations}" th:value="${serviceOrderById.observations}"></textarea>
             </div>
           </div>
 
           <div class="card-footer text-muted">
-            <button type="submit" class="btn btn-success float-right">Guardar</button>
-            <a th:href="@{/orders?table=0}" th:text="Regresar" class="btn btn-warning"></a>
+            <button type="submit" class="btn btn-success float-right">Editar Orden</button>
+            <a th:href="@{/orders?table=0} + '&username=' + ${#authentication.name} " th:text="Regresar" class="btn btn-warning"></a>
           </div>
 
         </div>

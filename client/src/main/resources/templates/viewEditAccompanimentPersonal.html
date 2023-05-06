@@ -1,0 +1,110 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<header th:insert="includes/header :: header"> </header>
+<header th:insert="includes/navbar :: navbar"> </header>
+
+<div class="container mt-4 vj-destacados" th:if="${#authorization.expression('isAuthenticated()')}">
+    <div th:if="!${param.success}" class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Edita tu orden! </strong>Aqui podras editar lo que desees de tu plato personalizado
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Exito!</strong> Preferencia editada, ir a tus preferencias<a th:href="@{/menuPersonalView} + '/' +  ${#authentication.name}"> aqui</a>.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-md-12  mb-4">
+            <form th:action="@{/editAccompanimentPersonal}" method="POST">
+            <div class="card">
+                <!--<img src="" class="card-img-top" alt="...">-->
+                <div class="card-footer">
+                    <h4 th:text="'Resumen del plato: ' + ${menu_name}" class="card-title"></h4>
+                    <input type="hidden" th:value="${menu_id}" name="id">
+                    <input type="hidden" th:value="${id_menuType}" name="id_menu_type">
+                    <input type="hidden" value="../images/personalized.png" name="image">
+                    <input type="hidden" th:value="${menu_name}" name="mp_name_dish">
+                    <input type="hidden" value="Plato personalizado" name="description">
+                    <input type="hidden" th:value="${price}" name="price">
+                    <input type="hidden" th:value="${#authentication.name}" name="username">
+                </div>
+                <div class="card-body">
+
+                    <div class="form-group">
+                        <label class="form-label">Cereal incluido</label>
+                        <select class="form-control" name="mp_options" required>
+                            <option th:value="${options}" th:text="${optionsName}" selected="true"></option>
+                            <option th:each="menuPersonalFormOptions : ${menuPersonalFormOptions}" th:value="${menuPersonalFormOptions.id}" th:text="${menuPersonalFormOptions.name}" th:unless="${menuPersonalFormOptions.id} == ${options}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Principio</label>
+                        <select class="form-control" name="mp_principles" required>
+                            <option th:value="${principles}" th:text="${principlesName}" selected="true"></option>
+                            <option th:each="menuPersonalFormPrinciples : ${menuPersonalFormPrinciples}" th:value="${menuPersonalFormPrinciples.id}" th:text="${menuPersonalFormPrinciples.name}" th:unless="${menuPersonalFormPrinciples.id} == ${principles}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Proteina</label>
+                        <select class="form-control" name="mp_proteins" required>
+                            <option th:value="${proteins}" th:text="${proteinsName}" selected="true"></option>
+                            <option th:each="menuPersonalFormProteins : ${menuPersonalFormProteins}" th:value="${menuPersonalFormProteins.id}" th:text="${menuPersonalFormProteins.name}" th:unless="${menuPersonalFormProteins.id} == ${proteins}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Entradas</label>
+                        <select class="form-control" name="mp_entries" required>
+                            <option th:value="${entries}" th:text="${entriesName}" selected="true"></option>
+                            <option th:each="menuPersonalFormEntries : ${menuPersonalFormEntries}" th:value="${menuPersonalFormEntries.id}" th:text="${menuPersonalFormEntries.name}" th:unless="${menuPersonalFormEntries.id} == ${entries}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Vegatales</label>
+                        <select class="form-control" name="mp_vegetables" required>
+                            <option th:value="${vegetables}" th:text="${vegetablesName}" selected="true"></option>
+                            <option th:each="menuPersonalFormVegetables : ${menuPersonalFormVegetables}" th:value="${menuPersonalFormVegetables.id}" th:text="${menuPersonalFormVegetables.name}" th:unless="${menuPersonalFormVegetables.id} == ${vegetables}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Ensalada</label>
+                        <select class="form-control" name="mp_salad" required>
+                            <option th:value="${salad}" th:text="${saladName}" selected="true"></option>
+                            <option th:each="menuPersonalFormSalad : ${menuPersonalFormSalad}" th:value="${menuPersonalFormSalad.id}" th:text="${menuPersonalFormSalad.name}" th:unless="${menuPersonalFormSalad.id} == ${salad}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Bebida</label>
+                        <select class="form-control" name="mp_drinks" required>
+                            <option th:value="${drinks}" th:text="${drinksName}" selected="true"></option>
+                            <option th:each="menuPersonalFormDrinks : ${menuPersonalFormDrinks}" th:value="${menuPersonalFormDrinks.id}" th:text="${menuPersonalFormDrinks.name}" th:unless="${menuPersonalFormDrinks.id} == ${drinks}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Observaciones (Opcional)</label>
+                        <textarea class="form-control" name="mp_observations" th:text="${observations}" placeholder="Use estas observaciones para complementar el pedido..."></textarea>
+                    </div>
+                </div>
+
+                <div class="card-footer text-muted" th:if="${#authorization.expression('isAuthenticated()')}">
+                    <button type="submit" class="btn btn-success float-right">Guardar Edición</button>
+                    <a th:href="@{/menuPersonalView} + '/' + ${#authentication.name}" th:text="Regresar" class="btn btn-warning"></a>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

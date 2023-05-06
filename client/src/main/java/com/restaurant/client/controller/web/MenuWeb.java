@@ -3,6 +3,7 @@ package com.restaurant.client.controller.web;
 import com.restaurant.client.entity.*;
 import com.restaurant.client.entity.menu_personal.MenuPersonal;
 import com.restaurant.client.entity.menu_personal.MenuPersonalForm;
+import com.restaurant.client.security.entity.Clients;
 import com.restaurant.client.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,6 +98,9 @@ public class MenuWeb {
     @GetMapping(value = "/menuPersonalView/{username}")
     public String menuPersonalView(Model model, @PathVariable String username){
         List<MenuPersonal> menuPersonal = serviceMenuPersonalView.getMenuPersonalByUsername(username);
+        if (menuPersonal.isEmpty()){
+            model.addAttribute("withOutMenuPersonal", "ok");
+        }
         model.addAttribute("menuPersonal", menuPersonal);
         model.addAttribute("menuPersonalView", "/menuPersonalView");
         return "menuPersonalView";

@@ -18,6 +18,10 @@ public class ServiceOrders {
         return repositoryOrder.findAll();
     }
 
+    public List<ServiceOrder> getServiceOrderByUser(String username){
+        return repositoryOrder.finByUsername(username);
+    }
+
     public List<ServiceOrder> getByTableNumber(long table){
         return repositoryOrder.findByTableNumber(table);
     }
@@ -68,6 +72,10 @@ public class ServiceOrders {
 
     public ServiceOrder getServiceOrderById(long id){
         return repositoryOrder.findById(id).get();
+    }
+
+    public void editOrderPersonal(ServiceOrder serviceOrder){
+        repositoryOrder.save(serviceOrder);
     }
 
 
