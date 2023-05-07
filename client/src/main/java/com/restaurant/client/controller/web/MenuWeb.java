@@ -1,6 +1,7 @@
 package com.restaurant.client.controller.web;
 
 import com.restaurant.client.entity.*;
+import com.restaurant.client.dto.MenuPersonalDTO;
 import com.restaurant.client.entity.menu_personal.MenuPersonal;
 import com.restaurant.client.entity.menu_personal.MenuPersonalForm;
 import com.restaurant.client.service.*;
@@ -48,7 +49,6 @@ public class MenuWeb {
         List<MenuType> menuTypeList = serviceMenuType.getMenuType();
         model.addAttribute("menu", menu);
         model.addAttribute("menuTypeList", menuTypeList);
-        model.addAttribute("menuPersonalView", "/menuPersonalView");
         return "viewMenu";
     }
 
@@ -58,7 +58,6 @@ public class MenuWeb {
         List<MenuType> menuTypeList = serviceMenuType.getMenuType();
         model.addAttribute("menu", menu);
         model.addAttribute("menuTypeList", menuTypeList);
-        model.addAttribute("menuPersonalView", "/menuPersonalView");
         return "viewMenu";
     }
 
@@ -83,7 +82,6 @@ public class MenuWeb {
         model.addAttribute("menuPersonalFormVegetables", menuPersonalFormVegetables);
         model.addAttribute("menuPersonalFormSalad", menuPersonalFormSalad);
         model.addAttribute("menuPersonalFormDrinks", menuPersonalFormDrinks);
-        model.addAttribute("menuPersonalView", "/menuPersonalView");
         return "menuPersonalForm";
     }
 
@@ -93,25 +91,21 @@ public class MenuWeb {
             menuPersonal.setMp_observations("Sin Observaciones");
         }
         serviceMenuPersonalView.saveMenuPersonalView(menuPersonal);
-        return "redirect:/menuPersonalView/jalarcono@udistrital.edu.co?success";
+        return "redirect:/menuPersonalView/" + menuPersonal.getUsername() + "?success";
     }
 
     @GetMapping(value = "/menuPersonalView/{username}")
     public String menuPersonalView(Model model, @PathVariable String username){
         List<MenuPersonal> menuPersonal = serviceMenuPersonalView.getMenuPersonalByUsername(username);
+
         if (menuPersonal.isEmpty()){
             model.addAttribute("withOutMenuPersonal", "ok");
         }
 
-        for (MenuPersonal menuPersonalList : menuPersonal){
-            String options = menuPersonalList.getMp_options();
-            MenuPersonalForm menuPersonalForm = serviceMenuPersonalForm.getMenuPersonalById(options);
-            model.addAttribute("options", options);
-            model.addAttribute("menuPersonalForm", menuPersonalForm);
-        }
+        List<MenuPersonalDTO> menuPersonalListByName = serviceMenuPersonalView.getMenuPersonalByNameAndUsername(username);
 
         model.addAttribute("menuPersonal", menuPersonal);
-        model.addAttribute("menuPersonalView", "/menuPersonalView");
+        model.addAttribute("menuPersonalListByName", menuPersonalListByName);
         return "menuPersonalView";
     }
 

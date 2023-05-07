@@ -38,18 +38,6 @@ public class OrdersWebTest {
     private ServiceMenuOptional serviceMenuOptional;
 
     @Test
-    public void testOrders() {
-        long table = 1L;
-        boolean add = false;
-        List<ServiceOrder> neatOrderList = Arrays.asList(new ServiceOrder());
-        when(serviceOrders.getNeatOrderByTable(table)).thenReturn(neatOrderList);
-        List<String> tableNumberList = Arrays.asList("1");
-        when(serviceOrders.getTableNumber()).thenReturn(tableNumberList);
-        List<ServiceOrder> serviceOrdersByTableNumber = Arrays.asList(new ServiceOrder());
-        when(serviceOrders.getByTableNumber(table)).thenReturn(serviceOrdersByTableNumber);
-    }
-
-    @Test
     public void testConfirmOrder() {
         long table = 1L;
         String result = ordersWeb.confirmOrder(null, table);

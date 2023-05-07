@@ -85,7 +85,6 @@ class MenuWebTest {
         Assert.assertEquals("viewMenu", viewName);
         Assert.assertEquals(menu, model.getAttribute("menu"));
         Assert.assertEquals(menuTypeList, model.getAttribute("menuTypeList"));
-        Assert.assertEquals("/menuPersonalView", model.getAttribute("menuPersonalView"));
     }
 
 

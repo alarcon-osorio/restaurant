@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-04-2023 a las 05:57:53
+-- Tiempo de generación: 08-05-2023 a las 00:25:23
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -99,7 +99,7 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `id_menu_type`, `name`, `description`, `price`, `image`, `ordered`) VALUES
-(6, 1, 'Espagueti Italiano', 'Especial de Italia', '20000', 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', '0');
+(1, 2, 'Espagueti Italiano', 'Especial de Italia', '20000', 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', '0');
 
 -- --------------------------------------------------------
 
@@ -213,17 +213,16 @@ CREATE TABLE `menu_personal_view` (
   `vegetables` int(11) NOT NULL,
   `salad` int(11) NOT NULL,
   `drinks` int(11) NOT NULL,
-  `observations` varchar(255) NOT NULL
+  `observations` varchar(255) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `menu_personal_view`
 --
 
-INSERT INTO `menu_personal_view` (`id`, `username`, `id_menu_type`, `name_dish`, `options`, `principles`, `proteins`, `entries`, `vegetables`, `salad`, `drinks`, `observations`) VALUES
-(1, 'jalarcono@udistrital.edu.co', 1, 'hola', 9, 2, 3, 4, 5, 6, 7, 'jlkggcjk'),
-(2, 'jalarcono@udistrital.edu.co', 1, 'El mejor Plato del mundo', 1, 2, 3, 4, 5, 6, 7, 'Que quede muy rico'),
-(3, 'alarcon_osorio@hotmail.com', 1, '', 1, 2, 3, 4, 5, 6, 7, 'pedido en alarcon_osorio');
+INSERT INTO `menu_personal_view` (`id`, `username`, `id_menu_type`, `name_dish`, `options`, `principles`, `proteins`, `entries`, `vegetables`, `salad`, `drinks`, `observations`, `time`) VALUES
+(8, 'jalarcono@udistrital.edu.co', 1, 'Plato Personalizado', 1, 2, 3, 4, 5, 6, 7, 'Sin Observaciones', '2023-05-07 04:02:59');
 
 -- --------------------------------------------------------
 
@@ -261,7 +260,7 @@ CREATE TABLE `menu_type` (
 
 INSERT INTO `menu_type` (`id`, `name`) VALUES
 (1, 'Personalizado'),
-(6, 'Tipico');
+(2, 'Restaurante');
 
 -- --------------------------------------------------------
 
@@ -350,6 +349,7 @@ CREATE TABLE `service_order` (
   `id_menu` int(11) DEFAULT NULL,
   `id_menu_type` int(11) NOT NULL,
   `number_order` int(11) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `observations` varchar(255) NOT NULL,
@@ -386,17 +386,15 @@ CREATE TABLE `service_order` (
 -- Volcado de datos para la tabla `service_order`
 --
 
-INSERT INTO `service_order` (`id`, `id_menu`, `id_menu_type`, `number_order`, `name`, `description`, `observations`, `accompaniment`, `option1`, `option2`, `option3`, `option4`, `option5`, `drinks_includes`, `options`, `principles`, `proteins`, `entries`, `vegetables`, `salad`, `drinks`, `table_number`, `image`, `ordered`, `prepare`, `prepared`, `served`, `close`, `cancel`, `price`, `cant`, `discount`, `payment_method`, `time`) VALUES
-(1, 0, 1, NULL, 'hola', 'Plato personalizado', 'jlkggcjk', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz con ajonjoli', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 100, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '250000', 1, 0, NULL, '2023-04-22 02:45:07'),
-(2, 0, 1, NULL, 'El mejor Plato del mundo', 'Plato personalizado', 'Que quede muy rico', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 100, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '250000', 1, 0, NULL, '2023-04-22 02:46:40'),
-(3, 0, 1, NULL, 'El mejor Plato del mundo', 'Plato personalizado', 'Que quede muy rico', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 100, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '250000', 1, 0, NULL, '2023-04-22 02:52:47'),
-(4, 6, 1, NULL, 'Espagueti Italiano', 'Especial de Italia', 'Hola', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 100, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 0, 0, 0, 0, 0, 0, '250000', 1, 0, NULL, '2023-04-22 02:55:46'),
-(5, 0, 1, NULL, 'El mejor Plato del mundo', 'Plato personalizado', 'Que quede muy rico', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 100, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '60000', 1, 0, NULL, '2023-04-22 03:19:24'),
-(6, 0, 1, NULL, 'El mejor Plato del mundo', 'Plato personalizado', 'Que quede muy rico muyyyyyy riiiiccccooooooo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 100, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '25000', 1, 0, NULL, '2023-04-22 03:27:02'),
-(7, 0, 1, NULL, 'El mejor Plato del mundo', 'Plato personalizado', 'Que quede muy rico perrororooroso', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 100, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '25000', 1, 0, NULL, '2023-04-22 03:36:29'),
-(8, 0, 1, NULL, 'El mejor Plato del mundo', 'Plato personalizado', 'Que quede muy rico', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 100, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '25000', 1, 0, NULL, '2023-04-22 03:40:22'),
-(9, 0, 1, NULL, 'El mejor Plato del mundo', 'Plato personalizado', 'Que quede muy rico', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 100, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '25000', 1, 0, NULL, '2023-04-22 03:45:18'),
-(10, 0, 1, NULL, 'hola', 'Plato personalizado', 'Nada de JDK', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz con ajonjoli', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 100, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '25000', 1, 0, NULL, '2023-04-22 03:52:53');
+INSERT INTO `service_order` (`id`, `id_menu`, `id_menu_type`, `number_order`, `username`, `name`, `description`, `observations`, `accompaniment`, `option1`, `option2`, `option3`, `option4`, `option5`, `drinks_includes`, `options`, `principles`, `proteins`, `entries`, `vegetables`, `salad`, `drinks`, `table_number`, `image`, `ordered`, `prepare`, `prepared`, `served`, `close`, `cancel`, `price`, `cant`, `discount`, `payment_method`, `time`) VALUES
+(11, 0, 1, NULL, 'jalarcono@udistrital.edu.co', 'Plato Personalizado', 'Plato personalizado', 'un buen plato', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 1, '../images/personalized.png', 0, 0, 0, 0, 0, 1, '25000', 1, 0, NULL, '2023-05-06 03:53:43'),
+(12, 0, 1, NULL, 'jalarcono@udistrital.edu.co', 'Plato Personalizado', 'Plato personalizado', 'Gracias...', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 1, '../images/personalized.png', 0, 0, 0, 0, 0, 1, '25000', 1, 0, NULL, '2023-05-06 03:54:30'),
+(13, 0, 1, NULL, 'jalarcono@udistrital.edu.co', 'Plato Personalizado', 'Plato personalizado', 'un buen plato', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 1, '../images/personalized.png', 0, 0, 0, 0, 0, 1, '25000', 10000, 0, NULL, '2023-05-07 04:01:47'),
+(14, 0, 1, NULL, 'jalarcono@udistrital.edu.co', 'Plato Personalizado', 'Plato personalizado', 'Gracias...', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 1, '../images/personalized.png', 0, 0, 0, 0, 0, 1, '25000', 1, 0, NULL, '2023-05-07 04:01:50'),
+(16, 1, 2, NULL, 'jalarcono@udistrital.edu.co', 'Espagueti Italiano', 'Especial de Italia', 'Sin Observacionesnnnn', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 0, 0, 0, 0, 0, 1, '20000', 10, 0, NULL, '2023-05-06 07:16:17'),
+(17, 1, 2, NULL, 'jalarcono@udistrital.edu.co', 'Espagueti Italiano', 'Especial de Italia', 'Sin Observaciones', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 0, 0, 0, 0, 0, 1, '20000', 1000, 0, NULL, '2023-05-07 04:05:06'),
+(18, 0, 1, NULL, 'jalarcono@udistrital.edu.co', 'Plato Personalizado', 'Plato personalizado', 'Sin Observaciones', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 1, '../images/personalized.png', 0, 0, 0, 0, 0, 1, '25000', 100, 0, NULL, '2023-05-07 04:05:03'),
+(19, 0, 1, NULL, 'jalarcono@udistrital.edu.co', 'Plato Personalizado', 'Plato personalizado', 'Sin Observaciones', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 1, '../images/personalized.png', 1, 0, 0, 0, 0, 0, '25000', 1, 0, NULL, '2023-05-07 04:05:25');
 
 -- --------------------------------------------------------
 
@@ -644,7 +642,7 @@ ALTER TABLE `menu_personal_type`
 -- AUTO_INCREMENT de la tabla `menu_personal_view`
 --
 ALTER TABLE `menu_personal_view`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `menu_price`
@@ -686,7 +684,7 @@ ALTER TABLE `restaurant_table`
 -- AUTO_INCREMENT de la tabla `service_order`
 --
 ALTER TABLE `service_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

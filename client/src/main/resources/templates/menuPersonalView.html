@@ -46,25 +46,27 @@
     </div>
 
     <div class="row filtered">
-        <div th:each="menuPersonal : ${menuPersonal}" class="col-md-4 mb-4">
+        <div th:each="menuPersonalListByName : ${menuPersonalListByName}" class="col-md-4 mb-4">
             <div class="card">
-                <a th:href="@{/accompaniment(menuId=${menuPersonal.id})}">
+                <a th:href="@{/accompaniment(menuId=${menuPersonalListByName.id})}">
                     <!--<img th:src="${menu.image}" class="card-img-top" alt="...">-->
                 </a>
                 <div class="card-body">
-                    <h4 th:text="${menuPersonal.mp_name_dish}" class="card-title"></h4>
-
-                    <!--<h5 th:text="'$' + ${#numbers.formatDecimal(menu.price, 0, 'COMMA', 0, 'POINT')}" class="card-title"></h5>-->
-                    <h6 th:text="${menuPersonal.mp_observations}" ></h6>
-                    <h6 th:text="${menuPersonal.mp_options}" ></h6>
-                    <h6 th:text="${menuPersonal.mp_principles}" ></h6>
-                    <h6 th:text="${menuPersonal.mp_proteins}" ></h6>
-                    <h6 th:text="${menuPersonal.mp_entries}" ></h6>
-                    <h6 th:text="${menuPersonalForm.name}" ></h6>
+                    <h4 th:text="${menuPersonalListByName.name_dish}" class="card-title"></h4>
+                    <label class="form-label">Fecha: <h6 th:text="${menuPersonalListByName.time}" class="card-title"></h6> </label>
+                    <h5 th:text="'Precio: $' + ${#numbers.formatDecimal(25000, 0, 'COMMA', 0, 'POINT')}" class="card-title"></h5>
+                    <h6 th:text="'Cereal: ' + ${menuPersonalListByName.options}" ></h6>
+                    <h6 th:text="'Principio: ' + ${menuPersonalListByName.principles}" ></h6>
+                    <h6 th:text="'Proteina: ' + ${menuPersonalListByName.proteins}" ></h6>
+                    <h6 th:text="'Entrada: ' + ${menuPersonalListByName.entries}" ></h6>
+                    <h6 th:text="'Vegetal: ' + ${menuPersonalListByName.vegetables}" ></h6>
+                    <h6 th:text="'Ensalada: ' + ${menuPersonalListByName.salad}" ></h6>
+                    <h6 th:text="'Bebida: ' + ${menuPersonalListByName.drinks}" ></h6>
+                    <h6 th:text="'Observaciones: ' + ${menuPersonalListByName.observations}" ></h6>
                 </div>
                 <div class="card-footer text-muted">
-                    <a th:href="@{/accompaniment(menuIdPersonal=${menuPersonal.id}, edit=false)}" th:text="'Seleccionar'" class="btn btn-success"></a>
-                    <a th:href="@{/accompaniment(menuIdPersonal=${menuPersonal.id}, edit=true)}" th:text="'Editar'" class="btn btn-primary"></a>
+                    <a th:href="@{/accompaniment(menuIdPersonal=${menuPersonalListByName.id}, edit=false)}" th:text="'Seleccionar'" class="btn btn-success"></a>
+                    <a th:href="@{/accompaniment(menuIdPersonal=${menuPersonalListByName.id}, edit=true)}" th:text="'Editar'" class="btn btn-primary"></a>
                     <button type="button" class="btn btn-danger" data-target="#deleteModal" data-toggle="modal">Eliminar</button>
                 </div>
 
@@ -83,7 +85,7 @@
                             </div>
                             <div class="modal-footer" th:if="${#authorization.expression('isAuthenticated()')}">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                <a th:href="@{/deleteAccompaniment(menuIdPersonal=${menuPersonal.id},username=${#authentication.name})}" th:text="'Si'" class="btn btn-danger"></a>
+                                <a th:href="@{/deleteAccompaniment(menuIdPersonal=${menuPersonalListByName.id},username=${#authentication.name})}" th:text="'Si'" class="btn btn-danger"></a>
                             </div>
                         </div>
                     </div>
