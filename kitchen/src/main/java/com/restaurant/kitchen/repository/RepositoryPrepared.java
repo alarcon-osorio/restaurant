@@ -18,11 +18,20 @@ public interface RepositoryPrepared extends JpaRepository<ServiceOrder, Long> {
     void preparedById(long id);
 
     @Modifying
+    @Query(value = "UPDATE service_order SET served = 1 WHERE id = ?1 AND close = 0 AND cancel = 0", nativeQuery = true)
+    void servedById(long id);
+
+    @Modifying
     @Query(value = "UPDATE service_order SET prepare = 1 WHERE table_number = ?1 AND close = 0 AND cancel = 0", nativeQuery = true)
     void prepareByTable(long table);
 
     @Modifying
     @Query(value = "UPDATE service_order SET prepared = 1 WHERE table_number = ?1 AND close = 0 AND cancel = 0", nativeQuery = true)
     void preparedByTable(long table);
+
+    @Modifying
+    @Query(value = "UPDATE service_order SET served = 1 WHERE table_number = ?1 AND close = 0 AND cancel = 0", nativeQuery = true)
+    void servedByTable(long table);
+
 
 }

@@ -40,8 +40,10 @@ public class OrdersWeb {
                     model.addAttribute("ordered", "ok");
                 }else if(serviceOrder.getOrdered() == 1 && serviceOrder.getPrepare() == 1 && serviceOrder.getPrepared() == 0 ){
                     model.addAttribute("prepare", "ok");
-                }else if(serviceOrder.getOrdered() == 1 && serviceOrder.getPrepare() == 1 && serviceOrder.getPrepared() == 1 ){
+                }else if(serviceOrder.getOrdered() == 1 && serviceOrder.getPrepare() == 1 && serviceOrder.getPrepared() == 1 && serviceOrder.getServed() == 0 ){
                     model.addAttribute("prepared", "ok");
+                }else if(serviceOrder.getOrdered() == 1 && serviceOrder.getPrepare() == 1 && serviceOrder.getPrepared() == 1 && serviceOrder.getServed() == 1 ){
+                    model.addAttribute("served", "ok");
                 }
             }
             model.addAttribute("table", table);

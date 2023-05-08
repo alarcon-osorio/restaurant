@@ -42,7 +42,9 @@
                 <div class="card-footer text-muted" >
                     <a th:if="${serviceOrderList.prepare} == 0 and ${serviceOrderList.prepared} == 0" th:href="@{/prepare(id=${serviceOrderList.id})}" th:text="'Comenzar Preparación'" class="btn btn-primary"></a>
                     <a th:if="${serviceOrderList.prepare} == 1 and ${serviceOrderList.prepared} == 0" th:href="@{/prepared(id=${serviceOrderList.id})}" class="btn btn-warning "><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"> </span> Terminar Preparacón</a>
-                    <a th:if="${serviceOrderList.prepare} == 1 and ${serviceOrderList.prepared} == 1" th:href="@{/kitchen?table=0}" th:text="'Preparación Terminada'" class="btn btn-success"></a>
+                    <a th:if="${serviceOrderList.prepare} == 1 and ${serviceOrderList.prepared} == 1 and ${serviceOrderList.served} == 0" th:href="@{/served(id=${serviceOrderList.id})}" th:text="'Despachar pedido'" class="btn btn-info"></a>
+                    <!--<a th:if="${serviceOrderList.prepare} == 1 and ${serviceOrderList.prepared} == 1" th:href="@{/kitchen?table=0}" th:text="'Preparación Terminada'" class="btn btn-success"></a>-->
+                    <a th:if="${serviceOrderList.prepare} == 1 and ${serviceOrderList.prepared} == 1 and ${serviceOrderList.served} == 1" th:href="'#'" th:text="'Preparación Terminada'" class="btn btn-success"></a>
                 </div>
             </div>
         </div>
@@ -53,7 +55,8 @@
     <div class="card-body" th:if="${ordersByTable} == 'ok' and ${empty} != 'ok'">
         <a th:if="${ordered} == 'ok'" th:href="@{/prepare_table(table=${table})}" th:text="'Preparar platos - Mesa ' + ${table}" class="btn btn-success"></a>
         <a th:if="${prepare} == 'ok'" th:href="@{/prepared_table(table=${table})}" th:text="'Terminar preparación - Mesa ' + ${table}" class="btn btn-warning"> </a>
-        <a th:if="${prepared} == 'ok'" th:href="'#'" th:text="'Preparación completa - Mesa ' + ${table}" class="btn btn-success"> </a>
+        <a th:if="${prepared} == 'ok'" th:href="@{/served_table(table=${table})}" th:text="'Preparación completa, despachar - Mesa ' + ${table}" class="btn btn-info"> </a>
+        <a th:if="${served} == 'ok'" th:href="'#'" th:text="'Servido en - Mesa ' + ${table}" class="btn btn-success"> </a>
     </div>
     <hr th:if="${empty} != ok" >
     <div class="row justify-content-center align-items-center" th:if="${ordersByTable} == 'ok'">
@@ -80,7 +83,9 @@
                 <div class="card-footer text-muted">
                     <a th:if="${serviceOrderByTable.prepare} == 0 and ${serviceOrderByTable.prepared} == 0" th:href="@{/prepare(id=${serviceOrderByTable.id})}" th:text="'Comenzar Preparación'" class="btn btn-primary"></a>
                     <a th:if="${serviceOrderByTable.prepare} == 1 and ${serviceOrderByTable.prepared} == 0" th:href="@{/prepared(id=${serviceOrderByTable.id})}" class="btn btn-warning "><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"> </span> Terminar Preparacón</a>
-                    <a th:if="${serviceOrderByTable.prepare} == 1 and ${serviceOrderByTable.prepared} == 1" th:href="@{/kitchen(table=${serviceOrderByTable.tableNumber})}" th:text="'Preparación Terminada'" class="btn btn-success"></a>
+                    <!--<a th:if="${serviceOrderByTable.prepare} == 1 and ${serviceOrderByTable.prepared} == 1" th:href="@{/kitchen(table=${serviceOrderByTable.tableNumber})}" th:text="'Preparación Terminada'" class="btn btn-success"></a>-->
+                    <a th:if="${serviceOrderByTable.prepare} == 1 and ${serviceOrderByTable.prepared} == 1 and ${serviceOrderByTable.served} == 0" th:href="@{/served(id=${serviceOrderByTable.id})}" th:text="'Preparación Terminada, Despachar'" class="btn btn-info"></a>
+                    <a th:if="${serviceOrderByTable.prepare} == 1 and ${serviceOrderByTable.prepared} == 1 and ${serviceOrderByTable.served} == 1" th:href="@{/kitchen(table=${serviceOrderByTable.tableNumber})}" th:text="'Preparación Terminada'" class="btn btn-success"></a>
                 </div>
             </div>
         </div>

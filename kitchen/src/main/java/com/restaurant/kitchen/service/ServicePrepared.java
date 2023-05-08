@@ -23,6 +23,11 @@ public class ServicePrepared {
     }
 
     @Transactional
+    public void servedOrder(long id){
+        repositoryPrepared.servedById(id);
+    }
+
+    @Transactional
     public void prepareOrderByTable(long table){
         repositoryPrepared.prepareByTable(table);
     }
@@ -30,6 +35,11 @@ public class ServicePrepared {
     @Transactional
     public void preparedOrderByTable(long table){
         repositoryPrepared.preparedByTable(table);
+    }
+
+    @Transactional
+    public void servedOrderByTable(long table){
+        repositoryPrepared.servedByTable(table);
     }
 
 
