@@ -47,7 +47,7 @@ public class ClientsWeb {
         clients.setPassword(passwordEncoder.encode(clients.getPassword()));
 
         serviceClients.saveClients(clients);
-        return "redirect:/register?success";
+        return "redirect:/login?success";
     }
 
 }

@@ -14,7 +14,7 @@
                 <p class="owner-subtext"><a th:href="@{/orders?table=0} + '&username=' + ${#authentication.name}" class="btn btn-warning">Mis ordenes</a></p>
             </div>
             <div class="btn-group" style="width:100%">
-                <a th:href="@{/menu}" class="btn btn-outline-danger">Home</a>
+                <a th:href="@{/menu}" class="btn btn-outline-danger"><span class="bi bi-house"></span> Inicio</a>
                 <a th:href="@{/menuPersonalForm}" class="btn btn-outline-success">Personalizar Plato</a>
                 <a th:href="@{/menuPersonalView} + '/' + ${#authentication.name}" class="btn btn-outline-info">Mis Platos</a>
             </div>
@@ -48,6 +48,19 @@
                         <div class="card-body">
                             <input type="hidden" th:value="${serviceOrderList.id}" >
                             <h5 th:text="'Nombre del plato: ' + ${serviceOrderList.name}"></h5>
+                            <div th:if="${serviceOrderList.description} == 'Plato personalizado'">
+                            <label class="form-label">Fecha: <h6 th:text="${serviceOrderList.time}" class="card-title"></h6> </label>
+                            <h5 th:text="'Precio: $' + ${#numbers.formatDecimal(25000, 0, 'COMMA', 0, 'POINT')}" class="card-title"></h5>
+                                <ul>
+                                    <li><h6 th:text="'Cereal: ' + ${serviceOrderList.options}"></h6></li>
+                                    <li><h6 th:text="'Principio: ' + ${serviceOrderList.principles}"></h6></li>
+                                    <li><h6 th:text="'Proteina: ' + ${serviceOrderList.proteins}"></h6></li>
+                                    <li><h6 th:text="'Entrada: ' + ${serviceOrderList.entries}"></h6></li>
+                                    <li><h6 th:text="'Vegetales: ' + ${serviceOrderList.vegetables}"></h6></li>
+                                    <li><h6 th:text="'Ensalada: ' + ${serviceOrderList.salad}"></h6></li>
+                                    <li><h6 th:text="'Bebida: ' + ${serviceOrderList.drinks}"></h6></li>
+                                </ul>
+                            </div>
                             <h5 th:if="${serviceOrderList.accompaniment}" th:text="'Acompañamientos: ' + ${serviceOrderList.accompaniment}"></h5>
                             <h5 th:if="${serviceOrderList.option1}" th:text="'Caldo: ' + ${serviceOrderList.option1}"></h5>
                             <h5 th:if="${serviceOrderList.option2}" th:text="'Huevos: ' + ${serviceOrderList.option2}"></h5>

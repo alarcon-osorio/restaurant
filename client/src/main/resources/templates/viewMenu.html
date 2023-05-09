@@ -14,7 +14,7 @@
                 <p class="owner-subtext"><a th:href="@{/orders?table=0} + '&username=' + ${#authentication.name}" class="btn btn-warning">Mis ordenes</a></p>
             </div>
             <div class="btn-group" style="width:100%">
-                <a th:href="@{/menu}" class="btn btn-outline-danger">Home</a>
+                <a th:href="@{/menu}" class="btn btn-outline-danger"><span class="bi bi-house"></span> Inicio</a>
                 <a th:href="@{/menuPersonalForm}" class="btn btn-outline-success">Personalizar Plato</a>
                 <a th:href="@{/menuPersonalView} + '/' + ${#authentication.name}" class="btn btn-outline-info">Mis platos</a>
                 <!--<a th:href="@{/menu}" class="btn btn-outline-warning">Menú del dia</a>-->

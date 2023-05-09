@@ -82,60 +82,62 @@
               <input class="form-control" type="number" name="cant"  th:value="${serviceOrderById.cant}">
             </div>
 
-            <div class="form-group">
-              <label class="form-label">Cereal incluido</label>
-              <select class="form-control" name="options" required>
-                <option th:value="${serviceOrderById.options}" th:text="${serviceOrderById.options}" selected="true"></option>
-                <option th:each="menuPersonalFormOptions : ${menuPersonalFormOptions}" th:value="${menuPersonalFormOptions.name}" th:text="${menuPersonalFormOptions.name}" th:unless="${menuPersonalFormOptions.name} == ${serviceOrderById.options}"></option>
-              </select>
-            </div>
+            <div th:if="${serviceOrderById.description == 'Plato personalizado'}">
+                <div class="form-group">
+                  <label class="form-label">Cereal incluido</label>
+                  <select class="form-control" name="options" required>
+                    <option th:value="${serviceOrderById.options}" th:text="${serviceOrderById.options}" selected="true"></option>
+                    <option th:each="menuPersonalFormOptions : ${menuPersonalFormOptions}" th:value="${menuPersonalFormOptions.name}" th:text="${menuPersonalFormOptions.name}" th:unless="${menuPersonalFormOptions.name} == ${serviceOrderById.options}"></option>
+                  </select>
+                </div>
 
-            <div class="form-group">
-              <label class="form-label">Principio</label>
-              <select class="form-control" name="principles" required>
-                <option th:value="${serviceOrderById.principles}" th:text="${serviceOrderById.principles}" selected="true"></option>
-                <option th:each="menuPersonalFormPrinciples : ${menuPersonalFormPrinciples}" th:value="${menuPersonalFormPrinciples.name" th:text="${menuPersonalFormPrinciples.name}" th:unless="${menuPersonalFormPrinciples.name} == ${serviceOrderById.principles}"></option>
-              </select>
-            </div>
+                <div class="form-group">
+                  <label class="form-label">Principio</label>
+                  <select class="form-control" name="principles" required>
+                    <option th:value="${serviceOrderById.principles}" th:text="${serviceOrderById.principles}" selected="true"></option>
+                    <option th:each="menuPersonalFormPrinciples : ${menuPersonalFormPrinciples}" th:value="${menuPersonalFormPrinciples.name}" th:text="${menuPersonalFormPrinciples.name}" th:unless="${menuPersonalFormPrinciples.name} == ${serviceOrderById.principles}"></option>
+                  </select>
+                </div>
 
-            <div class="form-group">
-              <label class="form-label">Proteina</label>
-              <select class="form-control" name="proteins" required>
-                <option th:value="${serviceOrderById.proteins}" th:text="${serviceOrderById.proteins}" selected="true"></option>
-                <option th:each="menuPersonalFormProteins : ${menuPersonalFormProteins}" th:value="${menuPersonalFormProteins.name}" th:text="${menuPersonalFormProteins.name}" th:unless="${menuPersonalFormProteins.name} == ${serviceOrderById.proteins}"></option>
-              </select>
-            </div>
+                <div class="form-group">
+                  <label class="form-label">Proteina</label>
+                  <select class="form-control" name="proteins" required>
+                    <option th:value="${serviceOrderById.proteins}" th:text="${serviceOrderById.proteins}" selected="true"></option>
+                    <option th:each="menuPersonalFormProteins : ${menuPersonalFormProteins}" th:value="${menuPersonalFormProteins.name}" th:text="${menuPersonalFormProteins.name}" th:unless="${menuPersonalFormProteins.name} == ${serviceOrderById.proteins}"></option>
+                  </select>
+                </div>
 
-            <div class="form-group">
-              <label class="form-label">Entradas</label>
-              <select class="form-control" name="entries" required>
-                <option th:value="${serviceOrderById.entries}" th:text="${serviceOrderById.entries}" selected="true"></option>
-                <option th:each="menuPersonalFormEntries : ${menuPersonalFormEntries}" th:value="${menuPersonalFormEntries.name}" th:text="${menuPersonalFormEntries.name}" th:unless="${menuPersonalFormEntries.name} == ${serviceOrderById.entries}"></option>
-              </select>
-            </div>
+                <div class="form-group">
+                  <label class="form-label">Entradas</label>
+                  <select class="form-control" name="entries" required>
+                    <option th:value="${serviceOrderById.entries}" th:text="${serviceOrderById.entries}" selected="true"></option>
+                    <option th:each="menuPersonalFormEntries : ${menuPersonalFormEntries}" th:value="${menuPersonalFormEntries.name}" th:text="${menuPersonalFormEntries.name}" th:unless="${menuPersonalFormEntries.name} == ${serviceOrderById.entries}"></option>
+                  </select>
+                </div>
 
-            <div class="form-group">
-              <label class="form-label">Vegatales</label>
-              <select class="form-control" name="vegetables" required>
-                <option th:value="${serviceOrderById.vegetables}" th:text="${serviceOrderById.vegetables}" selected="true"></option>
-                <option th:each="menuPersonalFormVegetables : ${menuPersonalFormVegetables}" th:value="${menuPersonalFormVegetables.name}" th:text="${menuPersonalFormVegetables.name}" th:unless="${menuPersonalFormVegetables.name} == ${serviceOrderById.vegetables}"></option>
-              </select>
-            </div>
+                <div class="form-group">
+                  <label class="form-label">Vegatales</label>
+                  <select class="form-control" name="vegetables" required>
+                    <option th:value="${serviceOrderById.vegetables}" th:text="${serviceOrderById.vegetables}" selected="true"></option>
+                    <option th:each="menuPersonalFormVegetables : ${menuPersonalFormVegetables}" th:value="${menuPersonalFormVegetables.name}" th:text="${menuPersonalFormVegetables.name}" th:unless="${menuPersonalFormVegetables.name} == ${serviceOrderById.vegetables}"></option>
+                  </select>
+                </div>
 
-            <div class="form-group">
-              <label class="form-label">Ensalada</label>
-              <select class="form-control" name="salad" required>
-                <option th:value="${serviceOrderById.salad}" th:text="${serviceOrderById.salad}" selected="true"></option>
-                <option th:each="menuPersonalFormSalad : ${menuPersonalFormSalad}" th:value="${menuPersonalFormSalad.name}" th:text="${menuPersonalFormSalad.name}" th:unless="${menuPersonalFormSalad.name} == ${serviceOrderById.salad}"></option>
-              </select>
-            </div>
+                <div class="form-group">
+                  <label class="form-label">Ensalada</label>
+                  <select class="form-control" name="salad" required>
+                    <option th:value="${serviceOrderById.salad}" th:text="${serviceOrderById.salad}" selected="true"></option>
+                    <option th:each="menuPersonalFormSalad : ${menuPersonalFormSalad}" th:value="${menuPersonalFormSalad.name}" th:text="${menuPersonalFormSalad.name}" th:unless="${menuPersonalFormSalad.name} == ${serviceOrderById.salad}"></option>
+                  </select>
+                </div>
 
-            <div class="form-group">
-              <label class="form-label">Bebida</label>
-              <select class="form-control" name="drinks" required>
-                <option th:value="${serviceOrderById.drinks}" th:text="${serviceOrderById.drinks}" selected="true"></option>
-                <option th:each="menuPersonalFormDrinks : ${menuPersonalFormDrinks}" th:value="${menuPersonalFormDrinks.name}" th:text="${menuPersonalFormDrinks.name}" th:unless="${menuPersonalFormDrinks.name} == ${serviceOrderById.drinks}"></option>
-              </select>
+                <div class="form-group">
+                  <label class="form-label">Bebida</label>
+                  <select class="form-control" name="drinks" required>
+                    <option th:value="${serviceOrderById.drinks}" th:text="${serviceOrderById.drinks}" selected="true"></option>
+                    <option th:each="menuPersonalFormDrinks : ${menuPersonalFormDrinks}" th:value="${menuPersonalFormDrinks.name}" th:text="${menuPersonalFormDrinks.name}" th:unless="${menuPersonalFormDrinks.name} == ${serviceOrderById.drinks}"></option>
+                  </select>
+                </div>
             </div>
 
             <div class="form-group">

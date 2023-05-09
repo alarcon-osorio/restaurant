@@ -14,7 +14,7 @@
                 <p class="owner-subtext"><a th:href="@{/orders?table=0} + '&username=' + ${#authentication.name}" class="btn btn-warning">Mis ordenes</a></p>
             </div>
             <div class="btn-group" style="width:100%" th:if="${#authorization.expression('isAuthenticated()')}">
-                <a th:href="@{/menu}" class="btn btn-outline-danger">Home</a>
+                <a th:href="@{/menu}" class="btn btn-outline-danger"><span class="bi bi-house"></span> Inicio</a>
                 <a th:href="@{/menuPersonalForm}" class="btn btn-outline-success">Personalizar Plato</a>
                 <!--<a th:each="menuTypeList : ${menuTypeList}" th:href="@{/type_menu(id=${menuTypeList.id})}"  th:text="${menuTypeList.name}" class="btn btn-outline-success"></a>-->
             </div>
@@ -55,14 +55,16 @@
                     <h4 th:text="${menuPersonalListByName.name_dish}" class="card-title"></h4>
                     <label class="form-label">Fecha: <h6 th:text="${menuPersonalListByName.time}" class="card-title"></h6> </label>
                     <h5 th:text="'Precio: $' + ${#numbers.formatDecimal(25000, 0, 'COMMA', 0, 'POINT')}" class="card-title"></h5>
-                    <h6 th:text="'Cereal: ' + ${menuPersonalListByName.options}" ></h6>
-                    <h6 th:text="'Principio: ' + ${menuPersonalListByName.principles}" ></h6>
-                    <h6 th:text="'Proteina: ' + ${menuPersonalListByName.proteins}" ></h6>
-                    <h6 th:text="'Entrada: ' + ${menuPersonalListByName.entries}" ></h6>
-                    <h6 th:text="'Vegetal: ' + ${menuPersonalListByName.vegetables}" ></h6>
-                    <h6 th:text="'Ensalada: ' + ${menuPersonalListByName.salad}" ></h6>
-                    <h6 th:text="'Bebida: ' + ${menuPersonalListByName.drinks}" ></h6>
-                    <h6 th:text="'Observaciones: ' + ${menuPersonalListByName.observations}" ></h6>
+                    <ul>
+                        <li><h6 th:text="'Cereal: ' + ${menuPersonalListByName.options}" ></h6></li>
+                        <li><h6 th:text="'Principio: ' + ${menuPersonalListByName.principles}" ></h6></li>
+                        <li><h6 th:text="'Proteina: ' + ${menuPersonalListByName.proteins}" ></h6></li>
+                        <li><h6 th:text="'Entrada: ' + ${menuPersonalListByName.entries}" ></h6></li>
+                        <li><h6 th:text="'Vegetal: ' + ${menuPersonalListByName.vegetables}" ></h6></li>
+                        <li><h6 th:text="'Ensalada: ' + ${menuPersonalListByName.salad}" ></h6></li>
+                        <li> <h6 th:text="'Bebida: ' + ${menuPersonalListByName.drinks}" ></h6></li>
+                    </ul>
+                    <h5 th:text="'Observaciones: ' + ${menuPersonalListByName.observations}" ></h5>
                 </div>
                 <div class="card-footer text-muted">
                     <a th:href="@{/accompaniment(menuIdPersonal=${menuPersonalListByName.id}, edit=false)}" th:text="'Seleccionar'" class="btn btn-success"></a>

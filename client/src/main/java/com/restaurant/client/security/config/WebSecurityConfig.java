@@ -1,13 +1,8 @@
 package com.restaurant.client.security.config;
 
-import com.restaurant.client.security.entity.Clients;
-import com.restaurant.client.security.repository.RepositoryClientSecurity;
 import com.restaurant.client.security.service.ClientDetailsServiceImpl;
-import com.restaurant.client.service.ServiceClients;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -19,9 +14,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-    @Autowired
-    Environment environment;
 
     @Bean
     public UserDetailsService userDetailsService() {

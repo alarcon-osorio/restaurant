@@ -19,23 +19,41 @@
     </div>
 
     <hr th:if="${allOrders} == 'ok'">
+
     <div class="row justify-content-center align-items-center" th:if="${allOrders} == 'ok'">
         <h1>Todas las Mesas</h1>
     </div>
+
     <hr th:if="${empty} != ok" >
     <div class="row">
         <div th:each="serviceOrderList : ${serviceOrderList}" class="col-md-4 mb-4">
             <div class="card">
-                <img th:src="${serviceOrderList.image}" class="card-img-top" alt="...">
+                <img th:if="${serviceOrderList.description != 'Plato personalizado'}" th:src="${serviceOrderList.image}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h4 th:text="'Mesa ' + ${serviceOrderList.tableNumber}" class="card-title" style="text-align:center;"></h4>
+                    <hr th:if="${serviceOrderList.description == 'Plato personalizado'}" >
+
                     <h5 th:text="${serviceOrderList.name}" class="card-title"></h5>
+
                     <h6 th:if="${serviceOrderList.accompaniment}" th:text="'Acompañamientos: ' +${serviceOrderList.accompaniment}"></h6>
                     <h6 th:if="${serviceOrderList.option1}" th:text="'Caldo: ' + ${serviceOrderList.option1}" ></h6>
                     <h6 th:if="${serviceOrderList.option2}" th:text="'Huevos: ' + ${serviceOrderList.option2}" ></h6>
                     <h6 th:if="${serviceOrderList.option3}" th:text="'Bebida: ' + ${serviceOrderList.option3}" ></h6>
                     <h6 th:if="${serviceOrderList.option4}" th:text="'Complemento: ' + ${serviceOrderList.option4}" ></h6>
                     <h6 th:if="${serviceOrderList.drinksIncludes}" th:text="'Bebida Incluida: ' + ${serviceOrderList.drinksIncludes}"></h6>
+
+                    <div th:if="${serviceOrderList.description == 'Plato personalizado'}">
+                        <ul>
+                            <li><h6 th:text="'Cereal: ' + ${serviceOrderList.options}" ></h6></li>
+                            <li><h6 th:text="'Principio: ' + ${serviceOrderList.principles}" ></h6></li>
+                            <li><h6 th:text="'Proteina: ' + ${serviceOrderList.proteins}" ></h6></li>
+                            <li><h6 th:text="'Entrada: ' + ${serviceOrderList.entries}" ></h6></li>
+                            <li><h6 th:text="'Vegetal: ' + ${serviceOrderList.vegetables}" ></h6></li>
+                            <li><h6 th:text="'Ensalada: ' + ${serviceOrderList.salad}" ></h6></li>
+                            <li> <h6 th:text="'Bebida: ' + ${serviceOrderList.drinks}" ></h6></li>
+                        </ul>
+                    </div>
+
                     <h6 th:text="'Observaciones: ' +${serviceOrderList.observations}" class="card-title"></h6>
                     <h6 th:text="'Cantidad: ' +${serviceOrderList.cant}"></h6>
                 </div>
@@ -67,16 +85,34 @@
     <div class="row">
         <div th:each="serviceOrderByTable : ${serviceOrderByTable}" class="col-md-4 mb-4">
             <div class="card">
-                <img th:src="${serviceOrderByTable.image}" class="card-img-top" alt="...">
+                <img th:if="${serviceOrderByTable.description != 'Plato personalizado'}" th:src="${serviceOrderByTable.image}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h4 th:text="'Mesa ' + ${serviceOrderByTable.tableNumber}" class="card-title" style="text-align:center;"></h4>
+                    <hr th:if="${serviceOrderByTable.description == 'Plato personalizado'}" >
                     <h5 th:text="${serviceOrderByTable.name}" class="card-title"></h5>
+                    <label class="form-label">Fecha: <h6 th:text="${serviceOrderByTable.time}" class="card-title"></h6> </label>
+
+                    <!-- Por si se registran acompañamientos en el menu Restuarante-->
                     <h6 th:if="${serviceOrderByTable.accompaniment}" th:text="'Acompañamientos: ' +${serviceOrderByTable.accompaniment}"></h6>
                     <h6 th:if="${serviceOrderByTable.option1}" th:text="'Caldo: ' + ${serviceOrderByTable.option1}" ></h6>
                     <h6 th:if="${serviceOrderByTable.option2}" th:text="'Huevos: ' + ${serviceOrderByTable.option2}" ></h6>
                     <h6 th:if="${serviceOrderByTable.option3}" th:text="'Bebida: ' + ${serviceOrderByTable.option3}" ></h6>
                     <h6 th:if="${serviceOrderByTable.option4}" th:text="'Complemento: ' + ${serviceOrderByTable.option4}" ></h6>
                     <h6 th:if="${serviceOrderByTable.drinksIncludes}" th:text="'Bebida Incluida: ' + ${serviceOrderByTable.drinksIncludes}"></h6>
+                    <!-- Fin del acompañamiento menu Restaurante-->
+
+                    <div th:if="${serviceOrderByTable.description == 'Plato personalizado'}">
+                        <ul>
+                            <li><h6 th:text="'Cereal: ' + ${serviceOrderByTable.options}" ></h6></li>
+                            <li><h6 th:text="'Principio: ' + ${serviceOrderByTable.principles}" ></h6></li>
+                            <li><h6 th:text="'Proteina: ' + ${serviceOrderByTable.proteins}" ></h6></li>
+                            <li><h6 th:text="'Entrada: ' + ${serviceOrderByTable.entries}" ></h6></li>
+                            <li><h6 th:text="'Vegetal: ' + ${serviceOrderByTable.vegetables}" ></h6></li>
+                            <li><h6 th:text="'Ensalada: ' + ${serviceOrderByTable.salad}" ></h6></li>
+                            <li> <h6 th:text="'Bebida: ' + ${serviceOrderByTable.drinks}" ></h6></li>
+                        </ul>
+                    </div>
+
                     <h6 th:text="'Observaciones: ' +${serviceOrderByTable.observations}" class="card-title"></h6>
                     <h6 th:text="'Cantidad: ' +${serviceOrderByTable.cant}"></h6>
                 </div>
