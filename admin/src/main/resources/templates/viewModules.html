@@ -1,5 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="es">
 
 <header th:insert="includes/header :: header"> </header>
 <header th:insert="includes/navbar :: navbar"> </header>
@@ -13,8 +13,7 @@
         <p class="owner-subtext"><a th:href="@{/logout}">Cerrar Sesión</a></p>
 
         <div class="btn-group" style="width:100%">
-          <a th:href="@{/admin}" class="btn btn-outline-success">Admin</a>
-          <a th:href="@{/logout}" class="btn btn-outline-warning">Cerrar Sesión</a>
+          <a th:href="@{/dashboard}" class="btn btn-outline-success">Administración</a>
         </div>
       </div>
       <br>

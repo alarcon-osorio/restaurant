@@ -3,7 +3,7 @@
 
     <ul class="nav" th:fragment="sidebar">
         <li class="nav-item">
-            <a class="nav-link" th:href="@{/admin}">
+            <a class="nav-link" th:href="@{/dashboard}">
                 <i class="mdi mdi-home menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
@@ -11,7 +11,7 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-format-align-justify"></i>
-                <span class="menu-title">&nbsp;Menú</span>
+                <span class="menu-title">&nbsp;Menú Restaurante</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
@@ -24,6 +24,34 @@
                 </ul>
             </div>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#menu-items" aria-expanded="false" aria-controls="menu-items">
+                <i class="mdi mdi-format-align-justify"></i>
+                <span class="menu-title">&nbsp;Menú Restaurante</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="menu-items">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/menu}">Menú Principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/menuType}">Tipos de Menú</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/menuAccompaniment}">Menú Acompañamientos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/menuIncludes}">Menu Incluidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/menuOptional}">Menú Opcionales</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
         <li class="nav-item">
             <a class="nav-link" th:href="@{/paymentDiscount}">
                 <i class="mdi mdi-cash-usd"></i>
@@ -55,6 +83,12 @@
                     <li class="nav-item"> <a class="nav-link" th:href="@{/typesProductAndMeasure}">T. Producto & U.Medida</a></li>
                 </ul>
             </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/users}">
+                <i class="mdi mdi-account-key"></i>
+                <span class="menu-title">&nbsp;Clientes</span>
+            </a>
         </li>
 
         <li class="nav-item">

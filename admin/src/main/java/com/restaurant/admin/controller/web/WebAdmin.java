@@ -17,7 +17,7 @@ public class WebAdmin {
     @Autowired
     ServiceOrders serviceOrders;
 
-    @RequestMapping("/admin")
+    @RequestMapping("/dashboard")
     public String viewAdmin(Model model){
         List<ServiceOrder> serviceOrderList = serviceOrders.getServiceOrders();
         String totalOrders = serviceOrders.getTotalOrders();
