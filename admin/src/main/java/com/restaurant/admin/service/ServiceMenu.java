@@ -23,8 +23,12 @@ public class ServiceMenu {
         return repositoryMenuDTO.findAll();
     }
 
-    public Menu saveMenu(Menu menu){
-        return repositoryMenu.save(menu);
+    public void saveMenu(Menu menu){
+        repositoryMenu.save(menu);
+    }
+
+    public void deleteById(Long id){
+        repositoryMenu.deleteById(id);
     }
 
     public Menu getMenuId(long id){

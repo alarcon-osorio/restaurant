@@ -55,7 +55,7 @@ public class ClientsWebTest {
 
         String viewName = clientsWeb.registration(clientsMock, bindingResultMock, modelMock);
 
-        assertEquals("redirect:/register?success", viewName);
+        assertEquals("redirect:/login?success", viewName);
         clientsMock.getEmail();
         clientsMock.getEmail();
         clientsMock.setUsername("test@example.com");

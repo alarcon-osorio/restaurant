@@ -41,7 +41,6 @@ public class WebMenu {
     @GetMapping("/menu")
     public String getMenu(Model model){
         List<MenuDTO> menuList = serviceMenu.getMenu();
-        log.info("--->" + menuList);
         model.addAttribute("menuList", menuList);
         return "pages/tables/menu-principal";
     }
@@ -60,10 +59,16 @@ public class WebMenu {
         Menu menuPrincipal = serviceMenu.getMenuId(id);
         if (edit){
             serviceMenu.saveMenu(menu);
-            return "redirect:/menu?success";
+            return "redirect:/menu?edit";
         }
         model.addAttribute("menuPrincipal", menuPrincipal);
         return "pages/forms/menu-form_edit";
+    }
+
+    @RequestMapping("/deleteMenu")
+    public String deleteMenu(@RequestParam long id){
+        serviceMenu.deleteById(id);
+        return "redirect:/menu?delete";
     }
 
 

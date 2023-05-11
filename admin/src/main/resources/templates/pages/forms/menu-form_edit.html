@@ -26,23 +26,23 @@
                                             <option th:value="${menuPrincipal.id}">Tipico</option>
                                         </select>
                                     </div>
+                                    <input type="hidden" th:value="${menuPrincipal.id}" name="id">
                                     <div class="form-group">
-                                        <label for="exampleInputName1">Nombre</label>
-                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name">
+                                        <label>Nombre</label>
                                         <input th:value="${menuPrincipal.name}" type="text" class="form-control" placeholder="Name" name="name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail3">Descripción</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Descripcion" name="description">
+                                        <label>Descripción</label>
+                                        <input th:value="${menuPrincipal.description}" type="text" class="form-control" placeholder="Descripción" name="description">
                                     </div>
                                     <div class="form-group">
                                         <label>Precio</label>
-                                        <input type="number" class="form-control" placeholder="Precio" name="price">
+                                        <input th:value="${menuPrincipal.price}" type="text" class="form-control" placeholder="Precio" name="price">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Imagen</label>
-                                        <input type="text" class="form-control" placeholder="Url imagen" name="image">
+                                        <input th:value="${menuPrincipal.image}" type="text" class="form-control" placeholder="Url Imagen" name="image">
                                     </div>
 
                                     <button type="submit" class="btn btn-success mr-2">Guardar</button>
