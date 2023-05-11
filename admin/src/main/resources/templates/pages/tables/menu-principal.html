@@ -18,8 +18,14 @@
                 <div class="card-body">
                   <h4 class="card-title">Listado de platos Menú</h4>
                   <p class="card-description">
-                    <a href="#">Crear Nuevo registro</a>
+                    <a th:href="@{/createMenu}">Crear Nuevo registro</a>
                   </p>
+                  <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Exito! </strong>Menú guardado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
@@ -40,9 +46,9 @@
                           <td th:text="${menuList.menuType}"></td>
                           <td th:text="'$' + ${#numbers.formatDecimal(menuList.price, 0, 'COMMA', 0, 'POINT')}"></td>
                           <td>
-                            <a href="#">Editar</a>
+                            <a th:href="@{/editMenu(id=${menuList.id})}">Editar</a>
                             |
-                            <a href="#">Eliminar</a>
+                            <a href="">Eliminar</a>
                           </td>
                         </tr>
                       </tbody>

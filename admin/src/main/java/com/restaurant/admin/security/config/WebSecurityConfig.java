@@ -38,21 +38,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers( "/css/**", "/images/**", "/favicon.ico").permitAll()
-                .anyRequest().authenticated()
-                .and()
+                    .antMatchers( "/css/**", "/images/**", "/favicon.ico").permitAll()
+                    .anyRequest().authenticated()
+                    .and()
                 .formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/modules")
-                .permitAll()
-                .and()
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/modules")
+                    .permitAll()
+                    .and()
                 .logout()
-                .permitAll()
-                .and().csrf().disable(); // we'll enable this in a later blog post
+                    .permitAll()
+                    .and().csrf().disable(); // we'll enable this in a later blog post
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authenticationProvider());
+        auth
+                .authenticationProvider(authenticationProvider());
     }
 }
