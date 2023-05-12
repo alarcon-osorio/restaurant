@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<header th:insert="includes/header :: header"> </header>
+<header th:insert="includes/navbar :: navbar"> </header>
+
+<div class="container-scroller">
+  <div class="container-fluid page-body-wrapper">
+    <!-- partial:../../partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar" th:insert="includes/sidebar :: sidebar"></nav>
+      <!-- partial -->
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                  <h4 class="card-title">Opciones de menú Pesonal</h4>
+                  <p class="card-description">
+                    <a th:href="@{/createMenuPersonalForm}">Crear Nuevo registro</a>
+                  </p>
+
+                  <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Exito! </strong>Opción de menu personal creada correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div th:if="${param.edit}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Editado! </strong>Opción de menu personal editada correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div th:if="${param.delete}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Eliminado! </strong>Opción de menu personal eliminada correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Opción menú Personalizado</th>
+                          <th>Tipo Opción Personalizada</th>
+                          <th>Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr th:each="menuPersonalFormDTOList, iter : ${menuPersonalFormDTOList}">
+                          <td th:text="${iter.index + 1}"></td>
+                          <td th:text="${menuPersonalFormDTOList.name}"></td>
+                          <td th:text="${menuPersonalFormDTOList.type}"></td>
+                          <td>
+                            <a th:href="@{/editMenuPersonalForm(id=${menuPersonalFormDTOList.id})}">Editar</a>
+                            |
+                            <a th:href="@{/deleteMenuPersonalForm(id=${menuPersonalFormDTOList.id})}">Eliminar</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>
+<footer th:insert="includes/footer :: footer"></footer>

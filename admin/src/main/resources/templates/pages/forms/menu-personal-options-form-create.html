@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="es">
+
+<header th:insert="includes/header :: header"></header>
+<header th:insert="includes/navbar :: navbar"></header>
+
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" th:insert="includes/sidebar :: sidebar"></nav>
+        <!-- partial -->
+
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Crear Opciones de Menu Personalizado</h4>
+                                <form th:action="@{/createMenuPersonalForm?create=true}" method="post" class="forms-sample">
+
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Nombre Opción</label>
+                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Nombre" name="name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Tipo Opción</label>
+                                        <select class="form-control form-control-lg" name="type">
+                                            <option th:each="menuPersonalTypeList : ${menuPersonalTypeList}" th:value="${menuPersonalTypeList.id}" th:text="${menuPersonalTypeList.name}"></option>
+                                        </select>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success mr-2">Guardar</button>
+                                    <a th:href="@{/menuPersonalForm}" class="btn btn-light">Cancelar</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="includes/footer :: footer"></footer>
+

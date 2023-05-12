@@ -8,25 +8,24 @@
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item show-submenu">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-format-align-justify"></i>
                 <span class="menu-title">&nbsp;Menú General</span>
-                <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu" id="menuRestaurante">
+                <ul class="nav flex-column sub-menu">
                     <strong><span class="menu-title">&nbsp;- Menú Restaurante</span></strong>
                     <li class="nav-item"> <a class="nav-link" th:href="@{/menu}">Menú</a></li>
-                    <li class="nav-item"> <a class="nav-link" th:href="@{/menuType}" data-toggle="collapse" aria-expanded="false">Tipos de Menú</a></li>
+                    <li class="nav-item"> <a class="nav-link" th:href="@{/menuType}">Tipos de Menú</a></li>
                     <li class="nav-item"> <a class="nav-link" th:href="@{/menuAccompaniment}">Menú Acompañamientos</a></li>
                     <li class="nav-item"> <a class="nav-link" th:href="@{/menuIncludes}">Menu Incluidos</a></li>
                     <li class="nav-item"> <a class="nav-link" th:href="@{/menuOptional}">Menú Opcionales</a></li>
                     <br>
                     <strong><span class="menu-title">&nbsp;- Menú Personalizado </span></strong>
-                    <li class="nav-item"> <a class="nav-link" th:href="@{/menuPersonal}">Opciones Menú</a></li>
-                    <li class="nav-item"> <a class="nav-link" th:href="@{/menuPersonalType}">Tipos de opciones</a></li>
-                    <li class="nav-item"> <a class="nav-link" th:href="@{/menuPersonalView}">Vista personal</a></li>
+                    <li class="nav-item"> <a class="nav-link" th:href="@{/menuPersonalForm}">Opciones Menú</a></li>
+                    <li class="nav-item"> <a class="nav-link" th:href="@{/menuPersonalType}">Tipos de personalización</a></li>
+                    <li class="nav-item"> <a class="nav-link" th:href="@{/menuPersonalView}">Vista personalizaciones</a></li>
                 </ul>
             </div>
         </li>
@@ -52,11 +51,10 @@
         </li>
 
 
-        <li class="nav-item">
+        <li class="nav-item show-submenu">
             <a class="nav-link" data-toggle="collapse" href="#ui-inv" aria-expanded="false" aria-controls="ui-inv">
                 <i class="mdi mdi-file-tree"></i>
                 <span class="menu-title">&nbsp;Inventario</span>
-                <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-inv">
                 <ul class="nav flex-column sub-menu">
@@ -66,8 +64,8 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" th:href="@{/users}">
-                <i class="mdi mdi-account-key"></i>
+            <a class="nav-link" th:href="@{/clients}">
+                <i class="mdi mdi-account-multiple"></i>
                 <span class="menu-title">&nbsp;Clientes</span>
             </a>
         </li>
