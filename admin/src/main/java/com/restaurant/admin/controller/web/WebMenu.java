@@ -70,8 +70,6 @@ public class WebMenu {
         serviceMenu.deleteById(id);
         return "redirect:/menu?delete";
     }
-
-
     @RequestMapping("/menuType")
     public String getMenuType(Model model){
         List<MenuType> menuTypeMenu = serviceMenuType.getMenuType();

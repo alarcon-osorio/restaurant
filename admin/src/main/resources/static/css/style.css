@@ -128,3 +128,15 @@
     height: 166px;
     border-radius: 118px;
 }
+
+/* Estilo para el submenú */
+.collapse {
+  max-height: 0 !important;
+  overflow: hidden !important;
+  transition: max-height 0.3s ease-out !important;
+}
+
+/* Estilo para el submenú abierto */
+.collapse.show {
+  max-height: 500px !important; /* Ajustar la altura máxima según el contenido del submenú */
+}

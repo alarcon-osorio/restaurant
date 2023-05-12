@@ -15,10 +15,10 @@
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
+                <ul class="nav flex-column sub-menu" id="menuRestaurante">
                     <strong><span class="menu-title">&nbsp;- Menú Restaurante</span></strong>
                     <li class="nav-item"> <a class="nav-link" th:href="@{/menu}">Menú</a></li>
-                    <li class="nav-item"> <a class="nav-link" th:href="@{/menuType}">Tipos de Menú</a></li>
+                    <li class="nav-item"> <a class="nav-link" th:href="@{/menuType}" data-toggle="collapse" aria-expanded="false">Tipos de Menú</a></li>
                     <li class="nav-item"> <a class="nav-link" th:href="@{/menuAccompaniment}">Menú Acompañamientos</a></li>
                     <li class="nav-item"> <a class="nav-link" th:href="@{/menuIncludes}">Menu Incluidos</a></li>
                     <li class="nav-item"> <a class="nav-link" th:href="@{/menuOptional}">Menú Opcionales</a></li>
@@ -98,6 +98,7 @@
             <span class="menu-title">Icons</span>
           </a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
             <i class="mdi mdi-account menu-icon"></i>
@@ -106,15 +107,16 @@
           </a>
           <div class="collapse" id="auth">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="admin/pages/samples/login.html"> Login </a></li>
-              <li class="nav-item"> <a class="nav-link" href="admin/pages/samples/login-2.html"> Login 2 </a></li>
-              <li class="nav-item"> <a class="nav-link" href="admin/pages/samples/register.html"> Register </a></li>
-              <li class="nav-item"> <a class="nav-link" href="admin/pages/samples/register-2.html"> Register 2 </a></li>
-              <li class="nav-item"> <a class="nav-link" href="admin/pages/samples/lock-screen.html"> Lockscreen </a></li>
+              <li class="nav-item"> <a class="nav-link" href="#"> Login </a></li>
+              <li class="nav-item"> <a class="nav-link" href="#"> Login 2 </a></li>
+              <li class="nav-item"> <a class="nav-link" href="#"> Register </a></li>
+              <li class="nav-item"> <a class="nav-link" href="#"> Register 2 </a></li>
+              <li class="nav-item"> <a class="nav-link" href="#"> Lockscreen </a></li>
             </ul>
           </div>
         </li>
-        -->
+
+ -->
         <li class="nav-item">
             <a class="nav-link" href="documentation/documentation.html">
                 <i class="mdi mdi-file-document-box-outline menu-icon"></i>
