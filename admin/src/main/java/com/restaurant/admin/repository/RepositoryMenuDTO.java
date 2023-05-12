@@ -1,5 +1,6 @@
 package com.restaurant.admin.repository;
 
+import com.restaurant.admin.dto.MenuAccompanimentDTO;
 import com.restaurant.admin.dto.MenuDTO;
 import com.restaurant.admin.entity.Menu;
 import org.springframework.beans.factory.annotation.Autowired;

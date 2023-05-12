@@ -29,4 +29,16 @@ public class ServiceMenuOptional {
         return repositoryMenuOptional.findByIdMenu(idMenu);
     }
 
+    public MenuOptional getMenuOptionalById(long id){
+        return repositoryMenuOptional.findById(id).get();
+    }
+
+    public void saveMenuOptional(MenuOptional menuOptional){
+        repositoryMenuOptional.save(menuOptional);
+    }
+
+    public void deleteMenuOptional(long id){
+        repositoryMenuOptional.deleteById(id);
+    }
+
 }

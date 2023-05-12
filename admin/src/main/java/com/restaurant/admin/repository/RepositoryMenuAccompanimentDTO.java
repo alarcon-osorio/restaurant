@@ -13,4 +13,5 @@ public interface RepositoryMenuAccompanimentDTO extends JpaRepository<MenuAccomp
     @Query(value = "SELECT t1.id, t2.name as menu_type, t3.name as menu, t1.accompaniment FROM restaurant.menu_accompaniment t1 LEFT JOIN restaurant.menu_type t2 ON t1.id_menu_type = t2.id LEFT JOIN restaurant.menu t3 ON t1.id_menu = t3.id ;", nativeQuery = true)
     List<MenuAccompanimentDTO> findAll();
 
+
 }

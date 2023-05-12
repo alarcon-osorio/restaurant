@@ -21,4 +21,12 @@ public class ServiceMenuType {
         return repositoryMenuType.findById(id).get();
     }
 
+    public void saveMenuType(MenuType menuType){
+        repositoryMenuType.save(menuType);
+    }
+
+    public void deleteById(long id){
+        repositoryMenuType.deleteById(id);
+    }
+
 }

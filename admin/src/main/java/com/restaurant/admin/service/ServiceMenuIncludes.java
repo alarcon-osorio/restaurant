@@ -29,4 +29,16 @@ public class ServiceMenuIncludes {
     public List<MenuIncludes> getMenuIncludesIdMenu(long idMenu){
         return repositoryMenuIncludes.findByIdMenu(idMenu);
     }
+
+    public MenuIncludes getMenuIncludesById(long id){
+        return repositoryMenuIncludes.findById(id).get();
+    }
+
+    public void saveMenuInlcudes(MenuIncludes menuIncludes){
+        repositoryMenuIncludes.save(menuIncludes);
+    }
+
+    public void deleteMenuInclcudes(long id){
+        repositoryMenuIncludes.deleteById(id);
+    }
 }

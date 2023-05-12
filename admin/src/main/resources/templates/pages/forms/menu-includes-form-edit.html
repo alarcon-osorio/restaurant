@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="es">
+
+<header th:insert="includes/header :: header"></header>
+<header th:insert="includes/navbar :: navbar"></header>
+
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" th:insert="includes/sidebar :: sidebar"></nav>
+        <!-- partial -->
+
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Editar incluidos del menu Restaurante</h4>
+                                <form th:action="@{/editMenuIncludes?edit=true}" method="post" class="forms-sample">
+
+                                    <input type="hidden" th:value="${menuIncludesPrincipal.id}" name="id">
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Tipo de menu</label>
+                                        <select class="form-control form-control-lg" id="exampleFormControlSelect1" name="idMenuType">
+                                            <option value="2">Restaurante</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Menú</label>
+                                        <input th:value="${menuIncludesPrincipal.idMenu}"  type="hidden" class="form-control" placeholder="Menú" name="idMenu" readonly>
+                                        <input th:value="${menu.name}"  type="text" class="form-control" placeholder="Menú" readonly>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Inlcuidos</label>
+                                        <input th:value="${menuIncludesPrincipal.name}" type="text" class="form-control" placeholder="Inlcuidos" name="name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Precio</label>
+                                        <input th:value="${menuIncludesPrincipal.price}" type="text" class="form-control" placeholder="Precio" name="price">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success mr-2">Guardar</button>
+                                    <a th:href="@{/menuIncludes}" class="btn btn-light">Cancelar</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:insert="includes/footer :: footer"></footer>
+

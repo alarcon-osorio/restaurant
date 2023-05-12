@@ -160,6 +160,10 @@ public class AccompanimentWeb {
         if (!menuOptionalList.isEmpty()) {
             model.addAttribute("options", "ok");
             model.addAttribute("menuOptionalList", menuOptionalList);
+
+
+
+
         }
         if (add) {
             model.addAttribute("table", table);

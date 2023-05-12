@@ -35,4 +35,12 @@ public class ServiceMenuAccompaniment {
         return repositoryMenuAccompaniment.findAccompanimentDistinct();
     }
 
+    public void saveMenuAccompaniment(MenuAccompaniment menuAccompaniment){
+        repositoryMenuAccompaniment.save(menuAccompaniment);
+    }
+
+    public void deleteMenuAccompaniment(long id){
+        repositoryMenuAccompaniment.deleteById(id);
+    }
+
 }

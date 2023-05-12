@@ -31,7 +31,7 @@
                         <label class="form-label">Acompañamiento</label>
                         <select class="form-control" name="accompaniment" required>
                             <option value="">Seleccione...</option>
-                            <option th:each="menuAccompanimentIdMenu : ${menuAccompanimentIdMenu}" th:text="${menuAccompanimentIdMenu.accompaniment}" th:value="${menuAccompanimentIdMenu.accompaniment}"></option>
+                            <option th:each="menuAccompanimentIdMenu : ${menuAccompanimentIdMenu}" th:text="${menuAccompanimentIdMenu.accompaniment}" th:value="${menuAccompanimentIdMenu.accompaniment}" ></option>
                         </select>
                     </div>
 
@@ -39,7 +39,7 @@
                         <label class="form-label">Bebida Incluida</label>
                         <select class="form-control" name="drinksIncludes" required>
                             <option value="">Seleccione...</option>
-                            <option th:each="menuIncludeByIdMenu : ${menuIncludeByIdMenu}" th:text="${menuIncludeByIdMenu.name}" th:value="${menuIncludeByIdMenu.name}"></option>
+                            <option th:each="menuIncludeByIdMenu : ${menuIncludeByIdMenu}" th:text="${menuIncludeByIdMenu.name}" th:value="${menuIncludeByIdMenu.name}" ></option>
                         </select>
                     </div>
 
@@ -55,7 +55,7 @@
                         <label class="form-label">Huevos</label>
                         <select class="form-control" name="option2" required>
                             <option value="">Seleccione...</option>
-                            <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option2}" th:value="${menuOptionalList.option2}"></option>
+                            <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option2}" th:value="${menuOptionalList.option2}" ></option>
                         </select>
                     </div>
 
@@ -63,7 +63,7 @@
                         <label class="form-label">Bebida</label>
                         <select class="form-control" name="option3" required>
                             <option value="">Seleccione...</option>
-                            <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option3}" th:value="${menuOptionalList.option3}"></option>
+                            <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option3}" th:value="${menuOptionalList.option3}" ></option>
                         </select>
                     </div>
 
@@ -71,7 +71,7 @@
                         <label class="form-label">Complemento</label>
                         <select class="form-control" name="option4" required>
                             <option value="">Seleccione...</option>
-                            <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option4}" th:value="${menuOptionalList.option4}"></option>
+                            <option th:each="menuOptionalList : ${menuOptionalList}" th:text="${menuOptionalList.option4}" th:value="${menuOptionalList.option4}" ></option>
                         </select>
                     </div>
 
