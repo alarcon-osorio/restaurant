@@ -16,10 +16,32 @@
             <div class="col-lg-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Gestion de Mesas</h4>
+                  <h4 class="card-title">Gestión de Mesas</h4>
                   <p class="card-description">
-                    <a href="#">Crear Nuevo registro</a>
+                    <a th:href="@{/createRestaurantTable}">Crear Nuevo registro</a>
                   </p>
+
+                  <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Exito! </strong>Mesa creada correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div th:if="${param.edit}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Exito! </strong>Mesa creada editado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div th:if="${param.delete}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Eliminado! </strong>Mesa creada eliminado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
@@ -32,12 +54,11 @@
                       <tbody>
                         <tr th:each="restaurantTableList, iter : ${restaurantTableList}">
                           <td th:text="${iter.index + 1}"></td>
-                          <td th:if="${restaurantTableList.tableNumber} != 100" th:text="'Mesa ' + ${restaurantTableList.tableNumber}"></td>
-                          <td th:if="${restaurantTableList.tableNumber} == 100">DOMICILIOS</td>
+                          <td th:text="'Mesa ' + ${restaurantTableList.tableNumber}"></td>
                           <td>
-                            <a href="#">Editar</a>
+                            <a th:href="@{/editRestaurantTable(id=${restaurantTableList.id})}">Editar</a>
                             |
-                            <a href="#">Eliminar</a>
+                            <a th:href="@{/deleteRestaurantTable(id=${restaurantTableList.id})}">Eliminar</a>
                           </td>
                         </tr>
                       </tbody>

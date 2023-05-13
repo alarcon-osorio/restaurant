@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="es">
+
+<header th:insert="includes/header :: header"></header>
+<header th:insert="includes/navbar :: navbar"></header>
+
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" th:insert="includes/sidebar :: sidebar"></nav>
+        <!-- partial -->
+
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Crear menu Restaurante</h4>
+                                <form th:action="@{/createServiceOrders?create=true}" method="post" class="forms-sample">
+
+                                    <input type="text" th:value="${serviceOrderPrincipal.id}" class="form-control" name="id">
+
+                                    <div class="form-group">
+                                        <label>Menú</label>
+                                        <select class="form-control form-control-lg" name="idMenu">
+                                            <option th:each="menu : ${menu}" th:value="${menu.id}" th:text="${menu.name}"></option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Tipo de Menú</label>
+                                        <select class="form-control form-control-lg" name="idMenu">
+                                            <option th:each="menuType : ${menuType}" th:value="${menuType.id}" th:text="${menuType.name}"></option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Nombre</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.name}" class="form-control" id="exampleInputName1" placeholder="Nombre" name="name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label >Usuario</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.username}"  class="form-control" placeholder="Usuario" name="username">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label >Descripción</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.description}"  class="form-control" placeholder="Descripcion" name="description">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Observaciones</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.observations}" class="form-control" placeholder="Observaciones" name="observations">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Acompañamientos</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.accompaniment}" class="form-control" placeholder="Acompañamientos" name="accompaniments">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Caldo</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.option1}" class="form-control" placeholder="Caldo" name="option1">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Huevos</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.option2}" class="form-control" placeholder="Huevos" name="option2">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Bebida</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.option3}" class="form-control" placeholder="Bebida" name="option3">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Complemento</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.option4}" class="form-control" placeholder="Complemento" name="option4">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Otros</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.option5}" class="form-control" placeholder="Otros" name="option5">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Cereal</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.options}" class="form-control" placeholder="Cereal" name="options">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Proteinas</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.proteins}" class="form-control" placeholder="Proteinas" name="proteins">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Entradas</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.entries}" class="form-control" placeholder="Entradas" name="entries">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Vegetales</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.vegetables}" class="form-control" placeholder="Vegetales" name="vegetables">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Ensalada</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.salad}" class="form-control" placeholder="Ensalada" name="salad">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Bebidas</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.drinks}" class="form-control" placeholder="Bebidas" name="drinks">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Número de Mesa</label>
+                                        <input type="number" th:value="${serviceOrderPrincipal.tableNumber}" class="form-control" placeholder="Número de Mesa" name="table_number">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Imagen</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.image}" class="form-control" placeholder="Url imagen" name="image">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Ordenado</label>
+                                        <input type="number" th:value="${serviceOrderPrincipal.ordered}" class="form-control" placeholder="Ordenado" name="ordered">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>En preparación</label>
+                                        <input type="number" th:value="${serviceOrderPrincipal.prepare}" class="form-control" placeholder="En preparación" name="prepare">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Preperada</label>
+                                        <input type="number" th:value="${serviceOrderPrincipal.prepared}" class="form-control" placeholder="Número de Mesa" name="prepared">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Servido</label>
+                                        <input type="number" th:value="${serviceOrderPrincipal.served}" class="form-control" placeholder="Número de Mesa" name="served">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Cerrado/Finalizado</label>
+                                        <input type="number" th:value="${serviceOrderPrincipal.close}" class="form-control" placeholder="Número de Mesa" name="close">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Cencelado</label>
+                                        <input type="number" th:value="${serviceOrderPrincipal.cancel}" class="form-control" placeholder="Número de Mesa" name="cancel">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Precio</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.price}" class="form-control" placeholder="Precio" name="price">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Cantidad</label>
+                                        <input type="number" th:value="${serviceOrderPrincipal.cant}" class="form-control" placeholder="Cantidad" name="cant">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Descuento</label>
+                                        <input type="number" th:value="${serviceOrderPrincipal.discount}" class="form-control" placeholder="Descuento" name="discount">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Medio de pago</label>
+                                        <input type="text" th:value="${serviceOrderPrincipal.paymentMethod}" class="form-control" placeholder="Medio de pago" name="payment_method">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success mr-2">Guardar</button>
+                                    <a th:href="@{/serviceOrders}" class="btn btn-light">Cancelar</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="includes/footer :: footer"></footer>
+

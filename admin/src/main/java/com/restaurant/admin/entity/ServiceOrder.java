@@ -19,6 +19,7 @@ public class ServiceOrder {
     private long idMenu;
     private long idMenuType;
     private String name;
+    private String username;
     private String description;
     private String observations;
     private String accompaniment;
@@ -28,6 +29,16 @@ public class ServiceOrder {
     private String option4;
     private String option5;
     private String drinksIncludes;
+
+    //MenuPersonalized
+    private String options;
+    private String principles;
+    private String proteins;
+    private String entries;
+    private String vegetables;
+    private String salad;
+    private String drinks;
+
     private String price;
     private long cant;
     private long tableNumber;

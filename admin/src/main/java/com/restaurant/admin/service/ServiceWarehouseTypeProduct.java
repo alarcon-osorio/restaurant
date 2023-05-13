@@ -17,4 +17,8 @@ public class ServiceWarehouseTypeProduct {
         return repositoryWarehouseTypeProduct.findAll();
     }
 
+    public WarehouseTypeProduct warehouseTypeProductById(String id){
+        return repositoryWarehouseTypeProduct.findById(Long.valueOf(id)).get();
+    }
+
 }

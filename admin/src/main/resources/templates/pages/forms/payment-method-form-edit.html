@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="es">
+
+<header th:insert="includes/header :: header"></header>
+<header th:insert="includes/navbar :: navbar"></header>
+
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" th:insert="includes/sidebar :: sidebar"></nav>
+        <!-- partial -->
+
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Editar medio de pago</h4>
+                                <form th:action="@{/editPaymentMethod?edit=true}" method="post" class="forms-sample">
+
+                                    <input type="hidden" th:value="${paymentMethodPrincipal.id}" class="form-control" name="id">
+
+                                    <div class="form-group">
+                                        <label>Medio de Pago</label>
+                                        <input type="text" th:value="${paymentMethodPrincipal.method}" class="form-control" placeholder="Medio de pago" name="method">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Descripción</label>
+                                        <input type="text" th:value="${paymentMethodPrincipal.description}" class="form-control" placeholder="Descripcion" name="description">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success mr-2">Guardar</button>
+                                    <a th:href="@{/paymentDiscount}" class="btn btn-light">Cancelar</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="includes/footer :: footer"></footer>
+

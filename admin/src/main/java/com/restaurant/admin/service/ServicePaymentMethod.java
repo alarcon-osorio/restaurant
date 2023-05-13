@@ -18,9 +18,24 @@ public class ServicePaymentMethod {
         return repositoryPaymentMethod.findAll();
     }
 
+    public PaymentMethod getPaymentMethodById(long id) {
+        return repositoryPaymentMethod.findById(id).get();
+    }
+
     @Transactional
-    public void savePaymentMethod(String method, long discount, long table) {
+    public void savePaymentMethodByDiscount(String method, long discount, long table) {
         repositoryPaymentMethod.savePaymentMethod(method, discount, table);
     }
+
+    @Transactional
+    public void savePaymentMethod(PaymentMethod paymentMethod) {
+        repositoryPaymentMethod.save(paymentMethod);
+    }
+
+    @Transactional
+    public void deletePaymentMethod(long id) {
+        repositoryPaymentMethod.deleteById(id);
+    }
+
 
 }

@@ -17,9 +17,6 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Gestión de Ordenes</h4>
-                  <p class="card-description">
-                    <a href="#">Crear Nuevo registro</a>
-                  </p>
                   <div class="table-responsive">
                     <table id="recent-purchases-listing" class="table">
                       <thead>
@@ -32,7 +29,6 @@
                         <th>Medio de pago</th>
                         <th>Estado</th>
                         <th>Fecha</th>
-                        <th>Acciones</th>
                       </tr>
                       </thead>
                       <tbody>
@@ -48,9 +44,11 @@
                         <td th:if="${serviceOrderList.served} == 1 and ${serviceOrderList.close} == 0 and ${serviceOrderList.cancel} == 0"><label class="badge badge-info">Pendiente pago</label></td>
                         <td th:if="${serviceOrderList.served} == 0 and ${serviceOrderList.close} == 0 and ${serviceOrderList.cancel} == 0"><label class="badge badge-warning">Por Despachar</label></td>
                         <td th:text="${serviceOrderList.time}"></td>
+                        <!--
                         <td>
-                          <a href="#">Editar</a>
+                          <a th:href="@{/editServiceOrders(id=${serviceOrderList.id})}">Editar</a>
                         </td>
+                        -->
                       </tr>
                       </tbody>
                     </table>

@@ -16,4 +16,8 @@ public class ServiceMeasureUnit {
     public List<MeasureUnit> getMeasureUnit(){
         return repositoryMeasureUnit.findAll();
     }
+
+    public MeasureUnit getMeasureUnitById(long id){
+        return repositoryMeasureUnit.findById(id).get();
+    }
 }

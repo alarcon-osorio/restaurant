@@ -18,8 +18,30 @@
                 <div class="card-body">
                   <h4 class="card-title">Medios de pago</h4>
                   <p class="card-description">
-                    <a href="#">Crear Nuevo registro</a>
+                    <a th:href="@{/createPaymentMethod}">Crear Nuevo registro</a>
                   </p>
+
+                  <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Exito! </strong>Medio de pago creado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div th:if="${param.edit}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Exito! </strong>Medio de pago editado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div th:if="${param.delete}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Eliminado! </strong>Medio de pago eliminado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
@@ -36,9 +58,9 @@
                         <td th:text="${paymentMethodList.method}"></td>
                         <td th:text="${paymentMethodList.description}" ></td>
                         <td>
-                          <a href="#">Editar</a>
+                          <a th:href="@{/editPaymentMethod(id=${paymentMethodList.id})}">Editar</a>
                           |
-                          <a href="#">Eliminar</a>
+                          <a th:href="@{/deletePaymentMethod(id=${paymentMethodList.id})}">Eliminar</a>
                         </td>
                       </tr>
                       </tbody>
@@ -52,8 +74,30 @@
                 <div class="card-body">
                   <h4 class="card-title">Descuentos %</h4>
                   <p class="card-description">
-                    <a href="#">Crear Nuevo registro</a>
+                    <a th:href="@{/createDiscount}">Crear Nuevo registro</a>
                   </p>
+
+                  <div th:if="${param.successDiscount}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Exito! </strong>Descuento creado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div th:if="${param.editDiscount}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Exito! </strong>Descuento editado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div th:if="${param.deleteDiscount}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Eliminado! </strong>Descuento eliminado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
                   <div class="table-responsive">
                     <table class="table table-hover">
                       <thead>
@@ -67,12 +111,12 @@
                       <tbody>
                       <tr th:each="discountList, iter: ${discountList}">
                         <td th:text="${iter.index + 1}"></td>
-                        <td class="text-danger" th:text="${discountList.type}"></td>
+                        <td class="text-danger" th:text="${discountList.value} + '%'"></td>
                         <td th:text="${discountList.description}"></td>
                         <td>
-                          <a href="#">Editar</a>
+                          <a th:href="@{/editDiscount(id=${discountList.id})}">Editar</a>
                           |
-                          <a href="#">Eliminar</a>
+                          <a th:href="@{/deleteDiscount(id=${discountList.id})}">Eliminar</a>
                         </td>
                       </tr>
                       </tbody>

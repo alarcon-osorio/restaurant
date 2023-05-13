@@ -18,14 +18,36 @@
                 <div class="card-body">
                   <h4 class="card-title">Inventario general de Productos</h4>
                   <p class="card-description">
-                    <a href="#">Crear Nuevo registro</a>
+                    <a th:href="@{/createInventory}">Crear Nuevo registro</a>
                   </p>
+
+                  <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Exito! </strong>Registro creado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div th:if="${param.edit}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Exito! </strong>Registro editado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div th:if="${param.delete}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Eliminado! </strong>Registro eliminado correctamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Referencia</th>
+                          <th>N° Referencia</th>
                           <th>Nombre</th>
                           <th>Tipo</th>
                           <th>Estado</th>
@@ -36,7 +58,7 @@
                           <th>Cant. Orden</th>
                           <th>Cant. Min.</th>
                           <th>Total</th>
-                          <!--<th>Fecha</th>-->
+                          <th>Fecha</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
@@ -46,8 +68,8 @@
                           <td th:text="${inventoryList.numberProduct}"></td>
                           <td th:text="${inventoryList.name}"></td>
                           <td th:text="${inventoryList.type}"></td>
-                          <td th:if="${inventoryList.status == 'Activo'}"><label class="badge badge-success">Activo</label></td>
-                          <td th:if="${inventoryList.status == 'Inactivo'}"><label class="badge badge-danger">Inactivo</label></td>
+                          <td th:if="${inventoryList.status == '1'}"><label class="badge badge-success">Activo</label></td>
+                          <td th:if="${inventoryList.status == '0'}"><label class="badge badge-danger">Inactivo</label></td>
                           <td th:text="${inventoryList.measureUnit}"></td>
                           <td th:text="'$' + ${#numbers.formatDecimal(inventoryList.priceUnit, 0, 'COMMA', 0, 'POINT')}"></td>
                           <td th:text="'$' + ${#numbers.formatDecimal(inventoryList.salePrice, 0, 'COMMA', 0, 'POINT')}"></td>
@@ -55,9 +77,11 @@
                           <td th:text="${inventoryList.cantOrder}"></td>
                           <td th:text="${inventoryList.CantMinInv}"></td>
                           <td th:text="'$' + ${#numbers.formatDecimal(inventoryList.totalInventory, 0, 'COMMA', 0, 'POINT')}"></td>
-                          <!--<td th:text="${inventoryList.date}"></td> --> <!--TODO: Validar -->
+                          <td th:text="${inventoryList.date}"></td> <!--TODO: Validar -->
                           <td>
-                            <a href="#">Editar</a>
+                            <a th:href="@{/editInventory(id=${inventoryList.id})}">Editar</a>
+                            |
+                            <a th:href="@{/deleteInventory(id=${inventoryList.id})}">Eliminar</a>
                           </td>
                         </tr>
                       </tbody>

@@ -17,4 +17,17 @@ public class ServiceDiscount {
         return repositoryDiscount.findAll();
     }
 
+    public Discount getDiscountById(long id){
+        return repositoryDiscount.findById(id).get();
+    }
+
+    public void saveDiscount(Discount discount){
+        repositoryDiscount.save(discount);
+    }
+
+    public void deleteDiscount(long id){
+        repositoryDiscount.deleteById(id);
+    }
+
+
 }

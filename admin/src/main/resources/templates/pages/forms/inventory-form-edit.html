@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="es">
+
+<header th:insert="includes/header :: header"></header>
+<header th:insert="includes/navbar :: navbar"></header>
+
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" th:insert="includes/sidebar :: sidebar"></nav>
+        <!-- partial -->
+
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Editar registro en inventario</h4>
+                                <form th:action="@{/editInventory?edit=true}" method="post" class="forms-sample">
+
+                                    <input type="hidden" th:value="${inventoryPrincipal.id}" class="form-control" name="id">
+
+                                    <div class="form-group">
+                                        <label>Numero de producto</label>
+                                        <input type="text" th:value="${inventoryPrincipal.numberProduct}" class="form-control" placeholder="Numero de producto" name="numberProduct">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Nombre</label>
+                                        <input type="text" th:value="${inventoryPrincipal.name}" class="form-control" id="exampleInputName1" placeholder="Nombre" name="name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail3">Descripción</label>
+                                        <input type="text" th:value="${inventoryPrincipal.description}" class="form-control" id="exampleInputEmail3" placeholder="Descripcion" name="description">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Estado</label>
+                                        <select class="form-control form-control-lg" name="status">
+                                            <option value="1">Activo</option>
+                                            <option value="2">Inactivo</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label >Unidades de Medida</label>
+                                        <select class="form-control form-control-lg" name="measureUnit">
+                                            <option th:value="${measureUnit.id}" th:text="${measureUnit.type}">
+                                            <option th:each="measureUnits : ${measureUnits}" th:value="${measureUnits.id}"  th:text="${measureUnits.type}" th:unless="${measureUnits.type} == ${measureUnit.type}"></option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Tipo de producto</label>
+                                        <select class="form-control form-control-lg" name="type">
+                                            <option th:value="${warehouseTypeProduct.id}"  th:text="${warehouseTypeProduct.type}"></option>
+                                            <option th:each="warehouseTypeProducts : ${warehouseTypeProducts}" th:value="${warehouseTypeProducts.id}"  th:text="${warehouseTypeProducts.type}" th:unless="${warehouseTypeProducts.type} == ${warehouseTypeProduct.type}"></option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Precio Unitario</label>
+                                        <input type="text" th:value="${inventoryPrincipal.priceUnit}" class="form-control" placeholder="Precio unitario" name="priceUnit">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Precio Venta</label>
+                                        <input type="text" th:value="${inventoryPrincipal.salePrice}" class="form-control" placeholder="Precio Venta" name="salePrice">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Cantidad disponible</label>
+                                        <input type="number" th:value="${inventoryPrincipal.cantDisp}" class="form-control" placeholder="Cantidad disponible" name="cantDisp">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Cantidad Ordenada</label>
+                                        <input type="number" th:value="${inventoryPrincipal.cantOrder}" class="form-control" placeholder="Cantidad Ordenada" name="cantOrder">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Cantidad Minima en inventario</label>
+                                        <input type="number" th:value="${inventoryPrincipal.cantMinInv}" class="form-control" placeholder="Cantidad Minima en inventario" name="cantMinInv">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Fecha Ingreso</label>
+                                        <input type="date" th:value="${inventoryPrincipal.date}" class="form-control"  name="date">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success mr-2">Guardar</button>
+                                    <a th:href="@{/inventory}" class="btn btn-light">Cancelar</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="includes/footer :: footer"></footer>
+

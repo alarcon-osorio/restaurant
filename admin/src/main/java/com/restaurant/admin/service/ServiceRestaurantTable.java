@@ -17,4 +17,16 @@ public class ServiceRestaurantTable {
         return repositoryRestaurantTable.findAll();
     }
 
+    public RestaurantTable getRestaurantTableById(long id){
+        return repositoryRestaurantTable.findById(id).get();
+    }
+
+    public void saveRestaurantTable(RestaurantTable restaurantTable){
+        repositoryRestaurantTable.save(restaurantTable);
+    }
+
+    public void deleteRestaurantTable(long id){
+        repositoryRestaurantTable.deleteById(id);
+    }
+
 }

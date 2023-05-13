@@ -19,6 +19,10 @@ public class ServiceOrders {
         return repositoryOrders.findAll();
     }
 
+    public ServiceOrder getServiceOrdersById(long id){
+        return repositoryOrders.findById(id).get();
+    }
+
     public String getTotalOrders(){
         return repositoryOrders.findTotalOrders();
     }
@@ -33,6 +37,10 @@ public class ServiceOrders {
 
     public String getcancelled(){
         return repositoryOrders.findCancelled();
+    }
+
+    public void saveServerOrders(ServiceOrder serviceOrder){
+        repositoryOrders.save(serviceOrder);
     }
 
 }
