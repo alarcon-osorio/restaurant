@@ -19,14 +19,36 @@
                             <div class="card-body">
                                 <h4 class="card-title">Tipos de Producto Inventario</h4>
                                 <p class="card-description">
-                                    <a href="#">Crear Nuevo registro</a>
+                                    <a th:href="@{/createTypesProduct}">Crear Nuevo registro</a>
                                 </p>
+
+                                <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong>Exito! </strong>Tipo de producto inventario creado correctamente
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div th:if="${param.edit}" class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong>Exito! </strong>Tipo de producto inventario editado correctamente
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div th:if="${param.delete}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>Eliminado! </strong>Tipo de producto inventario eliminado correctamente
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Tipo de Producto</th>
+                                            <th>Tipo de Producto Inventario</th>
                                             <th>Acciones</th>
                                         </tr>
                                         </thead>
@@ -35,9 +57,9 @@
                                             <td th:text="${iter.index + 1}"></td>
                                             <td th:text="${warehouseTypeProducts.type}"></td>
                                             <td>
-                                                <a href="#">Editar</a>
+                                                <a th:href="@{/editTypesProduct(id=${warehouseTypeProducts.id})}">Editar</a>
                                                 |
-                                                <a href="#">Eliminar</a>
+                                                <a th:href="@{/deleteTypesProduct(id=${warehouseTypeProducts.id})}">Eliminar</a>
                                             </td>
                                         </tr>
                                         </tbody>
@@ -52,8 +74,32 @@
                             <div class="card-body">
                                 <h4 class="card-title">Unidades de Medida</h4>
                                 <p class="card-description">
-                                    <a href="#">Crear Nuevo registro</a>
+                                    <a th:href="@{/createMeasureUnits}">Crear Nuevo registro</a>
                                 </p>
+
+
+                                <div th:if="${param.successUnits}" class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong>Exito! </strong>Unidad de Medida creada correctamente
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div th:if="${param.editUnits}" class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong>Exito! </strong>Unidad de Medida editada correctamente
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div th:if="${param.deleteUnits}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>Eliminado! </strong>Unidad de Medida eliminada correctamente
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <thead>
@@ -70,9 +116,9 @@
                                             <td th:text="${measureUnits.type}"></td>
                                             <td th:text="${measureUnits.description}" ></td>
                                             <td>
-                                                <a href="#">Editar</a>
+                                                <a th:href="@{/editMeasureUnits(id=${measureUnits.id})}">Editar</a>
                                                 |
-                                                <a href="#">Eliminar</a>
+                                                <a th:href="@{/deleteMeasureUnits(id=${measureUnits.id})}">Eliminar</a>
                                             </td>
                                         </tr>
                                         </tbody>

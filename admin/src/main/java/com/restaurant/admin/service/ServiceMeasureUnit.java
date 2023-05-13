@@ -20,4 +20,12 @@ public class ServiceMeasureUnit {
     public MeasureUnit getMeasureUnitById(long id){
         return repositoryMeasureUnit.findById(id).get();
     }
+
+    public void saveMeasureUnits(MeasureUnit measureUnit){
+        repositoryMeasureUnit.save(measureUnit);
+    }
+
+    public void deleteMeasureUnits(long id){
+        repositoryMeasureUnit.deleteById(id);
+    }
 }

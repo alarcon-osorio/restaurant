@@ -21,4 +21,12 @@ public class ServiceWarehouseTypeProduct {
         return repositoryWarehouseTypeProduct.findById(Long.valueOf(id)).get();
     }
 
+    public void saveWarehouseTypeProduct(WarehouseTypeProduct warehouseTypeProduct){
+        repositoryWarehouseTypeProduct.save(warehouseTypeProduct);
+    }
+
+    public void deleteWarehouseTypeProduct(long id){
+        repositoryWarehouseTypeProduct.deleteById(id);
+    }
+
 }

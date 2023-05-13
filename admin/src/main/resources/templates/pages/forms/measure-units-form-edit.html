@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="es">
+
+<header th:insert="includes/header :: header"></header>
+<header th:insert="includes/navbar :: navbar"></header>
+
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" th:insert="includes/sidebar :: sidebar"></nav>
+        <!-- partial -->
+
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Crear unidad de medida para producto inventario principal</h4>
+                                <form th:action="@{/editMeasureUnits?edit=true}" method="post" class="forms-sample">
+
+                                    <input type="text" th:value="${measureUnitPrincipal.id}" class="form-control"  name="id">
+
+                                    <div class="form-group">
+                                        <label>Nomenclatura</label>
+                                        <input type="text" th:value="${measureUnitPrincipal.type}" class="form-control"  placeholder="Nomenclatura" name="type">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Descripción</label>
+                                        <input type="text" th:value="${measureUnitPrincipal.description}" class="form-control"  placeholder="Desacripción" name="description">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success mr-2">Guardar</button>
+                                    <a th:href="@{/typesProductAndMeasure}" class="btn btn-light">Cancelar</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="includes/footer :: footer"></footer>
+

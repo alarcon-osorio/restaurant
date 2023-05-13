@@ -96,4 +96,64 @@ public class WebInventory {
         return "pages/tables/inventory-type-product-measure";
     }
 
+    @RequestMapping("/createTypesProduct")
+    public String createTypesProduct(Model model, WarehouseTypeProduct warehouseTypeProduct, @Nullable @RequestParam boolean create){
+
+        if (create){
+            serviceWarehouseTypeProduct.saveWarehouseTypeProduct(warehouseTypeProduct);
+            return "redirect:/typesProductAndMeasure?success";
+        }
+
+        return "pages/forms/inventory-type-form-create";
+    }
+
+    @RequestMapping("/editTypesProduct")
+    public String editTypesProduct(Model model, WarehouseTypeProduct warehouseTypeProduct, @Nullable @RequestParam boolean edit, @RequestParam long id){
+        WarehouseTypeProduct warehouseTypeProductPrincipal = serviceWarehouseTypeProduct.warehouseTypeProductById(String.valueOf(id));
+
+        if (edit){
+            serviceWarehouseTypeProduct.saveWarehouseTypeProduct(warehouseTypeProduct);
+            return "redirect:/typesProductAndMeasure?edit";
+        }
+
+        model.addAttribute("warehouseTypeProductPrincipal", warehouseTypeProductPrincipal);
+        return "pages/forms/inventory-type-form-edit";
+    }
+
+    @RequestMapping("/deleteTypesProduct")
+    public String deleteTypesProduct(@RequestParam long id){
+        serviceWarehouseTypeProduct.deleteWarehouseTypeProduct(id);
+        return "redirect:/typesProductAndMeasure?delete";
+    }
+
+    @RequestMapping("/createMeasureUnits")
+    public String createMeasureUnits(Model model, MeasureUnit measureUnit, @Nullable @RequestParam boolean create){
+
+        if (create){
+            serviceMeasureUnit.saveMeasureUnits(measureUnit);
+            return "redirect:/typesProductAndMeasure?successUnits";
+        }
+
+        return "pages/forms/measure-units-form-create";
+    }
+
+    @RequestMapping("/editMeasureUnits")
+    public String editMeasureUnits(Model model, MeasureUnit measureUnit, @Nullable @RequestParam boolean edit, @RequestParam long id){
+        MeasureUnit measureUnitPrincipal = serviceMeasureUnit.getMeasureUnitById(id);
+
+        if (edit){
+            serviceMeasureUnit.saveMeasureUnits(measureUnit);
+            return "redirect:/typesProductAndMeasure?editUnits";
+        }
+
+        model.addAttribute("measureUnitPrincipal", measureUnitPrincipal);
+        return "pages/forms/measure-units-form-edit";
+    }
+
+    @RequestMapping("/deleteMeasureUnits")
+    public String deleteMeasureUnits(@RequestParam long id){
+        serviceMeasureUnit.deleteMeasureUnits(id);
+        return "redirect:/typesProductAndMeasure?deleteUnits";
+    }
+
 }
