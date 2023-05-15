@@ -17,4 +17,16 @@ public class ServiceUsers {
         return repositoryUsersAdmin.findAll();
     }
 
+    public Users findUserById(long id){
+        return repositoryUsersAdmin.findById(id).get();
+    }
+
+    public void saveUsers(Users users){
+        repositoryUsersAdmin.save(users);
+    }
+
+    public void deleteUsers(long id){
+        repositoryUsersAdmin.deleteById(id);
+    }
+
 }

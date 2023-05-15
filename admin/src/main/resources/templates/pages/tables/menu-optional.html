@@ -21,6 +21,13 @@
                     <a th:href="@{/createMenuOptional}">Crear Nuevo registro</a>
                   </p>
 
+                  <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Información! </strong>Este modulo es para uso del menu propio del restaurante, podras crear opciones extra para los platos creados previamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
                   <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>Exito! </strong>Opción de menu creado correctamente
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -70,7 +77,7 @@
                           <td>
                             <a th:href="@{/editMenuOptional(id=${menuOptionals.id})}">Editar</a>
                             |
-                            <a th:href="@{/deleteMenuOptional(id=${menuOptionals.id})}">Eliminar</a>
+                            <a th:href="@{/deleteMenuOptional(id=${menuOptionals.id})}" class="text-danger">Eliminar</a>
                           </td>
                         </tr>
                       </tbody>

@@ -1,5 +1,4 @@
-
-package com.restaurant.admin.security.entity;
+package com.restaurant.admin.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,17 +10,18 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "users", schema="restaurant")
-public class Users{
+@Table(name = "clients")
+public class Clients {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user")
-    private Long id;
+    private long idClient;
     private String name;
+    private String lastname;
     private String username;
-    private String password;
+    private String email;
     private String role;
+    private String password;
     private boolean enabled;
 
 }

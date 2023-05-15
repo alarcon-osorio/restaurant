@@ -16,10 +16,10 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Tipos de opciones de Menu (Solo consulta - Tabla parametrica)</h4>
+                  <h4 class="card-title">Gestión de cuentas de cliente (SOLO CONSULTA)</h4>
 
                   <div class="alert alert-info alert-dismissible fade show" role="alert">
-                    <strong>Información! </strong>Este modulo muestra el tipo de opciones disponibles para las personlizaciones de menú al que acceden los clientes
+                    <strong>Información! </strong>En este modulo puedes observar los datos basicos de los clientes registrados en el sistema
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -30,13 +30,22 @@
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Tipo de Menu</th>
+                          <th>Nombre</th>
+                          <th>Apellido</th>
+                          <th>Nombre de Usuario</th>
+                          <th>Perfil</th>
+                          <th>Estado</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr th:each="menuPersonalTypeList, iter : ${menuPersonalTypeList}">
+                        <tr th:each="clientsList, iter : ${clientsList}">
                           <td th:text="${iter.index + 1}"></td>
-                          <td th:text="${menuPersonalTypeList.name}"></td>
+                          <td th:text="${clientsList.name}"></td>
+                          <td th:text="${clientsList.lastname}"></td>
+                          <td th:text="${clientsList.username}"></td>
+                          <td th:if="${clientsList.role} == 'client'" th:text="'Cliente'"></td>
+                          <td th:if="${clientsList.enabled}"><label class="badge badge-success">Activo</label></td>
+                          <td th:unless="${clientsList.enabled}"><label class="badge badge-danger">Inactivo</label></td>
                         </tr>
                       </tbody>
                     </table>

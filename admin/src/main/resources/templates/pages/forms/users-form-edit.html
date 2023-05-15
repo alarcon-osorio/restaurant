@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="es">
+
+<header th:insert="includes/header :: header"></header>
+<header th:insert="includes/navbar :: navbar"></header>
+
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" th:insert="includes/sidebar :: sidebar"></nav>
+        <!-- partial -->
+
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Editar Usuario administrador y/o empleado</h4>
+
+                                <div th:if="${param.exception}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>Falló! </strong> No se puede crear usuario, datos incorrectos o ya existe
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <form th:action="@{/editUsers?edit=true}" method="post" class="forms-sample">
+
+                                    <input type="hidden" th:value="${usersPrincipal.id}" class="form-control" name="id" readonly>
+
+                                    <div class="form-group">
+                                        <label>Nombre</label>
+                                        <input type="text" th:value="${usersPrincipal.name}" class="form-control" placeholder="Nombre completo" name="name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" th:value="${usersPrincipal.username}" class="form-control" placeholder="Nombre usuario" name="username" readonly>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Roles</label>
+                                        <select class="form-control form-control-lg" name="role">
+                                            <option th:value="${usersPrincipal.role}" th:text="${usersPrincipal.role}" ></option>
+                                            <option th:if="${usersPrincipal.role} != admin" value="admin">Admin</option>
+                                            <option th:if="${usersPrincipal.role} != cocina" value="cocina">Cocina</option>
+                                            <option th:if="${usersPrincipal.role} != servicio" value="servicio">Servicio</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Estado</label>
+                                        <select class="form-control form-control-lg" name="enabled">
+                                            <option value="true">Activo</option>
+                                            <option value="false">Inactivo</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" th:value="${usersPrincipal.password}" class="form-control" name="password">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success mr-2">Guardar</button>
+                                    <a th:href="@{/users}" class="btn btn-light">Cancelar</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="includes/footer :: footer"></footer>
+

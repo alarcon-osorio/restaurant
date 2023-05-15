@@ -21,6 +21,13 @@
                     <a th:href="@{/createMenuAccompaniment}">Crear Nuevo registro</a>
                   </p>
 
+                  <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Información! </strong>Este modulo es para uso del menu propio del restaurante, podras crear acompañamientos extra que puedan llevar los platos del menu creado previamente
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
                   <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>Exito! </strong>Tipo de acompañamiento creado correctamente
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -62,7 +69,7 @@
                           <td>
                             <a th:href="@{/editMenuAccompaniment(id=${menuAccompaniments.id})}">Editar</a>
                             |
-                            <a th:href="@{/deleteMenuAccompaniment(id=${menuAccompaniments.id})}">Eliminar</a>
+                            <a th:href="@{/deleteMenuAccompaniment(id=${menuAccompaniments.id})}" class="text-danger">Eliminar</a>
                           </td>
                         </tr>
                       </tbody>

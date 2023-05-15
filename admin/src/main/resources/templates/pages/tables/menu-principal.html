@@ -20,6 +20,14 @@
                   <p class="card-description">
                     <a th:href="@{/createMenu}">Crear Nuevo registro</a>
                   </p>
+
+                  <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Información! </strong>En este modulo podras crear y gestionar las opciones de menú implicitas(unicamente) en el restaurante
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
                   <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>Exito! </strong>Menú creado correctamente
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -62,7 +70,7 @@
                           <td>
                             <a th:href="@{/editMenu(id=${menuList.id})}">Editar</a>
                             |
-                            <a th:href="@{/deleteMenu(id=${menuList.id})}">Eliminar</a>
+                            <a th:href="@{/deleteMenu(id=${menuList.id})}" class="text-danger">Eliminar</a>
                           </td>
                         </tr>
                       </tbody>

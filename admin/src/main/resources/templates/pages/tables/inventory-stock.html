@@ -21,6 +21,13 @@
                     <a th:href="@{/createInventory}">Crear Nuevo registro</a>
                   </p>
 
+                  <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Información! </strong>En este modulo puedes crear y gestionar el inventario de productos de tu restaurante
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
                   <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>Exito! </strong>Registro creado correctamente
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -81,7 +88,7 @@
                           <td>
                             <a th:href="@{/editInventory(id=${inventoryList.id})}">Editar</a>
                             |
-                            <a th:href="@{/deleteInventory(id=${inventoryList.id})}">Eliminar</a>
+                            <a th:href="@{/deleteInventory(id=${inventoryList.id})}"><span style="color: red;">Eliminar</span></a>
                           </td>
                         </tr>
                       </tbody>

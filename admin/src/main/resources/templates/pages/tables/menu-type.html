@@ -13,13 +13,20 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-lg-6 grid-margin stretch-card">
+            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tipos de Menu</h4>
                   <p class="card-description">
                     <a th:href="@{/createMenuType}">Crear Nuevo registro</a>
                   </p>
+
+                  <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Información! </strong>Este modulo es parametrico para el menu, en el podras crear tipos de menus genericos según tus preferencias u opciones del restaurante
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
 
                   <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>Exito! </strong>Tipo de menu creado correctamente
@@ -59,7 +66,7 @@
                           <td>
                             <a th:href="@{/editMenuType(id=${menuTypeMenu.id})}">Editar</a>
                             |
-                            <a th:href="@{/deleteMenuType(id=${menuTypeMenu.id})}">Eliminar</a>
+                            <a th:href="@{/deleteMenuType(id=${menuTypeMenu.id})}" class="text-danger">Eliminar</a>
                           </td>
                         </tr>
                       </tbody>

@@ -21,6 +21,13 @@
                     <a th:href="@{/createPaymentMethod}">Crear Nuevo registro</a>
                   </p>
 
+                  <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Información! </strong>En este modulo podras crear y administrar los medios de pago que puede ofrecer tu restaurante
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
                   <div th:if="${param.success}" class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>Exito! </strong>Medio de pago creado correctamente
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -60,7 +67,7 @@
                         <td>
                           <a th:href="@{/editPaymentMethod(id=${paymentMethodList.id})}">Editar</a>
                           |
-                          <a th:href="@{/deletePaymentMethod(id=${paymentMethodList.id})}">Eliminar</a>
+                          <a th:href="@{/deletePaymentMethod(id=${paymentMethodList.id})}"><span style="color: red;">Eliminar</span></a>
                         </td>
                       </tr>
                       </tbody>
@@ -76,6 +83,13 @@
                   <p class="card-description">
                     <a th:href="@{/createDiscount}">Crear Nuevo registro</a>
                   </p>
+
+                  <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Información! </strong>En este modulo podras crear y administrar los porcentajes de descuento que puede ofrecer tu restaurante
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
 
                   <div th:if="${param.successDiscount}" class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>Exito! </strong>Descuento creado correctamente
@@ -116,7 +130,7 @@
                         <td>
                           <a th:href="@{/editDiscount(id=${discountList.id})}">Editar</a>
                           |
-                          <a th:href="@{/deleteDiscount(id=${discountList.id})}">Eliminar</a>
+                          <a th:href="@{/deleteDiscount(id=${discountList.id})}"><span class="text-danger">Eliminar</span></a>
                         </td>
                       </tr>
                       </tbody>

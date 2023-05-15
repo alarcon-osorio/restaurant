@@ -17,38 +17,46 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Gestión de Ordenes</h4>
+
+                  <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Información! </strong>En este modulo puedes observar y monitorear las ordenes de servicio y pedidos de tu restaurante
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
                   <div class="table-responsive">
                     <table id="recent-purchases-listing" class="table">
                       <thead>
                       <tr>
                         <th>#</th>
+                        <th>Estado</th>
                         <th>Nombre</th>
                         <th>Mesa</th>
                         <th>Valor</th>
                         <th>Descuentos</th>
-                        <th>Medio de pago</th>
-                        <th>Estado</th>
+                        <th>M. pago</th>
                         <th>Fecha</th>
                       </tr>
                       </thead>
                       <tbody>
                       <tr th:each="serviceOrderList, iter : ${serviceOrderList}">
                         <td th:text="${iter.index + 1}"></td>
+                        <td th:if="${serviceOrderList.close} == 1"><label class="badge badge-success">Completado</label></td>
+                        <td th:if="${serviceOrderList.cancel} == 1"><label class="badge badge-danger">Cancelado</label></td>
+                        <td th:if="${serviceOrderList.served} == 1 and ${serviceOrderList.close} == 0 and ${serviceOrderList.cancel} == 0"><label class="badge badge-info">Pendiente pago</label></td>
+                        <td th:if="${serviceOrderList.served} == 0 and ${serviceOrderList.close} == 0 and ${serviceOrderList.cancel} == 0"><label class="badge badge-warning">Por Despachar</label></td>
                         <td th:text="${serviceOrderList.name}"></td>
                         <td th:text="${serviceOrderList.tableNumber}"></td>
                         <td th:text="'$' + ${#numbers.formatDecimal(serviceOrderList.price, 0, 'COMMA', 0, 'POINT')}"></td>
                         <td th:text="${serviceOrderList.discount} + '%'"></td>
                         <td th:text="${serviceOrderList.paymentMethod}"></td>
-                        <td th:if="${serviceOrderList.close} == 1"><label class="badge badge-success">Completado</label></td>
-                        <td th:if="${serviceOrderList.cancel} == 1"><label class="badge badge-danger">Cancelado</label></td>
-                        <td th:if="${serviceOrderList.served} == 1 and ${serviceOrderList.close} == 0 and ${serviceOrderList.cancel} == 0"><label class="badge badge-info">Pendiente pago</label></td>
-                        <td th:if="${serviceOrderList.served} == 0 and ${serviceOrderList.close} == 0 and ${serviceOrderList.cancel} == 0"><label class="badge badge-warning">Por Despachar</label></td>
                         <td th:text="${serviceOrderList.time}"></td>
                         <!--
                         <td>
                           <a th:href="@{/editServiceOrders(id=${serviceOrderList.id})}">Editar</a>
                         </td>
-                        -->
+                        --> <!-- TODO: Se puede acivar si se desea administrar y/o gestionar -->
                       </tr>
                       </tbody>
                     </table>
