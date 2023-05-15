@@ -12,9 +12,10 @@
                 <p class="owner-subtext"><a th:href="@{/logout}">Cerrar Sesión</a></p>
             </div>
             <div class="btn-group" style="width:100%">
+                <a th:href="@{/menu}" class="btn btn-outline-danger"><span class="bi bi-house"></span> Inicio</a>
                 <a th:href="@{/orders?table=0}" class="btn btn-danger">Ver Ordenes</a>
-                <a th:href="@{/menu}" class="btn btn-outline-warning">Todos</a>
-                <a th:each="menuTypeList : ${menuTypeList}" th:href="@{/type_menu(id=${menuTypeList.id})}"  th:text="${menuTypeList.name}" class="btn btn-outline-success"></a>
+                <a th:href="@{/menuPersonalView}"  th:text="Personalizados" class="btn btn-outline-success"></a>
+                <a th:each="menuTypeList : ${menuTypeList}" th:href="@{/type_menu(id=${menuTypeList.id})}"  th:text="${menuTypeList.name}" class="btn btn-outline-success" th:unless="${menuTypeList.name} == 'Personalizado'"></a><!-- TODO: Validar -->
             </div>
             <br>
             <br>

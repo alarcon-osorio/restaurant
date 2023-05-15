@@ -3,18 +3,16 @@
 <header th:insert="includes/header :: header"> </header>
 <header th:insert="includes/navbar :: navbar"> </header>
 
-<div class="container mt-4 vj-destacados" id="div1">
+<div class="container mt-4 vj-destacados">
     <div class="row">
         <div class="col col-md-12 text-left mb-4" sec:authorize="isAuthenticated()">
             <div>
-                <a class="font-weight-bold">Bienvenido: Mesero</a>
-                <img src="https://i.pinimg.com/originals/fb/16/4c/fb164c25c9c83206fef9028a91ebfeb9.gif" width="45" height="45" class="d-inline-block align-top rounded-circle" alt="" loading="lazy">
+                <a class="font-weight-bold" sec:authorize="isAuthenticated()">Bienvenido: <span id="name" sec:authentication="name"></span></a>
+                <img src="https://i.pinimg.com/originals/fb/16/4c/fb164c25c9c83206fef9028a91ebfeb9.gif" width="40" height="40" class="d-inline-block align-top rounded-circle" alt="" loading="lazy">
                 <p class="owner-subtext"><a th:href="@{/logout}">Cerrar Sesión</a></p>
             </div>
             <div class="btn-group" style="width:100%">
-                <a th:href="@{/menu}" class="btn btn-outline-danger">Menú</a>
-                <a th:href="@{/orders?table=0}" class="btn btn-outline-warning">Todo</a>
-                <a th:each="tableNumberList : ${tableNumberList}" th:href="@{/orders(table=${tableNumberList})}" th:text="'Mesa ' + ${tableNumberList}" class="btn btn-outline-success"></a>
+                <a th:href="@{/menu}" class="btn btn-outline-danger"><span class="bi bi-house"></span> Inicio</a>
             </div>
         </div>
     </div>
@@ -27,96 +25,160 @@
         Sin pedidos para procesar
     </div>
 
-    <div th:if="${success} == 'ok'" class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Exito!</strong> Pedido ordenado exitosamente...<a href="/menu">  /  Volver al Menú</a>.
+    <div th:if="${param.success}" class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Excelente!</strong> un paso más... si esta todo listo da click en el botón <strong>Ordenar Pedido</strong> para que empecemos a prepararlo, tambien puedes editar o cancelar tu orden
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
 
-    <div class="row" th:if="${table} == 0">
-        <div class="col-md-6 mb-4" th:each="serviceOrderList : ${serviceOrderList}">
-            <br>
-            <div class="card" style="margin-bottom: 42px;">
+    <div id="div1">
+        <div class="row" th:if="${table} == 0">
+            <div class="col-md-6 mb-4" th:each="serviceOrderList : ${serviceOrderList}">
                 <br>
-                <h1 th:text="'Mesa: ' +${serviceOrderList.tableNumber}" class="card-title" style="text-align: center;"></h1>
-                <hr>
-                <div class="container">
-                    <div class="card-body">
-                        <input type="hidden" th:value="${serviceOrderList.id}">
-                        <h5 th:text="'Nombre del plato: ' + ${serviceOrderList.name}"></h5>
-                        <h5 th:if="${serviceOrderList.accompaniment}" th:text="'Acompañamientos: ' + ${serviceOrderList.accompaniment}"></h5>
-                        <h5 th:if="${serviceOrderList.option1}" th:text="'Caldo: ' + ${serviceOrderList.option1}"></h5>
-                        <h5 th:if="${serviceOrderList.option2}" th:text="'Huevos: ' + ${serviceOrderList.option2}"></h5>
-                        <h5 th:if="${serviceOrderList.option3}" th:text="'Bebida: ' + ${serviceOrderList.option3}"></h5>
-                        <h5 th:if="${serviceOrderList.option4}" th:text="'Complemento: ' + ${serviceOrderList.option4}"></h5>
-                        <h5 th:if="${serviceOrderList.drinksIncludes}" th:text="'Bebida Incluida: ' + ${serviceOrderList.drinksIncludes}"></h5>
-                        <h5 th:text="'Observaciones: ' + ${serviceOrderList.observations}" class="card-title"></h5>
-                        <h5 th:text="'Cantidad: ' + ${serviceOrderList.cant}"></h5>
+                <div class="card" style="margin-bottom: 42px;">
+                    <br>
+                    <h1 th:text="'Mesa: ' +${serviceOrderList.tableNumber}" class="card-title" style="text-align: center;"></h1>
+                    <hr>
+                    <div class="container">
+                        <div class="card-body">
+                            <input type="hidden" th:value="${serviceOrderList.id}" >
+                            <h5 th:text="'Nombre del plato: ' + ${serviceOrderList.name}"></h5>
+                            <div th:if="${serviceOrderList.description} == 'Plato personalizado'">
+                                <label class="form-label">Fecha: <h6 th:text="${serviceOrderList.time}" class="card-title"></h6> </label>
+                                <h5 th:text="'Precio: $' + ${#numbers.formatDecimal(25000, 0, 'COMMA', 0, 'POINT')}" class="card-title"></h5>
+                                <ul>
+                                    <li><h6 th:text="'Cereal: ' + ${serviceOrderList.options}"></h6></li>
+                                    <li><h6 th:text="'Principio: ' + ${serviceOrderList.principles}"></h6></li>
+                                    <li><h6 th:text="'Proteina: ' + ${serviceOrderList.proteins}"></h6></li>
+                                    <li><h6 th:text="'Entrada: ' + ${serviceOrderList.entries}"></h6></li>
+                                    <li><h6 th:text="'Vegetales: ' + ${serviceOrderList.vegetables}"></h6></li>
+                                    <li><h6 th:text="'Ensalada: ' + ${serviceOrderList.salad}"></h6></li>
+                                    <li><h6 th:text="'Bebida: ' + ${serviceOrderList.drinks}"></h6></li>
+                                </ul>
+                            </div>
+                            <h5 th:if="${serviceOrderList.accompaniment}" th:text="'Acompañamientos: ' + ${serviceOrderList.accompaniment}"></h5>
+                            <h5 th:if="${serviceOrderList.option1}" th:text="'Caldo: ' + ${serviceOrderList.option1}"></h5>
+                            <h5 th:if="${serviceOrderList.option2}" th:text="'Huevos: ' + ${serviceOrderList.option2}"></h5>
+                            <h5 th:if="${serviceOrderList.option3}" th:text="'Bebida: ' + ${serviceOrderList.option3}"></h5>
+                            <h5 th:if="${serviceOrderList.option4}" th:text="'Complemento: ' + ${serviceOrderList.option4}"></h5>
+                            <h5 th:if="${serviceOrderList.drinksIncludes}" th:text="'Bebida Incluida: ' + ${serviceOrderList.drinksIncludes}"></h5>
+                            <h5 th:text="'Observaciones: ' + ${serviceOrderList.observations}" class="card-title"></h5>
+                            <h5 th:text="'Cantidad: ' + ${serviceOrderList.cant}"></h5>
+                        </div>
+                    </div>
+                    <div class="btn-group" th:if="${empty} == empty">
+                        <a th:href="@{/menu}" class="btn btn-outline-danger">Atrás</a>
+                    </div>
+                    <div class="btn-group" th:if="${empty} != empty" style="margin-left: 10px;">
+                        <a th:if="${serviceOrderList.ordered} == 0" th:href="@{/order_table(id=${serviceOrderList.id}, table=0)}" class="btn btn-outline-success">Ordenar Pedido</a>
+                        <a th:if="${serviceOrderList.ordered} == 0 and ${serviceOrderList.idMenuType} != 2" th:href="@{/edit_order_table(id=${serviceOrderList.id})}" class="btn btn-outline-info">Editar Pedido</a>
+                        <a th:if="${serviceOrderList.ordered} == 0 and ${serviceOrderList.idMenuType} == 2" th:href="@{/edit_order_table_restaurant(id=${serviceOrderList.id})}" class="btn btn-outline-info">Editar Pedido</a>
+                        <button th:if="${serviceOrderList.ordered} == 0" data-toggle="modal" data-target="#cancelModal1" th:data-parametro="${serviceOrderList.id}" onclick="openModal(this)" class="btn btn-outline-danger">Cancelar Pedido</button>
+                        <a th:if="${serviceOrderList.ordered} == 1 and ${serviceOrderList.prepare} == 0" th:href="@{/orders?table=0}" class="btn btn-outline-danger"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido en Cocina ...</a>
+                        <a th:if="${serviceOrderList.ordered} == 1 and ${serviceOrderList.prepare} == 1  and ${serviceOrderList.prepared} == 0" th:href="@{/orders?table=0}" class="btn btn-outline-warning"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido en preparación ...</a>
+                        <a th:if="${serviceOrderList.prepared} == 1 and ${serviceOrderList.served} == 0" class="btn btn-outline-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido Listo, pronto lo serviremos en tu mesa</a>
+                        <a th:if="${serviceOrderList.prepared} == 1 and ${serviceOrderList.served} == 1" class="btn btn-outline-success"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Servido en la mesa</a>
+                        <!--<a th:if="${serviceOrderList.prepared} == 1 and ${serviceOrderList.served} == 0" th:href="@{/served(id=${serviceOrderList.id},table=0)}" class="btn btn-outline-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido Listo -> Servir en la mesa</a>-->
+                        <!--<a th:if="${serviceOrderList.served} == 1" href="#" class="btn btn-outline-success">Servido en la mesa</a>-->
                     </div>
                 </div>
-                <div class="btn-group" th:if="${empty} == empty">
-                    <a th:href="@{/menu}" class="btn btn-outline-danger">Atrás</a>
-                </div>
-                <div class="btn-group" th:if="${empty} != empty" style="margin-left: 10px;">
-                    <a th:if="${serviceOrderList.ordered} == 0" th:href="@{/order_table(id=${serviceOrderList.id}, table=0)}" class="btn btn-outline-success">Ordenar Pedido</a>
-                    <a th:if="${serviceOrderList.ordered} == 0" th:href="@{/edit_order_table(id=${serviceOrderList.id})}" class="btn btn-outline-info">Editar Pedido</a>
-                    <a th:if="${serviceOrderList.ordered} == 0" th:href="@{/cancel_order_table(id=${serviceOrderList.id})}" class="btn btn-outline-danger">Cancelar Pedido</a>
-                    <a th:if="${serviceOrderList.ordered} == 1 and ${serviceOrderList.prepare} == 0" th:href="@{/orders?table=0}" class="btn btn-outline-danger"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido en Cocina ...</a>
-                    <a th:if="${serviceOrderList.ordered} == 1 and ${serviceOrderList.prepare} == 1  and ${serviceOrderList.prepared} == 0" th:href="@{/orders?table=0}" class="btn btn-outline-warning"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido en preparación ...</a>
-                    <a th:if="${serviceOrderList.prepared} == 1 and ${serviceOrderList.served} == 0" th:href="@{/served(id=${serviceOrderList.id},table=0)}" class="btn btn-outline-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido Listo -> Servir en la mesa</a>
-                    <a th:if="${serviceOrderList.served} == 1" href="#" class="btn btn-outline-success">Servido en la mesa</a>
+            </div>
+        </div>
+
+        <div class="card-body" th:if="${table} != 0 and ${empty} != 'ok'">
+            <a th:if="${disableButton} != ok" th:href="@{/confirm_order(table=${table})}" th:text="'Ordenar Mesa ' + ${table}" class="btn btn-success"></a>
+            <a th:if="${disableButton} != ok" th:href="@{/cancel_order(table=${table})}" th:text="'Cancelar Pedido ' + ${table}" class="btn btn-danger"></a>
+            <a th:if="${ordered} == ok" href="#" class="btn btn-danger"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Plato en cocina...</a> <!--TODO: Contador de platos-->
+            <a th:if="${prepare} == ok" href="#" class="btn btn-warning"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> En preparación...</a> <!--TODO: Contador de platos-->
+            <a th:if="${prepared} == ok" href="#" class="btn btn-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Plato Listo, pronto lo serviremos en tu mesa</a> <!--TODO: Contador de platos-->
+            <!--<a th:if="${prepared} == ok" href="#" class="btn btn-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Platos Listos, Servir en la mesa</a>--> <!--TODO: Contador de platos-->
+            <a th:if="${served} == ok" href="#" class="btn btn-success"></span> Servido en la mesa</a> <!--TODO: Contador de platos-->
+        </div>
+
+        <div th:if="${empty} == ok" th:text="'No existe pedido en esta mesa'" class="alert alert-danger" role="alert" ></div>
+
+        <div class="row" th:if="${table} != 0">
+            <div class="col-md-6 mb-4" th:each="serviceOrdersByTableNumber : ${serviceOrdersByTableNumber}">
+                <div class="card" style="margin-bottom: 42px;">
+                    <br>
+                    <h1 th:text="'Mesa: ' +${serviceOrdersByTableNumber.tableNumber}" class="card-title" style="text-align: center;"></h1>
+                    <hr>
+                    <div class="container">
+                        <div class="card-body">
+                            <input type="hidden" th:value="${serviceOrdersByTableNumber.id}">
+                            <h5 th:text="'Nombre del plato: ' + ${serviceOrdersByTableNumber.name}"></h5>
+                            <h5 th:if="${serviceOrdersByTableNumber.accompaniment}" th:text="'Acompañamientos: ' + ${serviceOrdersByTableNumber.accompaniment}"></h5>
+                            <h5 th:if="${serviceOrdersByTableNumber.option1}" th:text="'Caldo: ' + ${serviceOrdersByTableNumber.option1}"></h5>
+                            <h5 th:if="${serviceOrdersByTableNumber.option2}" th:text="'Huevos: ' + ${serviceOrdersByTableNumber.option2}"></h5>
+                            <h5 th:if="${serviceOrdersByTableNumber.option3}" th:text="'Bebida: ' + ${serviceOrdersByTableNumber.option3}"></h5>
+                            <h5 th:if="${serviceOrdersByTableNumber.option4}" th:text="'Complemento: ' + ${serviceOrdersByTableNumber.option4}"></h5>
+                            <h5 th:if="${serviceOrdersByTableNumber.drinksIncludes}" th:text="'Bebida Incluida: ' + ${serviceOrdersByTableNumber.drinksIncludes}"></h5>
+                            <h5 th:text="'Observaciones: ' + ${serviceOrdersByTableNumber.observations}" class="card-title"></h5>
+                            <h5 th:text="'Cantidad: ' + ${serviceOrdersByTableNumber.cant}"></h5>
+                        </div>
+                    </div>
+                    <div class="btn-group" th:if="${empty} == ok">
+                        <a th:href="@{/menu}" class="btn btn-outline-danger">Atrás</a>
+                    </div>
+                    <div class="btn-group" th:if="${empty} != ok" style="margin-left: 10px;">
+                        <a th:if="${serviceOrdersByTableNumber.ordered} == 0" th:href="@{/order_table(id=${serviceOrdersByTableNumber.id},table=${table}, add='true')}" class="btn btn-outline-success">Ordenar Pedido</a>
+                       <!-- <a th:if="${serviceOrdersByTableNumber.ordered} == 0 and ${serviceOrderList.idMenuType} != 2" th:href="@{/edit_order_table(id=${serviceOrdersByTableNumber.id})}" class="btn btn-outline-info">Editar Pedido</a>
+                        <a th:if="${serviceOrdersByTableNumber.ordered} == 0 and ${serviceOrderList.idMenuType} == 2" th:href="@{/edit_order_table_restaurant(id=${serviceOrdersByTableNumber.id})}" class="btn btn-outline-info">Editar Pedido</a>
+                        <button th:if="${serviceOrdersByTableNumber.ordered} == 0" data-toggle="modal" data-target="#cancelModal2"  onclick="openModal2(this)" class="btn btn-outline-danger">Cancelar Pedido</button>-->
+                        <a th:if="${serviceOrdersByTableNumber.ordered} == 1 and ${serviceOrdersByTableNumber.prepare} == 0" href="#" class="btn btn-outline-danger"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido en Cocina ...</a>
+                        <a th:if="${serviceOrdersByTableNumber.ordered} == 1 and ${serviceOrdersByTableNumber.prepare} == 1  and ${serviceOrdersByTableNumber.prepared} == 0" th:href="@{/orders?table=0}" class="btn btn-outline-warning"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido En Preparación ...</a>
+                        <!--<a th:if="${serviceOrdersByTableNumber.prepared} == 1 and ${serviceOrdersByTableNumber.served} == 0" th:href="@{/served(id=${serviceOrdersByTableNumber.id},table=${table})}" class="btn btn-outline-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido Listo -> Servir en la mesa</a>-->
+                        <a th:if="${serviceOrdersByTableNumber.prepared} == 1 and ${serviceOrdersByTableNumber.served} == 0" class="btn btn-outline-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido Listo, pronto lo serviremos en tu mesa</a>
+                        <a th:if="${serviceOrdersByTableNumber.served} == 1" href="#" class="btn btn-outline-success">Servido en la mesa</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="card-body" th:if="${table} != 0 and ${empty} != 'ok'">
-        <a th:if="${disableButton} != ok" th:href="@{/confirm_order(table=${table})}" th:text="'Ordenar Mesa ' + ${table}" class="btn btn-success"></a>
-        <a th:if="${disableButton} != ok" th:href="@{/cancel_order(table=${table})}" th:text="'Cancelar Mesa ' + ${table}" class="btn btn-danger"></a>
-        <a th:if="${ordered} == ok" href="#" class="btn btn-danger"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Plato en Cocina...</a> <!--TODO: Contador de platos-->
-        <a th:if="${prepare} == ok" href="#" class="btn btn-warning"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> En preparación...</a> <!--TODO: Contador de platos-->
-        <a th:if="${prepared} == ok" href="#" class="btn btn-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Platos Listos, Servir en la mesa</a> <!--TODO: Contador de platos-->
-        <a th:if="${served} == ok" href="#" class="btn btn-success"></span> Platos servidos en la Mesa</a> <!--TODO: Contador de platos-->
+    <!-- Modal -->
+    <div class="modal fade" id="cancelModal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cancelModalLabel1">Cencelar Pedido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Seguro que deseas cancelar tu pedido?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <a th:href="@{/cancel_order_table}" th:text="'Si'" class="btn btn-danger"></a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div th:if="${empty} == ok" th:text="'No existe pedido en esta mesa'" class="alert alert-danger" role="alert" ></div>
+    <!-- Modal -->
+    <div class="modal fade" id="cancelModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cancelModalLabel2">Cencelar Pedido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Seguro que deseas cancelar tu pedido?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <a th:href="@{/cancel_order_table}" th:text="'Si'" class="btn btn-danger"></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-     <div class="row" th:if="${table} != 0">
-         <div class="col-md-6 mb-4" th:each="serviceOrdersByTableNumber : ${serviceOrdersByTableNumber}">
-             <div class="card" style="margin-bottom: 42px;">
-                 <br>
-                 <h1 th:text="'Mesa: ' +${serviceOrdersByTableNumber.tableNumber}" class="card-title" style="text-align: center;"></h1>
-                 <hr>
-                 <div class="container">
-                     <div class="card-body">
-                         <input type="hidden" th:value="${serviceOrdersByTableNumber.id}">
-                         <h5 th:text="'Nombre del plato: ' + ${serviceOrdersByTableNumber.name}"></h5>
-                         <h5 th:if="${serviceOrdersByTableNumber.accompaniment}" th:text="'Acompañamientos: ' + ${serviceOrdersByTableNumber.accompaniment}"></h5>
-                         <h5 th:if="${serviceOrdersByTableNumber.option1}" th:text="'Caldo: ' + ${serviceOrdersByTableNumber.option1}"></h5>
-                         <h5 th:if="${serviceOrdersByTableNumber.option2}" th:text="'Huevos: ' + ${serviceOrdersByTableNumber.option2}"></h5>
-                         <h5 th:if="${serviceOrdersByTableNumber.option3}" th:text="'Bebida: ' + ${serviceOrdersByTableNumber.option3}"></h5>
-                         <h5 th:if="${serviceOrdersByTableNumber.option4}" th:text="'Complemento: ' + ${serviceOrdersByTableNumber.option4}"></h5>
-                         <h5 th:if="${serviceOrdersByTableNumber.drinksIncludes}" th:text="'Bebida Incluida: ' + ${serviceOrdersByTableNumber.drinksIncludes}"></h5>
-                         <h5 th:text="'Observaciones: ' + ${serviceOrdersByTableNumber.observations}" class="card-title"></h5>
-                         <h5 th:text="'Cantidad: ' + ${serviceOrdersByTableNumber.cant}"></h5>
-                     </div>
-                 </div>
-                 <div class="btn-group" th:if="${empty} == ok">
-                     <a th:href="@{/menu}" class="btn btn-outline-danger">Atrás</a>
-                 </div>
-                 <div class="btn-group" th:if="${empty} != ok" style="margin-left: 10px;">
-                     <a th:if="${serviceOrdersByTableNumber.ordered} == 0" th:href="@{/order_table(id=${serviceOrdersByTableNumber.id},table=${table}, add='true')}" class="btn btn-outline-success">Ordenar Pedido</a>
-                     <a th:if="${serviceOrdersByTableNumber.ordered} == 0" th:href="@{/edit_order_table(id=${serviceOrdersByTableNumber.id})}" class="btn btn-outline-info">Editar Pedido</a>
-                     <a th:if="${serviceOrdersByTableNumber.ordered} == 0" th:href="@{/cancel_order_table(id=${serviceOrdersByTableNumber.id})}" class="btn btn-outline-danger">Cancelar Pedido</a>
-                     <a th:if="${serviceOrdersByTableNumber.ordered} == 1 and ${serviceOrdersByTableNumber.prepare} == 0" href="#" class="btn btn-outline-danger"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido en Cocina ...</a>
-                     <a th:if="${serviceOrdersByTableNumber.ordered} == 1 and ${serviceOrdersByTableNumber.prepare} == 1  and ${serviceOrdersByTableNumber.prepared} == 0" th:href="@{/orders?table=0}" class="btn btn-outline-warning"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido En Preparación ...</a>
-                     <a th:if="${serviceOrdersByTableNumber.prepared} == 1 and ${serviceOrdersByTableNumber.served} == 0" th:href="@{/served(id=${serviceOrdersByTableNumber.id},table=${table})}" class="btn btn-outline-info"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Pedido Listo -> Servir en la mesa</a>
-                     <a th:if="${serviceOrdersByTableNumber.served} == 1" href="#" class="btn btn-outline-success">Servido en la mesa</a>
-                 </div>
-             </div>
-         </div>
-     </div>
 </div>
 <footer th:insert="includes/footer :: footer"> </footer>
 <script>
@@ -127,9 +189,40 @@ $(document).ready(function() {
       }, pageRefresh);
   });
 
-  // Functions
   function refresh() {
   $('#div1').load(location.href + " #div1");
 }
+
+//Function
+function openModal(button) {
+    var parametro = button.dataset.parametro;
+    var mensajeModal = document.getElementById("mensaje-modal1");
+    var link = document.querySelector("a.btn-danger");
+    var url = link.getAttribute("href");
+    var nuevaUrl = url.split("&")[0] + "&id=" + parametro;
+    link.setAttribute("href", nuevaUrl);
+    $('#cancelModal1').modal('show');
+}
+
+function cancelarPedido() {
+    // Código para cancelar el pedido
+    $('#cancelModal1').modal('hide');
+}
+
+
+function openModal2(button) {
+    var parametro = button.dataset.parametro;
+    var link = document.querySelector("a.btn-danger");
+    var url = link.getAttribute("href");
+    var nuevaUrl = url.split("&")[0] + "&id=" + parametro;
+    link.setAttribute("href", nuevaUrl);
+    $('#cancelModal2').modal('show');
+}
+
+function cancelarPedido() {
+    // Código para cancelar el pedido
+    $('#cancelModal2').modal('hide');
+}
+
 </script>
 </html>

@@ -114,6 +114,26 @@ public class OrdersWeb {
         return "viewEditOrders";
     }
 
+    @RequestMapping(value = "/edit_order_table_restaurant")
+    public String editOrderTableRestaurant(Model model, @RequestParam long id, boolean edit) {
+        ServiceOrder serviceOrderById = serviceOrders.getServiceOrderById(id);
+
+        List<MenuAccompaniment> menuAccompaniment = serviceMenuAccompaniment.getMenuAccompanimentList();
+        List<MenuIncludes> menuIncludesList = serviceMenuIncludes.getMenuIncludesList();
+        List<MenuOptional> menuOptionalList = serviceMenuOptional.getMenuOptional();
+        List<String> menuAccompanimentDistinct = serviceMenuAccompaniment.getMenuAccompanimentDistinct();
+        if (edit){
+            model.addAttribute("success", "ok");
+        }
+        model.addAttribute("serviceOrderById", serviceOrderById);
+        model.addAttribute("menuAccompaniment", menuAccompaniment);
+        model.addAttribute("menuIncludesList", menuIncludesList);
+        model.addAttribute("menuOptionalList", menuOptionalList);
+        model.addAttribute("menuAccompanimentDistinct", menuAccompanimentDistinct);
+
+        return "viewEditOrdersRestaurant";
+    }
+
     @RequestMapping(value = "/order_table")
     public String orderTable(Model model, @RequestParam long id, @RequestParam long table, boolean add) {
         serviceOrders.saveOrderTableById(id);
@@ -153,6 +173,10 @@ public class OrdersWeb {
     public String saveOrder(ServiceOrder serviceOrder){
         if (serviceOrder.getObservations().isEmpty()){
             serviceOrder.setObservations("Sin Observaciones");
+        }
+
+        if (serviceOrder.getIdMenu() == 0){
+            serviceOrder.setIdMenu(1);
         }
         serviceOrder.setOrdered(0);
         serviceOrder.setPrepared(0);

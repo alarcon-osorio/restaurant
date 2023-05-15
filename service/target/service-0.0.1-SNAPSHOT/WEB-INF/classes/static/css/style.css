@@ -9,13 +9,13 @@
 
 .owner-subtext {
     margin-right: 13mm;
-    margin-top: -28px;
+    margin-top: -8px;
 }
 
 .badge-warning{
-    width: 210px !important;
-    height: 40px !important;
-    font-size: 25px !important;
+    width: 140px !important;
+    height: 30px !important;
+    font-size: 16px !important;
 }
 
 .filter-option{
@@ -118,4 +118,19 @@
 
 .font-size-order{
     font-size: 20px;
+}
+
+/* BASIC AUTH*/
+.img-round {
+    width: 170px;
+    height: 166px;
+    border-radius: 118px;
+}
+
+.nav-item.show-submenu .collapse {
+  display: block;
+}
+
+.nav-link.selected {
+  font-weight: bold;
 }
