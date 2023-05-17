@@ -5,10 +5,10 @@ $(function() {
    */
   'use strict';
   var data = {
-    labels: ["2012", "2014", "2014", "2015", "2016", "2017"],
+    labels: ["Hora1", "Hora2", "Hora3", "Hora4", "Hora5", "Hora6"],
     datasets: [{
-      label: '# of Votes',
-      data: [10, 19, 3, 5, 2, 3],
+      label: '# de Pedidos',
+      data: [10, 8, 15, 10, 20, 16],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -80,7 +80,7 @@ $(function() {
   };
   var doughnutPieData = {
     datasets: [{
-      data: [30, 40, 30],
+      data: [20, 50, 30],
       backgroundColor: [
         'rgba(255, 99, 132, 0.5)',
         'rgba(54, 162, 235, 0.5)',
@@ -101,11 +101,40 @@ $(function() {
 
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
-      'Pink',
-      'Blue',
-      'Yellow',
+      'Menú del dia',
+      'Menú Pesonalizado',
+      'Menú Especial',
     ]
   };
+
+  var PieData = {
+      datasets: [{
+        data: [30, 20, 50],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.5)',
+          'rgba(54, 162, 235, 0.5)',
+          'rgba(255, 206, 86, 0.5)',
+          'rgba(75, 192, 192, 0.5)',
+          'rgba(153, 102, 255, 0.5)',
+          'rgba(255, 159, 64, 0.5)'
+        ],
+        borderColor: [
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+      }],
+
+      // These labels appear in the legend and in the tooltips when hovering different arcs
+      labels: [
+        'Mesa 1',
+        'Mesa 2',
+        'Mesa 3',
+      ]
+    };
   var doughnutPieOptions = {
     responsive: true,
     animation: {
@@ -114,10 +143,10 @@ $(function() {
     }
   };
   var areaData = {
-    labels: ["2013", "2014", "2015", "2016", "2017"],
+    labels: ["Semana1", "Semana2", "Semana3", "Semana4", "Semana5"],
     datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
+      label: '# de clientes',
+      data: [20, 19, 15, 11, 13, 9],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -318,7 +347,7 @@ $(function() {
     var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
     var pieChart = new Chart(pieChartCanvas, {
       type: 'pie',
-      data: doughnutPieData,
+      data: PieData,
       options: doughnutPieOptions
     });
   }

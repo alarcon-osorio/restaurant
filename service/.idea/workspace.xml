@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c268c94-f21f-4466-8fd7-0b9d344e0db2" name="Changes" comment="Update module admin - autenticacion">
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/WebReportingDocumentation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/documentation/documentation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/WebPaymentDiscount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/java/com/restaurant/admin/controller/WebPaymentDiscount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/static/js/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/static/js/chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/includes/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/charts/chartjs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/charts/chartjs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/documentation/documentation.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/main/resources/templates/pages/documentation/documentation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,22 +68,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/jeison.alarcon/OneDrive - Organización TERPEL S.A/Desarrollo/2. Personal/Restaurante/restaurant/service",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.3034483"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jeison.alarcon/OneDrive - Organización TERPEL S.A/Desarrollo/2. Personal/Restaurante/restaurant/service&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3034483&quot;
   }
-}]]></component>
+}</component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
