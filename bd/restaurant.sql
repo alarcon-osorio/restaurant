@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 13-05-2023 a las 06:57:11
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.0.25
+-- Servidor: localhost
+-- Tiempo de generación: 20-01-2024 a las 03:40:53
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,8 @@ CREATE TABLE `clients` (
 INSERT INTO `clients` (`id_client`, `name`, `lastname`, `username`, `email`, `role`, `password`, `enabled`) VALUES
 (1, 'Jeison', 'Alarcon', 'jalarcono@udistrital.edu.co', 'jalarcono@udistrital.edu.co', 'client', '$2a$10$Sh2nGMhmzBKy1PMZVk0/su0mPiP6CDSjvjn952M9/HxDkoYYhTqA2', 1),
 (4, 'Jeison', 'Alarcon Osorio', 'alarcon_osorio@hotmail.com', 'alarcon_osorio@hotmail.com', 'client', '$2a$10$GmQA0VAA3n7beREOLtz41./Hj3rJftFu7iHHAY5JVLdh8dG7bGwHK', 1),
-(5, 'Andres', 'Melo', 'andres.melo.p@gmail.com', 'andres.melo.p@gmail.com', 'client', '$2a$10$FbQ0NRgqmYhwxHkacxzGSO0t8YZ56G.UN4FWu9BGdBzGZlZluWNWW', 1);
+(5, 'Andres', 'Melo', 'andres.melo.p@gmail.com', 'andres.melo.p@gmail.com', 'client', '$2a$10$FbQ0NRgqmYhwxHkacxzGSO0t8YZ56G.UN4FWu9BGdBzGZlZluWNWW', 1),
+(9, 'Pepino', 'Perez', 'pepito_perez@fakemail.com', 'pepito_perez@fakemail.com', 'client', '$2a$10$leTyQNFysGB2Yp7ntsrB4.pywq9uaSRfy09/e.KwjlmF8ZsRsz6s2', 1);
 
 -- --------------------------------------------------------
 
@@ -86,8 +87,7 @@ CREATE TABLE `measure_unit` (
 
 INSERT INTO `measure_unit` (`id`, `type`, `description`) VALUES
 (1, 'ML', 'Mililitros'),
-(2, 'KG', 'Kilogramo'),
-(3, 'MG', 'Miligramos');
+(2, 'KG', 'Kilogramo');
 
 -- --------------------------------------------------------
 
@@ -111,8 +111,7 @@ CREATE TABLE `menu` (
 
 INSERT INTO `menu` (`id`, `id_menu_type`, `name`, `description`, `price`, `image`, `ordered`) VALUES
 (1, 2, 'Espagueti Italiano', 'Especial de Italia', '20000', 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', '0'),
-(2, 2, 'Plato de lentejas especiales', 'Plato de lentejas especiales', '15000', 'https://unareceta.com/wp-content/uploads/2016/10/lentejas.jpg', '0'),
-(9, 2, 'Típico de la casasssss', 'Típico de la casasssss', '2500000', 'https://ethic.es/wp-content/uploads/2023/03/imagen.jpg', '0');
+(2, 2, 'Plato de lentejas especiales', 'Plato de lentejas especiales', '15000', 'https://unareceta.com/wp-content/uploads/2016/10/lentejas.jpg', '0');
 
 -- --------------------------------------------------------
 
@@ -184,6 +183,17 @@ CREATE TABLE `menu_optional` (
 INSERT INTO `menu_optional` (`id`, `id_menu`, `id_menu_type`, `option1`, `option2`, `option3`, `option4`, `option5`) VALUES
 (6, 1, 2, 'Pajarilla', 'Revueltos', 'Chocolate', 'Arepa', '-'),
 (7, 1, 2, 'Costilla', 'Cocido', '-', '-', '-');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu_options`
+--
+
+CREATE TABLE `menu_options` (
+  `id` int(11) NOT NULL,
+  `options` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -267,7 +277,8 @@ INSERT INTO `menu_personal_view` (`id`, `username`, `id_menu_type`, `name_dish`,
 (3, 'alarcon_osorio@hotmail.com', 1, '', 1, 2, 3, 4, 5, 6, 7, 'pedido en alarcon_osorio', '2023-05-08 18:33:58'),
 (7, 'alarcon_osorio@hotmail.com', 1, 'Plato Personalizado', 1, 2, 3, 4, 5, 6, 7, '', '2023-05-08 18:33:58'),
 (14, 'jalarcono@udistrital.edu.co', 1, 'Plato Personalizado', 1, 2, 3, 4, 5, 6, 7, 'Pedido en Fila', '2023-05-08 18:37:04'),
-(15, 'jalarcono@udistrital.edu.co', 1, 'Plato Personalizado', 1, 2, 3, 4, 5, 6, 7, 'Bien rico', '2023-05-08 18:37:28');
+(15, 'jalarcono@udistrital.edu.co', 1, 'Plato Personalizado', 1, 2, 3, 4, 5, 6, 7, 'Bien rico', '2023-05-08 18:37:28'),
+(17, 'pepito_perez@fakemail.com', 1, 'Plato Personalizado', 9, 2, 3, 4, 5, 6, 7, 'Bajo de sal el arroz y las lentejas', '2023-05-22 02:17:16');
 
 -- --------------------------------------------------------
 
@@ -433,16 +444,8 @@ CREATE TABLE `service_order` (
 --
 
 INSERT INTO `service_order` (`id`, `id_menu`, `id_menu_type`, `number_order`, `name`, `username`, `description`, `observations`, `accompaniment`, `option1`, `option2`, `option3`, `option4`, `option5`, `drinks_includes`, `options`, `principles`, `proteins`, `entries`, `vegetables`, `salad`, `drinks`, `table_number`, `image`, `ordered`, `prepare`, `prepared`, `served`, `close`, `cancel`, `price`, `cant`, `discount`, `payment_method`, `time`) VALUES
-(43, 1, 0, NULL, 'Plato Personalizado', 'jalarcono@udistrital.edu.co', 'Plato personalizado', 'Gracias', NULL, '', '', '', '', '', NULL, 'Arroz Blanco', NULL, 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 0, '../images/personalized.png', 0, 0, 0, 0, 0, 1, '25000', 1, 0, NULL, '2023-05-13 01:16:46'),
-(44, 1, 0, NULL, 'Plato Personalizado', 'jalarcono@udistrital.edu.co', 'Plato personalizado', 'Sin Observaciones', NULL, '', '', '', '', '', NULL, 'Arroz Blanco', NULL, 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 0, '../images/personalized.png', 1, 1, 1, 1, 0, 0, '25000', 10, 0, NULL, '2023-05-13 01:16:33'),
-(45, 0, 1, NULL, 'Plato Personalizado', 'jalarcono@udistrital.edu.co', 'Plato personalizado', 'pEDIDO EN FILA', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 1, '../images/personalized.png', 0, 0, 0, 0, 0, 1, '25000', 1, 0, NULL, '2023-05-08 22:45:23'),
-(46, 0, 1, NULL, 'Plato Personalizado', 'jalarcono@udistrital.edu.co', 'Plato personalizado', 'Sin Observaciones', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 1, '../images/personalized.png', 0, 0, 0, 0, 0, 1, '25000', 1, 0, NULL, '2023-05-08 23:20:34'),
-(47, 6, 1, NULL, 'Espagueti Italiano', 'jalarcono@udistrital.edu.co', 'Especial de Italia', 'Sin Observaciones', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 1, 0, 0, 0, 0, 0, '20000', 100, 0, NULL, '2023-05-09 21:01:18'),
-(48, 0, 1, NULL, 'Plato Personalizado', 'jalarcono@udistrital.edu.co', 'Plato personalizado', 'Pedido en Fila', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz Blanco', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 1, '../images/personalized.png', 1, 0, 0, 0, 0, 0, '25000', 1, 0, NULL, '2023-05-09 21:01:20'),
-(49, 1, 2, NULL, 'Espagueti Italiano', 'jalarcono@udistrital.edu.co', 'Especial de Italia', 'Sin Observaciones', 'Bebidas', 'Pajarilla', 'Sin Caldo', 'Sin Caldo', '', NULL, 'Sin Bebidas', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/spagh_e8DiuI5qVF4d3xokhn0EQAtHJYXSU6.png', 1, 0, 0, 0, 0, 0, '20000', 1, 0, NULL, '2023-05-12 05:00:42'),
-(50, 2, 0, NULL, 'Plato Personalizado', 'jalarcono@udistrital.edu.co', 'Plato personalizado', 'Gracias', NULL, '', '', '', '', '', NULL, 'Arroz Blancox', NULL, 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 0, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '25000', 1, 0, NULL, '2023-05-13 01:15:58'),
-(51, 2, 0, NULL, 'Plato Personalizado', 'jalarcono@udistrital.edu.co', 'Plato personalizado', 'Gracias', NULL, '', '', '', '', '', NULL, 'Arroz Blancox', NULL, 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 0, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '25', 1, 0, NULL, '2023-05-13 01:15:41'),
-(52, 2, 0, NULL, 'Plato Personalizado', 'jalarcono@udistrital.edu.co', 'Plato personalizado', 'Gracias', NULL, '', '', '', '', '', NULL, 'Arroz ', NULL, 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 0, '../images/personalized.png', 0, 0, 0, 0, 0, 0, '25000', 1, 0, NULL, '2023-05-13 01:16:09');
+(61, 0, 1, NULL, 'Plato Personalizado', 'pepito_perez@fakemail.com', 'Plato personalizado', 'Bajo de sal el arroz y las lentejas... Gracias', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz con ajonjoli', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 1, '../images/personalized.png', 1, 1, 1, 1, 1, 0, '25000', 1, 25, 'Efectivo', '2023-05-22 02:30:22'),
+(62, 1, 1, NULL, 'Plato Personalizado', NULL, 'Plato personalizado', 'Bajo de sal el arroz y las lentejas ... Mesero', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Arroz con ajonjoli', 'Lentejas', 'Pollo', 'Papas en Casco', 'Sin vegetales', 'Sin ensalada', 'Gaseosa', 2, '../images/personalized.png', 1, 0, 0, 0, 0, 0, '25000', 1, 0, NULL, '2023-05-22 03:15:20');
 
 -- --------------------------------------------------------
 
@@ -464,7 +467,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `name`, `username`, `password`, `role`, `enabled`) VALUES
-(1, 'admin', 'admin', '$2a$12$EMwlzqzTcj1cX36MFV4RWOtugEnl/gJPXgbIDq1ppZ1/dIiyellSK', 'admin', 'true');
+(1, 'admin', 'admin', '$2a$10$HY2QyA8BFka0DIQOqbaXtOuKcIA3CkoYmonOzLjM8iemV37XIofE.', 'admin', '1'),
+(3, 'Usuario Cocina', 'cocina', '$2a$10$YH3FvIKUHU92rxK3F5nzIeHcPFOADboJwSMfpev58C.FLm9gkJ7R2', 'admin', '1'),
+(5, 'servicio', 'servicio', '$2a$10$QkaVjCCgS2lGE7gnr4yum.vpwdc3wzLZA.3sMa1FrfuvyDT7MJAiy', 'admin', '1'),
+(6, 'caja', 'caja', '$2a$10$ggmb4i86L3JHhCg2TURgou1b03pk7FqfcnhGmyZXACeGnXaEFB3Ua', 'admin', '1');
 
 -- --------------------------------------------------------
 
@@ -476,27 +482,29 @@ CREATE TABLE `warehouse` (
   `id` int(11) NOT NULL,
   `number_product` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `measure_unit` varchar(255) DEFAULT NULL,
   `price_unit` varchar(255) DEFAULT NULL,
   `date_price_unit` timestamp NULL DEFAULT NULL,
-  `sale_price` varchar(255) DEFAULT NULL,
   `date_sale_price` timestamp NULL DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `sale_price` varchar(255) DEFAULT NULL,
   `cant_disp` int(11) DEFAULT NULL,
   `cant_order` int(11) DEFAULT NULL,
   `cant_min_inv` int(11) DEFAULT NULL,
-  `total_inventory` varchar(255) DEFAULT NULL,
-  `date` varchar(255) DEFAULT NULL,
-  `type` varchar(255) DEFAULT NULL
+  `total_inventory` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `warehouse`
 --
 
-INSERT INTO `warehouse` (`id`, `number_product`, `name`, `description`, `status`, `measure_unit`, `price_unit`, `date_price_unit`, `sale_price`, `date_sale_price`, `cant_disp`, `cant_order`, `cant_min_inv`, `total_inventory`, `date`, `type`) VALUES
-(2, '123', 'Gaseosas 350ML', 'Gaseosas', '1', '2', '1500', NULL, '2500', NULL, 100, 100, 1, NULL, '2023-05-12', '1');
+INSERT INTO `warehouse` (`id`, `number_product`, `name`, `type`, `description`, `status`, `measure_unit`, `price_unit`, `date_price_unit`, `date_sale_price`, `date`, `sale_price`, `cant_disp`, `cant_order`, `cant_min_inv`, `total_inventory`) VALUES
+(2, '123', 'Gaseosas 350ML', 'Gaseosas', 'Gaseosas', 'Activo', 'ML', '1500', NULL, NULL, 'Sun May 21 22:02:25 COT 2023', '2500', 100, 100, 1, NULL),
+(4, 'GR124', 'Arroz', 'Granos', NULL, 'Activo', 'KG', '30000', NULL, NULL, 'Sun May 21 22:01:35 COT 2023', '20000', 10, 10, 1, NULL),
+(6, 'GR125', 'Lentejas', 'Granos', NULL, 'Activo', 'KG', '15000', NULL, NULL, 'Sun May 21 22:06:03 COT 2023', '10000', 10, 14, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -514,7 +522,8 @@ CREATE TABLE `warehouse_type_product` (
 --
 
 INSERT INTO `warehouse_type_product` (`id`, `type`) VALUES
-(1, 'Gaseosas');
+(1, 'Gaseosas'),
+(5, 'Granos');
 
 --
 -- Índices para tablas volcadas
@@ -562,6 +571,12 @@ ALTER TABLE `menu_includes`
 -- Indices de la tabla `menu_optional`
 --
 ALTER TABLE `menu_optional`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `menu_options`
+--
+ALTER TABLE `menu_options`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -628,7 +643,8 @@ ALTER TABLE `service_order`
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id_user`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indices de la tabla `warehouse`
@@ -650,7 +666,7 @@ ALTER TABLE `warehouse_type_product`
 -- AUTO_INCREMENT de la tabla `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `discount`
@@ -689,6 +705,12 @@ ALTER TABLE `menu_optional`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT de la tabla `menu_options`
+--
+ALTER TABLE `menu_options`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `menu_personal_form`
 --
 ALTER TABLE `menu_personal_form`
@@ -704,7 +726,7 @@ ALTER TABLE `menu_personal_type`
 -- AUTO_INCREMENT de la tabla `menu_personal_view`
 --
 ALTER TABLE `menu_personal_view`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `menu_price`
@@ -746,25 +768,25 @@ ALTER TABLE `restaurant_table`
 -- AUTO_INCREMENT de la tabla `service_order`
 --
 ALTER TABLE `service_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `warehouse`
 --
 ALTER TABLE `warehouse`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `warehouse_type_product`
 --
 ALTER TABLE `warehouse_type_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
